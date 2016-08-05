@@ -1,4 +1,121 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+
+  color: #333;
+}
+
+a {
+  color: #2d8af0;
+}
+
+
+// ----------------------------
+// header
+// ----------------------------
+
+.header {
+  background-color: #d4d8dc;
+  padding: 1em;
+}
+
+
+// ----------------------------
+// brand
+// ----------------------------
+
+.brand {
+  font-size: 2.4em;
+}
+
+.brand__Link {
+  color: #333;
+  text-decoration: none;
+}
+
+.brand__name {}
+
+
+// ----------------------------
+// menu
+// ----------------------------
+
+.menu {
+  font-size: 18px;
+}
+
+.menu__list {
+  list-style: none;
+  padding-left: 0;
+}
+.menu__item {}
+.menu__link {
+  color: #333;
+  text-decoration: none;
+}
+
+
+// ----------------------------
+// content
+// ----------------------------
+
+.content {}
+
+
+// ----------------------------
+// section
+// ----------------------------
+
+.section {
+  padding: 1em;
+}
+.section__title {
+  font-weight: normal;
+  font-size: 2.4em;
+}
+.section__subtitle {
+  display: block;
+  font-size: 0.6em;
+  color: #666;
+}
+
+
+// ----------------------------
+// portfolio
+// ----------------------------
+
+.portfolio {}
+.portfolio__item {
+  margin-left: 0;
+  margin-right: 0;
+}
+.portfolio__image {
+  max-width: 100%;
+  height: auto;
+}
+.portfolio__name {}
+.portfolio__details {}
+
+
+
+// ----------------------------
+// footer
+// ----------------------------
+
+.footer {
+  padding: 1em;
+  background: #666;
+  color: #eaeaea;
 }
