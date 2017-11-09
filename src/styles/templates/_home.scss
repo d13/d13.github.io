@@ -1,0 +1,13 @@
+
+.home {}
+.home__header {
+  position: fixed;
+  width: 100%;
+  transition: transform 0.25s ease-in-out;
+}
+.home__content {}
+.home__footer {}
+
+.home.is-advancing .home__header {
+  transform: translateY(-100%);
+}

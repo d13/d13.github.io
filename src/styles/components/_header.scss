@@ -1,0 +1,17 @@
+// ----------------------------
+// header
+// ----------------------------
+
+.header {
+  background-color: #d4d8dc;
+  padding: 1rem;
+  height: 4.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__brand { }
+.header__menu { }

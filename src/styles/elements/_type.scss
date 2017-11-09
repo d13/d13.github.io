@@ -1,0 +1,38 @@
+html {
+  font-size: 1em;
+}
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+
+  color: #333;
+}
+
+a {
+  color: #2d8af0;
+}
+
+h1 {
+  font-size: $type-size--up-3;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: $type-size--up-2;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: $type-size--up-1;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: $type-size;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: $type-size;
+  font-weight: normal;
+}

@@ -1,0 +1,24 @@
+// ----------------------------
+// menu
+// ----------------------------
+
+.menu {
+  font-size: 18px;
+}
+
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+.menu__item:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.menu__link {
+  color: #333;
+  text-decoration: none;
+}
