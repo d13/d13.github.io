@@ -11,25 +11,17 @@ To get started:
 - Run `npm install`
 
 
-## Development gulp task
+## Development task
 
-Run `gulp dev`
+Run `npm run dev`
 
 This will:
 - Builds the JS, CSS and HTML files
-- Run a local web-server to see you changes
-- Live-reloads the browser as changes are made
+- Run the webpack-dev-server to see your changes
+- Hot-reloads CSS and JS as changes are made
 
-## Individual gulp tasks
+## Individual tasks
 
-**Browsing locally:** run `gulp serve`
+**Dev bundling with hot-reloading:** run `npm run dev`
 
-**Wipe-out built files:** run `gulp clean`
-
-**Building all files:** run `gulp build`
-
-**Building HTML:** run `gulp build-templates`
-
-**Building JS:** run `gulp build-scripts`
-
-**Building CSS:** run `gulp build-styles`
+**Production-ready bundling:** run `gulp build`

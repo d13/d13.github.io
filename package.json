@@ -4,11 +4,8 @@
   "description": "my website",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --progress --watch",
-    "start": "webpack-dev-server --open",
-    "start:dev": "webpack-dev-server --hotOnly --open",
-    "build": "webpack"
+    "dev": "webpack-dev-server",
+    "build": "webpack --env.Production"
   },
   "repository": {
     "type": "git",

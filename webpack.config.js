@@ -5,31 +5,43 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env, p) => {
-    const isProd = env && env.prod;
+    const isProd = env && env.Production || false;
 
     const extractSassPlugin = new ExtractTextPlugin({
-        filename: "bundle.css",
-        disable: false
+        filename: 'bundle.css',
+        disable: !isProd,
+        allChunks: true
     });
 
     let rules = [];
-
-    rules.push({
-        test: /\.scss$/,
-        use: extractSassPlugin.extract({
-            use: [
-                { loader: "css-loader" },
-                {
-                    loader: "sass-loader",
-                    options: {
-                        //includePaths: [ 'src/styles/styles.scss' ]
+    if (isProd) {
+        rules.push({
+            test: /\.scss$/,
+            use: extractSassPlugin.extract({
+                use: [
+                    { loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            minimize: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
                     }
-                }
-            ],
-            // use style-loader in development
-            fallback: "style-loader"
-        })
-    });
+                ],
+                fallback: 'style-loader',
+                publicPath: '/dist'
+            })
+        });
+    } else {
+        rules.push({
+            test: /\.scss$/,
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        });
+    }
 
     rules.push({
         test: /\.ts$/,
@@ -42,17 +54,20 @@ module.exports = (env, p) => {
         use: 'file-loader?name=assets/images/[name]-[hash].[ext]'
     });
 
-    let plugins = [
-        new CleanWebpackPlugin([ 'dist' ]),
-        extractSassPlugin,
+    let plugins = [];
+    if (isProd) {
+        plugins.push(new CleanWebpackPlugin([ 'dist' ]));
+    }
+    plugins.push(
         new HtmlWebpackPlugin({
             hash: true,
             template: './src/html/index.html',
             filename: '../index.html'
         }),
+        extractSassPlugin,
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
-    ];
+    );
 
     return [
         {
@@ -62,16 +77,19 @@ module.exports = (env, p) => {
             },
             plugins: plugins,
             resolve: {
-                extensions: [ ".ts", ".js" ]
+                extensions: [ '.ts', '.js' ]
             },
-            devtool: isProd ? "source-map" : 'inline-source-map',
+            devtool: isProd ? 'source-map' : 'inline-source-map',
             devServer: {
                 contentBase: './',
-                hot: true
+                hot: true,
+                compress: true,
+                open: true
             },
             output: {
                 filename: 'bundle.js',
-                path: path.resolve(__dirname, 'dist')
+                path: path.resolve(__dirname, 'dist'),
+                publicPath: 'dist'
             }
         }
     ];
