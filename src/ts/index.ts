@@ -1,11 +1,13 @@
 import '../styles/styles.scss';
 
 import { scrollY } from './utility/animation';
-import { delegate } from './utility/events';
+import { on, delegate, debounce } from './utility/events';
 
 let bodyScrollTop = 0;
 function onScroll(e: Event) {
     const newScrollTop = document.documentElement.scrollTop;
+
+    console.log(e);
 
     if (newScrollTop !== 0 && newScrollTop > bodyScrollTop) {
         document.body.classList.add('is-advancing');
@@ -16,14 +18,7 @@ function onScroll(e: Event) {
     bodyScrollTop = newScrollTop;
 }
 
-let scrollTimer: number;
-window.addEventListener('scroll', (e) => {
-    if (scrollTimer) clearTimeout(scrollTimer);
-
-    scrollTimer = setTimeout(() => {
-        onScroll(e);
-    }, 100);
-}, false);
+on(window, 'scroll', debounce(onScroll, 100), false);
 
 delegate(document, 'click', 'a[data-inpage]', (e) => {
     //console.log(e);

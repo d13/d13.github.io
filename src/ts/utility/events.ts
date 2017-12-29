@@ -48,3 +48,15 @@ export function delegate(element: Element | Document, type: any, selector: strin
 
     return on(element, type, delegateListener, capture, thisArg);
 }
+
+export function debounce(listener: (e: Event) => any, delay: number) {
+    let timer: number;
+
+    return (e: Event) => {
+        if (timer) clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            listener(e);
+        }, delay);
+    };
+}
