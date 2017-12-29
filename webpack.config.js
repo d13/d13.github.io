@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env, p) => {
@@ -43,7 +43,7 @@ module.exports = (env, p) => {
     });
 
     let plugins = [
-        //new CleanWebpackPlugin([ 'dist' ]),
+        new CleanWebpackPlugin([ 'dist' ]),
         extractSassPlugin,
         new HtmlWebpackPlugin({
             hash: true,
