@@ -2,12 +2,27 @@
 // brand
 // ----------------------------
 
-.brand {
-  font-size: 2.4em;
-  color: #333;
+.o-brand {
+  display: inline-block;
+  vertical-align: middle;
+
+  color: inherit;
   text-decoration: none;
 }
 
-.brand__logo {}
+.o-brand__logo {
+  display: inline-block;
+  vertical-align: middle;
 
-.brand__name {}
+  width: 1em;
+  height: 1em;
+  background: url(../images/logo.png) no-repeat center center;
+  background-size: contain;
+}
+
+.o-brand__name {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+  margin-left: 0.5em;
+}

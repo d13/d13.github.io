@@ -1,7 +1,12 @@
+@import url(https://use.typekit.net/bdx2zst.css);
+
 // ----------------------------
 // tools
 // ----------------------------
+@import "./tools/settings";
+@import "./tools/functions";
 @import "./tools/variables";
+@import "./tools/mixins";
 
 // ----------------------------
 // elements
@@ -22,10 +27,17 @@
 
 @import "./objects/brand";
 
+// ----------------------------
+// layouts
+// ----------------------------
+
+@import "./layouts/container";
 
 // ----------------------------
 // components
 // ----------------------------
+
+@import "./components/contact";
 
 @import "./components/skunkwork";
 @import "./components/portfolio";
@@ -45,3 +57,4 @@
 // ----------------------------
 // helpers
 // ----------------------------
+@import "./helpers/helpers";

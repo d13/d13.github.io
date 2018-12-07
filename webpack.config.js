@@ -51,7 +51,7 @@ module.exports = (env, p) => {
 
     rules.push({
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: 'file-loader?name=assets/images/[name]-[hash].[ext]'
+        use: 'file-loader?name=/assets/images/[name]-[hash].[ext]'
     });
 
     let plugins = [];
@@ -62,7 +62,8 @@ module.exports = (env, p) => {
         new HtmlWebpackPlugin({
             hash: true,
             template: './src/html/index.html',
-            filename: '../index.html'
+            filename: '../index.html',
+            alwaysWriteToDisk: true
         }),
         extractSassPlugin,
         new webpack.NamedModulesPlugin(),

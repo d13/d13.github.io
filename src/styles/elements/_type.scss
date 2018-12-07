@@ -1,38 +1,44 @@
 html {
-  font-size: 1em;
+  font-size: $type-size-val;
 }
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "proxima-nova", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 1.2;
 
-  color: #333;
+  color: #666;
 }
 
 a {
   color: #2d8af0;
 }
 
-h1 {
-  font-size: $type-size--up-3;
+h1, h2, h3, h5 {
   font-weight: normal;
+  margin-top: 0;
+}
+
+h1 {
+  font-family: "proxima-nova-condensed",sans-serif;
+  //font-size: $type-size--up-3;
+  @include responsiveType(3);
+  color: #313233;
 }
 
 h2 {
-  font-size: $type-size--up-2;
-  font-weight: normal;
+  //font-size: $type-size--up-2;
+  @include responsiveType(2);
 }
 
 h3 {
-  font-size: $type-size--up-1;
-  font-weight: normal;
+  //font-size: $type-size--up-1;
+  @include responsiveType(1);
 }
 
 h4 {
-  font-size: $type-size;
   font-weight: bold;
+  font-size: $type-size;
 }
 
 h5 {
   font-size: $type-size;
-  font-weight: normal;
 }

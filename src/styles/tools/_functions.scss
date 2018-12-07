@@ -1,0 +1,78 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function convert-value($value, $valueBase) {
+  @return (strip-units($value) * $valueBase);
+}
+
+// based on http://type-scale.com/ and http://www.modularscale.com/
+@function scaleType($multi, $ratio, $base) {
+  $size: $base;
+
+  @if $multi != 0 {
+    $amount: abs($multi);
+    $count: floor($amount);
+
+    @for $i from 1 through $count {
+      @if $multi < 0 {
+        $size: ($size / $ratio);
+      } @else {
+        $size: ($size * $ratio);
+      }
+    }
+
+    @if $count != $amount {
+      $remainder: $amount - $count;
+
+      $size-tmp: $size;
+      @if $multi < 0 {
+        $size-tmp: ($size / $ratio);
+      } @else {
+        $size-tmp: ($size * $ratio);
+      }
+
+      $size-diff: $size - $size-tmp;
+      $size: $size - ($size-diff * $remainder);
+    }
+  }
+
+  @return $size;
+}
+
+// based on: https://www.smashingmagazine.com/2016/05/fluid-typography/
+//           https://codepen.io/MadeByMike/pen/7744b5fc445e2b34a9e2bb1e21e8b09c
+@function fluidSizing($typeMin, $typeMax, $widthMin, $widthMax) {
+  $a: ($typeMax - $typeMin) / ($widthMax - $widthMin);
+  $b: $typeMin - $a * $widthMin;
+
+  $sign: "+";
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+  @return calc(#{$a*100}vw #{$sign} #{$b});
+}
+
+// assumptive functions
+@function px-to-rem($value) {
+  @return convert-value($value, (1/strip-units($type-size-val))rem);
+}
+
+@function em-to-px($value) {
+  @return convert-value($value, $type-size-val);
+}
+
+@function scaleTypeLarge($multi, $base: $type-size) {
+  @return scaleType($multi, $type-scale-large, $base);
+}
+
+@function scaleTypeSmall($multi, $base: $type-size) {
+  @return scaleType($multi, $type-scale-small, $base);
+}
+
+@function scaleTypeFluid($multi) {
+  $typeMin: scaleTypeSmall($multi, $type-size-val);
+  $typeMax: scaleTypeLarge($multi, $type-size-val);
+  @return fluidSizing($typeMin, $typeMax, $type-break-small, $type-break-large);
+}

@@ -1,0 +1,23 @@
+@mixin responsiveProp($multi, $prop: font-size) {
+  $typeMin: scaleTypeSmall($multi, $type-size-val);
+  $typeMax: scaleTypeLarge($multi, $type-size-val);
+  $typeResp: fluidSizing($typeMin, $typeMax, $type-break-small, $type-break-large);
+
+  & {
+    #{$prop}: #{$typeMin};
+    @media (min-width: #{($type-break-small + 1)}) and (max-width: #{($type-break-large - 1)}) {
+      #{$prop}: #{$typeResp};
+    }
+    @media (min-width: #{$type-break-large}) {
+      #{$prop}: #{$typeMax};
+    }
+  }
+}
+
+@mixin responsiveType($multi) {
+  @include responsiveProp($multi, font-size);
+}
+
+@mixin layout-gutters() {
+
+}

@@ -2,11 +2,9 @@
 // menu
 // ----------------------------
 
-.menu {
-  font-size: 18px;
-}
+.c-menu {}
 
-.menu__list {
+.c-menu__list {
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -14,11 +12,11 @@
   display: flex;
   flex-direction: row;
 }
-.menu__item:not(:first-child) {
+.c-menu__item:not(:first-child) {
   margin-left: 1rem;
 }
 
-.menu__link {
-  color: #333;
+.c-menu__link {
+  color: inherit;
   text-decoration: none;
 }

@@ -6,8 +6,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "lib": [
-      "es5",
-      "es2015.iterable",
+      "es2017",
       "dom"
     ],
     "module": "es2015",
