@@ -1,0 +1,63 @@
+/**
+    Grid calculation
+    Scale based:
+        - 1140px width
+        - 40px margin (2)
+        - 20px gutter (11)
+        - 70px column (12)
+    live = 1060 = 1140 - (40 * 2)
+    gutter = 1.88679245283% = (20 / live) * 100
+    column = 6.60377358491% = (((20 * (cols - 1)) + (70 * cols)) / live) * 100
+**/
+
+$grid-config-width: 1140;
+$grid-config-margin: 40;
+$grid-config-gutter: 20;
+$grid-config-column: 70;
+
+$grid-live-width:  $grid-config-width - ($grid-config-margin * 2);
+$grid-gutter: ($grid-config-gutter / $grid-live-width) * 100%;
+
+@function get-column-size($arg-cols){
+    @return ((($grid-config-gutter * ($arg-cols - 1)) + ($grid-config-column * $arg-cols)) / $grid-live-width) * 100%;
+}
+
+.l-grid {
+    display: flex;
+    flex-direction: row;
+
+    > * {
+        flex: 0 0 auto;
+    }
+}
+
+.l-grid--spread {
+    justify-content: space-between;
+}
+
+.l-grid--halves {
+    justify-content: space-between;
+
+    > * {
+        flex-basis: get-column-size(6);
+        max-width: get-column-size(6);
+    }
+}
+
+.l-grid--thirds {
+    justify-content: space-between;
+
+    > * {
+        flex-basis: get-column-size(4);
+        max-width: get-column-size(4);
+    }
+}
+
+.l-grid--fourths {
+    justify-content: space-between;
+
+    > * {
+        flex-basis: get-column-size(3);
+        max-width: get-column-size(3);
+    }
+}
