@@ -39,3 +39,6 @@ jspm_packages
 # Idea
 .idea
 *.iml
+
+# OS junk
+.DS_Store
