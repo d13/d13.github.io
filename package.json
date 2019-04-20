@@ -1,8 +1,7 @@
 {
   "name": "d13.github.io",
-  "version": "0.0.1",
-  "description": "my website",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "My personal website and general dumping ground to try out my ideas.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

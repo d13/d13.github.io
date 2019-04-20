@@ -2,394 +2,223 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Keith Daulton - Senior UI Developer and Designer</title>
+    <title>Keith Daulton - UI Developer and Designer</title>
     <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-    <header class="header">
-        <div class="brand">
-            <a href="#" class="brand__Link">
-                <span class="brand__name">Keith Daulton</span>
-            </a>
-        </div>
-        <div class="menu">
-            <ul class="menu__list">
-                <li class="menu__item"><a class="menu__link" href="#">Bio</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Portfolio</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Experience</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Skunkworks</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-                <li class="menu__item"><a class="menu__link" target="_blank" href="https://github.com/d13/d13.github.io">Code</a></li>
+<body class="t-home">
+    <header class="c-header t-home__header">
+        <div class="c-header__brand"><a href="#intro" class="o-brand o-brand--no-name"><i class="o-brand__logo" role="presentation"></i><span class="o-brand__name">Keith Daulton</span></a></div>
+        <nav class="c-menu c-header__nav">
+            <ul class="c-menu__list">
+                <li class="c-menu__item"><a class="c-button c-menu__link" href="#bio">Bio</a></li>
+                <li class="c-menu__item"><a class="c-button c-menu__link" href="#works">Works</a></li>
+                <li class="c-menu__item"><a class="c-button c-menu__link" href="#experience">Experience</a></li>
+                <!-- <li class="c-menu__item"><a class="c-menu__link" href="#skunkworks">Skunkworks</a></li> -->
+                <li class="c-menu__item"><a class="c-button c-menu__link" href="#contact">Contact</a></li>
+                <li class="c-menu__item"><a class="c-button c-menu__link" rel="external" target="_blank" href="https://github.com/d13/d13.github.io">Code</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
-    <div class="content">
-        <section class="section section--intro">
-            <h1 class="section__title">
-                Hi, my name is Keith
-                <small class="section__subtitle">I make pixels &amp; divs pretty</small>
-            </h1>
-            <p>An accomplished User Interface Developer and Designer with a passion for creating awesome user experiences for web and mobile.</p>
-        </section>
-        <section class="section section--bio">
-            <h1 class="section__title">Keith Daulton &mdash;</h1>
-            <p>
-                A leader in user-interface development and design with over 14 years of experience and a proven track record for delivering scalable, interactive and multi-device web experiences including: online stores, single-page applications, marketing apps, widgets, microsites, landing pages and social-networking websites.
-            </p>
-        </section>
-        <section class="section section--portfolio">
-            <h1 class="section__title">
-                Portfolio
-                <small class="section__subtitle">because seeing is much more fun</small>
-            </h1>
-            <div class="portfolio">
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_sparx_prev.png" alt="Sparx site design">
-                    <figcaption>
-                        <h2 class="portfolio__name">Sparx</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Landing Page Design (2014)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Designer, Developer, Partner</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS3, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_dpi_prev.png" alt="Dynamic Partners International Website">
-                    <figcaption>
-                        <h2 class="portfolio__name">Dynamic Partners International</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Website (2014)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Designer, Developer, Contractor</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS3, JS, jQuery, Photoshop</dd>
-                        </dl>
-                        <a href="http://www.dynamicpartnersint.com/" target="_blank">Launch website</a>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_bhpm_prev.png" alt="BHP Markets Website">
-                    <figcaption>
-                        <h2 class="portfolio__name">BHP Markets</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Website Redesign (2013)</dd>
-
-                            <dt>Role</dt>
-                            <dd>UI Developer, Contractor</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS3, JS, jQuery, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_restee-v1-app_prev.png" alt="RESTEE Mobile Design">
-                    <figcaption>
-                        <h2 class="portfolio__name">RESTEE Mobile</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Website Design (2013)</dd>
-
-                            <dt>Role</dt>
-                            <dd>UI Developer &amp; Designer, Co-Founder</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS, JS, jQuery, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_rojo-v2_prev.png" alt="Rojo Solutions Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Rojo Solutions v2</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Website Redesign (2012)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Developer, Web Designer, Co-Founder</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS, JS, jQuery, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://dev.d13design.com/assets/images/port/port_colors-logo_prev.png" alt="Colors App Logo">
-                    <figcaption>
-                        <h2 class="portfolio__name">Colors App</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Logo Design (2012)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Designer</dd>
-
-                            <dt>Skills</dt>
-                            <dd>Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_spirit_prev.png" alt="Spirit Airlines Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Spirit Airlines</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Website Redesign (2011)</dd>
-
-                            <dt>Role</dt>
-                            <dd>UI Lead, JS Ninja, Browser Wrangler, Employee</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS3, JS, jQuery, Knockout.js, XSLT, Photoshop</dd>
-                        </dl>
-                        <a href="http://www.spirit.com/" target="_blank">Launch website</a>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_betterfly_prev.png" alt="Betterfly.com Homepage Redesign">
-                    <figcaption>
-                        <h2 class="portfolio__name">Betterfly.com</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Homepage Redesign (2011)</dd>
-
-                            <dt>Role</dt>
-                            <dd>JS Ninja, Browser Wrangler, Contractor</dd>
-
-                            <dt>Skills</dt>
-                            <dd>HTML5, CSS3, JS, jQuery, PHP, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_rojosolutions_prev.png" alt="ROJO Solutions Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Rojo Solutions</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Corporate Site (2010)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Developer, Web Designer, Co-Founder</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, jQuery, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_d13design_prev.png" alt="D13 Design Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">D13 Design</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Corporate Site (2010)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Developer, Web Designer, Owner</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, jQuery, Photoshop</dd>
-                        </dl>
-                        <a href="http://www.d13design.com/" target="_blank">Launch website</a>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_drghersi_prev.png" alt="Marcelo Ghersi, M.D., P.A Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Marcelo Ghersi, M.D., P.A</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Company Website (2009)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Developer, Web Designer, Contractor</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, PHP, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_cybertek_prev.png" alt="Cybertek Solutions Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">CyberTek Solutions</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Corporate Site (2009)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Designer, Freelance</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, Photoshop</dd>
-                        </dl>
-                        <a href="http://www.cybertek-us.com/" target="_blank">Launch website</a>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_bahamas_prev.png" alt="Bahama Cruise Vacations Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Bahama Cruise Vacations</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Cruise Site (2009)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Designer, Co-Developer, Freelance</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, Classic ASP, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_dreammaker_prev.png" alt="DreamMaker Miami Company Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">DreamMaker Miami</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Company Site (2008)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Developer, Web Designer, Freelance</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, PHP, MySQL, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_dscripted_prev.png" alt="DScripted Wordpress Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">DScripted</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Wordpress Site (2008)</dd>
-
-                            <dt>Role</dt>
-                            <dd>JS Ninja, Web Designer, Founder</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, PHP, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_efrai_prev.png" alt="Efrai Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Efrai</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Corporate Site (2008)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Co-Designer, Backend Coder, Freelance</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, Classic ASP, MySQL, Flex, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio__item">
-                    <img class="portfolio__image" src="http://keithdaulton.com/assets/images/port/port_rosenbaumcontemporary_prev.png" alt="Rosenbaum Contemporary Corporate Site">
-                    <figcaption>
-                        <h2 class="portfolio__name">Rosenbaum Contemporary</h2>
-                        <dl>
-                            <dt>Project</dt>
-                            <dd>Corporate Site (2005)</dd>
-
-                            <dt>Role</dt>
-                            <dd>Web Designer, Freelance</dd>
-
-                            <dt>Skills</dt>
-                            <dd>XHTML, CSS, JS, Photoshop</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
+    <main class="t-home__main">
+        <section class="c-section c-section--fixed-hero c-section--light c-section--rough" id="intro">
+            <div class="l-row l-row--narrow l-row--halves">
+                <div class="c-section__content">
+                    <h1>Hello!</h1>
+                    <p>I'm a <strong>UI Developer &amp; Designer</strong> with a passion for creating awesome user experiences for web and mobile.</p>
+                    <p>I make pixels & divs pretty!</p>
+                </div>
+                <div class="c-section__media"></div>
             </div>
         </section>
-        <section class="section section--experience">
-            <h1 class="section__title">Experience</h1>
-            <h2>Core Competencies</h2>
-            <ul>
-                <li>mobile-first and responsive web design</li>
-                <li>grid / layout systems</li>
-                <li>progressive-enhancement</li>
-                <li>page-load and performance-tuning</li>
-                <li>browser debugging</li>
-                <li>interactive web components</li>
-                <li>UX design</li>
-                <li>wireframing and user-flows</li>
-                <li>mentoring and training</li>
-            </ul>
-            <h2>Technical Competencies</h2>
-            <dl>
-                <dt>Client-side UI</dt>
-                <dd>
-                    JavaScript, HTML, CSS, LESS, jQuery, Backbone, Lo-Dash, Require.js, Handlebars, Knockout.js, Bootstrap
-                </dd>
-                <dt>Server-side UI</dt>
-                <dd>
-                    JSP, JSTL, Tiles, GSP/Sitemesh, Swig.js, r.js, PHP, Smarty, JSON, XML, XSLT, XPath, XSL-FO
-                </dd>
-                <dt>Environments</dt>
-                <dd>
-                    Node.js, Java, .NET, Grails, LAMP, MySQL, MongoDB, Git/GitHub, CVS, TFS
-                </dd>
-                <dt>Tools</dt>
-                <dd>
-                    Eclipse (Aptana or STS), WebStorm, PHPStorm, Visual Studio, Photoshop
-                </dd>
-            </dl>
+        <section class="c-section c-section--fixed-hero c-section--feint c-section--polished" id="bio">
+            <div class="l-row l-row--narrow l-row--halves">
+                <div class="c-section__content">
+                    <h1>I'm Keith &mdash;</h1>
+                    <p>A leader in user-interface development and design with over 17 years of experience and a proven track record for delivering scalable, interactive and multi-device web experiences including: online stores, single-page applications, marketing apps, widgets, microsites, landing pages and social-networking websites.</p>
+                </div>
+                <div class="c-section__media"></div>
+            </div>
         </section>
-        <section class="section section--skunkworks">
-            <h1 class="section__title">Skunkworks</h1>
-            <h2>BEM + LESS</h2>
-            <script src="https://gist.github.com/d13/90aa65b955907209c430.js"></script>
-            <h2>Node.js: XML API hell</h2>
-            <script src="https://gist.github.com/d13/eda0f6e068bdf4011025.js"></script>
-            <h2>LESS: variables as mixins</h2>
-            <script src="https://gist.github.com/d13/b31489dd37e0f34b5175.js"></script>
-        </section>
-        <section class="section section--contact">
-            <h1 class="section__title">Contact</h1>
-            <dl>
-                <dt>Address:</dt>
-                <dd>
-                    75 Station Landing<br>
-                    Apt 616<br>
-                    Medford, MA 02155
-                </dd>
-                <dt>Phone:</dt>
-                <dd><a href="tel:19548052603">1 (954) 805-2603</a></dd>
-                <dt>Email:</dt>
-                <dd><a href="mailto:kdaulton@gmail.com">kdaulton@gmail.com</a></dd>
-                <dt>Links:</dt>
-                <dd>
-                    <ul>
-                        <li><a target="_blank" href="https://github.com/d13">GitHub</a></li>
-                        <li><a target="_blank" href="https://gist.github.com/d13">Gist</a></li>
-                        <li><a target="_blank" href="http://www.linkedin.com/in/keithdaulton">LinkedIn</a></li>
+        <section class="c-section c-section--dark" id="works">
+            <div class="c-section__content"></div>
+            <div class="c-section__media">
+                <div class="l-aspect l-aspect--fullwidth">
+                    <div class="c-gallery c-gallery--zipper">
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/spirit_screenshot.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/Business-Profile-offline.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/landing_page_1.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/Landscaping-Logo.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/DPI_Logo_Icon.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/dashboard_anon.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/Cruise_HP.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/Marketing_Affil_of_America.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/Pawtastic-404-Error.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                        <figure class="c-gallery__item">
+                            <img class="c-gallery__image" src="./assets/media/portfolio/DPI-02.png" alt="image">
+                            <figcaption class="c-gallery__caption">item caption</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!-- will be good for a formal works page
+                <div class="c-brand-wall">
+                    <ul class="c-brand-wall__list">
+                        <li class="c-brand-wall__item">MergeIn</li>
+                        <li class="c-brand-wall__item">Intuit</li>
+                        <li class="c-brand-wall__item">DHL</li>
+                        <li class="c-brand-wall__item">Dell</li>
+                        <li class="c-brand-wall__item">TracFone</li>
+                        <li class="c-brand-wall__item">Net10</li>
+                        <li class="c-brand-wall__item">StraightTalk</li>
+                        <li class="c-brand-wall__item">SafeLink</li>
+                        <li class="c-brand-wall__item">ion interactive</li>
+                        <li class="c-brand-wall__item">athenahealth</li>
+                        <li class="c-brand-wall__item">Rosenbaum Fine Art</li>
+                        <li class="c-brand-wall__item">EarlyShares</li>
+                        <li class="c-brand-wall__item">Kabam</li>
                     </ul>
-                </dd>
-            </dl>
+                </div>
+                -->
+            </div>
         </section>
-    </div>
-    <footer class="footer">
-        <p>Copyright &copy; 1996-2016, Keith Daulton, LLC. All rights reserved.</p>
+        <section class="c-section c-section--full" id="experience">
+            <div class="l-row l-row--narrow l-row--halves">
+                <div class="c-section__media">
+                    <div class="l-aspect">
+                        <div class="c-gallery c-gallery--thirds">
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-section__content">
+                    <h2>Experience</h2>
+                    <p>I spend most of my time crafting UIs using JavaScript, HTML and CSS for server-rendered and client-side applications. I’m highly involved in the platform-side of things like CSS architecture, design-system engineering and build processes to make developing cool stuff fast and consistent.</p>
+                    <p>When I’m not coding, I’m involved in the UX-side of things like sketching out wireframes and designs on paper or whiteboard, creating high-fidelity designs and clickable prototypes and user-testing them.</p>
+                    <!-- will be good for a formal works page -->
+                    <p><a href="#" class="c-button">More experience</a></p>
+                </div>
+            </div>
+        </section>
+        <section class="c-section c-section--full c-section--medium" id="contact">
+            <div class="l-row l-row--narrow l-row--halves">
+                <div class="c-section__content">
+                    <h2>Contact</h2>
+                    <p>Need help getting your site or app whipped into world-class shape?</p>
+                    <p>Wanna poke around on my professional networks?</p>
+                    <p>Just wanna see what kinda nonsense I’m into?</p>
+                    <p>It’s all here, enjoy :)</p>
+                </div>
+                <div class="c-section__media">
+                    <div class="l-aspect">
+                        <div class="c-gallery c-gallery--thirds">
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                            <figure class="c-gallery__item">
+                                <img class="c-gallery__image" src="https://via.placeholder.com/160x160" alt="image">
+                                <figcaption class="c-gallery__caption">item caption</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="c-footer t-home__footer">
+        <p>
+            All content &copy; copyright 2019 Keith Daulton and respective brands. All rights reserved.
+            <a href="https://mixpanel.com/f/partner"><img src="http://cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" style="vertical-align: middle;" /></a>
+        </p>
     </footer>
 </body>
 </html>
