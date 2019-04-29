@@ -67,7 +67,7 @@ function detectVisibility(items, once) {
 
 const listenerQueue = {};
 function detectAnimationVisibility() {
-    console.log('detectAnimationVisibility');
+    //console.log('detectAnimationVisibility');
 
     Object.keys(listenerQueue).map(key => listenerQueue[key]).forEach(_ => {
         detectVisibility(_.items, _.once);
@@ -83,16 +83,18 @@ function listenOnChanges() {
     if (!activeVisibility) {
         let events = [
             on(window, 'resize', () => {
-                console.log('resize');
+                //console.log('resize');
                 vpW = window.innerWidth;
                 vpH = window.innerHeight;
                 debouncedDetectAnimationVisibility();
             }),
             on(window, 'scroll', () => {
-                console.log('scroll');
+                //console.log('scroll');
                 debouncedDetectAnimationVisibility();
             })
         ];
+
+        debouncedDetectAnimationVisibility();
 
         activeVisibility = {
             off: () => {
