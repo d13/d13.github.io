@@ -36,9 +36,13 @@ function elementIsVisible(el) {
 function detectVisibility(selector, once) {
     let selections = lazyQueryAll(selector);
     selections.forEach(el => {
+        if (once && el.classList.contains('is-in-view')) {
+            return;
+        }
+
         if (elementIsVisible(el)) {
             el.classList.add('is-in-view');
-        } else if (!once) {
+        } else {
             el.classList.remove('is-in-view');
         }
     });
@@ -53,11 +57,11 @@ const debouncedDetectAnimationVisibility = debounceFrame(() => {
     detectAnimationVisibility();
 });
 
-window.addEventListener('scroll', e => {
+window.addEventListener('scroll', () => {
     console.log('scrolling');
     debouncedDetectAnimationVisibility();
 }, false);
 
-document.addEventListener('DOMContentLoaded', e => {
+document.addEventListener('DOMContentLoaded', () => {
     debouncedDetectAnimationVisibility();
 }, false);

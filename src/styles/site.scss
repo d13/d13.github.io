@@ -134,7 +134,7 @@ p:last-child {
   display: inline-block;
   width: 0.833em; /* 750x900 */
   height: 1em;
-  background: url(./media/branding/logo-tight.png) no-repeat center center;
+  background: url(../media/branding/logo-tight.png) no-repeat center center;
   background-size: contain;
   vertical-align: baseline;
 }
@@ -352,11 +352,11 @@ p:last-child {
 }
 
 .c-section--rough {
-  background-image: url(./media/features/phone-mergein-rough.png);
+  background-image: url(../media/features/phone-mergein-rough.png);
 }
 
 .c-section--polished {
-  background-image: url(./media/features/phone-mergein-finished.png);
+  background-image: url(../media/features/phone-mergein-finished.png);
 }
 
 
