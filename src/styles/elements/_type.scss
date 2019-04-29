@@ -1,0 +1,41 @@
+html {
+    font-family: "proxima-nova";
+    font-weight: 400;
+    font-size: var(--font-0);
+    line-height: 1.22;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "proxima-nova-condensed";
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-size: var(--font-5); // 101.75px;
+}
+
+h3 {
+    font-size: var(--font-4); // 71.96px;
+}
+
+h4 {
+    font-size: var(--font-3); // 50.89px;
+}
+
+h5 {
+    font-size: var(--font-2); // 35.99px;
+}
+
+h6 {
+    font-size: var(--font-1); // 25.45px;
+}
+
+p {
+    margin-top: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}

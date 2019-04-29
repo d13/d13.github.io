@@ -1,0 +1,20 @@
+@function pow($number, $exp) {
+    $value: 1;
+
+    @if $exp > 0 {
+        @for $i from 1 through $exp {
+            @if $exp < 0 {
+                $value: ($value / $number);
+            } @else {
+                $value: ($value * $number);
+            }
+        }
+    }
+
+    @return $value;
+}
+
+// modular type scale: 1.414 - augmented fourth (https://type-scale.com/)
+@function scale-type($multi, $ratio: 1.414, $base: 1rem) {
+    @return $base * pow($ratio, $multi);
+}

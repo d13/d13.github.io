@@ -1,11 +1,13 @@
 const { src, dest, parallel, watch } = require('gulp');
 const sass = require('gulp-sass');
-const concat = require('gulp-concat');
+//const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 //const autoprefixer = require('gulp-autoprefixer');
 const rollupEach = require('gulp-rollup-each');
 
 function styles() {
-    return src('src/styles/*.scss', { sourcemaps: true })
+    return src('src/styles/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         // css custom property support makes this practically pointless
         //      (see: https://caniuse.com/#feat=css-variables vs npx browserslist '> .5%')
@@ -13,7 +15,8 @@ function styles() {
         //     browsers: ['> .5%'],
         //     cascade: false
         // }))
-        .pipe(dest('assets/styles'), { sourcemaps: true });
+        .pipe(sourcemaps.write())
+        .pipe(dest('assets/styles'));
 }
 
 // TODO: add typescript compilation
@@ -30,8 +33,8 @@ function scripts() {
         .pipe(dest('assets/scripts', { sourcemaps: true }));
 }
 
-// watch('src/styles/**/*.scss', styles);
-// watch('src/scripts/*.js', scripts);
+watch('src/styles/**/*.scss', styles);
+watch('src/scripts/*.js', scripts);
 
 exports.scripts = scripts;
 exports.styles = styles;

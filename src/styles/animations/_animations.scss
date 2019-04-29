@@ -1,0 +1,38 @@
+@keyframes phone-home {
+    from {
+        background-position: left calc(50vw + 20px) bottom -100vh;
+    }
+
+    to {
+        background-position: left calc(50vw + 20px) bottom -30vh;
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100% ,0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// FIXME: needs to be on animation classes only
+.h-vp-in,
+.h-vp-in-once {
+  &.is-in-view {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: .25s;
+  }
+}
+
+.a-fade-in-down {
+  &:not(.h-vp-in):not(.h-vp-in-once),
+  &.is-in-view {
+    animation-name: fade-in-down;
+  }
+}
