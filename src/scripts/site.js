@@ -1,5 +1,5 @@
 import { on } from './utils/events';
-import { observeVisibility, monitorVisibility } from './utils/visibility';
+import { monitorVisibility } from './utils/visibility'; // observeVisibility,
 
 on(document, 'DOMContentLoaded', () => {
     monitorVisibility('.h-vp-in');
