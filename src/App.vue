@@ -1,13 +1,18 @@
 <template>
   <div class="t-app">
-    <nav class="t-app__nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/experience">Experience</router-link> |
-      <router-link to="/contact">Contact</router-link> |
-      <router-link to="/code">Code</router-link>
-    </nav>
-    <main class="t-app__main">
+    <a href="#t-app__main" @click.prevent="skipToMain()"
+      >Skip to main content</a
+    >
+    <header class="t-app__header" role="banner">
+      <nav class="t-app__nav" role="navigation">
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/experience">Experience</router-link>
+        <router-link to="/contact">Contact</router-link>
+        <router-link to="/code">Code</router-link>
+      </nav>
+    </header>
+    <main class="t-app__main" id="t-app__main" role="main" ref="main">
       <router-view />
     </main>
   </div>
@@ -15,7 +20,22 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    skipToMain() {
+      this.$nextTick(() => {
+        const focusTarget = this.$refs.main;
+        focusTarget.setAttribute('tabindex', '-1');
+        focusTarget.focus();
+        focusTarget.removeAttribute('tabindex');
+      });
+    }
+  } // ,
+  // watch: {
+  //   $route(to) {
+  //     this.skipToMain();
+  //   }
+  // }
 };
 </script>
 
