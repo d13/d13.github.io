@@ -1,6 +1,6 @@
 <template>
   <div class="t-app">
-    <a href="#t-app__main" @click.prevent="skipToMain()"
+    <a class="t-app__skip" href="#t-app__main" @click.prevent="skipToMain()"
       >Skip to main content</a
     >
     <header class="t-app__header" role="banner">
@@ -40,13 +40,10 @@ export default {
 </script>
 
 <style lang="scss">
-.t-app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@use './scss/baseline';
+@use './scss/utils';
 
+.t-app {
   &__nav {
     padding: 30px;
 
@@ -58,6 +55,11 @@ export default {
         color: #42b983;
       }
     }
+  }
+
+  &__skip {
+    @include utils.m-visually-hidden;
+    @include utils.m-visually-hidden--focused;
   }
 }
 </style>
