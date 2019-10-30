@@ -1,0 +1,5 @@
+@use '../tools/mixins';
+
+.h-visually-hidden {
+  @include mixins.visually-hidden;
+}

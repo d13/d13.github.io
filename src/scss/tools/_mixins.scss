@@ -1,4 +1,4 @@
-@mixin m-visually-hidden {
+@mixin visually-hidden {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -8,7 +8,7 @@
   white-space: nowrap; // added line
 }
 
-@mixin m-visually-hidden--focused {
+@mixin visually-hidden--focused {
   &:focus, &:active {
     left: 1px;
     top: 1px;
@@ -16,8 +16,4 @@
     width: auto;
     clip: auto !important;
   }
-}
-
-.h-visually-hidden {
-  @include m-visually-hidden;
 }

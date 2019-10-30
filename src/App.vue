@@ -4,8 +4,12 @@
       >Skip to main content</a
     >
     <header class="t-app__header" role="banner">
+      <nav class="t-app__brand" role="navigation">
+        <router-link to="/">
+          <Brand :hide-name="true" />
+        </router-link>
+      </nav>
       <nav class="t-app__nav" role="navigation">
-        <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/experience">Experience</router-link>
         <router-link to="/contact">Contact</router-link>
@@ -19,8 +23,13 @@
 </template>
 
 <script>
+import Brand from './components/Brand';
+
 export default {
   name: 'App',
+  components: {
+    Brand
+  },
   methods: {
     skipToMain() {
       this.$nextTick(() => {
@@ -40,13 +49,15 @@ export default {
 </script>
 
 <style lang="scss">
-@use './scss/baseline';
-@use './scss/utils';
+@use './scss/elements';
+@use './scss/tools/mixins';
 
 .t-app {
-  &__nav {
+  &__header {
+    display: flex;
     padding: 30px;
-
+  }
+  &__nav {
     a {
       font-weight: bold;
       color: #2c3e50;
@@ -58,8 +69,8 @@ export default {
   }
 
   &__skip {
-    @include utils.m-visually-hidden;
-    @include utils.m-visually-hidden--focused;
+    @include mixins.visually-hidden;
+    @include mixins.visually-hidden--focused;
   }
 }
 </style>

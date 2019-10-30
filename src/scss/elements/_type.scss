@@ -1,0 +1,57 @@
+@use '../tools/functions' as fns;
+@import url(https://use.typekit.net/bdx2zst.css);
+
+
+:root {
+  --font-0: 18px;
+  --font-1: #{fns.scale-type(1)}; // 25.45px;
+  --font-2: #{fns.scale-type(2)}; // 35.99px;
+  --font-3: #{fns.scale-type(3)}; // 50.89px;
+  --font-4: #{fns.scale-type(4)}; // 71.96px;
+  --font-5: #{fns.scale-type(5)}; // 101.75px;
+}
+
+html {
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--font-0);
+  line-height: 1.22;
+
+  text-align: center;
+  color: #2c3e50;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima-nova-condensed";
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: fns.px-to-rem(20px);
+}
+
+h1, h2 {
+  font-size: var(--font-5);
+}
+
+h3 {
+  font-size: var(--font-4);
+}
+
+h4 {
+  font-size: var(--font-3);
+}
+
+h5 {
+  font-size: var(--font-2);
+}
+
+h6 {
+  font-size: var(--font-1);
+}
+
+p {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
