@@ -51,13 +51,18 @@ export default {
 <style lang="scss">
 @use './scss/elements';
 @use './scss/tools/mixins';
+@use './scss/tools/functions' as fns;
 
 .t-app {
   &__header {
     display: flex;
-    padding: 30px;
+    align-items: center;
+    padding: fns.px-to-rem(10px) fns.px-to-rem(20px);
   }
+
   &__nav {
+    margin-left: auto;
+
     a {
       font-weight: bold;
       color: #2c3e50;
