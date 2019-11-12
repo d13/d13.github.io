@@ -1,14 +1,14 @@
-@use '../tools/functions' as fns;
+@use '../tools';
 @import url(https://use.typekit.net/bdx2zst.css);
 
 
 :root {
-  --font-0: 18px;
-  --font-1: #{fns.scale-type(1)}; // 25.45px;
-  --font-2: #{fns.scale-type(2)}; // 35.99px;
-  --font-3: #{fns.scale-type(3)}; // 50.89px;
-  --font-4: #{fns.scale-type(4)}; // 71.96px;
-  --font-5: #{fns.scale-type(5)}; // 101.75px;
+  --font-0: tools.$font-base-size;
+  --font-1: #{tools.f-scale-type(1)}; // 25.45px;
+  --font-2: #{tools.f-scale-type(2)}; // 35.99px;
+  --font-3: #{tools.f-scale-type(3)}; // 50.89px;
+  --font-4: #{tools.f-scale-type(4)}; // 71.96px;
+  --font-5: #{tools.f-scale-type(5)}; // 101.75px;
 }
 
 html {
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "proxima-nova-condensed";
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: fns.px-to-rem(20px);
+  margin-bottom: tools.f-px-to-rem(20px);
 }
 
 h1, h2 {

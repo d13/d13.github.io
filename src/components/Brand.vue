@@ -23,8 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../scss/tools/functions' as fns;
-@use '../scss/tools/mixins';
+@use '../scss/tools';
 
 .o-brand {
   $_block: &;
@@ -35,7 +34,8 @@ export default {
 
   &__logo {
     $_img-ratio: (750 / 900); // 750x900
-    $_height: fns.px-to-rem(40px);
+    $_height: tools.f-px-to-rem(40px);
+
     display: inline-block;
     width: $_height * $_img-ratio; // 0.833
     height: $_height;
@@ -54,7 +54,7 @@ export default {
   }
 
   &--no-name #{$_block}__name {
-    @include mixins.visually-hidden;
+    @include tools.m-visually-hidden;
   }
 }
 </style>

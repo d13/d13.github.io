@@ -1,6 +1,6 @@
 @use './settings';
 
-@function pow($number, $exp) {
+@function f-pow($number, $exp) {
   $value: 1;
 
   @if $exp > 0 {
@@ -17,10 +17,10 @@
 }
 
 // modular type scale: 1.414 - augmented fourth (https://type-scale.com/)
-@function scale-type($multi, $ratio: settings.$font-base-scale, $base: 1rem) {
-  @return $base * pow($ratio, $multi);
+@function f-scale-type($multi, $ratio: settings.$font-base-scale, $base: 1rem) {
+  @return $base * f-pow($ratio, $multi);
 }
 
-@function px-to-rem($size, $base: settings.$font-base-size) {
+@function f-px-to-rem($size, $base: settings.$font-base-size) {
   @return ($size / $base) * 1rem;
 }

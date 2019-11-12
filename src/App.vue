@@ -49,15 +49,14 @@ export default {
 </script>
 
 <style lang="scss">
+@use './scss/tools';
 @use './scss/elements';
-@use './scss/tools/mixins';
-@use './scss/tools/functions' as fns;
 
 .t-app {
   &__header {
     display: flex;
     align-items: center;
-    padding: fns.px-to-rem(10px) fns.px-to-rem(20px);
+    padding: tools.f-px-to-rem(10px) tools.f-px-to-rem(20px);
   }
 
   &__nav {
@@ -74,8 +73,8 @@ export default {
   }
 
   &__skip {
-    @include mixins.visually-hidden;
-    @include mixins.visually-hidden--focused;
+    @include tools.m-visually-hidden;
+    @include tools.m-visually-hidden--focused;
   }
 }
 </style>
