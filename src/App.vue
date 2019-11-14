@@ -10,9 +10,9 @@
         </router-link>
       </nav>
       <nav class="t-app__nav" role="navigation">
-        <router-link to="/about">About</router-link>
-        <router-link to="/experience">Experience</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <router-link to="about">About</router-link>
+        <router-link to="experience">Experience</router-link>
+        <router-link to="contact">Contact</router-link>
         <router-link to="/code">Code</router-link>
       </nav>
     </header>
