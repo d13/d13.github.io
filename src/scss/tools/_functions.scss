@@ -1,10 +1,12 @@
+@use 'sass:math';
 @use './settings';
 
 @function f-pow($number, $exp) {
   $value: 1;
+  $count: math.abs($exp);
 
-  @if $exp > 0 {
-      @for $i from 1 through $exp {
+  @if $exp != 0 {
+      @for $i from 1 through $count {
           @if $exp < 0 {
               $value: ($value / $number);
           } @else {

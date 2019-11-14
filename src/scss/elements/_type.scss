@@ -3,7 +3,8 @@
 
 
 :root {
-  --font-0: tools.$font-base-size;
+  --font-01: #{tools.f-scale-type(-1)};
+  --font-0: #{tools.$font-base-size};
   --font-1: #{tools.f-scale-type(1)}; // 25.45px;
   --font-2: #{tools.f-scale-type(2)}; // 35.99px;
   --font-3: #{tools.f-scale-type(3)}; // 50.89px;
