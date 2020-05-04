@@ -1,80 +1,20 @@
 <template>
-  <div class="t-app">
-    <a class="t-app__skip" href="#t-app__main" @click.prevent="skipToMain()"
-      >Skip to main content</a
-    >
-    <header class="t-app__header" role="banner">
-      <nav class="t-app__brand" role="navigation">
-        <router-link to="/">
-          <Brand :hide-name="true" />
-        </router-link>
-      </nav>
-      <nav class="t-app__nav" role="navigation">
-        <router-link to="about">About</router-link>
-        <router-link to="experience">Experience</router-link>
-        <router-link to="contact">Contact</router-link>
-        <router-link to="/code">Code</router-link>
-      </nav>
-    </header>
-    <main class="t-app__main" id="t-app__main" role="main" ref="main">
-      <router-view />
-    </main>
-  </div>
+  <AppLayout />
 </template>
 
 <script>
-import Brand from './components/Brand';
+import AppLayout from './components/templates/AppLayout';
 
 export default {
   name: 'App',
   components: {
-    Brand
-  },
-  methods: {
-    skipToMain() {
-      this.$nextTick(() => {
-        const focusTarget = this.$refs.main;
-        focusTarget.setAttribute('tabindex', '-1');
-        focusTarget.focus();
-        focusTarget.removeAttribute('tabindex');
-      });
-    }
-  } // ,
-  // watch: {
-  //   $route(to) {
-  //     this.skipToMain();
-  //   }
-  // }
+    AppLayout
+  }
 };
 </script>
 
 <style lang="scss">
 @use './scss/tools';
 @use './scss/elements';
-
-.t-app {
-  &__header {
-    display: flex;
-    align-items: center;
-    padding: tools.f-px-to-rem(10px) tools.f-px-to-rem(20px);
-  }
-
-  &__nav {
-    margin-left: auto;
-
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
-  }
-
-  &__skip {
-    @include tools.m-visually-hidden;
-    @include tools.m-visually-hidden--focused;
-  }
-}
+@use './scss/layouts';
 </style>

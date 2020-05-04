@@ -3,9 +3,13 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: '/',
+    redirect: 'home'
+  },
+  {
+    path: '/home',
     name: 'home',
     component: () => import(/* webpackChunkName: 'home' */ '../views/Home.vue')
   },
@@ -40,7 +44,7 @@ const routes = [
     path: '/code',
     name: 'code',
     beforeEnter() {
-      location.href = 'http://github.com';
+      location.href = 'https://github.com/d13/d13.github.io';
     }
   }
 ];

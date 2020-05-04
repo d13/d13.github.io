@@ -1,5 +1,9 @@
 <template>
   <section class="t-contact">
-    <h1>This is a contact page</h1>
+    <h1>Contact</h1>
+    <p>Need help getting your site or app whipped into world-class shape?</p>
+    <p>Wanna poke around on my professional networks?</p>
+    <p>Just wanna see what kinda nonsense I’m into?</p>
+    <p>It’s all here, enjoy :)</p>
   </section>
 </template>

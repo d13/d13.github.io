@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../scss/tools';
+@use '../../scss/tools';
 
 .o-brand {
   $_block: &;
@@ -39,7 +39,7 @@ export default {
     display: inline-block;
     width: $_height * $_img-ratio; // 0.833
     height: $_height;
-    background: url(../assets/media/branding/logo-tight.png) no-repeat center
+    background: url(../../assets/media/branding/logo-tight.png) no-repeat center
       center;
     background-size: contain;
     vertical-align: baseline;
