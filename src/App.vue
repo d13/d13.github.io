@@ -16,5 +16,6 @@ export default {
 <style lang="scss">
 @use './scss/tools';
 @use './scss/elements';
+@use './scss/animations';
 @use './scss/layouts';
 </style>
