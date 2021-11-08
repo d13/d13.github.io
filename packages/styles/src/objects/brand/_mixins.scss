@@ -1,0 +1,24 @@
+@use '../../helpers';
+
+@mixin container {
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+
+  font-size: 40px;
+  flex-wrap: nowrap;
+}
+
+@mixin logo {
+  width: 0.833em;
+  height: 1em;
+  background: url('@d13/content/src/images/logo-tight.png') no-repeat center center;
+  background-size: contain;
+  vertical-align: baseline;
+}
+
+@mixin name {
+  @include helpers.visually-hidden;
+
+  line-height: 1;
+}

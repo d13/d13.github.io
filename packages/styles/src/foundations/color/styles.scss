@@ -1,0 +1,12 @@
+@use './mixins';
+
+:root {
+  @include mixins.palette-light;
+  // @include mixins.palette-dark;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     @include mixins.palette-dark;
+//   }
+// }

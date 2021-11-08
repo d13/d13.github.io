@@ -1,0 +1,13 @@
+@use './mixins';
+
+.h-txt-break-after {
+  @include mixins.txt-break-after;
+}
+
+.h-sr-only {
+  @include mixins.visually-hidden;
+}
+
+.h-sr-only-focusable {
+  @include mixins.visually-hidden(true);
+}

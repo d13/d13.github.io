@@ -1,0 +1,66 @@
+@use '../../tools';
+@use './settings';
+@use './functions';
+
+////
+/// Generic style mixins
+/// @group @d13/styles/foundations/type
+////
+
+@mixin properties {
+  --font-base-size: #{settings.$base-size};
+  --font-line-height: #{settings.$base-scale};
+  --font--3: #{functions.scale-type(-3)};
+  --font--2: #{functions.scale-type(-2)};
+  --font--1: #{functions.scale-type(-1)};
+  --font-0: #{functions.scale-type(0)};
+  --font-1: #{functions.scale-type(1)};
+  --font-2: #{functions.scale-type(2)};
+  --font-3: #{functions.scale-type(3)};
+  --font-4: #{functions.scale-type(4)};
+  --font-5: #{functions.scale-type(5)};
+}
+
+@mixin base {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 400;
+  font-size: var(--font-base-size);
+  line-height: var(--font-line-height);
+}
+
+@mixin heading-base {
+  font-family: "proxima-nova-condensed", sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: var(--font-1);
+}
+
+@mixin heading1 {
+  font-size: var(--font-5);
+}
+
+@mixin heading2 {
+  font-size: var(--font-4);
+}
+
+@mixin heading3 {
+  font-size: var(--font-3);
+}
+
+@mixin heading4 {
+  font-size: var(--font-2);
+}
+
+@mixin heading5 {
+  font-size: var(--font-1);
+}
+
+@mixin heading6 {
+  font-size: var(--font-0);
+}
+
+@mixin paragraph {
+  font-size: var(--font-0);
+  margin-top: 0;
+  margin-bottom: var(--font-1);
+}

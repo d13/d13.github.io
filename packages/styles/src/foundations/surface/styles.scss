@@ -1,0 +1,8 @@
+@use './mixins';
+
+:root {
+  @include mixins.default;
+  @include mixins.default-inverse;
+  @include mixins.secondary;
+  @include mixins.secondary-inverse;
+}

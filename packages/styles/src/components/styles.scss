@@ -1,0 +1,99 @@
+.c-menu {
+  $block: &;
+
+  &__list {
+    // TODO: move to a "reset list" mixin
+    list-style: none;
+    padding-left: 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--font-0);
+  }
+
+  &__item {}
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.c-header {
+  padding: {
+    top: var(--font-0);
+    bottom: var(--font-0);
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.c-footer {
+  padding: {
+    top: var(--font-0);
+    bottom: var(--font-0);
+  }
+
+  &__primary {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+
+    > * {
+      flex: 1 1 auto;
+
+      &:first-child {
+        flex: 2 2 auto;
+      }
+    }
+  }
+
+  &__secondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.c-section {
+  $block: &;
+  // TODO: need to stop using font sizes
+  padding: {
+    top: var(--font-5);
+    bottom: var(--font-5);
+  }
+  background-color: var(--c-section-bg, transparent);
+
+  &--low {
+    --c-section-bg: var(--color-neutral-050);
+  }
+  &--medium {
+    --c-section-bg: var(--color-primary-050);
+  }
+  &--high {
+    --c-section-bg: var(--color-neutral-100);
+  }
+
+  &--feature {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.c-figure {
+  $block: &;
+
+  &__media {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {}
+}

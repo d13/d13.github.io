@@ -1,0 +1,20 @@
+@mixin txt-break-after {
+  &::after{
+    content: "\a";
+    white-space: pre;
+  }
+}
+
+@mixin visually-hidden($focusable: false) {
+  $modifier: if($focusable, ':not(:focus):not(:active)', '');
+
+  &#{$modifier} {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

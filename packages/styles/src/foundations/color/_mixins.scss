@@ -1,0 +1,75 @@
+@mixin palette-light {
+  --color-neutral-900: rgb(24,28,33);
+  --color-neutral-800: rgb(43,49,57);
+  --color-neutral-700: rgb(63,71,82);
+  --color-neutral-600: rgb(84,95,109);
+  --color-neutral-500: rgb(107,120,137);
+  --color-neutral-400: rgb(130,146,167);
+  --color-neutral-300: rgb(157,173,193);
+  --color-neutral-200: rgb(189,199,213);
+  --color-neutral-100: rgb(222,227,234);
+  --color-neutral-050: rgb(239,241,244);
+
+  --color-primary-900: rgb(4,28,56);
+  --color-primary-800: rgb(10,49,91);
+  --color-primary-700: rgb(19,71,128);
+  --color-primary-600: rgb(28,95,168);
+  --color-primary-500: rgb(37,120,210);
+  --color-primary-400: rgb(62,146,247);
+  --color-primary-300: rgb(127,172,249);
+  --color-primary-200: rgb(174,199,251);
+  --color-primary-100: rgb(216,227,253);
+  --color-primary-050: rgb(236,241,254);
+
+  --color-accent-900: rgb(62,5,6);
+  --color-accent-800: rgb(100,12,15);
+  --color-accent-700: rgb(141,21,25);
+  --color-accent-600: rgb(184,31,36);
+  --color-accent-500: rgb(229,41,47);
+  --color-accent-400: rgb(245,94,96);
+  --color-accent-300: rgb(246,141,143);
+  --color-accent-200: rgb(249,181,182);
+  --color-accent-100: rgb(251,219,219);
+  --color-accent-050: rgb(253,237,237);
+
+  --color-min: #ffffff;
+  --color-max: #000000;
+}
+
+@mixin palette-dark {
+  --color-neutral-050: rgb(24,28,33);
+  --color-neutral-100: rgb(43,49,57);
+  --color-neutral-200: rgb(63,71,82);
+  --color-neutral-300: rgb(84,95,109);
+  --color-neutral-400: rgb(107,120,137);
+  --color-neutral-400: rgb(130,146,167);
+  --color-neutral-600: rgb(157,173,193);
+  --color-neutral-700: rgb(189,199,213);
+  --color-neutral-800: rgb(222,227,234);
+  --color-neutral-900: rgb(239,241,244);
+
+  --color-primary-050: rgb(4,28,56);
+  --color-primary-100: rgb(10,49,91);
+  --color-primary-200: rgb(19,71,128);
+  --color-primary-300: rgb(28,95,168);
+  --color-primary-400: rgb(37,120,210);
+  --color-primary-500: rgb(62,146,247);
+  --color-primary-600: rgb(127,172,249);
+  --color-primary-700: rgb(174,199,251);
+  --color-primary-800: rgb(216,227,253);
+  --color-primary-900: rgb(236,241,254);
+
+  --color-accent-050: rgb(62,5,6);
+  --color-accent-100: rgb(100,12,15);
+  --color-accent-200: rgb(141,21,25);
+  --color-accent-300: rgb(184,31,36);
+  --color-accent-400: rgb(229,41,47);
+  --color-accent-500: rgb(245,94,96);
+  --color-accent-600: rgb(246,141,143);
+  --color-accent-700: rgb(249,181,182);
+  --color-accent-800: rgb(251,219,219);
+  --color-accent-900: rgb(253,237,237);
+
+  --color-min: #000000;
+  --color-max: #ffffff;
+}

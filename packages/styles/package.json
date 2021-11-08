@@ -1,0 +1,10 @@
+{
+  "name": "@d13/styles",
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "@d13/content": "workspace:^"
+  }
+}

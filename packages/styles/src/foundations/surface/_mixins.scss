@@ -1,0 +1,27 @@
+@mixin default {
+  --surface-default-text: var(--color-neutral-900);
+  --surface-default-background: var(--color-min);
+  --surface-default-accent-color: var(--color-neutral-100);
+  --surface-default-link: var(--color-primary-500);
+}
+
+@mixin default-inverse {
+  --surface-default-inverse-text: var(--color-neutral-050);
+  --surface-default-inverse-background: var(--color-max);
+  --surface-default-inverse-accent-color: var(--color-neutral-800);
+  --surface-default-inverse-link: var(--color-primary-600);
+}
+
+@mixin secondary {
+  --surface-secondary-text: var(--color-neutral-900);
+  --surface-secondary-background: var(--color-neutral-100);
+  --surface-secondary-accent-color: var(--color-neutral-050);
+  --surface-secondary-link: var(--color-primary-600);
+}
+
+@mixin secondary-inverse {
+  --surface-secondary-inverse-text: var(--color-neutral-050);
+  --surface-secondary-inverse-background: var(--color-neutral-800);
+  --surface-secondary-inverse-accent-color: var(--color-neutral-900);
+  --surface-secondary-inverse-link: var(--color-primary-600);
+}

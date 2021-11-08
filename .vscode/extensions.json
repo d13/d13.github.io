@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "KnisterPeter.vscode-commitizen",
+    "stylelint.vscode-stylelint"
+  ]
+}

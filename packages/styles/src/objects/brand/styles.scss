@@ -1,0 +1,13 @@
+@use './mixins';
+
+.o-brand {
+  @include mixins.container;
+
+  &__logo {
+    @include mixins.logo;
+  }
+
+  &__name {
+    @include mixins.name;
+  }
+}

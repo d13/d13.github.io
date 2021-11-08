@@ -1,0 +1,37 @@
+@use '../../foundations/type';
+
+html {
+  @include type.base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include type.heading-base;
+}
+
+h1 {
+  @include type.heading1;
+}
+
+h2 {
+  @include type.heading2;
+}
+
+h3 {
+  @include type.heading3;
+}
+
+h4 {
+  @include type.heading4;
+}
+
+h5 {
+  @include type.heading5;
+}
+
+h6 {
+  @include type.heading6;
+}
+
+p {
+  @include type.paragraph;
+}

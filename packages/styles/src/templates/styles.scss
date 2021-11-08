@@ -1,0 +1,24 @@
+.t-shell {
+  &__skip {
+    position: absolute;
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: var(--surface-default-background);
+    color: var(--surface-default-text);
+  }
+
+  &__footer {
+    // FIXME: this looks terrible in dark-mode
+    background-color: var(--surface-secondary-inverse-background);
+    color: var(--surface-secondary-inverse-text);
+
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: var(--surface-default-background);
+    //   color: var(--surface-default-text);
+    // }
+  }
+}

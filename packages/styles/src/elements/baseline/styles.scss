@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+
+  // themables
+  background-color: var(--surface-default-background);
+  color: var(--surface-default-text);
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: var(--surface-default-link);
+}

@@ -1,0 +1,6 @@
+@use './settings';
+@use './mixins';
+
+:root {
+  @include mixins.properties;
+}

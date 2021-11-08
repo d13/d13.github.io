@@ -1,0 +1,27 @@
+@use 'sass:math';
+@use 'sass:map';
+
+////
+/// Generic style functions
+/// @group @d13/styles/tools
+////
+
+/// Scale function
+/// @param {number} $multiplier - The multiplier to raise by.
+/// @param {number} $ratio - The ratio to scale by.
+/// @param {number} $base - The base value to scale from.
+/// @return {number} - Number has the same unit type as the `$base`.
+@function scale($multiplier, $ratio, $base) {
+  @return $base * math.pow($ratio, $multiplier);
+}
+
+/// Wrapper function for map.get that provides error handling
+/// @param {map} $map - The name of the defined type size.
+/// @param {string} $key - The key in the map to lookup.
+/// @param {string} $error-key ['item'] - Friendly name for the type of item in the map.
+@function map-get-safe($map, $key, $error-key: 'item') {
+  @if not map.has-key($map, $key) {
+    @error ('The #{$error-key} "#{$key}" does not exist.');
+  }
+  @return map.get($map, $key);
+}
