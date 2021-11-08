@@ -89,11 +89,52 @@
 
 .c-figure {
   $block: &;
+  display: flex;
+  flex-direction: column;
+  gap: var(--font-1);
+  margin-bottom: var(--font-0);
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__media {
     width: 100%;
-    height: auto;
+    // FIXME: please
+    max-height: 650px;
+
+    @media (min-width: 1024px) {
+      flex: 1 0 50%;
+      min-width: 0;
+      // FIXME: pretty please
+      max-height: 380px;
+    }
+
+    &--image {
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    &--embed {
+      // position: relative;
+      // height: 0;
+      // padding-top: 46%;
+
+      > * {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 100%;
+        // height: 100%;
+      }
+    }
   }
 
-  &__content {}
+  &__content {
+    @media (min-width: 1024px) {
+      flex: 1 0 50%;
+    }
+  }
 }
