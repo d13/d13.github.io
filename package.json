@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "clean:docs": "rimraf './docs/*'",
-    "build": "yarn build:portfolio && yarn build:docs",
+    "build": "yarn clean:docs && yarn build:portfolio && yarn build:docs",
     "build:portfolio": "yarn workspace @d13/portfolio run build",
     "build:docs": "copyfiles -u 3 './packages/portfolio/dist/*' './docs'",
     "start": "yarn start:portfolio",
