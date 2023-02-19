@@ -1,0 +1,9 @@
+@use './functions';
+
+@mixin properties {
+  @for $i from -8 through 20 {
+    --scale-#{$i}: #{functions.scale($i)};
+  }
+
+  --spacing-default: var(--scale-1);
+}

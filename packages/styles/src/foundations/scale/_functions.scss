@@ -1,0 +1,10 @@
+@use '../../tools';
+@use './settings';
+
+/// Scale type function
+/// @param {number} $multiplier - The multiplier to raise by.
+/// @return {number}
+///
+@function scale($multiplier, $base: settings.$base-relative-size) {
+  @return tools.scale($multiplier, settings.$base-scale, $base); //settings.$base-size
+}

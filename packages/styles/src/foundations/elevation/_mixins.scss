@@ -1,0 +1,5 @@
+@use './functions';
+
+@mixin lift($opts...) {
+  box-shadow: #{functions.key-shadow($opts...)}, #{functions.ambient-shadow($opts...)}, #{functions.fill-shadow($opts...)};
+}

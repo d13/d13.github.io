@@ -1,4 +1,5 @@
 @use '../../tools';
+@use '../scale';
 @use './settings';
 
 ////
@@ -8,14 +9,12 @@
 
 /// Scale type function
 /// @param {number} $multiplier - The multiplier to raise by.
-/// @param {number} $ratio - The ratio to scale by.
-/// @param {number} $base - The base value to scale from.
 /// @return {number}
 ///
 @function scale-type($multiplier) {
-  $test: tools.scale($multiplier, settings.$base-scale, settings.$base-size);
+  $test: tools.scale($multiplier, scale.$base-scale, scale.$base-size);
   @if ($test < 9px) {
     @warn 'Type multiplier of #{$multiplier} renders type at #{$test}, which is below 9px';
   }
-  @return tools.scale($multiplier, settings.$base-scale, settings.$base-relative-size);
+  @return tools.scale($multiplier, scale.$base-scale, scale.$base-relative-size);
 }

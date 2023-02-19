@@ -1,6 +1,6 @@
 @use './mixins';
 
-.o-brand {
+.c-brand {
   @include mixins.container;
 
   &__logo {

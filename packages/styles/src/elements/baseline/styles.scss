@@ -16,10 +16,32 @@ body {
   color: var(--surface-default-text);
 }
 
+:focus,
+:focus-visible {
+  outline: 2px auto var(--color-primary-700);
+  outline-offset: 3px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 figure {
   margin: 0;
 }
 
 a {
   color: var(--surface-default-link);
+
+  &[rel="external"]:after {
+    // needed to make `text-decoration` work :unamused:
+    display: inline-block;
+    // https://unicode-table.com/en/29C9/
+    content: "\29C9";
+    text-decoration: none;
+    margin-left: var(--scale--6);
+  }
+}
+
+button {
+  font-family: inherit;
 }

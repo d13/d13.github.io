@@ -25,3 +25,24 @@
   }
   @return map.get($map, $key);
 }
+
+/// Flattens a map's nested keys into kebab-cased strings
+/// @param {map} $map
+/// @return {map} Map with kebab-cased keys
+@function flatten-map($map) {
+  $new-map: ();
+
+  @each $key, $value in $map {
+    @if meta.type-of($value) == 'map' {
+      $nested-map: flatten-map($value);
+
+      @each $nested-key, $nested-value in $nested-map {
+        $new-map: map.set($new-map, '#{$key}-#{$nested-key}', $nested-value);
+      }
+    } @else {
+      $new-map: map.set($new-map, $key, $value);
+    }
+  }
+
+  @return $new-map;
+}

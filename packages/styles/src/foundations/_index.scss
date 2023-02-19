@@ -1,8 +1,8 @@
 @forward './color' as color-*;
-// @forward './scale' as scale-*;
+@forward './scale' as scale-*;
 // @forward './spacing' as spacing-*;
 // @forward './grid' as grid-*;
 @forward './surface' as surface-*;
-// @forward './elevation' as elevation-*;
+@forward './elevation' as elevation-*;
 @forward './type' as type-*;
 // @forward './motion' as motion-*;

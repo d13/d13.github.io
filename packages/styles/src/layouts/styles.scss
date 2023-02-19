@@ -2,8 +2,8 @@
   $block: &;
 
   padding: {
-    left: var(--font-1);
-    right: var(--font-1);
+    left: var(--scale-1);
+    right: var(--scale-1);
   }
 
   &:not(#{$block}--fluid) {

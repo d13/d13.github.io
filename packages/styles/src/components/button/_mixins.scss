@@ -1,0 +1,16 @@
+@use '../../helpers';
+
+@mixin container {
+  display: inline-block;
+  cursor: pointer;
+  padding: var(--scale--3);
+}
+
+@mixin link {
+  color: var(--surface-default-link);
+  text-decoration: underline;
+}
+
+@mixin disabled {
+  cursor: default;
+}

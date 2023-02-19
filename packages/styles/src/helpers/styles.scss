@@ -1,3 +1,4 @@
+@use '../foundations/type';
 @use './mixins';
 
 .h-txt-break-after {
@@ -10,4 +11,36 @@
 
 .h-sr-only-focusable {
   @include mixins.visually-hidden(true);
+}
+
+.h-inline-middle {
+  vertical-align: middle;
+}
+
+.h-txt-heading-1 {
+  @include type.heading1;
+}
+
+.h-txt-heading-2 {
+  @include type.heading2;
+}
+
+.h-txt-heading-3 {
+  @include type.heading3;
+}
+
+.h-txt-heading-4 {
+  @include type.heading4;
+}
+
+.h-txt-heading-5 {
+  @include type.heading5;
+}
+
+.h-txt-heading-6 {
+  @include type.heading6;
+}
+
+.h-txt-overline {
+  @include type.overline;
 }

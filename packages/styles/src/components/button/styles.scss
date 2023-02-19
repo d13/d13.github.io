@@ -1,0 +1,13 @@
+@use './mixins';
+
+.c-button {
+  @include mixins.container;
+
+  &--link {
+    @include mixins.link;
+  }
+
+  &[disabled] {
+    @include mixins.disabled;
+  }
+}
