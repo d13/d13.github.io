@@ -20,6 +20,7 @@
   "scripts": {
     "analyze": "node ./scripts/analyze.js",
     "build": "node ./scripts/build.js",
+    "images": "node ./scripts/images.js",
     "start": "node ./scripts/serve.js",
     "lint": "yarn lint:eslint && yarn lint:analyze",
     "lint:eslint": "eslint \"src/**/*.ts?(x)\" --fix",
@@ -38,12 +39,15 @@
     "eslint-plugin-lit": "^1.9.1",
     "eslint-plugin-lit-a11y": "^4.1.0",
     "eslint-plugin-wc": "^2.0.4",
+    "globby": "^14.0.0",
     "lit-analyzer": "^2.0.1",
     "prettier": "^3.0.3",
+    "sharp": "^0.33.0",
     "ts-lit-plugin": "^2.0.1"
   },
   "dependencies": {
     "lit": "^3.0.2",
     "typescript": "5.3.1-rc"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
