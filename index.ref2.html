@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>
+      Keith Daulton - Design Technologist, Front-End Development Lead, User
+      Experience Engineer
+    </title>
+    <meta
+      name="description"
+      content="Design technology, front-end development and user experience engineering portfolio of Keith Daulton."
+    />
+    <meta
+      name="keywords"
+      content="front-end, design technology, design systems, front end, ui, ux, user experience, user interface, javascript, portfolio, responsive, web, developer, designer"
+    />
+    <meta name="author" content="Keith Daulton" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://keithdaulton.com/assets/images/og-image.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Hello! I'm a UI Developer and Designer with a passion for creating awesome user experiences for web and mobile. I make pixels and divs pretty!"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/poy3rwm.css" />
+    <script
+      src="https://kit.fontawesome.com/cfea023448.js"
+      crossorigin="anonymous"
+      async
+    ></script>
+    <link rel="preload" href="assets/images/logo1.png" as="image" />
+    <link
+      rel="preload"
+      href="assets/images/phone-mergein-rough.png"
+      as="image"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BD3YNT001P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-BD3YNT001P');
+    </script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript" defer>
+      (function (f, b) {
+        if (!b.__SV) {
+          var a, e, i, g;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function (a, e, d) {
+            function f(b, h) {
+              var a = h.split('.');
+              2 == a.length && ((b = b[a[0]]), (h = a[1]));
+              b[h] = function () {
+                b.push([h].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var c = b;
+            'undefined' !== typeof d ? (c = b[d] = []) : (d = 'mixpanel');
+            c.people = c.people || [];
+            c.toString = function (b) {
+              var a = 'mixpanel';
+              'mixpanel' !== d && (a += '.' + d);
+              b || (a += ' (stub)');
+              return a;
+            };
+            c.people.toString = function () {
+              return c.toString(1) + '.people (stub)';
+            };
+            i =
+              'disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user'.split(
+                ' '
+              );
+            for (g = 0; g < i.length; g++) f(c, i[g]);
+            b._i.push([a, e, d]);
+          };
+          b.__SV = 1.2;
+          a = f.createElement('script');
+          a.type = 'text/javascript';
+          a.async = !0;
+          a.src = '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';
+          e = f.getElementsByTagName('script')[0];
+          e.parentNode.insertBefore(a, e);
+        }
+      })(document, window.mixpanel || []);
+      mixpanel.init('00f8e130c9f6233dcc214d3235d272fb');
+    </script>
+    <!-- end Mixpanel -->
+  </head>
+  <body>
+    <header class="page-header" data-site-region="header" role="banner">
+      <a href="#page-main" class="page-header__skip h-sr-only-focusable"
+        >Skip to main content</a
+      >
+      <a href="#page-nav" class="page-header__skip h-sr-only-focusable"
+        >Skip to main navigation</a
+      >
+      <div class="page-header__brand">
+        <a class="site-brand" href="#">
+          <span class="site-brand__name">Keith Daulton</span>
+        </a>
+      </div>
+      <nav
+        id="page-nav"
+        class="site-nav page-header__nav"
+        data-site-region="nav"
+        aria-label="Main navigation"
+      >
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#about">Bio</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#resume">Experience</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#skunkworks">Skunkworks</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="page-main" class="page-main" role="main">
+      <section
+        class="section section--intro"
+        id="intro"
+        data-site-region="hero"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col col--xs-12 col--sm-6">
+              <h1>
+                Hi, my name is Keith
+                <small>I make user interfaces easy</small>
+              </h1>
+              <p>
+                An accomplished User Interface Developer and Designer with a
+                passion for creating amazing user experiences and building tools
+                that empower design and development teams to do their best work.
+              </p>
+            </div>
+            <div class="col col--xs-12 col--sm-6"></div>
+          </div>
+          <div class="underwrite" aria-hidden="true">
+            <i class="fa-solid fa-spray-can"></i>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section section--about"
+        id="about"
+        data-site-region="about"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col col--xs-12 col--sm-6">
+              <h1>Keith Daulton &mdash;</h1>
+              <p>
+                A hands-on leader in user-interface development and design with
+                over 20 years of experience delivering engaging user experiences
+                for design systems, component libraries, developer tools,
+                marketing content and e-commerce. I build systems that bring
+                cohesion and accessibility for all customers, while providing a
+                developer experience, with documentation and code, that
+                engineering teams love to build with.
+              </p>
+            </div>
+            <div class="col col--xs-12 col--sm-6"></div>
+          </div>
+          <div class="underwrite" aria-hidden="true">
+            <i class="fa-solid fa-code"></i>
+          </div>
+        </div>
+      </section>
+      <section class="section section--portfolio" id="portfolio">
+        <div class="container">
+          <h1>
+            Portfolio
+            <small>because seeing is much more fun</small>
+          </h1>
+          <div class="row no-gutter">
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/gitlens-v13.jpg"
+                  width="2007"
+                  height="1050"
+                  loading="lazy"
+                  alt="GitLens release 13"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">GitLens for VS Code</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>GitKraken (2022-)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Maintainer, Development, Design</dd>
+
+                    <dt>Tools</dt>
+                    <dd>
+                      Web Components (Lit, FAST), React, TypeScript, SCSS, Yarn,
+                      Figma
+                    </dd>
+                  </dl>
+                  <a
+                    href="https://github.com/gitkraken/vscode-gitlens/"
+                    target="_blank"
+                    >Launch website</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/chirp-react-storybook.png"
+                  width="1223"
+                  height="950"
+                  loading="lazy"
+                  alt="Chewy Chirp Design System"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Chirp Design System</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Chewy.com (2021-2022)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>
+                      Vue, React, TypeScript, SCSS, Storybook, SassDoc, Lerna,
+                      Figma
+                    </dd>
+                  </dl>
+                  <a href="https://www.chewy.com/" target="_blank"
+                    >Launch website</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/chewy-checkout.png"
+                  width="1224"
+                  height="951"
+                  loading="lazy"
+                  alt="Chewy Checkout Screen"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Hybrid SPA</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Chewy.com (2020-2021)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Protyping, Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>
+                      Vue, TypeScript, SASS, Storybook, Yarn workspaces, Figma
+                    </dd>
+                  </dl>
+                  <a href="https://www.chewy.com/" target="_blank"
+                    >Launch website</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/ion/app-redesign.png"
+                  width="710"
+                  height="384"
+                  loading="lazy"
+                  alt="Legacy Application Dashboard"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Legacy Application Redesign</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>ScribbleLive (ion interactive) (2018-2019)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Protyping, Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>ASP.NET, ES5, Vue, SASS, Figma</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/ion/design-system.png"
+                  width="1420"
+                  height="769"
+                  loading="lazy"
+                  alt="Design System Screenshot"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">SaaS Design System</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>ScribbleLive (ion interactive) (2018)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>HTML, ES5, SASS, Figma</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/ion/quiz-builder.png"
+                  width="710"
+                  height="384"
+                  loading="lazy"
+                  alt="Quiz Builder Screenshot"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Quiz and Assessment Builder</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>ion interactive (2016-2017)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Co-Designer, Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>Aurelia.js, Webpack, TypeScript, HTML, SASS, Figma</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/ion/interactive-content-builder.png"
+                  width="710"
+                  height="384"
+                  loading="lazy"
+                  alt="Creative Studio Screenshot"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Interactive Content Builder</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>ion interactive (2013-2016)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Architecture, Front-end Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>Backbone.js, Require.js, ES5, HTML, LESS</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/dashboard_anon.png"
+                  width="2650"
+                  height="2048"
+                  loading="lazy"
+                  alt="Creative Studio Screenshot"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Telephony System Dashboard</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Stealth (2015)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Designer, Architecture, Full-stack Development</dd>
+
+                    <dt>Tools</dt>
+                    <dd>Marionette, Require.js, ES5, HTML, SASS</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/landing_page_1.png"
+                  width="2000"
+                  height="1200"
+                  loading="lazy"
+                  alt="Sparx site design"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Landing Page Concept</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Landing Page Design (2014)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Designer, Developer, Partner</dd>
+
+                    <dt>Tools</dt>
+                    <dd>HTML5, CSS3, Photoshop</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/spirit_screenshot.png"
+                  width="1160"
+                  height="777"
+                  loading="lazy"
+                  alt="Spirit Airlines Site"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Website Redesign</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Spirit Airlines (2011)</dd>
+
+                    <dt>Role</dt>
+                    <dd>UI Lead, JS Ninja, Browser Wrangler, Employee</dd>
+
+                    <dt>Skills</dt>
+                    <dd>
+                      HTML5, CSS3, JS, jQuery, Knockout.js, XSLT, Photoshop
+                    </dd>
+                  </dl>
+                  <a href="http://www.spirit.com/" target="_blank"
+                    >Launch website</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col col--xs-12 col--sm-6">
+              <figure class="portfolio-item">
+                <img
+                  src="assets/images/port/raw/Cruise_HP.png"
+                  width="1200"
+                  height="1096"
+                  loading="lazy"
+                  alt="Bahama Cruise Vacations Site"
+                />
+                <figcaption class="portfolio-item__content" tabindex="0">
+                  <h3 aria-level="2">Cruise Microsite</h3>
+                  <dl>
+                    <dt>Company</dt>
+                    <dd>Bahama Cruise Vacations (2009)</dd>
+
+                    <dt>Role</dt>
+                    <dd>Web Designer, Co-Developer, Freelance</dd>
+
+                    <dt>Skills</dt>
+                    <dd>XHTML, CSS, JS, Classic ASP, Photoshop</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--resume" id="resume">
+        <div class="container">
+          <h1>Experience</h1>
+          <div class="experience-skills">
+            <div class="row">
+              <div class="col col--xs-12 col--md-6">
+                <h2>Core Competencies</h2>
+                <ul>
+                  <li>Front-end architecture</li>
+                  <li>Design systems</li>
+                  <li>Performance tuning</li>
+                  <li>Responsive &amp; adaptive design</li>
+                  <li>CSS architecture</li>
+                  <li>Device debugging</li>
+                  <li>Prototyping &amp; wireframing</li>
+                  <li>Mentoring &amp; training</li>
+                  <li>Agile development</li>
+                </ul>
+              </div>
+              <div class="col col--xs-12 col--md-6">
+                <h2>Technical Competencies</h2>
+                <dl>
+                  <dt>Languages</dt>
+                  <dd>
+                    JavaScript (ES6, TypeScript), HTML, CSS (LESS, SASS,
+                    PostCSS)
+                  </dd>
+                  <dt>Libraries</dt>
+                  <dd>
+                    FAST, Vue, React, Lit, Aurelia, Backbone, Faker, Mirage
+                  </dd>
+                  <dt>Builds &amp; tooling</dt>
+                  <dd>
+                    Webpack, Babel, ESLint, Prettier, Yarn, Lerna, Storybook,
+                    SassDoc, Style Dictionary
+                  </dd>
+                  <dt>Application stacks</dt>
+                  <dd>
+                    NodeJS/Express, ASP.NET (core, MVC, Web Forms), Java/Spring
+                  </dd>
+                  <dt>Software</dt>
+                  <dd>
+                    Visual Studio Code, IntelliJ, Figma (<span aria-label="with"
+                      >w/</span
+                    >
+                    Figma Tokens), Adobe XD, Photoshop, GitHub
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--skunkworks" id="skunkworks">
+        <div class="container">
+          <h1>Skunkworks</h1>
+
+          <div class="row">
+            <div class="col col--xs-12 col--md-6">
+              <h2>HSLuv Color Ramps</h2>
+              <p
+                class="codepen"
+                data-height="610"
+                data-theme-id="light"
+                data-default-tab="result"
+                data-slug-hash="abyyRXm"
+                data-user="d13"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/d13/pen/abyyRXm">
+                    Color scale with HSLuv</a
+                  >
+                  by Keith (<a href="https://codepen.io/d13">@d13</a>) on
+                  <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+            </div>
+            <div class="col col--xs-12 col--md-6">
+              <h2>Color Grid</h2>
+              <p
+                class="codepen"
+                data-height="400"
+                data-theme-id="light"
+                data-default-tab="result"
+                data-slug-hash="WaXLvM"
+                data-user="d13"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/d13/pen/WaXLvM"> Color steps</a>
+                  by Keith (<a href="https://codepen.io/d13">@d13</a>) on
+                  <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+            </div>
+            <div class="col col--xs-12">
+              <h2>Visibility Component</h2>
+              <script src="https://gist.github.com/d13/fa220b4c3b988c820a81b91b21065a7a.js"></script>
+            </div>
+          </div>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </section>
+      <section class="section section--contact" id="contact">
+        <div class="container">
+          <h1>Contact</h1>
+
+          <div class="row">
+            <div class="col col--xs-12 col--sm-7 col--md-6">
+              <div class="map-location">
+                <iframe
+                  title="map of my location"
+                  loading="lazy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.040982856231!2d-80.37539799999995!3d26.06491700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a0cfa08513b1%3A0xef205128d15657f0!2s4468+Dogwood+Cir%2C+Weston%2C+FL+33331!5e0!3m2!1sen!2sus!4v1422577643626"
+                  width="100%"
+                  height="450"
+                  frameborder="0"
+                  style="border: 0"
+                ></iframe>
+              </div>
+            </div>
+            <div class="col col--xs-12 col--sm-5 col--md-6">
+              <dl>
+                <dt>Address:</dt>
+                <dd>
+                  4468 Dogwood Circle <br />
+                  Weston, FL 33331
+                </dd>
+                <dt>Phone:</dt>
+                <dd><a href="tel:19548052603">1 (954) 805-2603</a></dd>
+                <dt>Email:</dt>
+                <dd>
+                  <a href="mailto:kdaulton@gmail.com">kdaulton@gmail.com</a>
+                </dd>
+                <dt>Links:</dt>
+                <dd>
+                  <a
+                    target="_blank"
+                    href="https://github.com/d13"
+                    aria-label="GitHub"
+                    ><i class="fa-brands fa-xl fa-square-github"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    href="http://www.linkedin.com/in/keithdaulton"
+                    aria-label="LinkedIn"
+                    ><i class="fa-brands fa-xl fa-linkedin"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    href="https://dribbble.com/keithdaulton"
+                    aria-label="Dribble"
+                    ><i class="fa-brands fa-xl fa-square-dribbble"></i
+                  ></a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="page-footer">
+      <p>
+        All content &copy; Copyright 1996-2021 Keith Daulton and respective
+        brands. All rights reserved.
+      </p>
+      <p>
+        <a href="https://mixpanel.com/f/partner"
+          ><img
+            width="114"
+            height="36"
+            src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png"
+            loading="lazy"
+            alt="Mobile Analytics"
+            style="vertical-align: middle"
+        /></a>
+      </p>
+    </footer>
+    <script src="assets/scripts/site2.js" defer></script>
+  </body>
+</html>

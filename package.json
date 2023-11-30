@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "My personal website and general dumping ground to try out my ideas.",
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/d13/d13.github.io.git"
@@ -19,12 +16,34 @@
     "url": "https://github.com/d13/d13.github.io/issues"
   },
   "homepage": "https://d13.github.io",
+  "type": "module",
+  "scripts": {
+    "analyze": "node ./scripts/analyze.js",
+    "build": "node ./scripts/build.js",
+    "start": "node ./scripts/serve.js",
+    "lint": "yarn lint:eslint && yarn lint:analyze",
+    "lint:eslint": "eslint \"src/**/*.ts?(x)\" --fix",
+    "lint:analyze": "lit-analyzer"
+  },
   "devDependencies": {
-    "gulp": "^4.0.1",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rollup-each": "^3.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "@typescript-eslint/parser": "6.10.0",
+    "esbuild": "^0.19.5",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-anti-trojan-source": "^1.1.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-lit": "^1.9.1",
+    "eslint-plugin-lit-a11y": "^4.1.0",
+    "eslint-plugin-wc": "^2.0.4",
+    "lit-analyzer": "^2.0.1",
+    "prettier": "^3.0.3",
+    "ts-lit-plugin": "^2.0.1"
+  },
+  "dependencies": {
+    "lit": "^3.0.2",
+    "typescript": "5.3.1-rc"
   }
 }
