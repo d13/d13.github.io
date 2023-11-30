@@ -1,29 +1,27 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "declaration": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "importHelpers": true,
-        "lib": [
-            "es2017",
-            "dom"
-        ],
-        "module": "es2015",
-        "moduleResolution": "node",
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": false,
-        "noUnusedLocals": true,
-        "outDir": "./dist/",
-        "pretty": false,
-        "removeComments": true,
-        "rootDirs": [
-            "src/ts/"
-        ],
-        "sourceMap": true,
-        "strictNullChecks": false,
-        "target": "es5"
-    }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "lib": ["dom", "dom.iterable", "es2022", "esnext.disposable"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022",
+    "useDefineForClassFields": false,
+    "useUnknownInCatchVariables": false
+  },
+  "includes": ["src/**/*"]
 }
