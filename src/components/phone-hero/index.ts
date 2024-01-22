@@ -1,9 +1,9 @@
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { BaseElement } from '../base/base-element';
+import { KdBaseElement } from '../base/base-element';
 
 @customElement('kd-phone-hero')
-export class KdPhoneHero extends BaseElement {
+export class KdPhoneHero extends KdBaseElement {
   static override styles = css`
     :host {
       --kd-phone-hero-block-offset: 12vh;

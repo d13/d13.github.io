@@ -3,8 +3,14 @@
 /* root design properties */
 :root {
   /* font tokens */
-  --font-family-base: 'proxima-nova', sans-serif;
-  --font-family-heading: 'proxima-nova-condensed', 'proxima-nova', sans-serif;
+  --font-family-base: 'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC', 'Segoe UI',
+    /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans', /* 'Droid */ 'Droid Sans',
+    /* Boring */ 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont,
+    /* win */ 'Segoe WPC', 'Segoe UI', /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell',
+    /* FFOS */ 'Fira Sans', /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
+  --font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, /* FFOS */ 'Fira Mono', /* 'Droid */ 'Droid Sans Mono',
+    /* Boring */ 'Courier New', monospace;
   --font-size-base: 16px;
   --font-line-height-base: 1.5;
   --font-line-height-heading: 1.1;
@@ -100,6 +106,7 @@ html {
   font-size: var(--font-size-base);
   line-height: var(--font-line-height-base);
   scroll-behavior: smooth;
+  text-size-adjust: 100%;
 }
 
 html *,
@@ -119,6 +126,8 @@ img {
 }
 
 /* raw html styles */
+
+/* block type styles */
 
 figure {
   margin: 0;
@@ -172,8 +181,49 @@ ul {
   margin-block-end: var(--spacing-md);
 }
 
+/* inline styles */
+
 small {
   font-size: var(--type-small-size);
+}
+
+/* code styles */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: 1em;
+}
+
+kbd,
+code,
+pre {
+  font-size: var(--type-small-size);
+}
+
+code {
+  color: #e83e8c;
+  word-wrap: break-word;
+}
+
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+}
+
+kbd {
+  padding: 0.2rem 0.4rem;
+  color: #fff;
+  background-color: #212529;
+}
+
+kbd kbd {
+  padding: 0;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 /* class-based pattern styles */
@@ -283,6 +333,11 @@ small {
   margin-inline-start: auto;
 }
 .footer__brand {
+}
+
+.container {
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 /* utility classes */

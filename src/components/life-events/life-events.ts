@@ -1,9 +1,9 @@
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
-import { BaseElement } from '../base/base-element';
+import { KdBaseElement } from '../base/base-element';
 
 @customElement('kd-life-events')
-export class KdLifeEvents extends BaseElement {
+export class KdLifeEvents extends KdBaseElement {
   override render() {
     return html`<slot></slot>`;
   }

@@ -80,33 +80,37 @@
         </div>
       </section>
       <section id="work">
-        <h2 class="h-sr-only">Work</h2>
-        <kd-life-events>
-          <kd-life-event
-            asset="assets/media-opt/portfolio/gitlens-14.5.webp"
-            type="job"
-            date="now"
-            start-date="2022/05/31"
-          >
-            <h3 slot="title">GitLens for VS Code</h3>
-          </kd-life-event>
-        </kd-life-events>
+        <div class="container">
+          <h2 class="h-sr-only">Work</h2>
+          <kd-life-events>
+            <kd-life-event
+              asset="assets/media-opt/portfolio/gitlens-14.5.webp"
+              type="job"
+              date="present"
+              start-date="2022/05/31"
+            >
+              <h3 slot="title">GitLens for VS Code</h3>
+            </kd-life-event>
+          </kd-life-events>
+        </div>
       </section>
       <section id="contact">
-        <h2>Contact</h2>
-        <p>Drop me a line</p>
-        <nav>
-          <a href="tel:19548052603">Call</a>
-          <a href="mailto:kdaulton@gmail.com">Email</a>
-        </nav>
+        <div class="container">
+          <h2>Contact</h2>
+          <p>Drop me a line</p>
+          <nav>
+            <kd-link-button href="tel:19548052603">Call</kd-link-button>
+            <kd-link-button href="mailto:kdaulton@gmail.com">Email</kd-link-button>
+          </nav>
+        </div>
       </section>
     </main>
     <footer class="footer">
-      <!-- 
+      <!--
         - Copyright
         - Social links
         - Contact info
-        - Mixpanel image 
+        - Mixpanel image
         - Open source licenses
         - Built-with
         - Typeface
