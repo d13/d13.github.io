@@ -1,3 +1,3 @@
 import { LitElement } from 'lit';
 
-export class BaseElement extends LitElement {}
+export class KdBaseElement extends LitElement {}
