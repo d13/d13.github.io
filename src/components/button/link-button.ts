@@ -42,3 +42,9 @@ export class KdLinkButton extends KdBaseElement {
     ></a>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'kd-link-button': KdLinkButton;
+  }
+}

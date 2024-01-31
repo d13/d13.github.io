@@ -87,7 +87,64 @@
   --type-body-xl-size: var(--size-2);
   --type-overline-size: var(--size--2);
 
-  /* color tokens */
+  /* elevation (z-index and shadowing) */
+  --elevation-behind: -1;
+  --elevation-inline: 1;
+  --elevation-sticky: 1000;
+  --elevation-cover: 1100;
+  --elevation-dialog: 1200;
+  --elevation-modal: 1300;
+  --elevation-popover: 1400;
+
+  /* raw color tokens */
+  --color-raw-blue-10: rgb(4, 28, 56);
+  --color-raw-blue-20: rgb(10, 49, 91);
+  --color-raw-blue-30: rgb(19, 71, 128);
+  --color-raw-blue-40: rgb(28, 95, 168);
+  --color-raw-blue-50: rgb(37, 120, 210);
+  --color-raw-blue-60: rgb(62, 146, 247);
+  --color-raw-blue-70: rgb(127, 172, 249);
+  --color-raw-blue-80: rgb(174, 199, 251);
+  --color-raw-blue-90: rgb(216, 227, 253);
+  --color-raw-blue-95: rgb(236, 241, 254);
+
+  --color-raw-red-10: rgb(62, 5, 6);
+  --color-raw-red-20: rgb(100, 12, 15);
+  --color-raw-red-30: rgb(141, 21, 25);
+  --color-raw-red-40: rgb(184, 31, 36);
+  --color-raw-red-50: rgb(229, 41, 47);
+  --color-raw-red-60: rgb(245, 94, 96);
+  --color-raw-red-70: rgb(246, 141, 143);
+  --color-raw-red-80: rgb(249, 181, 182);
+  --color-raw-red-90: rgb(251, 219, 219);
+  --color-raw-red-95: rgb(253, 237, 237);
+
+  --color-raw-neutral-10: rgb(24, 28, 33);
+  --color-raw-neutral-20: rgb(43, 49, 57);
+  --color-raw-neutral-30: rgb(63, 71, 82);
+  --color-raw-neutral-40: rgb(84, 95, 109);
+  --color-raw-neutral-50: rgb(107, 120, 137);
+  --color-raw-neutral-60: rgb(130, 146, 167);
+  --color-raw-neutral-70: rgb(157, 173, 193);
+  --color-raw-neutral-80: rgb(189, 199, 213);
+  --color-raw-neutral-90: rgb(222, 227, 234);
+  --color-raw-neutral-95: rgb(239, 241, 244);
+
+  /* semantic color tokens */
+  --color-primary-foreground: var(--color-raw-neutral-10);
+  --color-primary-background: #fff;
+
+  --color-focus-foreground: var(--color-raw-blue-50);
+
+  --color-link-foreground: var(--color-raw-blue-50);
+  --color-link-hover-foreground: var(--color-raw-blue-40);
+  --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
+
+  --color-secondary-foreground: var(--color-raw-neutral-10);
+  --color-secondary-background: var(--color-raw-neutral-95);
+
+  --color-inverse-foreground: var(--color-raw-neutral-90);
+  --color-inverse-background: var(--color-raw-neutral-10);
 }
 
 /* baseline styles */
@@ -119,6 +176,13 @@ body {
   margin: 0;
   font-family: var(--font-family-base);
   scroll-snap-type: y proximity;
+  background-color: var(--color-primary-background);
+  color: var(--color-primary-foreground);
+}
+
+:focus {
+  outline: 1px solid var(--color-focus-foreground);
+  outline-offset: 1px;
 }
 
 img {
@@ -183,6 +247,16 @@ ul {
 
 /* inline styles */
 
+a {
+  color: var(--color-link-foreground);
+}
+a:visited {
+  color: var(--color-link-visited-foreground);
+}
+a:hover {
+  color: var(--color-link-hover-foreground);
+}
+
 small {
   font-size: var(--type-small-size);
 }
@@ -235,6 +309,7 @@ kbd kbd {
   box-shadow: inset 0 -30px 30px -30px rgba(0, 0, 0, 0.2);
   content-visibility: auto;
   contain-intrinsic-block-size: 100vh;
+  padding-block: 0;
 }
 
 .avatar {
@@ -266,31 +341,7 @@ kbd kbd {
 
 .skip-link {
   position: absolute;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  gap: var(--spacing-sm);
-  padding-inline: var(--spacing-md);
-  padding-block: var(--spacing-sm);
-  backdrop-filter: blur(8px);
-}
-.header--pinned {
-  position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-  z-index: 100;
-}
-.header__group {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-.header__group--end {
-  margin-inline-start: auto;
+  z-index: var(--elevation-popover);
 }
 
 .nav {
@@ -315,6 +366,39 @@ kbd kbd {
   text-decoration: underline;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+  padding-inline: var(--spacing-md);
+  padding-block: var(--spacing-sm);
+  backdrop-filter: blur(8px);
+}
+.header--pinned {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: var(--elevation-sticky);
+}
+.header__group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+.header__group--end {
+  margin-inline-start: auto;
+}
+.header a {
+  color: inherit;
+}
+
+.contact {
+  padding-block: var(--spacing-md);
+  background-color: var(--color-secondary-background);
+}
+
 .footer {
   display: flex;
   flex-direction: row;
@@ -322,6 +406,8 @@ kbd kbd {
   gap: var(--spacing-md);
   padding-inline: var(--spacing-md);
   padding-block: var(--spacing-sm);
+  background-color: var(--color-inverse-background);
+  color: var(--color-inverse-foreground);
 }
 .footer__group {
   display: inline-flex;
@@ -338,12 +424,13 @@ kbd kbd {
 .container {
   max-width: 900px;
   margin-inline: auto;
+  padding-inline: var(--spacing-md);
 }
 
 /* utility classes */
 
 /* natively focusable elements should use `.h-sr-only-focusable` */
-.h-sr-only,
+/* .h-sr-only,
 .h-sr-only-focusable:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -360,4 +447,4 @@ kbd kbd {
 
 .h-type-tight {
   line-height: 1;
-}
+} */
