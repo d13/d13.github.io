@@ -12,6 +12,7 @@ export class KdLifeEvent extends KdBaseElement {
         contain: content;
         display: flex;
         flex-direction: row;
+        gap: var(--spacing-xl);
       }
 
       *,
@@ -22,43 +23,6 @@ export class KdLifeEvent extends KdBaseElement {
 
       .event-tag {
         flex: 0 0 var(--size-5);
-      }
-
-      .year {
-        position: relative;
-        display: inline-block;
-        font-size: var(--size--1);
-        line-height: 1;
-        font-weight: bold;
-        transform: translateX(-50%);
-        padding-inline: var(--spacing-lg) var(--spacing-xs);
-        padding-block: var(--spacing-xs);
-        margin-inline-start: var(--size-2);
-        background: var(--color-primary-background);
-        border: 2px solid var(--color-primary-foreground);
-      }
-
-      /* make an arrow before .year */
-      .year::before,
-      .year::after {
-        position: absolute;
-        inset-block: 50%;
-        inset-inline-start: var(--spacing-xs);
-        transform: translateY(-50%);
-        display: inline-block;
-        content: '';
-        block-size: var(--type-small-size);
-        aspect-ratio: 2/3;
-        clip-path: polygon(100% 50%, 0 0, 0 100%);
-        /* vertical-align: text-bottom; */
-      }
-
-      .year::before {
-        background: var(--color-raw-blue-50);
-      }
-      .year::after {
-        background: var(--color-raw-red-40);
-        transform: translateX(50%) translateY(-50%);
       }
 
       .year2 {
@@ -72,11 +36,13 @@ export class KdLifeEvent extends KdBaseElement {
         width: max-content;
         padding-inline: var(--spacing-md);
         aspect-ratio: 1;
-        margin-inline-start: var(--size-3);
+        margin-inline: auto;
+        /* margin-inline-start: var(--size-3); */
         margin-block-start: var(--size-1);
-        transform: translateX(-50%) rotateZ(-45deg);
+        /* transform: translateX(-50%) rotateZ(-45deg); */
+        transform: rotateZ(-45deg);
         color: var(--color-primary-background);
-        background-color: var(--color-primary-background);
+        /* background-color: var(--color-primary-background); */
       }
 
       .year2::after {
@@ -112,9 +78,14 @@ export class KdLifeEvent extends KdBaseElement {
       }
 
       .event {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
       }
 
       .date-range {
+        line-height: 1;
       }
 
       .media {
@@ -127,10 +98,23 @@ export class KdLifeEvent extends KdBaseElement {
 
       .title {
         display: block;
+        line-height: 1;
       }
 
       .content {
         display: block;
+      }
+
+      .meta {
+        display: block;
+      }
+
+      ::slotted(*) {
+        margin-block-start: 0;
+      }
+
+      ::slotted(*:last-child) {
+        margin-block-end: 0;
       }
     `,
   ];
@@ -190,7 +174,7 @@ export class KdLifeEvent extends KdBaseElement {
           <slot name="title" class="title"></slot>
           <slot class="content"></slot>
         </div>
-        <div class="meta"></div>
+        <slot name="meta" class="meta"></slot>
       </article>
     `;
   }

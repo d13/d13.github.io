@@ -7,17 +7,17 @@ export abstract class KdInteractiveElement extends KdBaseElement {
     delegatesFocus: true,
   };
 
-  abstract control: HTMLElement;
+  protected abstract _control: HTMLElement;
 
   override focus(options?: FocusOptions) {
-    this.control.focus(options);
+    this._control.focus(options);
   }
 
   override blur() {
-    this.control.blur();
+    this._control.blur();
   }
 
   override click() {
-    this.control.click();
+    this._control.click();
   }
 }
