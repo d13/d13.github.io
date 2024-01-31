@@ -9,22 +9,10 @@ export class KdFormButton extends KdFormElement {
   static override styles = [buttonBase];
 
   @query('.button', true)
-  private _buttonEl!: HTMLButtonElement;
+  protected _control!: HTMLButtonElement;
 
   @property({ reflect: true })
   override type: HTMLButtonElement['type'] = 'button';
-
-  override focus(options?: FocusOptions) {
-    this._buttonEl.focus(options);
-  }
-
-  override blur() {
-    this._buttonEl.blur();
-  }
-
-  override click() {
-    this._buttonEl.click();
-  }
 
   private handleClick() {
     switch (this.type) {
@@ -37,11 +25,11 @@ export class KdFormButton extends KdFormElement {
     }
   }
   private handleFocus() {
-    this.emit('kd-focus');
+    this.fireEvent('kd-focus');
   }
 
   private handleBlur() {
-    this.emit('kd-blur');
+    this.fireEvent('kd-blur');
   }
 
   override render() {

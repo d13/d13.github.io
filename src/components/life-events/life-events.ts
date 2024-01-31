@@ -20,7 +20,8 @@ export class KdLifeEvents extends KdBaseElement {
         inline-size: 2px;
         background-color: var(--color-raw-blue-30);
         inset-block-start: 0;
-        inset-inline-start: var(--size-3);
+        inset-inline-start: calc(var(--size-5) / 2);
+        transform: translateX(-50%);
       }
 
       .events {
