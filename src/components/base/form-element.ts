@@ -1,7 +1,7 @@
 import { property } from 'lit/decorators.js';
-import { KdBaseElement } from './base-element';
+import { KdInteractiveElement } from './interactive-element';
 
-export abstract class KdFormElement extends KdBaseElement {
+export abstract class KdFormElement extends KdInteractiveElement {
   static formAssociated = true;
 
   protected _internals: ElementInternals;
