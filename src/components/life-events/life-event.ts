@@ -21,12 +21,29 @@ export class KdLifeEvent extends KdBaseElement {
         box-sizing: border-box;
       }
 
-      .event-tag {
+      .timeline-zone {
         flex: 0 0 var(--size-5);
+        position: relative;
       }
 
+      /*
+      .event-tag {
+        position: absolute;
+        display: inline-block;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+        block-size: var(--size-2);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: var(--color-raw-blue-30);
+        border: 4px solid var(--color-primary-background);
+      }
+      */
+
       .year2 {
-        position: relative;
+        position: sticky;
+        inset-block-start: var(--size-5);
         display: flex;
         align-items: center;
         font-family: var(--font-family-heading);
@@ -38,11 +55,12 @@ export class KdLifeEvent extends KdBaseElement {
         aspect-ratio: 1;
         margin-inline: auto;
         /* margin-inline-start: var(--size-3); */
-        margin-block-start: var(--size-1);
+        margin-block: var(--size-1);
         /* transform: translateX(-50%) rotateZ(-45deg); */
         transform: rotateZ(-45deg);
         color: var(--color-primary-background);
         /* background-color: var(--color-primary-background); */
+        z-index: var(--elevation-inline);
       }
 
       .year2::after {
@@ -164,8 +182,9 @@ export class KdLifeEvent extends KdBaseElement {
 
   override render() {
     return html`
-      <div class="event-tag">
+      <div class="timeline-zone">
         <span class="year2">${this.endingDate?.getFullYear()}</span>
+        <span class="event-tag"></span>
       </div>
       <article class="event">
         ${this.asset ? html`<img class="media" src="${this.asset}" alt="" />` : nothing}
