@@ -97,6 +97,7 @@
   --elevation-popover: 1400;
 
   /* raw color tokens */
+  --color-raw-blue-05: rgb(2, 17, 38);
   --color-raw-blue-10: rgb(4, 28, 56);
   --color-raw-blue-20: rgb(10, 49, 91);
   --color-raw-blue-30: rgb(19, 71, 128);
@@ -108,6 +109,7 @@
   --color-raw-blue-90: rgb(216, 227, 253);
   --color-raw-blue-95: rgb(236, 241, 254);
 
+  --color-raw-red-05: rgb(42, 2, 3);
   --color-raw-red-10: rgb(62, 5, 6);
   --color-raw-red-20: rgb(100, 12, 15);
   --color-raw-red-30: rgb(141, 21, 25);
@@ -119,6 +121,7 @@
   --color-raw-red-90: rgb(251, 219, 219);
   --color-raw-red-95: rgb(253, 237, 237);
 
+  --color-raw-neutral-05: rgb(14, 17, 21);
   --color-raw-neutral-10: rgb(24, 28, 33);
   --color-raw-neutral-20: rgb(43, 49, 57);
   --color-raw-neutral-30: rgb(63, 71, 82);
@@ -141,10 +144,40 @@
   --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
 
   --color-secondary-foreground: var(--color-raw-neutral-10);
-  --color-secondary-background: var(--color-raw-neutral-95);
+  --color-secondary-background: var(--color-raw-neutral-90);
 
-  --color-inverse-foreground: var(--color-raw-neutral-90);
-  --color-inverse-background: var(--color-raw-neutral-10);
+  --color-footer-foreground: var(--color-raw-neutral-90);
+  --color-footer-background: var(--color-raw-neutral-10);
+
+  --color-elevation-shadow: rgba(0, 0, 0, 0.2);
+
+  --color-hero-background: var(--color-raw-blue-90);
+  --color-hero-fade-background: var(--color-raw-blue-95);
+}
+
+/* semantic color tokens - dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary-foreground: var(--color-raw-neutral-90);
+    --color-primary-background: var(--color-raw-neutral-10);
+
+    --color-focus-foreground: var(--color-raw-blue-50);
+
+    --color-link-foreground: var(--color-raw-blue-50);
+    --color-link-hover-foreground: var(--color-raw-blue-40);
+    --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
+
+    --color-secondary-foreground: var(--color-raw-neutral-90);
+    --color-secondary-background: var(--color-raw-neutral-20);
+
+    --color-footer-foreground: var(--color-raw-neutral-70);
+    --color-footer-background: #000;
+
+    --color-elevation-shadow: rgba(0, 0, 0, 0.6);
+
+    --color-hero-background: var(--color-raw-blue-05);
+    --color-hero-fade-background: var(--color-raw-blue-10);
+  }
 }
 
 /* baseline styles */
@@ -175,7 +208,7 @@ html *::after {
 body {
   margin: 0;
   font-family: var(--font-family-base);
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
   background-color: var(--color-primary-background);
   color: var(--color-primary-foreground);
 }
@@ -306,10 +339,12 @@ kbd kbd {
 }
 .section--hero {
   height: 100vh;
-  box-shadow: inset 0 -30px 30px -30px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -30px 30px -30px var(--color-elevation-shadow);
   content-visibility: auto;
   contain-intrinsic-block-size: 100vh;
   padding-block: 0;
+  background-color: var(--color-hero-background);
+  background-image: linear-gradient(180deg, var(--color-hero-fade-background) 0%, var(--color-hero-background) 100%);
 }
 
 .avatar {
@@ -406,8 +441,8 @@ kbd kbd {
   gap: var(--spacing-md);
   padding-inline: var(--spacing-md);
   padding-block: var(--spacing-sm);
-  background-color: var(--color-inverse-background);
-  color: var(--color-inverse-foreground);
+  background-color: var(--color-footer-background);
+  color: var(--color-footer-foreground);
 }
 .footer__group {
   display: inline-flex;

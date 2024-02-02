@@ -39,3 +39,7 @@ jspm_packages
 # Idea
 .idea
 *.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
