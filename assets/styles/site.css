@@ -151,8 +151,8 @@
 
   --color-elevation-shadow: rgba(0, 0, 0, 0.2);
 
-  --color-hero-background: var(--color-raw-blue-90);
-  --color-hero-fade-background: var(--color-raw-blue-95);
+  --color-hero-background: var(--color-raw-blue-95);
+  --color-hero-fade-background: #fff;
 }
 
 /* semantic color tokens - dark mode */
