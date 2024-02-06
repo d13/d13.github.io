@@ -150,13 +150,13 @@
   --color-link-hover-foreground: var(--color-raw-blue-40);
   --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
 
-  --color-action-foreground: var(--color-raw-blue-50);
-  --color-action-background: var(--color-raw-blue-10);
-  --color-action-hover-foreground: var(--color-raw-blue-50);
-  --color-action-hover-background: var(--color-raw-blue-20);
+  --color-action-foreground: var(--color-raw-blue-95);
+  --color-action-background: var(--color-raw-blue-60);
+  --color-action-hover-foreground: var(--color-raw-blue-95);
+  --color-action-hover-background: var(--color-raw-blue-70);
 
   --color-secondary-foreground: var(--color-raw-neutral-10);
-  --color-secondary-background: var(--color-raw-neutral-90);
+  --color-secondary-background: var(--color-raw-neutral-80);
 
   --color-footer-foreground: var(--color-raw-neutral-90);
   --color-footer-background: var(--color-raw-neutral-10);
@@ -178,6 +178,11 @@
     --color-link-foreground: var(--color-raw-blue-50);
     --color-link-hover-foreground: var(--color-raw-blue-40);
     --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
+
+    --color-action-foreground: var(--color-raw-blue-60);
+    --color-action-background: var(--color-raw-blue-10);
+    --color-action-hover-foreground: var(--color-raw-blue-60);
+    --color-action-hover-background: var(--color-raw-blue-20);
 
     --color-secondary-foreground: var(--color-raw-neutral-90);
     --color-secondary-background: var(--color-raw-neutral-05);
