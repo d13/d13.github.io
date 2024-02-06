@@ -4,7 +4,7 @@ import esbuildPluginTsc from 'esbuild-plugin-tsc';
 export function createBuildSettings(options) {
   const plugins = [
     esbuildPluginTsc({
-      force: true,
+      force: false,
     }),
   ];
 

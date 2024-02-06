@@ -48,7 +48,7 @@ export class KdLifeEvents extends KdBaseElement {
       .events {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-xl);
+        gap: var(--size-5);
       }
     `,
   ];

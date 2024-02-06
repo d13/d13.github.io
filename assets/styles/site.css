@@ -96,6 +96,13 @@
   --elevation-modal: 1300;
   --elevation-popover: 1400;
 
+  /* roundness tokens */
+  --roundness-none: 0;
+  --roundness-sm: var(--size--5);
+  --roundness-md: var(--size--2);
+  --roundness-lg: var(--size-0);
+  --roundness-xl: var(--size-20);
+
   /* raw color tokens */
   --color-raw-blue-05: rgb(2, 17, 38);
   --color-raw-blue-10: rgb(4, 28, 56);
@@ -143,6 +150,11 @@
   --color-link-hover-foreground: var(--color-raw-blue-40);
   --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
 
+  --color-action-foreground: var(--color-raw-blue-50);
+  --color-action-background: var(--color-raw-blue-10);
+  --color-action-hover-foreground: var(--color-raw-blue-50);
+  --color-action-hover-background: var(--color-raw-blue-20);
+
   --color-secondary-foreground: var(--color-raw-neutral-10);
   --color-secondary-background: var(--color-raw-neutral-90);
 
@@ -168,7 +180,7 @@
     --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
 
     --color-secondary-foreground: var(--color-raw-neutral-90);
-    --color-secondary-background: var(--color-raw-neutral-20);
+    --color-secondary-background: var(--color-raw-neutral-05);
 
     --color-footer-foreground: var(--color-raw-neutral-70);
     --color-footer-background: #000;
@@ -407,6 +419,7 @@ kbd kbd {
   gap: var(--spacing-sm);
   padding-inline: var(--spacing-md);
   padding-block: var(--spacing-sm);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 .header--pinned {
@@ -440,7 +453,7 @@ kbd kbd {
   align-items: flex-start;
   gap: var(--spacing-md);
   padding-inline: var(--spacing-md);
-  padding-block: var(--spacing-sm);
+  padding-block: var(--spacing-xl);
   background-color: var(--color-footer-background);
   color: var(--color-footer-foreground);
 }

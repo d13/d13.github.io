@@ -5,6 +5,11 @@ import { KdBaseElement } from '../base/base-element';
 @customElement('kd-phone-hero')
 export class KdPhoneHero extends KdBaseElement {
   static override styles = css`
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
     :host {
       --kd-phone-hero-block-offset: 12vh;
       --kd-phone-hero-content-width: 80;

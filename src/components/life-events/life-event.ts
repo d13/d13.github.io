@@ -97,21 +97,74 @@ export class KdLifeEvent extends KdBaseElement {
 
       .event {
         flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         gap: var(--spacing-lg);
+      }
+
+      @media (min-width: 800px) {
+        .event {
+          display: grid;
+          grid-template-columns: 3fr 4fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            'summary media'
+            'meta meta';
+          gap: var(--spacing-lg) var(--spacing-xl);
+        }
       }
 
       .date-range {
         line-height: 1;
       }
 
+      .media-zone {
+        grid-area: media;
+      }
+
+      .media-container {
+        position: relative;
+        overflow: hidden;
+      }
+
       .media {
         max-inline-size: 100%;
         block-size: auto;
+        vertical-align: middle;
+      }
+
+      @media (min-width: 800px) {
+        .media {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          /* height: 100%; */
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      .media-cover {
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        /* height: 100%; */
+        object-fit: cover;
+        object-position: center;
+        z-index: var(--elevation-behind);
+        filter: blur(16px) saturate(50%);
+        opacity: 0.2;
+      }
+
+      @media (max-width: 799px) {
+        .media-cover {
+          display: none;
+        }
       }
 
       .summary {
+        grid-area: summary;
+        display: block;
       }
 
       .title {
@@ -124,6 +177,7 @@ export class KdLifeEvent extends KdBaseElement {
       }
 
       .meta {
+        grid-area: meta;
         display: block;
       }
 
@@ -180,6 +234,16 @@ export class KdLifeEvent extends KdBaseElement {
     </div>`;
   }
 
+  private renderMedia() {
+    if (this.asset === undefined) return nothing;
+    return html`<div class="media-zone">
+      <div class="media-container">
+        <img class="media-cover" src="${this.asset}" alt="" />
+        <img class="media" src="${this.asset}" alt="" />
+      </div>
+    </div>`;
+  }
+
   override render() {
     return html`
       <div class="timeline-zone">
@@ -187,7 +251,7 @@ export class KdLifeEvent extends KdBaseElement {
         <span class="event-tag"></span>
       </div>
       <article class="event">
-        ${this.asset ? html`<img class="media" src="${this.asset}" alt="" />` : nothing}
+        ${this.renderMedia()}
         <div class="summary">
           ${this.renderDateRange()}
           <slot name="title" class="title"></slot>
