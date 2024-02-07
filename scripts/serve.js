@@ -2,9 +2,9 @@ import esbuild from 'esbuild';
 import { createBuildSettings } from './settings.js';
 
 const settings = createBuildSettings({
-  sourcemap: true,
+  sourcemap: 'inline',
   banner: {
-    js: `new EventSource('/esbuild').addEventListener('change', () => location.reload());`,
+    js: `if (window.esBuildListener != null) window.esBuildListener = new EventSource('/esbuild').addEventListener('change', () => location.reload());`,
   },
 });
 

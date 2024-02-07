@@ -2,11 +2,13 @@ import { css, html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { KdBaseElement } from '../base/base-element';
 import { formatDate } from '../../system/date';
+import { sharedStyles } from '../../styles/shared.css';
 
 @customElement('kd-life-event')
 export class KdLifeEvent extends KdBaseElement {
   static readonly now = new Date();
   static override styles = [
+    sharedStyles,
     css`
       :host {
         contain: content;
@@ -191,7 +193,7 @@ export class KdLifeEvent extends KdBaseElement {
     `,
   ];
 
-  @property() type: 'job' | 'freelance' | 'education' | 'project' | 'other' = 'other';
+  @property() type: 'job' | 'freelance' | 'education' | 'project' | 'event' = 'event';
   @property() asset?: string;
   @property({ attribute: 'asset-type' }) assetType?: 'image' | 'video' = 'image';
   @property() date!: string;
@@ -247,7 +249,7 @@ export class KdLifeEvent extends KdBaseElement {
   override render() {
     return html`
       <div class="timeline-zone">
-        <span class="year2">${this.endingDate?.getFullYear()}</span>
+        <span class="year2"><span class="h-sr-only">${this.type} in year </span>${this.endingDate?.getFullYear()}</span>
         <span class="event-tag"></span>
       </div>
       <article class="event">

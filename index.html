@@ -11,13 +11,25 @@
       content="web, developer, designer, front end, ui, ux, user experience, user interface, javascript, portfolio, responsive design"
     />
     <meta name="author" content="Keith Daulton" />
+    <meta property="og:type" content="website" />
 
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#041c38" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <link rel="preload" href="./assets/media-opt/features/phone-mergein-rough.webp" as="image" />
     <link rel="stylesheet" href="./assets/styles/site.css" />
-    <script type="module">
-      // import styles from './assets/styles/shared.css' assert { type: 'css' };
-      // document.adoptedStyleSheets = [styles];
-    </script>
-    <script src="./assets/bundle.js" defer></script>
+
+    <!-- <script type="module">
+      import styles from './assets/styles/shared.css' assert { type: 'css' };
+      document.adoptedStyleSheets = [styles];
+    </script> -->
+    <script src="./assets/bundle/styles.js" type="module"></script>
+    <script src="./assets/bundle/main.js" type="module" defer></script>
   </head>
   <body>
     <a href="#page-main" class="skip-link h-sr-only-focusable">Skip to main content</a>
@@ -79,7 +91,7 @@
           </kd-phone-hero>
         </div>
       </section>
-      <section id="work">
+      <section class="section" id="work">
         <div class="container">
           <h2 class="h-sr-only">Work</h2>
           <kd-life-events>
@@ -131,7 +143,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/chewy-checkout.webp"
-              type="job"
+              type="project"
               date="2021"
               start-date="2020"
             >
@@ -153,7 +165,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/ion-app-redesign.webp"
-              type="job"
+              type="project"
               date="2019"
               start-date="2018"
             >
@@ -175,7 +187,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/ion-design-system.webp"
-              type="job"
+              type="project"
               date="2018"
               start-date="2018"
             >
@@ -197,7 +209,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/ion-quivio-quiz-builder.webp"
-              type="job"
+              type="project"
               date="2017"
               start-date="2016"
             >
@@ -218,7 +230,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/ion-interactive-content-builder.webp"
-              type="job"
+              type="project"
               date="2016"
               start-date="2013"
             >
@@ -246,7 +258,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/dashboard_anon.webp"
-              type="job"
+              type="freelance"
               date="2015"
               start-date="2015"
             >
@@ -269,7 +281,7 @@
             </kd-life-event>
             <kd-life-event
               asset="assets/media-opt/portfolio/landing_page_1.webp"
-              type="job"
+              type="freelance"
               date="2014"
               start-date="2014"
             >
@@ -313,7 +325,7 @@
                 <dd>HTML5, CSS3, JS, jQuery, Knockout.js, XSLT, Photoshop</dd>
               </dl>
             </kd-life-event>
-            <kd-life-event asset="assets/media-opt/portfolio/Cruise_HP.webp" type="job" date="2009">
+            <kd-life-event asset="assets/media-opt/portfolio/Cruise_HP.webp" type="freelance" date="2009">
               <h3 slot="title">Cruise Microsite</h3>
               <!-- <p>
                 Maintainer of the GitLens extension for Visual Studio Code and JetBrains soon™. GitLens is the most
@@ -334,7 +346,7 @@
           </kd-life-events>
         </div>
       </section>
-      <section id="contact" class="contact">
+      <section class="section section--contact" id="contact">
         <div class="container">
           <h2 class="h-type-tight">
             Contact

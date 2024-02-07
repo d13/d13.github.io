@@ -19,9 +19,10 @@
   "type": "module",
   "scripts": {
     "analyze": "node ./scripts/analyze.js",
-    "build": "node ./scripts/build.js",
+    "build": "yarn clean && node ./scripts/build.js",
+    "clean": "rimraf assets/bundle",
     "images": "node ./scripts/images.js",
-    "start": "node ./scripts/serve.js",
+    "start": "yarn clean && node ./scripts/serve.js",
     "lint": "yarn lint:eslint && yarn lint:analyze",
     "lint:eslint": "eslint \"src/**/*.ts?(x)\" --fix",
     "lint:analyze": "lit-analyzer"
@@ -44,6 +45,7 @@
     "globby": "^14.0.0",
     "lit-analyzer": "^2.0.1",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
     "sharp": "^0.33.0",
     "ts-lit-plugin": "^2.0.1"
   },

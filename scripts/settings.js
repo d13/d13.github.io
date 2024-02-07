@@ -13,9 +13,13 @@ export function createBuildSettings(options) {
   // }
 
   return {
-    entryPoints: ['src/main.ts'],
-    outfile: 'assets/bundle.js',
+    entryPoints: ['src/main.ts', 'src/styles.ts'],
+    outdir: 'assets/bundle',
+    chunkNames: 'chunks/[name]-[hash]',
+    format: 'esm',
     bundle: true,
+    splitting: true,
+    legalComments: 'linked',
     plugins: plugins,
     ...options,
   };

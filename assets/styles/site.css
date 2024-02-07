@@ -353,12 +353,12 @@ kbd kbd {
 /* class-based pattern styles */
 
 .section {
+  content-visibility: auto;
+  contain-intrinsic-block-size: 100vh;
 }
 .section--hero {
   height: 100vh;
   box-shadow: inset 0 -30px 30px -30px var(--color-elevation-shadow);
-  content-visibility: auto;
-  contain-intrinsic-block-size: 100vh;
   padding-block: 0;
   background-color: var(--color-hero-background);
   background-image: linear-gradient(180deg, var(--color-hero-fade-background) 0%, var(--color-hero-background) 100%);
@@ -447,7 +447,7 @@ kbd kbd {
   color: inherit;
 }
 
-.contact {
+.section--contact {
   padding-block: var(--spacing-md);
   background-color: var(--color-secondary-background);
 }
