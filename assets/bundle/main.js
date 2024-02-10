@@ -1,4 +1,4 @@
-import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chunk-UASHANUO.js";var h=r=>(e,t)=>{t!==void 0?t.addInitializer(()=>{customElements.define(r,e)}):customElements.define(r,e)};var P={attribute:!0,type:String,converter:M,reflect:!1,hasChanged:E},Y=(r=P,e,t)=>{let{kind:n,metadata:d}=t,l=globalThis.litPropertyMetadata.get(d);if(l===void 0&&globalThis.litPropertyMetadata.set(d,l=new Map),l.set(t.name,r),n==="accessor"){let{name:i}=t;return{set(p){let c=e.get.call(this);e.set.call(this,p),this.requestUpdate(i,c,r)},init(p){return p!==void 0&&this.C(i,void 0,r),p}}}if(n==="setter"){let{name:i}=t;return function(p){let c=this[i];e.call(this,p),this.requestUpdate(i,c,r)}}throw Error("Unsupported decorator location: "+n)};function s(r){return(e,t)=>typeof t=="object"?Y(r,e,t):((n,d,l)=>{let i=d.hasOwnProperty(l);return d.constructor.createProperty(l,i?{...n,wrapped:!0}:n),i?Object.getOwnPropertyDescriptor(d,l):void 0})(r,e,t)}var b=(r,e,t)=>(t.configurable=!0,t.enumerable=!0,Reflect.decorate&&typeof e!="object"&&Object.defineProperty(r,e,t),t);function S(r,e){return(t,n,d)=>{let l=i=>i.renderRoot?.querySelector(r)??null;if(e){let{get:i,set:p}=typeof n=="object"?t:d??(()=>{let c=Symbol();return{get(){return this[c]},set(H){this[c]=H}}})();return b(t,n,{get(){if(e){let c=i.call(this);return c===void 0&&(c=l(this),p.call(this,c)),c}return l(this)}})}return b(t,n,{get(){return l(this)}})}}function $(r){return(e,t)=>{let{slot:n,selector:d}=r??{},l="slot"+(n?`[name=${n}]`:":not([name])");return b(e,t,{get(){let i=this.renderRoot?.querySelector(l),p=i?.assignedElements(r)??[];return d===void 0?p:p.filter(c=>c.matches(d))}})}}var D=r=>r??x;var u=class extends w{fireEvent(e,t){let n;return t===void 0?n=new CustomEvent(e):n=new CustomEvent(e,{detail:t}),this.dispatchEvent(n)}};var O=class extends u{static{this.shadowRootOptions={...w.shadowRootOptions,delegatesFocus:!0}}focus(e){this._control.focus(e)}blur(){this._control.blur()}click(){this._control.click()}};var q=g`
+import{a as o,b as p,c as $,d as N,e as n,f as k,g as O,h as S}from"./chunks/chunk-UASHANUO.js";var u=r=>(t,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(r,t)}):customElements.define(r,t)};var _={attribute:!0,type:String,converter:$,reflect:!1,hasChanged:N},B=(r=_,t,e)=>{let{kind:a,metadata:f}=e,m=globalThis.litPropertyMetadata.get(f);if(m===void 0&&globalThis.litPropertyMetadata.set(f,m=new Map),m.set(e.name,r),a==="accessor"){let{name:l}=e;return{set(g){let d=t.get.call(this);t.set.call(this,g),this.requestUpdate(l,d,r)},init(g){return g!==void 0&&this.C(l,void 0,r),g}}}if(a==="setter"){let{name:l}=e;return function(g){let d=this[l];t.call(this,g),this.requestUpdate(l,d,r)}}throw Error("Unsupported decorator location: "+a)};function i(r){return(t,e)=>typeof e=="object"?B(r,t,e):((a,f,m)=>{let l=f.hasOwnProperty(m);return f.constructor.createProperty(m,l?{...a,wrapped:!0}:a),l?Object.getOwnPropertyDescriptor(f,m):void 0})(r,t,e)}var b=(r,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(r,t,e),e);function q(r,t){return(e,a,f)=>{let m=l=>l.renderRoot?.querySelector(r)??null;if(t){let{get:l,set:g}=typeof a=="object"?e:f??(()=>{let d=Symbol();return{get(){return this[d]},set(Y){this[d]=Y}}})();return b(e,a,{get(){if(t){let d=l.call(this);return d===void 0&&(d=m(this),g.call(this,d)),d}return m(this)}})}return b(e,a,{get(){return m(this)}})}}function U(r){return(t,e)=>{let{slot:a,selector:f}=r??{},m="slot"+(a?`[name=${a}]`:":not([name])");return b(t,e,{get(){let l=this.renderRoot?.querySelector(m),g=l?.assignedElements(r)??[];return f===void 0?g:g.filter(d=>d.matches(f))}})}}var z=r=>r??k;var c=class extends O{fireEvent(t,e){let a;return e===void 0?a=new CustomEvent(t):a=new CustomEvent(t,{detail:e}),this.dispatchEvent(a)}};var F=class extends c{static{this.shadowRootOptions={...O.shadowRootOptions,delegatesFocus:!0}}focus(t){this._control.focus(t)}blur(){this._control.blur()}click(){this._control.click()}};var j=p`
   :host {
     display: contents;
   }
@@ -24,14 +24,14 @@ import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chu
     outline: 1px solid var(--color-focus-foreground);
     outline-offset: 1px;
   }
-`;var f=class extends O{render(){return m`<a
+`;var h=class extends F{render(){return n`<a
       class="button"
       part="base"
-      href="${D(this.href)}"
-      target="${D(this.target)}"
-      rel="${D(this.rel)}"
+      href="${z(this.href)}"
+      target="${z(this.target)}"
+      rel="${z(this.rel)}"
       ><slot></slot
-    ></a>`}};f.styles=[q],o([S(".button",!0)],f.prototype,"_control",2),o([s()],f.prototype,"href",2),o([s()],f.prototype,"target",2),o([s()],f.prototype,"rel",2),f=o([h("kd-link-button")],f);var v=class extends u{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return m`<div class="container"><slot class="content"></slot></div>`}};v.styles=g`
+    ></a>`}};h.styles=[j],o([q(".button",!0)],h.prototype,"_control",2),o([i()],h.prototype,"href",2),o([i()],h.prototype,"target",2),o([i()],h.prototype,"rel",2),h=o([u("kd-link-button")],h);var y=class extends c{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return n`<div class="container"><slot class="content"></slot></div>`}};y.styles=p`
     *,
     *::before,
     *::after {
@@ -99,19 +99,19 @@ import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chu
       display: block;
       max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
     }
-  `,o([s({type:String})],v.prototype,"src",2),v=o([h("kd-phone-hero")],v);var U=new Map;function _(r){let e=U.get(r);return e||(e=new Intl.DateTimeFormat(void 0,r),U.set(r,e)),e}var V=Object.freeze({year:"numeric",month:"long"});function T(r,e=V){return _(e).format(r)}var Pe=Object.freeze({numeric:"auto"});var F=1e3,z=F*60,I=z*60,k=I*24,j=k*7,A=k*30,R=k*365,C=R*4,Ye=Object.freeze(new Map([["year",R],["years",R],["quarter",C],["quarters",C],["month",A],["months",A],["week",j],["weeks",j],["day",k],["days",k],["hour",I],["hours",I],["minute",z],["minutes",z],["second",F],["seconds",F]]));var _e=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var a=class extends u{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return a.now;let t=new Date(this.date);if(t.toString()!=="Invalid Date")return t}get startingDate(){if(this.startDate===void 0)return;let t=new Date(this.startDate);if(t.toString()!=="Invalid Date")return t}renderDateRange(){return this.endingDate===void 0?x:this.startingDate===void 0?this.date==="present"?m`<time datetime="${a.now.getFullYear()}">Present</time>`:m`<div class="date-range">
-        <time datetime="${this.endingDate.toISOString()}">${T(this.endingDate)}</time>
-      </div>`:this.date==="present"?m`<div class="date-range">
-        <time datetime="${this.startingDate.toISOString()}">${T(this.startingDate)}</time> - Present
-      </div>`:m`<div class="date-range">
-      <time datetime="${this.startingDate.toISOString()}">${T(this.startingDate)}</time> -
-      <time datetime="${this.endingDate.toISOString()}">${T(this.endingDate)}</time>
-    </div>`}renderMedia(){return this.asset===void 0?x:m`<div class="media-zone">
+  `,o([i({type:String})],y.prototype,"src",2),y=o([u("kd-phone-hero")],y);var C=new Map;function V(r){let t=C.get(r);return t||(t=new Intl.DateTimeFormat(void 0,r),C.set(r,t)),t}var X=Object.freeze({year:"numeric",month:"long"});function D(r,t=X){return V(t).format(r)}var _e=Object.freeze({numeric:"auto"});var I=1e3,R=I*60,M=R*60,w=M*24,H=w*7,A=w*30,E=w*365,P=E*4,Be=Object.freeze(new Map([["year",E],["years",E],["quarter",P],["quarters",P],["month",A],["months",A],["week",H],["weeks",H],["day",w],["days",w],["hour",M],["hours",M],["minute",R],["minutes",R],["second",I],["seconds",I]]));var Ve=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var s=class extends c{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return s.now;let e=new Date(this.date);if(e.toString()!=="Invalid Date")return e}get startingDate(){if(this.startDate===void 0)return;let e=new Date(this.startDate);if(e.toString()!=="Invalid Date")return e}renderDateRange(){return this.endingDate===void 0?k:this.startingDate===void 0?this.date==="present"?n`<time datetime="${s.now.getFullYear()}">Present</time>`:n`<div class="date-range">
+        <time datetime="${this.endingDate.toISOString()}">${D(this.endingDate)}</time>
+      </div>`:this.date==="present"?n`<div class="date-range">
+        <time datetime="${this.startingDate.toISOString()}">${D(this.startingDate)}</time> - Present
+      </div>`:n`<div class="date-range">
+      <time datetime="${this.startingDate.toISOString()}">${D(this.startingDate)}</time> -
+      <time datetime="${this.endingDate.toISOString()}">${D(this.endingDate)}</time>
+    </div>`}renderMedia(){return this.asset===void 0?k:n`<div class="media-zone">
       <div class="media-container">
         <img class="media-cover" src="${this.asset}" alt="" />
         <img class="media" src="${this.asset}" alt="" />
       </div>
-    </div>`}render(){return m`
+    </div>`}render(){return n`
       <div class="timeline-zone">
         <span class="year2"><span class="h-sr-only">${this.type} in year </span>${this.endingDate?.getFullYear()}</span>
         <span class="event-tag"></span>
@@ -125,7 +125,7 @@ import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chu
         </div>
         <slot name="meta" class="meta"></slot>
       </article>
-    `}};a.now=new Date,a.styles=[N,g`
+    `}};s.now=new Date,s.styles=[S,p`
       :host {
         contain: content;
         display: flex;
@@ -306,7 +306,7 @@ import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chu
       ::slotted(*:last-child) {
         margin-block-end: 0;
       }
-    `],o([s()],a.prototype,"type",2),o([s()],a.prototype,"asset",2),o([s({attribute:"asset-type"})],a.prototype,"assetType",2),o([s()],a.prototype,"date",2),o([s({attribute:"start-date"})],a.prototype,"startDate",2),o([s()],a.prototype,"url",2),a=o([h("kd-life-event")],a);var y=class extends u{render(){return m`<span class="timeline"></span><slot class="events"></slot>`}};y.styles=[g`
+    `],o([i()],s.prototype,"type",2),o([i()],s.prototype,"asset",2),o([i({attribute:"asset-type"})],s.prototype,"assetType",2),o([i()],s.prototype,"date",2),o([i({attribute:"start-date"})],s.prototype,"startDate",2),o([i()],s.prototype,"url",2),s=o([u("kd-life-event")],s);var x=class extends c{render(){return n`<span class="timeline"></span><slot class="events"></slot>`}};x.styles=[p`
       :host {
         display: block;
         position: relative;
@@ -350,5 +350,55 @@ import{a as o,b as g,c as M,d as E,e as m,f as x,g as w,h as N}from"./chunks/chu
         flex-direction: column;
         gap: var(--size-5);
       }
-    `],o([$({selector:"kd-life-event"})],y.prototype,"lifeEventEls",2),y=o([h("kd-life-events")],y);
+    `],o([U({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=o([u("kd-life-events")],x);var v=class extends c{constructor(){super(...arguments);this.term="";this.definition=""}get tags(){return this.definition.trim().length===0?[]:this.definition.split(",").map(e=>e.trim())}render(){return n`
+      <span role="term"><slot name="term">${this.term}</slot></span>
+      <span role="definition"
+        ><slot><span class="tags">${this.tags.map(e=>n`<kd-tag>${e}</kd-tag> `)}</span></slot></span
+      >
+    `}};v.styles=[p`
+      :host {
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+        gap: var(--spacing-md);
+        margin-block-end: var(--spacing-sm);
+      }
+
+      [role='term'] {
+        /* min-inline-size: var(--size-8); */
+        display: block;
+        /* font-weight: bold; */
+        /* font-size: var(--type-body-sm-size); */
+        /* line-height: 1.25; */
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      [role='definition'] {
+        display: block;
+        font-weight: bold;
+      }
+
+      .tags {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm) var(--spacing-xs);
+      }
+    `],o([i()],v.prototype,"term",2),o([i()],v.prototype,"definition",2),v=o([u("kd-attribution")],v);var T=class extends c{render(){return n`<slot></slot>`}};T.styles=[p`
+      :host {
+        display: inline-block;
+        padding: var(--spacing-xs) var(--spacing-lg);
+        font-size: var(--type-body-sm-size);
+        text-transform: uppercase;
+        border-radius: var(--roundness-sm);
+        background-color: var(--color-tag-background);
+        color: var(--color-tag-foreground);
+        letter-spacing: 0.075em;
+        vertical-align: middle;
+      }
+
+      :host {
+        margin-inline-end: var(--spacing-xs);
+      }
+    `],T=o([u("kd-tag")],T);
 /*! For license information please see main.js.LEGAL.txt */

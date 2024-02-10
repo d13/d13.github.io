@@ -3,6 +3,8 @@
 import './components/button/link-button';
 import './components/phone-hero';
 import './components/life-events';
+import './components/attribution';
+import './components/tag';
 
 // document.adoptedStyleSheets = [...litToStyleSheet(sharedStyles)];
 
