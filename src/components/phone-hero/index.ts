@@ -26,6 +26,7 @@ export class KdPhoneHero extends KdBaseElement {
 
       animation-name: phone-home;
       animation-duration: 0.65s;
+      will-change: contents;
     }
 
     @media (min-width: 480px) {
