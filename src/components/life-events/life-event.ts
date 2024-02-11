@@ -240,8 +240,8 @@ export class KdLifeEvent extends KdBaseElement {
     if (this.asset === undefined) return nothing;
     return html`<div class="media-zone">
       <div class="media-container">
-        <img class="media-cover" src="${this.asset}" alt="" />
-        <img class="media" src="${this.asset}" alt="" />
+        <img class="media-cover" loading="lazy" src="${this.asset}" alt="" />
+        <img class="media" loading="lazy" src="${this.asset}" alt="" />
       </div>
     </div>`;
   }

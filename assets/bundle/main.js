@@ -108,8 +108,8 @@ import{a as o,b as p,c as $,d as N,e as n,f as k,g as O,h as S}from"./chunks/chu
       <time datetime="${this.endingDate.toISOString()}">${D(this.endingDate)}</time>
     </div>`}renderMedia(){return this.asset===void 0?k:n`<div class="media-zone">
       <div class="media-container">
-        <img class="media-cover" src="${this.asset}" alt="" />
-        <img class="media" src="${this.asset}" alt="" />
+        <img class="media-cover" loading="lazy" src="${this.asset}" alt="" />
+        <img class="media" loading="lazy" src="${this.asset}" alt="" />
       </div>
     </div>`}render(){return n`
       <div class="timeline-zone">
