@@ -5,23 +5,32 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Yarn Serve",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "yarn",
-      "runtimeArgs": ["start"],
-      "serverReadyAction": {
-        "pattern": "Serving app at 0.0.0.0:5500.",
-        "uriFormat": "http://localhost:5500",
-        "action": "openExternally"
-      },
-      "restart": true,
+      "name": "Start",
+      "program": "${workspaceFolder}/scripts/serve.js",
       "console": "integratedTerminal",
-      "outFiles": ["${workspaceFolder}/assets/bundle.js"],
-      "pauseForSourceMap": true,
-      "sourceMapRenames": true,
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true,
-      "trace": true
+      "outFiles": ["${workspaceFolder}/assets/bundle/**/*.js"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Chrome",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch & Debug",
+      "configurations": ["Start", "Debug Chrome"],
+      "stopAll": true,
+      "preLaunchTask": "Run clean"
     }
   ]
 }
