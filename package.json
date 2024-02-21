@@ -53,5 +53,5 @@
     "lit": "^3.0.2",
     "typescript": "5.3.1-rc"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.0"
 }
