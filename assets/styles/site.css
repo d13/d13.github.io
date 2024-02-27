@@ -185,9 +185,9 @@
 
     --color-focus-foreground: var(--color-raw-blue-50);
 
-    --color-link-foreground: var(--color-raw-blue-50);
-    --color-link-hover-foreground: var(--color-raw-blue-40);
-    --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
+    --color-link-foreground: var(--color-raw-blue-60);
+    --color-link-hover-foreground: var(--color-raw-blue-50);
+    --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
 
     --color-action-foreground: var(--color-raw-blue-60);
     --color-action-background: var(--color-raw-blue-10);
