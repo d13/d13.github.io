@@ -1,5 +1,6 @@
 import { customElement, property } from 'lit/decorators.js';
 import { css, html } from 'lit';
+import { when } from 'lit/directives/when.js';
 import { KdBaseElement } from '../base/base-element';
 
 @customElement('kd-attribution')
@@ -43,18 +44,29 @@ export class KdAttribution extends KdBaseElement {
   @property()
   definition = '';
 
+  @property()
+  type: 'tags' | 'text' = 'tags';
+
   get tags() {
     if (this.definition.trim().length === 0) {
       return [];
     }
-    return this.definition.split(',').map(tag => tag.trim());
+
+    // split on commas, but ignore commas inside parens
+    return this.definition.split(/,(?![^(]*\))/).map(tag => tag.trim());
   }
 
   override render() {
     return html`
       <span role="term"><slot name="term">${this.term}</slot></span>
       <span role="definition"
-        ><slot><span class="tags">${this.tags.map(tag => html`<kd-tag>${tag}</kd-tag> `)}</span></slot></span
+        ><slot>
+          ${when(
+            this.type === 'tags',
+            () => html`<span class="tags">${this.tags.map(tag => html`<kd-tag>${tag}</kd-tag> `)}</span>`,
+            () => this.definition,
+          )}</slot
+        ></span
       >
     `;
   }

@@ -76,3 +76,10 @@ lit-html/directives/if-defined.js:
    * Copyright 2018 Google LLC
    * SPDX-License-Identifier: BSD-3-Clause
    */
+
+lit-html/directives/when.js:
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */

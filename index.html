@@ -54,6 +54,18 @@
     </script> -->
     <script src="./assets/bundle/styles.js" type="module"></script>
     <script src="./assets/bundle/main.js" type="module" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BD3YNT001P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-BD3YNT001P');
+    </script>
   </head>
   <body>
     <a href="#page-main" class="skip-link h-sr-only-focusable">Skip to main content</a>
@@ -133,16 +145,12 @@
                 active users.
               </p>
               <div slot="meta">
-                <kd-attribution term="Company">GitKraken</kd-attribution>
+                <kd-attribution term="Company" definition="GitKraken" type="text"></kd-attribution>
                 <kd-attribution term="Role" definition="Maintainer, Development, Design"></kd-attribution>
-                <kd-attribution term="Tools">
-                  <kd-tag>Web Components (Lit, FAST)</kd-tag>
-                  <kd-tag>React</kd-tag>
-                  <kd-tag>TypeScript</kd-tag>
-                  <kd-tag>SCSS</kd-tag>
-                  <kd-tag>Yarn</kd-tag>
-                  <kd-tag>Figma</kd-tag>
-                </kd-attribution>
+                <kd-attribution
+                  term="Tools"
+                  definition="Web Components (Lit, FAST), React, TypeScript, SCSS, Yarn, Figma"
+                ></kd-attribution>
               </div>
             </kd-life-event>
             <kd-life-event
