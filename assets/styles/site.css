@@ -142,6 +142,9 @@
   --color-raw-neutral-95: rgb(239, 241, 244);
 
   /* semantic color tokens */
+  --color-scroll-foreground: var(--color-raw-neutral-60);
+  --color-scroll-background: var(--color-raw-neutral-90);
+
   --color-primary-foreground: var(--color-raw-neutral-10);
   --color-primary-background: #fff;
 
@@ -174,6 +177,9 @@
 /* semantic color tokens - dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-scroll-foreground: var(--color-raw-neutral-30);
+    --color-scroll-background: var(--color-raw-neutral-05);
+
     --color-primary-foreground: var(--color-raw-neutral-90);
     --color-primary-background: var(--color-raw-neutral-10);
 
@@ -221,6 +227,7 @@ html {
   line-height: var(--font-line-height-base);
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+  scrollbar-color: var(--color-scroll-foreground) var(--color-scroll-background);
 }
 
 html *,
