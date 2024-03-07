@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ElementConstructor<T = Record<PropertyKey, unknown>> = new (...args: any[]) => T;
+
 export interface InteractiveElement {
   focus(options?: FocusOptions): void;
   blur(): void;

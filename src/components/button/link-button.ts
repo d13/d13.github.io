@@ -1,11 +1,12 @@
 import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { KdInteractiveElement } from '../base/interactive-element';
+import { Interactive } from 'src/components/base/mixins/interactive';
+import { KdBaseElement } from 'src/components/base/base-element';
 import { buttonBase } from './button.css';
 
 @customElement('kd-link-button')
-export class KdLinkButton extends KdInteractiveElement {
+export class KdLinkButton extends Interactive(KdBaseElement) {
   static override styles = [buttonBase];
 
   @query('.button', true)

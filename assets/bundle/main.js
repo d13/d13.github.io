@@ -1,4 +1,4 @@
-import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chunk-HJSB4PYJ.js";var s=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var B={attribute:!0,type:String,converter:N,reflect:!1,hasChanged:S},Q=(e=B,n,o)=>{let{kind:r,metadata:b}=o,p=globalThis.litPropertyMetadata.get(b);if(p===void 0&&globalThis.litPropertyMetadata.set(b,p=new Map),p.set(o.name,e),r==="accessor"){let{name:a}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(a,d,e)},init(u){return u!==void 0&&this.P(a,void 0,e),u}}}if(r==="setter"){let{name:a}=o;return function(u){let d=this[a];n.call(this,u),this.requestUpdate(a,d,e)}}throw Error("Unsupported decorator location: "+r)};function c(e){return(n,o)=>typeof o=="object"?Q(e,n,o):((r,b,p)=>{let a=b.hasOwnProperty(p);return b.constructor.createProperty(p,a?{...r,wrapped:!0}:r),a?Object.getOwnPropertyDescriptor(b,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function M(e,n){return(o,r,b)=>{let p=a=>a.renderRoot?.querySelector(e)??null;if(n){let{get:a,set:u}=typeof r=="object"?o:b??(()=>{let d=Symbol();return{get(){return this[d]},set(Z){this[d]=Z}}})();return g(o,r,{get(){let d=a.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,r,{get(){return p(this)}})}}function _(e){return(n,o)=>{let{slot:r,selector:b}=e??{},p="slot"+(r?`[name=${r}]`:":not([name])");return g(n,o,{get(){let a=this.renderRoot?.querySelector(p),u=a?.assignedElements(e)??[];return b===void 0?u:u.filter(d=>d.matches(b))}})}}var F=e=>e??z;var l=class extends O{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,r){let b;return r===void 0?b=new CustomEvent(o):b=new CustomEvent(o,{detail:r}),this.dispatchEvent(b)}};var x=class extends l{static{this.shadowRootOptions={...O.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var C=i`
+import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chunk-HJSB4PYJ.js";var l=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var V={attribute:!0,type:String,converter:N,reflect:!1,hasChanged:U},Z=(e=V,n,o)=>{let{kind:r,metadata:b}=o,p=globalThis.litPropertyMetadata.get(b);if(p===void 0&&globalThis.litPropertyMetadata.set(b,p=new Map),p.set(o.name,e),r==="accessor"){let{name:h}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(h,d,e)},init(u){return u!==void 0&&this.P(h,void 0,e),u}}}if(r==="setter"){let{name:h}=o;return function(u){let d=this[h];n.call(this,u),this.requestUpdate(h,d,e)}}throw Error("Unsupported decorator location: "+r)};function c(e){return(n,o)=>typeof o=="object"?Z(e,n,o):((r,b,p)=>{let h=b.hasOwnProperty(p);return b.constructor.createProperty(p,h?{...r,wrapped:!0}:r),h?Object.getOwnPropertyDescriptor(b,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function D(e,n){return(o,r,b)=>{let p=h=>h.renderRoot?.querySelector(e)??null;if(n){let{get:h,set:u}=typeof r=="object"?o:b??(()=>{let d=Symbol();return{get(){return this[d]},set(G){this[d]=G}}})();return g(o,r,{get(){let d=h.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,r,{get(){return p(this)}})}}function S(e){return(n,o)=>{let{slot:r,selector:b}=e??{},p="slot"+(r?`[name=${r}]`:":not([name])");return g(n,o,{get(){let h=this.renderRoot?.querySelector(p),u=h?.assignedElements(e)??[];return b===void 0?u:u.filter(d=>d.matches(b))}})}}var M=e=>e??q;function _(e){return class extends e{static{this.shadowRootOptions={...e.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}}}var s=class extends T{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,r){let b;return r===void 0?b=new CustomEvent(o):b=new CustomEvent(o,{detail:r}),this.dispatchEvent(b)}};var P=i`
   :host {
     display: contents;
   }
@@ -24,14 +24,14 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
     outline: 1px solid var(--color-focus-foreground);
     outline-offset: 1px;
   }
-`;var m=class extends x{render(){return f`<a
+`;var m=class extends _(s){render(){return f`<a
       class="button"
       part="base"
-      href="${F(this.href)}"
-      target="${F(this.target)}"
-      rel="${F(this.rel)}"
+      href="${M(this.href)}"
+      target="${M(this.target)}"
+      rel="${M(this.rel)}"
       ><slot></slot
-    ></a>`}};m.styles=[C],t([M(".button",!0)],m.prototype,"_control",2),t([c()],m.prototype,"href",2),t([c()],m.prototype,"target",2),t([c()],m.prototype,"rel",2),m=t([s("kd-link-button")],m);var y=class extends l{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return f`<div class="container"><slot class="content"></slot></div>`}};y.styles=i`
+    ></a>`}};m.styles=[P],t([D(".button",!0)],m.prototype,"_control",2),t([c()],m.prototype,"href",2),t([c()],m.prototype,"target",2),t([c()],m.prototype,"rel",2),m=t([l("kd-link-button")],m);var v=class extends s{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return f`<div class="container"><slot class="content"></slot></div>`}};v.styles=i`
     *,
     *::before,
     *::after {
@@ -100,14 +100,14 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
       display: block;
       max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
     }
-  `,t([c({type:String})],y.prototype,"src",2),y=t([s("kd-phone-hero")],y);var H=new Map;function W(e){let n=H.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),H.set(e,n)),n}var G=Object.freeze({year:"numeric",month:"long"});function T(e,n=G){return W(n).format(e)}var Qo=Object.freeze({numeric:"auto"});var E=1e3,R=E*60,I=R*60,j=I*24,A=j*7,P=j*30,$=j*365,Y=$*4,Wo=Object.freeze(new Map([["year",$],["years",$],["quarter",Y],["quarters",Y],["month",P],["months",P],["week",A],["weeks",A],["day",j],["days",j],["hour",I],["hours",I],["minute",R],["minutes",R],["second",E],["seconds",E]]));var Go=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var h=class extends l{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return h.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?z:this.startingDate===void 0?this.date==="present"?f`<time datetime="${h.now.getFullYear()}">Present</time>`:f`<div class="date-range">
-        <time datetime="${this.endingDate.toISOString()}">${T(this.endingDate)}</time>
+  `,t([c({type:String})],v.prototype,"src",2),v=t([l("kd-phone-hero")],v);var H=new Map;function Q(e){let n=H.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),H.set(e,n)),n}var J=Object.freeze({year:"numeric",month:"long"});function E(e,n=J){return Q(n).format(e)}var Zo=Object.freeze({numeric:"auto"});var F=1e3,R=F*60,I=R*60,z=I*24,A=z*7,Y=z*30,$=z*365,W=$*4,Qo=Object.freeze(new Map([["year",$],["years",$],["quarter",W],["quarters",W],["month",Y],["months",Y],["week",A],["weeks",A],["day",z],["days",z],["hour",I],["hours",I],["minute",R],["minutes",R],["second",F],["seconds",F]]));var Jo=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var a=class extends s{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return a.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?q:this.startingDate===void 0?this.date==="present"?f`<time datetime="${a.now.getFullYear()}">Present</time>`:f`<div class="date-range">
+        <time datetime="${this.endingDate.toISOString()}">${E(this.endingDate)}</time>
       </div>`:this.date==="present"?f`<div class="date-range">
-        <time datetime="${this.startingDate.toISOString()}">${T(this.startingDate)}</time> - Present
+        <time datetime="${this.startingDate.toISOString()}">${E(this.startingDate)}</time> - Present
       </div>`:f`<div class="date-range">
-      <time datetime="${this.startingDate.toISOString()}">${T(this.startingDate)}</time> -
-      <time datetime="${this.endingDate.toISOString()}">${T(this.endingDate)}</time>
-    </div>`}renderMedia(){return this.asset===void 0?z:f`<div class="media-zone">
+      <time datetime="${this.startingDate.toISOString()}">${E(this.startingDate)}</time> -
+      <time datetime="${this.endingDate.toISOString()}">${E(this.endingDate)}</time>
+    </div>`}renderMedia(){return this.asset===void 0?q:f`<div class="media-zone">
       <div class="media-container">
         <img class="media-cover" loading="lazy" src="${this.asset}" alt="" />
         <img class="media" loading="lazy" src="${this.asset}" alt="" />
@@ -126,7 +126,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
         </div>
         <slot name="meta" class="meta"></slot>
       </article>
-    `}};h.now=new Date,h.styles=[U,i`
+    `}};a.now=new Date,a.styles=[C,i`
       :host {
         contain: content;
         display: flex;
@@ -307,7 +307,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
       ::slotted(*:last-child) {
         margin-block-end: 0;
       }
-    `],t([c()],h.prototype,"type",2),t([c()],h.prototype,"asset",2),t([c({attribute:"asset-type"})],h.prototype,"assetType",2),t([c()],h.prototype,"date",2),t([c({attribute:"start-date"})],h.prototype,"startDate",2),t([c()],h.prototype,"url",2),h=t([s("kd-life-event")],h);var v=class extends l{render(){return f`<span class="timeline"></span><slot class="events"></slot>`}};v.styles=[i`
+    `],t([c()],a.prototype,"type",2),t([c()],a.prototype,"asset",2),t([c({attribute:"asset-type"})],a.prototype,"assetType",2),t([c()],a.prototype,"date",2),t([c({attribute:"start-date"})],a.prototype,"startDate",2),t([c()],a.prototype,"url",2),a=t([l("kd-life-event")],a);var x=class extends s{render(){return f`<span class="timeline"></span><slot class="events"></slot>`}};x.styles=[i`
       :host {
         display: block;
         position: relative;
@@ -351,7 +351,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
         flex-direction: column;
         gap: var(--size-5);
       }
-    `],t([_({selector:"kd-life-event"})],v.prototype,"lifeEventEls",2),v=t([s("kd-life-events")],v);function X(e,n,o){return e?n(e):o?.(e)}var k=class extends l{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return f`
+    `],t([S({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=t([l("kd-life-events")],x);function X(e,n,o){return e?n(e):o?.(e)}var k=class extends s{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return f`
       <span role="term"><slot name="term">${this.term}</slot></span>
       <span role="definition"
         ><slot>
@@ -387,7 +387,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
         flex-wrap: wrap;
         gap: var(--spacing-sm) var(--spacing-xs);
       }
-    `],t([c()],k.prototype,"term",2),t([c()],k.prototype,"definition",2),t([c()],k.prototype,"type",2),k=t([s("kd-attribution")],k);var D=class extends l{render(){return f`<slot></slot>`}};D.styles=[i`
+    `],t([c()],k.prototype,"term",2),t([c()],k.prototype,"definition",2),t([c()],k.prototype,"type",2),k=t([l("kd-attribution")],k);var j=class extends s{render(){return f`<slot></slot>`}};j.styles=[i`
       :host {
         display: inline-block;
         padding: var(--spacing-xs) var(--spacing-lg);
@@ -403,7 +403,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
       :host {
         margin-inline-end: var(--spacing-xs);
       }
-    `],D=t([s("kd-tag")],D);var V=i`
+    `],j=t([l("kd-tag")],j);var O=class extends s{static{this.shadowRootOptions={...T.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var B=i`
   :host {
     display: inline-block;
     font-style: normal;
@@ -414,7 +414,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`;var q=class extends l{};q.styles=[V,i`
+`;var y=class extends s{};y.styles=[B,i`
       :host {
         font-family: bootstrap-icons !important;
       }
@@ -6573,7 +6573,7 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
       :host([icon='vignette'])::before {
         content: '\\f903';
       }
-    `],t([c({type:String})],q.prototype,"icon",2),q=t([s("kd-bs-icon")],q);var w=class extends x{constructor(){super();this._mode="light";this.mode=this.preferredMode}get mode(){return this._mode}set mode(o){let r=this._mode;this._mode=o,this.requestUpdate("mode",r),this.updateMode()}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),document.documentElement.dataset.mode=this.mode}render(){return f`<button class="button" @click=${this.onClick.bind(this)}>
+    `],t([c({type:String})],y.prototype,"icon",2),y=t([l("kd-bs-icon")],y);var w=class extends O{constructor(){super();this._mode="light";this.mode=this.preferredMode}get mode(){return this._mode}set mode(o){let r=this._mode;this._mode=o,this.requestUpdate("mode",r),this.updateMode()}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),this.fireEvent("kd-mode-switcher-changed",{mode:this.mode}),document.documentElement.dataset.mode=this.mode}render(){return f`<button class="button" @click=${this.onClick.bind(this)}>
       <span class="light"><kd-bs-icon icon="sun"></kd-bs-icon></span>
       <span class="dark"><kd-bs-icon icon="moon"></kd-bs-icon></span>
       <span class="dot"></span>
@@ -6631,5 +6631,5 @@ import{a as t,b as i,c as N,d as S,e as f,f as z,g as O,h as U}from"./chunks/chu
       :host([mode='dark']) .dot {
         transform: translateX(calc(var(--size-1) - var(--spacing-xs)));
       }
-    `],t([M(".button",!0)],w.prototype,"_control",2),t([c({type:String,reflect:!0})],w.prototype,"mode",1),w=t([s("kd-mode-switcher")],w);
+    `],t([D(".button",!0)],w.prototype,"_control",2),t([c({type:String,reflect:!0})],w.prototype,"mode",1),w=t([l("kd-mode-switcher")],w);
 /*! For license information please see main.js.LEGAL.txt */
