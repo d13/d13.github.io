@@ -1,4 +1,19 @@
 @import url(https://use.typekit.net/bdx2zst.css);
+/* @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'); */
+
+/*!
+ * Bootstrap Icons v1.11.3 (https://icons.getbootstrap.com/)
+ * Copyright 2019-2024 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ */
+
+@font-face {
+  font-display: block;
+  font-family: 'bootstrap-icons';
+  src:
+    url('./fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6') format('woff2'),
+    url('./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6') format('woff');
+}
 
 /* root design properties */
 :root {
@@ -140,8 +155,13 @@
   --color-raw-neutral-80: rgb(189, 199, 213);
   --color-raw-neutral-90: rgb(222, 227, 234);
   --color-raw-neutral-95: rgb(239, 241, 244);
+}
 
-  /* semantic color tokens */
+/* semantic color tokens */
+:root[data-mode='auto'],
+:root[data-mode='light'] {
+  color-scheme: normal;
+
   --color-scroll-foreground: var(--color-raw-neutral-60);
   --color-scroll-background: var(--color-raw-neutral-90);
 
@@ -176,7 +196,8 @@
 
 /* semantic color tokens - dark mode */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root[data-mode='auto'] {
+    color-scheme: dark;
     --color-scroll-foreground: var(--color-raw-neutral-30);
     --color-scroll-background: var(--color-raw-neutral-05);
 
@@ -208,6 +229,40 @@
     --color-tag-foreground: var(--color-raw-blue-60);
     --color-tag-background: var(--color-raw-neutral-05);
   }
+}
+
+:root[data-mode='dark'] {
+  color-scheme: dark;
+  --color-scroll-foreground: var(--color-raw-neutral-30);
+  --color-scroll-background: var(--color-raw-neutral-05);
+
+  --color-primary-foreground: var(--color-raw-neutral-90);
+  --color-primary-background: var(--color-raw-neutral-10);
+
+  --color-focus-foreground: var(--color-raw-blue-50);
+
+  --color-link-foreground: var(--color-raw-blue-60);
+  --color-link-hover-foreground: var(--color-raw-blue-50);
+  --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
+
+  --color-action-foreground: var(--color-raw-blue-60);
+  --color-action-background: var(--color-raw-blue-10);
+  --color-action-hover-foreground: var(--color-raw-blue-60);
+  --color-action-hover-background: var(--color-raw-blue-20);
+
+  --color-secondary-foreground: var(--color-raw-neutral-90);
+  --color-secondary-background: var(--color-raw-neutral-05);
+
+  --color-footer-foreground: var(--color-raw-neutral-70);
+  --color-footer-background: #000;
+
+  --color-elevation-shadow: rgba(0, 0, 0, 0.6);
+
+  --color-hero-background: var(--color-raw-blue-05);
+  --color-hero-fade-background: var(--color-raw-blue-10);
+
+  --color-tag-foreground: var(--color-raw-blue-60);
+  --color-tag-background: var(--color-raw-neutral-05);
 }
 
 /* baseline styles */

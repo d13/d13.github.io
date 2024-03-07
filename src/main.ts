@@ -5,6 +5,7 @@ import './components/phone-hero';
 import './components/life-events';
 import './components/attribution';
 import './components/tag';
+import './components/mode-switcher';
 
 // document.adoptedStyleSheets = [...litToStyleSheet(sharedStyles)];
 
