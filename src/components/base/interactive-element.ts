@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
-import { KdBaseElement } from './base-element';
+import { KdBaseElement, KdEventMap, KdEvents } from './base-element';
 
-export abstract class KdInteractiveElement extends KdBaseElement {
+export abstract class KdInteractiveElement<Events extends KdEventMap = KdEvents> extends KdBaseElement<Events> {
   static override shadowRootOptions: ShadowRootInit = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,

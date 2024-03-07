@@ -1,5 +1,6 @@
 import { css, html } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
+import { KdEvents } from 'src/components/base/base-element';
 import { KdInteractiveElement } from '../base/interactive-element';
 import '../icon/bs-icon';
 
@@ -7,7 +8,7 @@ import '../icon/bs-icon';
 type Modes = 'light' | 'dark';
 
 @customElement('kd-mode-switcher')
-export class KdModeSwitcher extends KdInteractiveElement {
+export class KdModeSwitcher extends KdInteractiveElement<KdEvents<'mode-switcher'>> {
   static override styles = [
     css`
       :host {
@@ -99,6 +100,7 @@ export class KdModeSwitcher extends KdInteractiveElement {
     //     detail: { mode: this.mode },
     //   }),
     // );
+    this.fireEvent('kd-mode-switcher-changed', { mode: this.mode });
 
     document.documentElement.dataset.mode = this.mode;
   }
@@ -119,5 +121,9 @@ export class KdModeSwitcher extends KdInteractiveElement {
 declare global {
   interface HTMLElementTagNameMap {
     'kd-mode-switcher': KdModeSwitcher;
+  }
+
+  interface ElementEventMap {
+    'kd-mode-switcher-changed': CustomEvent<{ mode: Modes }>;
   }
 }
