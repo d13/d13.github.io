@@ -19,5 +19,9 @@ var dt=Object.defineProperty;var ut=Object.getOwnPropertyDescriptor;var xt=(o,t,
   .h-type-tight {
     line-height: 1;
   }
-`;export{xt as a,z as b,j as c,X as d,Rt as e,c as f,E as g,Jt as h};
-/*! For license information please see chunk-HJSB4PYJ.js.LEGAL.txt */
+
+  .h-type-xl {
+    font-size: var(--type-body-xl-size);
+  }
+`;export{xt as a,F as b,z as c,j as d,X as e,Rt as f,c as g,E as h,Jt as i};
+/*! For license information please see chunk-MD3C3WXH.js.LEGAL.txt */

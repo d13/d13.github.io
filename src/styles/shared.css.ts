@@ -19,4 +19,8 @@ export const sharedStyles = css`
   .h-type-tight {
     line-height: 1;
   }
+
+  .h-type-xl {
+    font-size: var(--type-body-xl-size);
+  }
 `;

@@ -6,6 +6,7 @@ import './components/life-events';
 import './components/attribution';
 import './components/tag';
 import './components/mode-switcher';
+import './components/icon/bs-icon';
 import './components/ooh-logos';
 
 // document.adoptedStyleSheets = [...litToStyleSheet(sharedStyles)];
