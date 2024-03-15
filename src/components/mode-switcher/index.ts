@@ -79,16 +79,22 @@ export class KdModeSwitcher extends KdInteractiveElement<KdEvents<'mode-switcher
     const old = this._mode;
     this._mode = value;
     this.requestUpdate('mode', old);
-    this.updateMode();
   }
 
   get preferredMode() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  constructor() {
-    super();
+  override connectedCallback(): void {
+    super.connectedCallback();
     this.mode = this.preferredMode;
+  }
+
+  protected override updated(changedProperties: Map<PropertyKey, unknown>): void {
+    super.updated(changedProperties);
+    if (changedProperties.has('mode')) {
+      this.updateMode();
+    }
   }
 
   private updateMode() {

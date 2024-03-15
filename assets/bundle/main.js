@@ -1,4 +1,4 @@
-import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chunk-HJSB4PYJ.js";var s=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var Q={attribute:!0,type:String,converter:U,reflect:!1,hasChanged:S},J=(e=Q,n,o)=>{let{kind:l,metadata:a}=o,p=globalThis.litPropertyMetadata.get(a);if(p===void 0&&globalThis.litPropertyMetadata.set(a,p=new Map),p.set(o.name,e),l==="accessor"){let{name:b}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(b,d,e)},init(u){return u!==void 0&&this.P(b,void 0,e),u}}}if(l==="setter"){let{name:b}=o;return function(u){let d=this[b];n.call(this,u),this.requestUpdate(b,d,e)}}throw Error("Unsupported decorator location: "+l)};function f(e){return(n,o)=>typeof o=="object"?J(e,n,o):((l,a,p)=>{let b=a.hasOwnProperty(p);return a.constructor.createProperty(p,b?{...l,wrapped:!0}:l),b?Object.getOwnPropertyDescriptor(a,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function F(e,n){return(o,l,a)=>{let p=b=>b.renderRoot?.querySelector(e)??null;if(n){let{get:b,set:u}=typeof l=="object"?o:a??(()=>{let d=Symbol();return{get(){return this[d]},set(V){this[d]=V}}})();return g(o,l,{get(){let d=b.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,l,{get(){return p(this)}})}}function P(e){return(n,o)=>{let{slot:l,selector:a}=e??{},p="slot"+(l?`[name=${l}]`:":not([name])");return g(n,o,{get(){let b=this.renderRoot?.querySelector(p),u=b?.assignedElements(e)??[];return a===void 0?u:u.filter(d=>d.matches(a))}})}}var R=e=>e??z;function H(e){return class extends e{static{this.shadowRootOptions={...e.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}}}var r=class extends M{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,l){let a;return l===void 0?a=new CustomEvent(o):a=new CustomEvent(o,{detail:l}),this.dispatchEvent(a)}};var A=i`
+import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as P}from"./chunks/chunk-HJSB4PYJ.js";var s=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var Q={attribute:!0,type:String,converter:U,reflect:!1,hasChanged:S},J=(e=Q,n,o)=>{let{kind:l,metadata:a}=o,p=globalThis.litPropertyMetadata.get(a);if(p===void 0&&globalThis.litPropertyMetadata.set(a,p=new Map),p.set(o.name,e),l==="accessor"){let{name:b}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(b,d,e)},init(u){return u!==void 0&&this.P(b,void 0,e),u}}}if(l==="setter"){let{name:b}=o;return function(u){let d=this[b];n.call(this,u),this.requestUpdate(b,d,e)}}throw Error("Unsupported decorator location: "+l)};function f(e){return(n,o)=>typeof o=="object"?J(e,n,o):((l,a,p)=>{let b=a.hasOwnProperty(p);return a.constructor.createProperty(p,b?{...l,wrapped:!0}:l),b?Object.getOwnPropertyDescriptor(a,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function F(e,n){return(o,l,a)=>{let p=b=>b.renderRoot?.querySelector(e)??null;if(n){let{get:b,set:u}=typeof l=="object"?o:a??(()=>{let d=Symbol();return{get(){return this[d]},set(G){this[d]=G}}})();return g(o,l,{get(){let d=b.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,l,{get(){return p(this)}})}}function _(e){return(n,o)=>{let{slot:l,selector:a}=e??{},p="slot"+(l?`[name=${l}]`:":not([name])");return g(n,o,{get(){let b=this.renderRoot?.querySelector(p),u=b?.assignedElements(e)??[];return a===void 0?u:u.filter(d=>d.matches(a))}})}}var R=e=>e??z;function H(e){return class extends e{static{this.shadowRootOptions={...e.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}}}var r=class extends M{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,l){let a;return l===void 0?a=new CustomEvent(o):a=new CustomEvent(o,{detail:l}),this.dispatchEvent(a)}};var A=i`
   :host {
     display: contents;
   }
@@ -100,7 +100,7 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
       display: block;
       max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
     }
-  `,t([f({type:String})],v.prototype,"src",2),v=t([s("kd-phone-hero")],v);var B=new Map;function L(e){let n=B.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),B.set(e,n)),n}var K=Object.freeze({year:"numeric",month:"long"});function j(e,n=K){return L(n).format(e)}var Jo=Object.freeze({numeric:"auto"});var I=1e3,$=I*60,N=$*60,E=N*24,Y=E*7,Z=E*30,C=E*365,W=C*4,Lo=Object.freeze(new Map([["year",C],["years",C],["quarter",W],["quarters",W],["month",Z],["months",Z],["week",Y],["weeks",Y],["day",E],["days",E],["hour",N],["hours",N],["minute",$],["minutes",$],["second",I],["seconds",I]]));var Ko=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var h=class extends r{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return h.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?z:this.startingDate===void 0?this.date==="present"?c`<time datetime="${h.now.getFullYear()}">Present</time>`:c`<div class="date-range">
+  `,t([f({type:String})],v.prototype,"src",2),v=t([s("kd-phone-hero")],v);var B=new Map;function L(e){let n=B.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),B.set(e,n)),n}var K=Object.freeze({year:"numeric",month:"long"});function j(e,n=K){return L(n).format(e)}var Jo=Object.freeze({numeric:"auto"});var I=1e3,$=I*60,C=$*60,E=C*24,Y=E*7,Z=E*30,N=E*365,V=N*4,Lo=Object.freeze(new Map([["year",N],["years",N],["quarter",V],["quarters",V],["month",Z],["months",Z],["week",Y],["weeks",Y],["day",E],["days",E],["hour",C],["hours",C],["minute",$],["minutes",$],["second",I],["seconds",I]]));var Ko=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var h=class extends r{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return h.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?z:this.startingDate===void 0?this.date==="present"?c`<time datetime="${h.now.getFullYear()}">Present</time>`:c`<div class="date-range">
         <time datetime="${this.endingDate.toISOString()}">${j(this.endingDate)}</time>
       </div>`:this.date==="present"?c`<div class="date-range">
         <time datetime="${this.startingDate.toISOString()}">${j(this.startingDate)}</time> - Present
@@ -126,7 +126,7 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
         </div>
         <slot name="meta" class="meta"></slot>
       </article>
-    `}};h.now=new Date,h.styles=[_,i`
+    `}};h.now=new Date,h.styles=[P,i`
       :host {
         contain: content;
         display: flex;
@@ -351,11 +351,11 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
         flex-direction: column;
         gap: var(--size-5);
       }
-    `],t([P({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=t([s("kd-life-events")],x);function X(e,n,o){return e?n(e):o?.(e)}var k=class extends r{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return c`
+    `],t([_({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=t([s("kd-life-events")],x);function W(e,n,o){return e?n(e):o?.(e)}var k=class extends r{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return c`
       <span role="term"><slot name="term">${this.term}</slot></span>
       <span role="definition"
         ><slot>
-          ${X(this.type==="tags",()=>c`<span class="tags">${this.tags.map(o=>c`<kd-tag>${o}</kd-tag> `)}</span>`,()=>this.definition)}</slot
+          ${W(this.type==="tags",()=>c`<span class="tags">${this.tags.map(o=>c`<kd-tag>${o}</kd-tag> `)}</span>`,()=>this.definition)}</slot
         ></span
       >
     `}};k.styles=[i`
@@ -403,7 +403,7 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
       :host {
         margin-inline-end: var(--spacing-xs);
       }
-    `],T=t([s("kd-tag")],T);var O=class extends r{static{this.shadowRootOptions={...M.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var G=i`
+    `],T=t([s("kd-tag")],T);var O=class extends r{static{this.shadowRootOptions={...M.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var X=i`
   :host {
     display: inline-block;
     font-style: normal;
@@ -414,7 +414,7 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`;var y=class extends r{};y.styles=[G,i`
+`;var y=class extends r{};y.styles=[X,i`
       :host {
         font-family: bootstrap-icons !important;
       }
@@ -6573,7 +6573,7 @@ import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chu
       :host([icon='vignette'])::before {
         content: '\\f903';
       }
-    `],t([f({type:String})],y.prototype,"icon",2),y=t([s("kd-bs-icon")],y);var w=class extends O{constructor(){super();this._mode="light";this.mode=this.preferredMode}get mode(){return this._mode}set mode(o){let l=this._mode;this._mode=o,this.requestUpdate("mode",l),this.updateMode()}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),this.fireEvent("kd-mode-switcher-changed",{mode:this.mode}),document.documentElement.dataset.mode=this.mode}render(){return c`<button class="button" @click=${this.onClick.bind(this)}>
+    `],t([f({type:String})],y.prototype,"icon",2),y=t([s("kd-bs-icon")],y);var w=class extends O{constructor(){super(...arguments);this._mode="light"}get mode(){return this._mode}set mode(o){let l=this._mode;this._mode=o,this.requestUpdate("mode",l)}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}connectedCallback(){super.connectedCallback(),this.mode=this.preferredMode}updated(o){super.updated(o),o.has("mode")&&this.updateMode()}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),this.fireEvent("kd-mode-switcher-changed",{mode:this.mode}),document.documentElement.dataset.mode=this.mode}render(){return c`<button class="button" @click=${this.onClick.bind(this)}>
       <span class="light"><kd-bs-icon icon="sun"></kd-bs-icon></span>
       <span class="dark"><kd-bs-icon icon="moon"></kd-bs-icon></span>
       <span class="dot"></span>
