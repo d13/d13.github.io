@@ -155,6 +155,15 @@
   --color-raw-neutral-80: rgb(189, 199, 213);
   --color-raw-neutral-90: rgb(222, 227, 234);
   --color-raw-neutral-95: rgb(239, 241, 244);
+
+  --color-accent-01: #fff;
+  --color-accent-02: #0d1017;
+  --color-accent-03: #622fb4;
+  --color-accent-04: #202945;
+  --color-accent-05: #bee81e;
+  --color-accent-06: #ffec00;
+  --color-accent-07: #a021ff;
+  --color-accent-08: #ffcc00;
 }
 
 /* semantic color tokens */
@@ -192,6 +201,8 @@
 
   --color-tag-foreground: var(--color-raw-blue-40);
   --color-tag-background: var(--color-raw-neutral-95);
+
+  --kd-ooh-logo-background-color: var(--color-raw-neutral-95);
 }
 
 /* semantic color tokens - dark mode */
@@ -228,6 +239,8 @@
 
     --color-tag-foreground: var(--color-raw-blue-60);
     --color-tag-background: var(--color-raw-neutral-05);
+
+    --kd-ooh-logo-background-color: color-mix(in srgb, var(--color-raw-neutral-05) 50%, transparent);
   }
 }
 
@@ -263,6 +276,8 @@
 
   --color-tag-foreground: var(--color-raw-blue-60);
   --color-tag-background: var(--color-raw-neutral-05);
+
+  --kd-ooh-logo-background-color: color-mix(in srgb, var(--color-raw-neutral-05) 50%, transparent);
 }
 
 /* baseline styles */

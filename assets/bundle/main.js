@@ -1,4 +1,4 @@
-import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chunk-HJSB4PYJ.js";var l=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var V={attribute:!0,type:String,converter:N,reflect:!1,hasChanged:U},Z=(e=V,n,o)=>{let{kind:r,metadata:b}=o,p=globalThis.litPropertyMetadata.get(b);if(p===void 0&&globalThis.litPropertyMetadata.set(b,p=new Map),p.set(o.name,e),r==="accessor"){let{name:h}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(h,d,e)},init(u){return u!==void 0&&this.P(h,void 0,e),u}}}if(r==="setter"){let{name:h}=o;return function(u){let d=this[h];n.call(this,u),this.requestUpdate(h,d,e)}}throw Error("Unsupported decorator location: "+r)};function c(e){return(n,o)=>typeof o=="object"?Z(e,n,o):((r,b,p)=>{let h=b.hasOwnProperty(p);return b.constructor.createProperty(p,h?{...r,wrapped:!0}:r),h?Object.getOwnPropertyDescriptor(b,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function D(e,n){return(o,r,b)=>{let p=h=>h.renderRoot?.querySelector(e)??null;if(n){let{get:h,set:u}=typeof r=="object"?o:b??(()=>{let d=Symbol();return{get(){return this[d]},set(G){this[d]=G}}})();return g(o,r,{get(){let d=h.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,r,{get(){return p(this)}})}}function S(e){return(n,o)=>{let{slot:r,selector:b}=e??{},p="slot"+(r?`[name=${r}]`:":not([name])");return g(n,o,{get(){let h=this.renderRoot?.querySelector(p),u=h?.assignedElements(e)??[];return b===void 0?u:u.filter(d=>d.matches(b))}})}}var M=e=>e??q;function _(e){return class extends e{static{this.shadowRootOptions={...e.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}}}var s=class extends T{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,r){let b;return r===void 0?b=new CustomEvent(o):b=new CustomEvent(o,{detail:r}),this.dispatchEvent(b)}};var P=i`
+import{a as t,b as i,c as U,d as S,e as c,f as z,g as M,h as _}from"./chunks/chunk-HJSB4PYJ.js";var s=e=>(n,o)=>{o!==void 0?o.addInitializer(()=>{customElements.define(e,n)}):customElements.define(e,n)};var Q={attribute:!0,type:String,converter:U,reflect:!1,hasChanged:S},J=(e=Q,n,o)=>{let{kind:l,metadata:a}=o,p=globalThis.litPropertyMetadata.get(a);if(p===void 0&&globalThis.litPropertyMetadata.set(a,p=new Map),p.set(o.name,e),l==="accessor"){let{name:b}=o;return{set(u){let d=n.get.call(this);n.set.call(this,u),this.requestUpdate(b,d,e)},init(u){return u!==void 0&&this.P(b,void 0,e),u}}}if(l==="setter"){let{name:b}=o;return function(u){let d=this[b];n.call(this,u),this.requestUpdate(b,d,e)}}throw Error("Unsupported decorator location: "+l)};function f(e){return(n,o)=>typeof o=="object"?J(e,n,o):((l,a,p)=>{let b=a.hasOwnProperty(p);return a.constructor.createProperty(p,b?{...l,wrapped:!0}:l),b?Object.getOwnPropertyDescriptor(a,p):void 0})(e,n,o)}var g=(e,n,o)=>(o.configurable=!0,o.enumerable=!0,Reflect.decorate&&typeof n!="object"&&Object.defineProperty(e,n,o),o);function F(e,n){return(o,l,a)=>{let p=b=>b.renderRoot?.querySelector(e)??null;if(n){let{get:b,set:u}=typeof l=="object"?o:a??(()=>{let d=Symbol();return{get(){return this[d]},set(V){this[d]=V}}})();return g(o,l,{get(){let d=b.call(this);return d===void 0&&(d=p(this),(d!==null||this.hasUpdated)&&u.call(this,d)),d}})}return g(o,l,{get(){return p(this)}})}}function P(e){return(n,o)=>{let{slot:l,selector:a}=e??{},p="slot"+(l?`[name=${l}]`:":not([name])");return g(n,o,{get(){let b=this.renderRoot?.querySelector(p),u=b?.assignedElements(e)??[];return a===void 0?u:u.filter(d=>d.matches(a))}})}}var R=e=>e??z;function H(e){return class extends e{static{this.shadowRootOptions={...e.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}}}var r=class extends M{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let o of this._disposables)o.dispose()}fireEvent(o,l){let a;return l===void 0?a=new CustomEvent(o):a=new CustomEvent(o,{detail:l}),this.dispatchEvent(a)}};var A=i`
   :host {
     display: contents;
   }
@@ -24,14 +24,14 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
     outline: 1px solid var(--color-focus-foreground);
     outline-offset: 1px;
   }
-`;var m=class extends _(s){render(){return f`<a
+`;var m=class extends H(r){render(){return c`<a
       class="button"
       part="base"
-      href="${M(this.href)}"
-      target="${M(this.target)}"
-      rel="${M(this.rel)}"
+      href="${R(this.href)}"
+      target="${R(this.target)}"
+      rel="${R(this.rel)}"
       ><slot></slot
-    ></a>`}};m.styles=[P],t([D(".button",!0)],m.prototype,"_control",2),t([c()],m.prototype,"href",2),t([c()],m.prototype,"target",2),t([c()],m.prototype,"rel",2),m=t([l("kd-link-button")],m);var v=class extends s{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return f`<div class="container"><slot class="content"></slot></div>`}};v.styles=i`
+    ></a>`}};m.styles=[A],t([F(".button",!0)],m.prototype,"_control",2),t([f()],m.prototype,"href",2),t([f()],m.prototype,"target",2),t([f()],m.prototype,"rel",2),m=t([s("kd-link-button")],m);var v=class extends r{updated(){this.src&&this.style.setProperty("--kd-phone-hero-background-image",`url(${this.src})`)}render(){return c`<div class="container"><slot class="content"></slot></div>`}};v.styles=i`
     *,
     *::before,
     *::after {
@@ -100,19 +100,19 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
       display: block;
       max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
     }
-  `,t([c({type:String})],v.prototype,"src",2),v=t([l("kd-phone-hero")],v);var H=new Map;function Q(e){let n=H.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),H.set(e,n)),n}var J=Object.freeze({year:"numeric",month:"long"});function E(e,n=J){return Q(n).format(e)}var Zo=Object.freeze({numeric:"auto"});var F=1e3,R=F*60,I=R*60,z=I*24,A=z*7,Y=z*30,$=z*365,W=$*4,Qo=Object.freeze(new Map([["year",$],["years",$],["quarter",W],["quarters",W],["month",Y],["months",Y],["week",A],["weeks",A],["day",z],["days",z],["hour",I],["hours",I],["minute",R],["minutes",R],["second",F],["seconds",F]]));var Jo=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var a=class extends s{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return a.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?q:this.startingDate===void 0?this.date==="present"?f`<time datetime="${a.now.getFullYear()}">Present</time>`:f`<div class="date-range">
-        <time datetime="${this.endingDate.toISOString()}">${E(this.endingDate)}</time>
-      </div>`:this.date==="present"?f`<div class="date-range">
-        <time datetime="${this.startingDate.toISOString()}">${E(this.startingDate)}</time> - Present
-      </div>`:f`<div class="date-range">
-      <time datetime="${this.startingDate.toISOString()}">${E(this.startingDate)}</time> -
-      <time datetime="${this.endingDate.toISOString()}">${E(this.endingDate)}</time>
-    </div>`}renderMedia(){return this.asset===void 0?q:f`<div class="media-zone">
+  `,t([f({type:String})],v.prototype,"src",2),v=t([s("kd-phone-hero")],v);var B=new Map;function L(e){let n=B.get(e);return n||(n=new Intl.DateTimeFormat(void 0,e),B.set(e,n)),n}var K=Object.freeze({year:"numeric",month:"long"});function j(e,n=K){return L(n).format(e)}var Jo=Object.freeze({numeric:"auto"});var I=1e3,$=I*60,N=$*60,E=N*24,Y=E*7,Z=E*30,C=E*365,W=C*4,Lo=Object.freeze(new Map([["year",C],["years",C],["quarter",W],["quarters",W],["month",Z],["months",Z],["week",Y],["weeks",Y],["day",E],["days",E],["hour",N],["hours",N],["minute",$],["minutes",$],["second",I],["seconds",I]]));var Ko=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var h=class extends r{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return h.now;let o=new Date(this.date);if(o.toString()!=="Invalid Date")return o}get startingDate(){if(this.startDate===void 0)return;let o=new Date(this.startDate);if(o.toString()!=="Invalid Date")return o}renderDateRange(){return this.endingDate===void 0?z:this.startingDate===void 0?this.date==="present"?c`<time datetime="${h.now.getFullYear()}">Present</time>`:c`<div class="date-range">
+        <time datetime="${this.endingDate.toISOString()}">${j(this.endingDate)}</time>
+      </div>`:this.date==="present"?c`<div class="date-range">
+        <time datetime="${this.startingDate.toISOString()}">${j(this.startingDate)}</time> - Present
+      </div>`:c`<div class="date-range">
+      <time datetime="${this.startingDate.toISOString()}">${j(this.startingDate)}</time> -
+      <time datetime="${this.endingDate.toISOString()}">${j(this.endingDate)}</time>
+    </div>`}renderMedia(){return this.asset===void 0?z:c`<div class="media-zone">
       <div class="media-container">
         <img class="media-cover" loading="lazy" src="${this.asset}" alt="" />
         <img class="media" loading="lazy" src="${this.asset}" alt="" />
       </div>
-    </div>`}render(){return f`
+    </div>`}render(){return c`
       <div class="timeline-zone">
         <span class="year2"><span class="h-sr-only">${this.type} in year </span>${this.endingDate?.getFullYear()}</span>
         <span class="event-tag"></span>
@@ -126,7 +126,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
         </div>
         <slot name="meta" class="meta"></slot>
       </article>
-    `}};a.now=new Date,a.styles=[C,i`
+    `}};h.now=new Date,h.styles=[_,i`
       :host {
         contain: content;
         display: flex;
@@ -307,7 +307,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
       ::slotted(*:last-child) {
         margin-block-end: 0;
       }
-    `],t([c()],a.prototype,"type",2),t([c()],a.prototype,"asset",2),t([c({attribute:"asset-type"})],a.prototype,"assetType",2),t([c()],a.prototype,"date",2),t([c({attribute:"start-date"})],a.prototype,"startDate",2),t([c()],a.prototype,"url",2),a=t([l("kd-life-event")],a);var x=class extends s{render(){return f`<span class="timeline"></span><slot class="events"></slot>`}};x.styles=[i`
+    `],t([f()],h.prototype,"type",2),t([f()],h.prototype,"asset",2),t([f({attribute:"asset-type"})],h.prototype,"assetType",2),t([f()],h.prototype,"date",2),t([f({attribute:"start-date"})],h.prototype,"startDate",2),t([f()],h.prototype,"url",2),h=t([s("kd-life-event")],h);var x=class extends r{render(){return c`<span class="timeline"></span><slot class="events"></slot>`}};x.styles=[i`
       :host {
         display: block;
         position: relative;
@@ -351,11 +351,11 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
         flex-direction: column;
         gap: var(--size-5);
       }
-    `],t([S({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=t([l("kd-life-events")],x);function X(e,n,o){return e?n(e):o?.(e)}var k=class extends s{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return f`
+    `],t([P({selector:"kd-life-event"})],x.prototype,"lifeEventEls",2),x=t([s("kd-life-events")],x);function X(e,n,o){return e?n(e):o?.(e)}var k=class extends r{constructor(){super(...arguments);this.term="";this.definition="";this.type="tags"}get tags(){return this.definition.trim().length===0?[]:this.definition.split(/,(?![^(]*\))/).map(o=>o.trim())}render(){return c`
       <span role="term"><slot name="term">${this.term}</slot></span>
       <span role="definition"
         ><slot>
-          ${X(this.type==="tags",()=>f`<span class="tags">${this.tags.map(o=>f`<kd-tag>${o}</kd-tag> `)}</span>`,()=>this.definition)}</slot
+          ${X(this.type==="tags",()=>c`<span class="tags">${this.tags.map(o=>c`<kd-tag>${o}</kd-tag> `)}</span>`,()=>this.definition)}</slot
         ></span
       >
     `}};k.styles=[i`
@@ -387,7 +387,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
         flex-wrap: wrap;
         gap: var(--spacing-sm) var(--spacing-xs);
       }
-    `],t([c()],k.prototype,"term",2),t([c()],k.prototype,"definition",2),t([c()],k.prototype,"type",2),k=t([l("kd-attribution")],k);var j=class extends s{render(){return f`<slot></slot>`}};j.styles=[i`
+    `],t([f()],k.prototype,"term",2),t([f()],k.prototype,"definition",2),t([f()],k.prototype,"type",2),k=t([s("kd-attribution")],k);var T=class extends r{render(){return c`<slot></slot>`}};T.styles=[i`
       :host {
         display: inline-block;
         padding: var(--spacing-xs) var(--spacing-lg);
@@ -403,7 +403,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
       :host {
         margin-inline-end: var(--spacing-xs);
       }
-    `],j=t([l("kd-tag")],j);var O=class extends s{static{this.shadowRootOptions={...T.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var B=i`
+    `],T=t([s("kd-tag")],T);var O=class extends r{static{this.shadowRootOptions={...M.shadowRootOptions,delegatesFocus:!0}}focus(n){this._control.focus(n)}blur(){this._control.blur()}click(){this._control.click()}};var G=i`
   :host {
     display: inline-block;
     font-style: normal;
@@ -414,7 +414,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`;var y=class extends s{};y.styles=[B,i`
+`;var y=class extends r{};y.styles=[G,i`
       :host {
         font-family: bootstrap-icons !important;
       }
@@ -6573,7 +6573,7 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
       :host([icon='vignette'])::before {
         content: '\\f903';
       }
-    `],t([c({type:String})],y.prototype,"icon",2),y=t([l("kd-bs-icon")],y);var w=class extends O{constructor(){super();this._mode="light";this.mode=this.preferredMode}get mode(){return this._mode}set mode(o){let r=this._mode;this._mode=o,this.requestUpdate("mode",r),this.updateMode()}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),this.fireEvent("kd-mode-switcher-changed",{mode:this.mode}),document.documentElement.dataset.mode=this.mode}render(){return f`<button class="button" @click=${this.onClick.bind(this)}>
+    `],t([f({type:String})],y.prototype,"icon",2),y=t([s("kd-bs-icon")],y);var w=class extends O{constructor(){super();this._mode="light";this.mode=this.preferredMode}get mode(){return this._mode}set mode(o){let l=this._mode;this._mode=o,this.requestUpdate("mode",l),this.updateMode()}get preferredMode(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}updateMode(){let o=`Switch to ${this.mode==="light"?"dark":"light"} mode`;this._control?.setAttribute("aria-label",o),this._control?.setAttribute("title",o),this.fireEvent("kd-mode-switcher-changed",{mode:this.mode}),document.documentElement.dataset.mode=this.mode}render(){return c`<button class="button" @click=${this.onClick.bind(this)}>
       <span class="light"><kd-bs-icon icon="sun"></kd-bs-icon></span>
       <span class="dark"><kd-bs-icon icon="moon"></kd-bs-icon></span>
       <span class="dot"></span>
@@ -6631,5 +6631,72 @@ import{a as t,b as i,c as N,d as U,e as f,f as q,g as T,h as C}from"./chunks/chu
       :host([mode='dark']) .dot {
         transform: translateX(calc(var(--size-1) - var(--spacing-xs)));
       }
-    `],t([D(".button",!0)],w.prototype,"_control",2),t([c({type:String,reflect:!0})],w.prototype,"mode",1),w=t([l("kd-mode-switcher")],w);
+    `],t([F(".button",!0)],w.prototype,"_control",2),t([f({type:String,reflect:!0})],w.prototype,"mode",1),w=t([s("kd-mode-switcher")],w);var q=class extends r{connectedCallback(){super.connectedCallback(),this.role="listitem",this.tabIndex=0}update(n){super.update(n),n.has("accent")&&(this.accent?this.style.setProperty("--kd-ooh-logo-hover-background-color",this.accent):this.style.removeProperty("--kd-ooh-logo-hover-background-color"))}render(){return c`<slot></slot>`}};q.styles=[i`
+      :host {
+        --kd-ooh-logo-depth: 0;
+        --kd-ooh-logo-multi: 1;
+        --kd-ooh-logo-at: calc(var(--kd-ooh-logo-depth) * var(--kd-ooh-logo-multi));
+        --kd-ooh-logo-scale: 0.92;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 16 / 9;
+        padding: var(--spacing-md);
+        background-color: var(--kd-ooh-logo-background-color, var(--color-secondary-background));
+        transition:
+          filter 0.3s ease,
+          transform 0.3s ease,
+          background-color 0.3s ease;
+        /* }
+
+      :host-context(kd-ooh-logos:hover, kd-ooh-logos:focus-within) { */
+        /* filter: blur(var(--kd-ooh-logo-depth));
+        transform: translateZ(calc(var(--kd-ooh-logo-depth) * -1)); */
+        filter: blur(var(--kd-ooh-logo-at));
+        transform: translateZ(calc(var(--kd-ooh-logo-at) * -1)) scale(var(--kd-ooh-logo-scale));
+        z-index: 1;
+      }
+
+      :host(:hover) {
+        --kd-ooh-logo-multi: 0.1;
+        z-index: 2;
+      }
+
+      :host(:focus) {
+        --kd-ooh-logo-multi: 0;
+        --kd-ooh-logo-scale: 1;
+        z-index: 3;
+        background-color: var(--kd-ooh-logo-hover-background-color, var(--color-secondary-background));
+      }
+
+      ::slotted(img) {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    `],t([f()],q.prototype,"accent",2),q=t([s("kd-ooh-logo")],q);var D=class extends r{connectedCallback(){super.connectedCallback(),this.role="list"}render(){return c`<slot class="canvas"></slot>`}};D.styles=[i`
+      :host {
+        display: block;
+        /* padding: var(--size-5) var(--spacing-lg); */
+        padding-block: var(--size-5);
+      }
+
+      .canvas {
+        display: grid;
+        gap: var(--spacing-xl);
+        grid-template-columns: repeat(auto-fit, minmax(var(--size-9), 1fr));
+        transition: gap 0.3s ease;
+        perspective: 300px;
+      }
+
+      /* .canvas:focus-within,
+      .canvas:hover {
+        gap: var(--size-3);
+      } */
+
+      .canvas:focus-within::slotted(kd-ooh-logo),
+      .canvas:hover::slotted(kd-ooh-logo) {
+        --kd-ooh-logo-depth: 8px;
+      }
+    `],D=t([s("kd-ooh-logos")],D);
 /*! For license information please see main.js.LEGAL.txt */
