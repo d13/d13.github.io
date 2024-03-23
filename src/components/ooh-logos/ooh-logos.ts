@@ -14,8 +14,8 @@ export class KdOohLogos extends KdBaseElement {
 
       .canvas {
         display: grid;
-        gap: var(--spacing-xl);
-        grid-template-columns: repeat(auto-fit, minmax(var(--size-9), 1fr));
+        gap: var(--size-3);
+        grid-template-columns: repeat(auto-fit, minmax(var(--size-8), 1fr));
         transition: gap 0.3s ease;
         perspective: 300px;
       }

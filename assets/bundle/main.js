@@ -538,8 +538,8 @@ import{a as l,b as M,c as r,d as U,e as _,f as i,g as z,h as F,i as P}from"./chu
 
       .canvas {
         display: grid;
-        gap: var(--spacing-xl);
-        grid-template-columns: repeat(auto-fit, minmax(var(--size-9), 1fr));
+        gap: var(--size-3);
+        grid-template-columns: repeat(auto-fit, minmax(var(--size-8), 1fr));
         transition: gap 0.3s ease;
         perspective: 300px;
       }
