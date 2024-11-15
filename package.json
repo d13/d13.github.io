@@ -1,6 +1,6 @@
 {
   "name": "d13.github.io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My personal website and general dumping ground to try out my ideas.",
   "private": true,
   "repository": {
@@ -11,7 +11,10 @@
     "portfolio",
     "website"
   ],
-  "author": "Keith Daulton",
+  "author": {
+    "name": "Keith Daulton",
+    "email": "kdaulton@d13design.com"
+  },
   "bugs": {
     "url": "https://github.com/d13/d13.github.io/issues"
   },
@@ -20,13 +23,18 @@
   "scripts": {
     "analyze": "node ./scripts/analyze.js",
     "build": "yarn clean && node ./scripts/build.js",
-    "clean": "rimraf assets/bundle",
+    "clean": "npx rimraf assets/bundle",
     "images": "node ./scripts/images.js",
     "start": "yarn clean && node ./scripts/serve.js",
     "lint": "yarn lint:eslint && yarn lint:analyze",
     "lint:eslint": "eslint \"src/**/*.ts?(x)\" --fix",
-    "lint:analyze": "lit-analyzer"
+    "lint:analyze": "lit-analyzer",
+    "lint:clean": "npx rimraf .eslintcache"
   },
+  "engines": {
+    "node": ">20.0.0"
+  },
+  "packageManager": "yarn@4.1.0",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -45,7 +53,6 @@
     "globby": "^14.0.1",
     "lit-analyzer": "^2.0.3",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
     "sharp": "^0.33.2",
     "ts-lit-plugin": "^2.0.2"
   },
@@ -53,6 +60,5 @@
     "bootstrap-icons": "^1.11.3",
     "lit": "^3.1.2",
     "typescript": "5.3.3"
-  },
-  "packageManager": "yarn@4.1.0"
+  }
 }

@@ -12,10 +12,22 @@ const ctx = await esbuild.context(settings);
 
 await ctx.watch();
 
+const protocol = 'http';
 const { host, port } = await ctx.serve({
+  host: 'localhost',
   port: 5500,
   servedir: '.',
   fallback: '.index.html',
+  onRequest: ({
+    remoteAddress,
+    method,
+    path,
+    status,
+    /** The time to generate the response, not to send it */
+    timeInMS,
+  }) => {
+    console.log(`${remoteAddress} ${method} ${path} ${status} ${timeInMS}ms`);
+  },
 });
 
-console.log(`Serving app at ${host}:${port}.`);
+console.log(`Serving app at: ${protocol}://${host}:${port}`);
