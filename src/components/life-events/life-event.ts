@@ -214,26 +214,50 @@ export class KdLifeEvent extends KdBaseElement {
     return date;
   }
 
+  private renderDateTime(attr?: string) {
+    if (attr === undefined) return undefined;
+
+    if (attr === 'present') {
+      return html`<time datetime="${KdLifeEvent.now.getFullYear()}">Present</time>`;
+    }
+
+    if (attr.length === 4) {
+      return html`<time datetime="${attr}">${attr}</time>`;
+    }
+
+    const date = new Date(attr);
+    if (date.toString() === 'Invalid Date') return undefined;
+
+    return html`<time datetime="${date.toISOString()}">${formatDate(date)}</time>`;
+  }
+
   private renderDateRange() {
-    if (this.endingDate === undefined) return nothing;
-
-    if (this.startingDate === undefined) {
-      if (this.date === 'present') return html`<time datetime="${KdLifeEvent.now.getFullYear()}">Present</time>`;
-      return html`<div class="date-range">
-        <time datetime="${this.endingDate.toISOString()}">${formatDate(this.endingDate)}</time>
-      </div>`;
+    if (this.date === this.startDate) {
+      return this.renderDateTime(this.date);
     }
 
-    if (this.date === 'present') {
-      return html`<div class="date-range">
-        <time datetime="${this.startingDate.toISOString()}">${formatDate(this.startingDate)}</time> - Present
-      </div>`;
+    const dates = [];
+
+    const startDate = this.renderDateTime(this.startDate);
+    if (startDate !== undefined) {
+      dates.push(startDate);
     }
 
-    return html`<div class="date-range">
-      <time datetime="${this.startingDate.toISOString()}">${formatDate(this.startingDate)}</time> -
-      <time datetime="${this.endingDate.toISOString()}">${formatDate(this.endingDate)}</time>
-    </div>`;
+    const endDate = this.renderDateTime(this.date);
+    if (endDate !== undefined) {
+      dates.push(endDate);
+    }
+
+    if (dates.length === 0) {
+      return nothing;
+    }
+
+    const [start, end] = dates;
+    if (end === undefined) {
+      return start;
+    }
+
+    return html`<div class="date-range">${start} <span aria-label="to">-</span> ${end}</div>`;
   }
 
   private renderMedia() {
