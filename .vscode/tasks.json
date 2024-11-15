@@ -13,7 +13,7 @@
       "script": "clean",
       "problemMatcher": [],
       "label": "Run clean",
-      "detail": "rimraf assets/bundle"
+      "detail": "npx rimraf assets/bundle"
     }
   ]
 }
