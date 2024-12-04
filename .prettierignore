@@ -1,3 +1,7 @@
 dist
 out
 node_modules
+assets/bundle
+assets/favicon-opt
+assets/media-opt
+assets/refs
