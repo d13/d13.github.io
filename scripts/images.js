@@ -4,6 +4,8 @@ import { existsSync } from 'fs';
 import { writeFile, mkdir } from 'fs/promises';
 import { dirname } from 'path';
 
+console.time('Image optimization completed');
+
 const createFileAndDirectories = async (file, buffer) => {
   const dir = dirname(file);
   if (!existsSync(dir)) {
@@ -39,4 +41,5 @@ await Promise.all(
     ['favicon', 'png'],
   ].map(([dir, ext]) => imageOptimize(dir, ext)),
 );
-console.log('Images optimized');
+
+console.timeEnd('Image optimization completed');

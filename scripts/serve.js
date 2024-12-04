@@ -1,6 +1,8 @@
 import esbuild from 'esbuild';
 import { createBuildSettings } from './settings.js';
 
+console.time('Serving started');
+
 const settings = createBuildSettings({
   sourcemap: 'inline',
   banner: {
@@ -29,5 +31,7 @@ const { host, port } = await ctx.serve({
     console.log(`${remoteAddress} ${method} ${path} ${status} ${timeInMS}ms`);
   },
 });
+
+console.timeEnd('Serving started');
 
 console.log(`Serving app at: ${protocol}://${host}:${port}`);
