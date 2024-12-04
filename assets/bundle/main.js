@@ -1,4 +1,4 @@
-import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chunks/chunk-MD3C3WXH.js";var d=l=>(r,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(l,r)}):customElements.define(l,r)};var K={attribute:!0,type:String,converter:S,reflect:!1,hasChanged:U},ee=(l=K,r,e)=>{let{kind:t,metadata:c}=e,p=globalThis.litPropertyMetadata.get(c);if(p===void 0&&globalThis.litPropertyMetadata.set(c,p=new Map),p.set(e.name,l),t==="accessor"){let{name:f}=e;return{set(h){let m=r.get.call(this);r.set.call(this,h),this.requestUpdate(f,m,l)},init(h){return h!==void 0&&this.P(f,void 0,l),h}}}if(t==="setter"){let{name:f}=e;return function(h){let m=this[f];r.call(this,h),this.requestUpdate(f,m,l)}}throw Error("Unsupported decorator location: "+t)};function o(l){return(r,e)=>typeof e=="object"?ee(l,r,e):((t,c,p)=>{let f=c.hasOwnProperty(p);return c.constructor.createProperty(p,f?{...t,wrapped:!0}:t),f?Object.getOwnPropertyDescriptor(c,p):void 0})(l,r,e)}var b=(l,r,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof r!="object"&&Object.defineProperty(l,r,e),e);function M(l,r){return(e,t,c)=>{let p=f=>f.renderRoot?.querySelector(l)??null;if(r){let{get:f,set:h}=typeof t=="object"?e:c??(()=>{let m=Symbol();return{get(){return this[m]},set(L){this[m]=L}}})();return b(e,t,{get(){let m=f.call(this);return m===void 0&&(m=p(this),(m!==null||this.hasUpdated)&&h.call(this,m)),m}})}return b(e,t,{get(){return p(this)}})}}function P(l){return(r,e)=>{let{slot:t,selector:c}=l??{},p="slot"+(t?`[name=${t}]`:":not([name])");return b(r,e,{get(){let f=this.renderRoot?.querySelector(p),h=f?.assignedElements(l)??[];return c===void 0?h:h.filter(m=>m.matches(c))}})}}var R=l=>l??z;function H(l){return class extends l{static{this.shadowRootOptions={...l.shadowRootOptions,delegatesFocus:!0}}focus(r){this._control.focus(r)}blur(){this._control.blur()}click(){this._control.click()}}}var s=class extends D{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let e of this._disposables)e.dispose()}fireEvent(e,t){let c;return t===void 0?c=new CustomEvent(e):c=new CustomEvent(e,{detail:t}),this.dispatchEvent(c)}};var A=n`
+import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chunks/chunk-YBJVVUAP.js";var d=l=>(r,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(l,r)}):customElements.define(l,r)};var K={attribute:!0,type:String,converter:S,reflect:!1,hasChanged:U},ee=(l=K,r,e)=>{let{kind:t,metadata:c}=e,p=globalThis.litPropertyMetadata.get(c);if(p===void 0&&globalThis.litPropertyMetadata.set(c,p=new Map),p.set(e.name,l),t==="accessor"){let{name:f}=e;return{set(h){let m=r.get.call(this);r.set.call(this,h),this.requestUpdate(f,m,l)},init(h){return h!==void 0&&this.P(f,void 0,l),h}}}if(t==="setter"){let{name:f}=e;return function(h){let m=this[f];r.call(this,h),this.requestUpdate(f,m,l)}}throw Error("Unsupported decorator location: "+t)};function o(l){return(r,e)=>typeof e=="object"?ee(l,r,e):((t,c,p)=>{let f=c.hasOwnProperty(p);return c.constructor.createProperty(p,f?{...t,wrapped:!0}:t),f?Object.getOwnPropertyDescriptor(c,p):void 0})(l,r,e)}var b=(l,r,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof r!="object"&&Object.defineProperty(l,r,e),e);function M(l,r){return(e,t,c)=>{let p=f=>f.renderRoot?.querySelector(l)??null;if(r){let{get:f,set:h}=typeof t=="object"?e:c??(()=>{let m=Symbol();return{get(){return this[m]},set(L){this[m]=L}}})();return b(e,t,{get(){let m=f.call(this);return m===void 0&&(m=p(this),(m!==null||this.hasUpdated)&&h.call(this,m)),m}})}return b(e,t,{get(){return p(this)}})}}function P(l){return(r,e)=>{let{slot:t,selector:c}=l??{},p="slot"+(t?`[name=${t}]`:":not([name])");return b(r,e,{get(){let f=this.renderRoot?.querySelector(p),h=f?.assignedElements(l)??[];return c===void 0?h:h.filter(m=>m.matches(c))}})}}var R=l=>l??z;function H(l){return class extends l{static{this.shadowRootOptions={...l.shadowRootOptions,delegatesFocus:!0}}focus(r){this._control.focus(r)}blur(){this._control.blur()}click(){this._control.click()}}}var s=class extends D{constructor(){super(...arguments);this._disposables=[]}disconnectedCallback(){super.disconnectedCallback();for(let e of this._disposables)e.dispose()}fireEvent(e,t){let c;return t===void 0?c=new CustomEvent(e):c=new CustomEvent(e,{detail:t}),this.dispatchEvent(c)}};var A=n`
   :host {
     display: contents;
   }
@@ -38,22 +38,34 @@ import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chu
       box-sizing: border-box;
     }
     :host {
-      --kd-phone-hero-block-offset: 12vh;
+      --kd-phone-hero-block-offset: 30vh;
       --kd-phone-hero-content-width: 80;
       --kd-phone-hero-content-gap: 20px;
       display: block;
       contain: content;
       height: 100%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: auto 100%;
-      background-position: left calc((var(--kd-phone-hero-content-width) * 1vw) + var(--kd-phone-hero-content-gap))
-        bottom calc(-1 * var(--kd-phone-hero-block-offset));
-      background-image: var(--kd-phone-hero-background-image, none);
+      background-image: none;
 
-      animation-name: phone-home;
-      animation-duration: 0.65s;
       will-change: contents;
+    }
+
+    @media (max-width: 623px) {
+      :host::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        content: '';
+        display: block;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: left 50% top 50vh;
+        background-image: var(--kd-phone-hero-background-image, none);
+        opacity: 0.3;
+        z-index: -1;
+      }
     }
 
     @media (min-width: 480px) {
@@ -66,6 +78,14 @@ import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chu
     @media (min-width: 624px) {
       :host {
         --kd-phone-hero-content-width: 60;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto 100%;
+        background-position: left calc((var(--kd-phone-hero-content-width) * 1vw) + var(--kd-phone-hero-content-gap))
+          bottom calc(-1 * var(--kd-phone-hero-block-offset));
+        background-image: var(--kd-phone-hero-background-image, none);
+        animation-name: phone-home;
+        animation-duration: 0.65s;
       }
     }
 
@@ -92,13 +112,24 @@ import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chu
       height: 100%;
       max-width: 900px;
       margin-inline: auto;
-      padding-block-start: var(--kd-phone-hero-block-offset);
+      padding-block-start: calc(0.4 * var(--kd-phone-hero-block-offset));
       padding-inline: var(--spacing-md);
+    }
+
+    @media (min-width: 624px) {
+      .container {
+        padding-block-start: var(--kd-phone-hero-block-offset);
+      }
     }
 
     .content {
       display: block;
-      max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
+    }
+
+    @media (min-width: 624px) {
+      .content {
+        max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
+      }
     }
   `,i([o({type:String})],v.prototype,"src",2),v=i([d("kd-phone-hero")],v);var B=new Map;function le(l){let r=B.get(l);return r||(r=new Intl.DateTimeFormat(void 0,l),B.set(l,r)),r}var re=Object.freeze({year:"numeric",month:"long"});function X(l,r=re){return le(r).format(l)}var il=Object.freeze({numeric:"auto"});var I=1e3,O=I*60,C=O*60,E=C*24,Y=E*7,Z=E*30,$=E*365,W=$*4,tl=Object.freeze(new Map([["year",$],["years",$],["quarter",W],["quarters",W],["month",Z],["months",Z],["week",Y],["weeks",Y],["day",E],["days",E],["hour",C],["hours",C],["minute",O],["minutes",O],["second",I],["seconds",I]]));var al=Object.freeze({localeMatcher:"best fit",numeric:"always",style:"narrow"});var u=class extends s{constructor(){super(...arguments);this.type="event";this.assetType="image"}get endingDate(){if(this.date==="present")return u.now;let e=new Date(this.date);if(e.toString()!=="Invalid Date")return e}get startingDate(){if(this.startDate===void 0)return;let e=new Date(this.startDate);if(e.toString()!=="Invalid Date")return e}renderDateTime(e){if(e===void 0)return;if(e==="present")return a`<time datetime="${u.now.getFullYear()}">Present</time>`;if(e.length===4)return a`<time datetime="${e}">${e}</time>`;let t=new Date(e);if(t.toString()!=="Invalid Date")return a`<time datetime="${t.toISOString()}">${X(t)}</time>`}renderDateRange(){if(this.date===this.startDate)return this.renderDateTime(this.date);let e=[],t=this.renderDateTime(this.startDate);t!==void 0&&e.push(t);let c=this.renderDateTime(this.date);if(c!==void 0&&e.push(c),e.length===0)return z;let[p,f]=e;return f===void 0?p:a`<div class="date-range">${p} <span aria-label="to">-</span> ${f}</div>`}renderMedia(){return this.asset===void 0?z:a`<div class="media-zone">
       <div class="media-container">
