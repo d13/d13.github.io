@@ -11,22 +11,34 @@ export class KdPhoneHero extends KdBaseElement {
       box-sizing: border-box;
     }
     :host {
-      --kd-phone-hero-block-offset: 12vh;
+      --kd-phone-hero-block-offset: 30vh;
       --kd-phone-hero-content-width: 80;
       --kd-phone-hero-content-gap: 20px;
       display: block;
       contain: content;
       height: 100%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: auto 100%;
-      background-position: left calc((var(--kd-phone-hero-content-width) * 1vw) + var(--kd-phone-hero-content-gap))
-        bottom calc(-1 * var(--kd-phone-hero-block-offset));
-      background-image: var(--kd-phone-hero-background-image, none);
+      background-image: none;
 
-      animation-name: phone-home;
-      animation-duration: 0.65s;
       will-change: contents;
+    }
+
+    @media (max-width: 623px) {
+      :host::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        content: '';
+        display: block;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: left 50% top 50vh;
+        background-image: var(--kd-phone-hero-background-image, none);
+        opacity: 0.3;
+        z-index: -1;
+      }
     }
 
     @media (min-width: 480px) {
@@ -39,6 +51,14 @@ export class KdPhoneHero extends KdBaseElement {
     @media (min-width: 624px) {
       :host {
         --kd-phone-hero-content-width: 60;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto 100%;
+        background-position: left calc((var(--kd-phone-hero-content-width) * 1vw) + var(--kd-phone-hero-content-gap))
+          bottom calc(-1 * var(--kd-phone-hero-block-offset));
+        background-image: var(--kd-phone-hero-background-image, none);
+        animation-name: phone-home;
+        animation-duration: 0.65s;
       }
     }
 
@@ -65,13 +85,24 @@ export class KdPhoneHero extends KdBaseElement {
       height: 100%;
       max-width: 900px;
       margin-inline: auto;
-      padding-block-start: var(--kd-phone-hero-block-offset);
+      padding-block-start: calc(0.4 * var(--kd-phone-hero-block-offset));
       padding-inline: var(--spacing-md);
+    }
+
+    @media (min-width: 624px) {
+      .container {
+        padding-block-start: var(--kd-phone-hero-block-offset);
+      }
     }
 
     .content {
       display: block;
-      max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
+    }
+
+    @media (min-width: 624px) {
+      .content {
+        max-inline-size: calc(var(--kd-phone-hero-content-width) * 1%);
+      }
     }
   `;
 

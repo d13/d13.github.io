@@ -33,7 +33,7 @@
   --font-weight-bold: 700;
 
   /* modular scale tokens - https://docs.google.com/spreadsheets/d/1hX1n-Z9jlRxA6zbIf2z8VYe56AYGVC_M2xTw9SNGwyc/edit#gid=0 */
-  /* --size-scale: 1.333;
+  --size-scale: 1.2;
   --size--5: calc(pow(var(--size-scale), -5) * 1rem);
   --size--4: calc(pow(var(--size-scale), -4) * 1rem);
   --size--3: calc(pow(var(--size-scale), -3) * 1rem);
@@ -54,8 +54,9 @@
   --size-12: calc(pow(var(--size-scale), 12) * 1rem);
   --size-13: calc(pow(var(--size-scale), 13) * 1rem);
   --size-14: calc(pow(var(--size-scale), 14) * 1rem);
-  --size-15: calc(pow(var(--size-scale), 15) * 1rem); */
+  --size-15: calc(pow(var(--size-scale), 15) * 1rem);
 
+  /* pow() is finally baseline!
   --size--5: 0.24rem;
   --size--4: 0.32rem;
   --size--3: 0.42rem;
@@ -82,6 +83,7 @@
   --size-18: 176.58rem;
   --size-19: 235.38rem;
   --size-20: 313.76rem;
+  */
 
   /* spacing tokens */
   --spacing-xs: var(--size--5);
@@ -164,6 +166,18 @@
   --color-accent-06: #ffec00;
   --color-accent-07: #a021ff;
   --color-accent-08: #ffcc00;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --size-scale: 1.26;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --size-scale: 1.333;
+  }
 }
 
 /* semantic color tokens */
