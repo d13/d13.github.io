@@ -41,6 +41,12 @@ export class KdPhoneHero extends KdBaseElement {
       }
     }
 
+    @media (max-width: 623px) and (hover: none) {
+      :host::before {
+        background-attachment: initial;
+      }
+    }
+
     @media (min-width: 480px) {
       :host {
         --kd-phone-hero-block-offset: 30vh;
@@ -59,6 +65,12 @@ export class KdPhoneHero extends KdBaseElement {
         background-image: var(--kd-phone-hero-background-image, none);
         animation-name: phone-home;
         animation-duration: 0.65s;
+      }
+    }
+
+    @media (min-width: 624px) and (hover: none) {
+      :host {
+        background-attachment: initial;
       }
     }
 
