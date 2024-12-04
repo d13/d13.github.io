@@ -45,6 +45,8 @@ Optimize images from `assets/media` and `assets/favicon` and saves the optimized
 yarn images
 ```
 
+## Release
+
 Build and bundle files in `src` to `assets/bundle`
 
 ```bash
@@ -56,3 +58,5 @@ To analyze the bundle
 ```bash
 yarn analyze
 ```
+
+The built files from `assets/*` plus `index.html` can be served from any static file server. GitHub Pages are used for this repository and deployed to https://d13.github.io/.
