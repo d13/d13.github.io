@@ -68,6 +68,12 @@ import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chu
       }
     }
 
+    @media (max-width: 623px) and (hover: none) {
+      :host::before {
+        background-attachment: initial;
+      }
+    }
+
     @media (min-width: 480px) {
       :host {
         --kd-phone-hero-block-offset: 30vh;
@@ -86,6 +92,12 @@ import{a as i,b as N,c as n,d as S,e as U,f as a,g as z,h as D,i as _}from"./chu
         background-image: var(--kd-phone-hero-background-image, none);
         animation-name: phone-home;
         animation-duration: 0.65s;
+      }
+    }
+
+    @media (min-width: 624px) and (hover: none) {
+      :host {
+        background-attachment: initial;
       }
     }
 
