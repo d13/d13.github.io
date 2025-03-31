@@ -1,12 +1,13 @@
-import { ConfigEnv, defineConfig, UserConfig } from 'vite';
+import { ConfigEnv, defineConfig, UserConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
-  const isProd = mode === 'production';
-  console.log('isProd', isProd);
+  const isProd = mode === "production";
+  console.log("isProd", isProd);
 
   const config = {
     build: {
+      outDir: "docs",
       minify: isProd,
       sourcemap: !isProd,
       //   cssCodeSplit: true,
