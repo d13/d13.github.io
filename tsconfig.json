@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "esModuleInterop": true,
+    "target": "ES2020",
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "lib": ["dom", "dom.iterable", "es2022", "esnext.disposable"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "outDir": "dist",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2022",
     "useDefineForClassFields": false,
-    "useUnknownInCatchVariables": false
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "types": ["vite/client"]
   },
-  "includes": ["src/**/*"]
+  "include": ["src"]
 }

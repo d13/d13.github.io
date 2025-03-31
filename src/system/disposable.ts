@@ -1,27 +1,26 @@
-export class Disposable {
-  static from(...disposablesFns: { dispose: () => unknown }[]): Disposable {
-    let disposables: { dispose: () => unknown }[] | undefined = disposablesFns;
-    return new Disposable(() => {
-      if (!disposables) return;
+import { once } from './function';
 
-      for (const disposable of disposables) {
-        disposable.dispose?.();
-      }
+// TODO: include Symbol.dispose when TC39 proposal is implemented
+export interface Disposable {
+  dispose: () => void;
+}
 
-      disposables = undefined;
-    });
+export interface AsyncDisposable {
+  dispose: () => Promise<void>;
+}
+
+export function toDisposable(dispose: () => void, options?: { once: boolean }): Disposable {
+  if (options?.once) {
+    dispose = once(dispose);
   }
 
-  private disposeFn?: () => unknown;
+  return { dispose };
+}
 
-  constructor(disposeFn: () => unknown) {
-    this.disposeFn = disposeFn;
+export function toAsyncDisposable(dispose: () => Promise<void>, options?: { once: boolean }): AsyncDisposable {
+  if (options?.once) {
+    dispose = once(dispose);
   }
 
-  dispose() {
-    if (!this.disposeFn) return;
-
-    this.disposeFn();
-    this.disposeFn = undefined;
-  }
+  return { dispose };
 }

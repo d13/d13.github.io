@@ -1,8 +1,19 @@
-import { Disposable } from './disposable';
+/* global document, window */
+import { Disposable, toDisposable } from './disposable';
 
-// References:
-// https://github.com/d13/d13.github.io/blob/68bd82a889db4b153ee54e45685cba034cc673fc/src/ts/utility/events.ts
-// https://github.com/gitkraken/vscode-gitlens/blob/main/src/webviews/apps/shared/dom.ts
+export function onReady(target: Document | Window, callback: () => void, thisArg?: unknown, callIfReady = true): void {
+  const isWindow = target === window;
+  const readyState = document.readyState;
+
+  const boundCallback = thisArg ? callback.bind(thisArg) : callback;
+
+  if (readyState === 'loading' || (readyState === 'interactive' && isWindow)) {
+    const eventName = isWindow ? 'load' : 'DOMContentLoaded';
+    target.addEventListener(eventName, boundCallback, { once: true });
+  } else if (callIfReady) {
+    boundCallback();
+  }
+}
 
 export function on<K extends keyof WindowEventMap>(
   element: Window,
@@ -22,42 +33,40 @@ export function on<K extends keyof ElementEventMap>(
   listener: (e: ElementEventMap[K]) => void,
   options?: boolean | AddEventListenerOptions,
 ): Disposable;
-export function on<K extends keyof (ElementEventMap | DocumentEventMap | WindowEventMap)>(
-  element: Element | Document | Window,
+export function on<K extends keyof GlobalEventHandlersEventMap>(
+  element: HTMLElement,
+  name: K,
+  listener: (e: GlobalEventHandlersEventMap[K]) => void,
+  options?: boolean | AddEventListenerOptions,
+): Disposable;
+export function on<K extends keyof (ElementEventMap | DocumentEventMap | WindowEventMap | GlobalEventHandlersEventMap)>(
+  element: Element | Document | Window | HTMLElement,
   name: K,
   listener: EventListenerOrEventListenerObject,
   options?: boolean | AddEventListenerOptions,
 ): Disposable {
+  options ??= false;
   element.addEventListener(name, listener, options);
 
-  return new Disposable(() => {
-    let removeOptions: boolean | EventListenerOptions | undefined;
-    if (options !== undefined) {
-      if (typeof options === 'boolean') {
-        removeOptions = options;
-      } else {
-        removeOptions = options.capture;
-      }
-    }
-    element.removeEventListener(name, listener, removeOptions);
+  return toDisposable(() => {
+    element.removeEventListener(name, listener, options);
   });
 }
 
-export function delegateOn<T extends Element, K extends keyof ElementEventMap>(
+export function delegateOn<K extends keyof (GlobalEventHandlersEventMap | ElementEventMap)>(
   element: Element,
   selector: string,
   name: K,
-  listener: (e: ElementEventMap[K], target: T) => void,
+  listener: (e: (GlobalEventHandlersEventMap | ElementEventMap)[K], target: Element) => void,
   options?: boolean | AddEventListenerOptions,
 ): Disposable {
-  const delegateListener = (e: ElementEventMap[K]) => {
-    const originalTarget = e.target as Element;
-    const target = originalTarget?.closest(selector);
-    if (!target) {
+  const delegateListener = (e: Event) => {
+    const delegateTarget: Element | null | undefined = (e.target as Element | null)?.closest(selector);
+    if (!delegateTarget) {
       return;
     }
 
-    listener(e, target as T);
+    listener(e as (GlobalEventHandlersEventMap | ElementEventMap)[K], delegateTarget);
   };
 
   return on(element, name, delegateListener, options);
