@@ -1,0 +1,13 @@
+{
+  "debug.hideLauncherWhileDebugging": true,
+  "debug.toolBarLocation": "commandCenter", // "floating" is stuck under window buttons
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.insertFinalNewline": true,
+  // "files.trimTrailingWhitespace": true,
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
