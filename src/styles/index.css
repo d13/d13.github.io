@@ -63,7 +63,7 @@
 }
 
 @layer props.color {
-  :where([data-theme='auto'], [data-theme='light']) {
+  :where([data-theme="auto"], [data-theme="light"]) {
     color-scheme: light;
     --color-min: #fff;
     --color-max: #000;
@@ -75,13 +75,17 @@
 
     --color-link-foreground: var(--color-raw-blue-50);
     --color-link-hover-foreground: var(--color-raw-blue-40);
-    --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
+    --color-link-visited-foreground: color-mix(
+      in srgb,
+      var(--color-raw-blue-50) 65%,
+      var(--color-raw-red-50)
+    );
 
     --color-elevation-shadow: rgba(0, 0, 0, 0.6);
   }
 
   @media (prefers-color-scheme: dark) {
-    :where([data-theme='auto']) {
+    :where([data-theme="auto"]) {
       color-scheme: dark;
       --color-min: #000;
       --color-max: #fff;
@@ -91,13 +95,17 @@
 
       --color-link-foreground: var(--color-raw-blue-60);
       --color-link-hover-foreground: var(--color-raw-blue-50);
-      --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
+      --color-link-visited-foreground: color-mix(
+        in srgb,
+        var(--color-raw-blue-60) 65%,
+        var(--color-raw-red-60)
+      );
 
       --color-elevation-shadow: rgba(0, 0, 0, 0.6);
     }
   }
 
-  :where([data-theme='dark']) {
+  :where([data-theme="dark"]) {
     color-scheme: dark;
     --color-min: #000;
     --color-max: #fff;
@@ -107,7 +115,11 @@
 
     --color-link-foreground: var(--color-raw-blue-60);
     --color-link-hover-foreground: var(--color-raw-blue-50);
-    --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
+    --color-link-visited-foreground: color-mix(
+      in srgb,
+      var(--color-raw-blue-60) 65%,
+      var(--color-raw-red-60)
+    );
 
     --color-elevation-shadow: rgba(0, 0, 0, 0.6);
   }
@@ -180,13 +192,16 @@
 @layer props.fonts {
   :root {
     --font-family-base:
-      'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC', 'Segoe UI',
-      /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
-      /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
+      "proxima-nova", /* mac */ -apple-system, BlinkMacSystemFont,
+      /* win */ "Segoe WPC", "Segoe UI", /* mobile */ "Roboto",
+      /* nix */ "Oxygen", "Ubuntu", "Cantarell", /* FFOS */ "Fira Sans",
+      /* 'Droid */ "Droid Sans", /* Boring */ "Helvetica Neue", sans-serif;
     --font-family-heading:
-      'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC',
-      'Segoe UI', /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
-      /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
+      "proxima-nova-condensed", "proxima-nova", /* mac */ -apple-system,
+      BlinkMacSystemFont, /* win */ "Segoe WPC", "Segoe UI",
+      /* mobile */ "Roboto", /* nix */ "Oxygen", "Ubuntu", "Cantarell",
+      /* FFOS */ "Fira Sans", /* 'Droid */ "Droid Sans",
+      /* Boring */ "Helvetica Neue", sans-serif;
     --font-size-base: 16px;
     --font-line-height-base: 1.5;
     --font-line-height-heading: 1.2;
@@ -330,15 +345,19 @@
 @layer base.loading {
   /* Shows a loading screen when :not(:defined), should probably use a real element */
   body:has(:not(:defined))::before {
-    content: '';
+    content: "";
     position: fixed;
     inset: 0;
-    background-color: color-mix(in srgb, var(--color-primary-background) 90%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--color-primary-background) 90%,
+      transparent
+    );
     z-index: var(--elevation-cover);
     backdrop-filter: blur(16px);
   }
   body:has(:not(:defined))::after {
-    content: 'Loading...';
+    content: "Loading...";
     width: fit-content;
     font-weight: bold;
     font-family: monospace;
@@ -474,7 +493,7 @@
     line-height: 1;
 
     color: var(--color-primary-background);
-    [data-past-hero='true'] & {
+    [data-past-hero="true"] & {
       color: var(--color-primary-foreground);
     }
 
@@ -489,20 +508,20 @@
 
   /* frosted glass effect */
   .header::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     z-index: var(--elevation-behind);
     block-size: 200%;
     pointer-events: none;
   }
-  [data-past-hero='true'] .header::before {
+  [data-past-hero="true"] .header::before {
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     mask-image: linear-gradient(180deg, #000 0 50%, transparent 50%);
   }
 
-  [data-scroll-direction='down'] .header {
+  [data-scroll-direction="down"] .header {
     transform: translateY(-100%);
   }
 
@@ -525,7 +544,7 @@
   }
   .header .nav-inline a {
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       inset-inline-start: 0;
       inset-inline-end: 0;
@@ -569,6 +588,8 @@
   }
 
   .hero__heading {
+    /* TODO: I know this is bad, but you can kinda still select the text if you start from the subheading */
+    pointer-events: none;
     font-family: var(--font-family-heading);
     font-size: 128px;
     color: var(--color-primary-background);
@@ -604,7 +625,7 @@
   }
 
   .hero__subgroup::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-color: var(--color-primary-background);
@@ -681,7 +702,7 @@
     align-items: center;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
       background: url(/media/branding/logo-outlined.svg) no-repeat center top;
@@ -744,7 +765,7 @@
   }
   .connect__content {
     &::after {
-      content: '';
+      content: "";
       display: block;
       clear: both;
     }
