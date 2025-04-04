@@ -1,0 +1,8 @@
+dist
+out
+docs
+node_modules
+assets/bundle
+assets/favicon-opt
+assets/media-opt
+assets/refs
