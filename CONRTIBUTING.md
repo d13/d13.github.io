@@ -8,8 +8,8 @@
 ### Prerequisites
 
 - [Git](https://git-scm.com/), `>= 2.7.2`
-- [NodeJS](https://nodejs.org/), `>= v20.11.1`
-- [Yarn](https://yarnpkg.com/), `4.1.0` (this repository does **not** commit the cache)
+- [NodeJS](https://nodejs.org/), `>= v22.0.0`
+- [pnpm](https://pnpm.io/), `>= 9.6.0`
 
 For those using [nvm](https://github.com/nvm-sh/nvm), simply run the following command to install the required version of NodeJS:
 
@@ -22,41 +22,35 @@ nvm use
 From a terminal, where you have cloned the repository, execute the following command to install the required dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Developing
 
-Running locally (defaults to `http://127.0.0.1:5500`)
+Running locally (defaults to `http://localhost:5173`)
 
 ```bash
-yarn start
+pnpm dev
 ```
 
 Check and fix code style
 
 ```bash
-yarn lint
-```
-
-Optimize images from `assets/media` and `assets/favicon` and saves the optimized versions to `assets/media-opt` and `assets/favicon-opt` respectively:
-
-```bash
-yarn images
+pnpm lint
 ```
 
 ## Release
 
-Build and bundle files in `src` to `assets/bundle`
+Build and bundle files in `src` to `docs`
 
 ```bash
-yarn build
+pnpm build
 ```
 
-To analyze the bundle
+Preview the production build locally
 
 ```bash
-yarn analyze
+pnpm preview
 ```
 
-The built files from `assets/*` plus `index.html` can be served from any static file server. GitHub Pages are used for this repository and deployed to https://d13.github.io/.
+The built files are deployed to GitHub Pages at https://d13.github.io/.
