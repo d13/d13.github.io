@@ -69,6 +69,59 @@ export abstract class HeroImageBase extends LitElement {
         `,
     ),
     css`
+      [fill="#BEBFC1"],
+      [fill="#6B6E71"] {
+        fill: var(--color-raw-neutral-50);
+      }
+
+      [fill="#2A84E6"] {
+        fill: var(--color-raw-blue-50);
+      }
+
+      [fill="#D32429"] {
+        fill: var(--color-raw-red-50);
+      }
+
+      [fill="#A8344B"] {
+        fill: var(--color-raw-red-30);
+      }
+
+      [fill="#1E5A9D"] {
+        fill: var(--color-raw-blue-30);
+      }
+
+      :host-context([data-theme="auto"]),
+      :host-context([data-theme="light"]) {
+        [fill="#181C21"] {
+          fill: var(--color-raw-neutral-70);
+        }
+
+        [stroke="#181C21"] {
+          stroke: var(--color-raw-neutral-70);
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :host-context([data-theme="auto"]) {
+          [fill="#181C21"] {
+            fill: var(--color-raw-neutral-10);
+          }
+          [stroke="#181C21"] {
+            stroke: var(--color-raw-neutral-10);
+          }
+        }
+      }
+
+      :host-context([data-theme="dark"]) {
+        [fill="#181C21"] {
+          fill: var(--color-raw-neutral-10);
+        }
+
+        [stroke="#181C21"] {
+          stroke: var(--color-raw-neutral-10);
+        }
+      }
+
       svg g {
         transform-origin: center center;
         transition: transform 0.5s;
