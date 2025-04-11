@@ -1,0 +1,17 @@
+{% macro hero(title, subtitle, tagline, heroComponent = "d-hero-image") %}
+<!-- HERO -->
+<section class="hero" id="hero">
+  <{{ heroComponent }} class="hero__media"></{{ heroComponent }}>
+  <hgroup class="hero__content">
+    <div class="container container--wide">
+      <h1 class="hero__heading">{{ title }}</h1>
+    </div>
+    <div class="hero__subgroup" id="hero-subgroup">
+      <div class="container container--wide">
+        <p class="hero__subheading">{{ subtitle }}</p>
+        <p class="hero__tagline">{{ tagline }}</p>
+      </div>
+    </div>
+  </hgroup>
+</section>
+{% endmacro %}

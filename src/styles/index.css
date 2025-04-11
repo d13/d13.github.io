@@ -416,9 +416,11 @@
     z-index: var(--elevation-popover);
   }
 
-  .logo {
-    width: var(--size-2);
+  img.logo,
+  .logo img {
+    inline-size: var(--size-2);
     aspect-ratio: 1;
+    block-size: auto;
   }
 
   .phone-swap {
@@ -687,7 +689,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url(/media/branding/logo-outlined.svg) no-repeat center top;
+      background: url(../media/branding/logo-outlined.svg) no-repeat center top;
       background-size: contain;
       opacity: 0.08;
       z-index: var(--elevation-behind);
