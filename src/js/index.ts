@@ -1,44 +1,16 @@
-/* global document, window */
 import { litToStyleSheet } from './system/lit-to-stylesheet';
 import * as sharedStyles from './styles/shared.css';
-import { onReady } from './system/events';
-import './components/heros/hero-image';
-import './components/heros/error-image';
-import './components/icons/icon-library';
+import { watchHeroPosition } from './utils/hero-watcher';
+// import './components/heros/hero-image';
+// import './components/icons/icon-library';
 
 const styles = litToStyleSheet(...Object.values(sharedStyles));
 document.adoptedStyleSheets.push(...styles);
 
-let lastScrollTop = 0;
-let heroFlipEl: HTMLElement | null = null;
-function handleScrollPosition(isInit = false) {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+watchHeroPosition('hero-subgroup');
 
-  if (!isInit) {
-    const direction = scrollTop > lastScrollTop ? 'down' : 'up';
-    if (Math.abs(scrollTop - lastScrollTop) > 5) {
-      document.body.dataset.scrollDirection = direction;
-    }
-    lastScrollTop = scrollTop;
-  }
-
-  heroFlipEl ??= document.getElementById('hero-subgroup');
-  const checkTop = heroFlipEl?.getBoundingClientRect().top ?? 0;
-
-  const pastHero = checkTop < 1 ? 'true' : 'false';
-  document.body.dataset.pastHero = pastHero;
-}
-
-onReady(document, () => {
-  handleScrollPosition(true);
+// defer loading web components after styles are loaded
+setTimeout(() => {
+  void import('./components/heros/hero-image');
+  void import('./components/icons/icon-library');
 });
-
-document.addEventListener(
-  'scroll',
-  () => {
-    handleScrollPosition();
-  },
-  {
-    passive: true,
-  },
-);

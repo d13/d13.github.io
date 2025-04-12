@@ -22,5 +22,6 @@
 <link rel="preconnect" href="https://p.typekit.net" />
 <link rel="preconnect" href="https://use.typekit.net" />
 <link rel="preload" href="https://use.typekit.net/bdx2zst.css" as="style" />
+
 <link rel="stylesheet" href="styles/index.css" />
-<script type="module" src="js/bundle.js"></script>
+<script type="module" src="js/{{ bundle | default('index.js') }}"></script>

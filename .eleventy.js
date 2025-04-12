@@ -1,4 +1,5 @@
 import esbuild from 'esbuild';
+import tsc from 'esbuild-plugin-tsc';
 import Image from '@11ty/eleventy-img';
 import path from 'path';
 import { getFaviconIcons } from './utils/icons.js';
@@ -48,13 +49,20 @@ export default function (eleventyConfig) {
   // Process TypeScript with esbuild
   eleventyConfig.on('eleventy.before', async () => {
     await esbuild.build({
-      entryPoints: ['src/js/index.ts'],
+      entryPoints: ['src/js/*.ts'],
       bundle: true,
-      outfile: '_site/js/bundle.js',
+      outdir: '_site/js',
+      splitting: true,
+      chunkNames: 'chunks/[name]-[hash]',
       format: 'esm',
       minify: isProd,
       sourcemap: isDev,
-      target: 'es2020',
+      legalComments: 'external',
+      plugins: [
+        tsc({
+          force: false,
+        }),
+      ],
     });
   });
 

@@ -45,6 +45,9 @@ importers:
       esbuild:
         specifier: ^0.25.2
         version: 0.25.2
+      esbuild-plugin-tsc:
+        specifier: ^0.5.0
+        version: 0.5.0(typescript@5.8.2)
       eslint:
         specifier: ^9.21.0
         version: 9.23.0
@@ -816,6 +819,11 @@ packages:
     resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
     hasBin: true
 
+  esbuild-plugin-tsc@0.5.0:
+    resolution: {integrity: sha512-t9j90NnMhAGWzS0SKX3zNa/XeWcUanqKaFe36CSmXiB2nYFdaSzKY9pBZTvGV7NGImxE1BktOOlVpQyYnUTVGg==}
+    peerDependencies:
+      typescript: ^4.0.0 || ^5.0.0
+
   esbuild@0.25.2:
     resolution: {integrity: sha512-16854zccKPnC+toMywC+uKNeYSv+/eXkevRAfwRD/G9Cleq66m8XFIrigkbvauLLlCfDL45Q2cWegSg53gGBnQ==}
     engines: {node: '>=18'}
@@ -1569,6 +1577,10 @@ packages:
   strip-bom-string@1.0.0:
     resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
     engines: {node: '>=0.10.0'}
+
+  strip-comments@2.0.1:
+    resolution: {integrity: sha512-ZprKx+bBLXv067WTCALv8SSz5l2+XhpYCsVtSqlMnkAXMWDq+/ekVbl1ghqP9rUHTzv6sm/DwCOiYutU/yp1fw==}
+    engines: {node: '>=10'}
 
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
@@ -2411,6 +2423,11 @@ snapshots:
     dependencies:
       prr: 1.0.1
 
+  esbuild-plugin-tsc@0.5.0(typescript@5.8.2):
+    dependencies:
+      strip-comments: 2.0.1
+      typescript: 5.8.2
+
   esbuild@0.25.2:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.25.2
@@ -3178,6 +3195,8 @@ snapshots:
       ansi-regex: 6.1.0
 
   strip-bom-string@1.0.0: {}
+
+  strip-comments@2.0.1: {}
 
   strip-json-comments@3.1.1: {}
 
