@@ -142,5 +142,6 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     pathPrefix: '/',
+    cleanOutput: true,
   };
 }
