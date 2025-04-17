@@ -5,10 +5,12 @@ import path from 'path';
 import { getFaviconIcons } from './utils/icons.js';
 import * as lightningcss from 'lightningcss';
 
+const outputDir = 'docs';
+
 // Simplified favicon configuration
 const faviconConfig = {
   source: 'src/media/branding/logo-square.png',
-  outputDir: '_site/img/favicon',
+  outputDir: `${outputDir}/img/favicon`,
   urlPath: '/img/favicon',
 
   icons: getFaviconIcons(),
@@ -75,7 +77,7 @@ export default function (eleventyConfig) {
     await esbuild.build({
       entryPoints: ['src/js/*.ts'],
       bundle: true,
-      outdir: '_site/js',
+      outdir: `${outputDir}/js`,
       splitting: true,
       chunkNames: 'chunks/[name]-[hash]',
       format: 'esm',
@@ -133,7 +135,7 @@ export default function (eleventyConfig) {
       let metadata = await Image(src, {
         widths: widths,
         formats: formats,
-        outputDir: './_site/img/',
+        outputDir: `${outputDir}/img/`,
         urlPath: '/img/',
         filenameFormat: function (id, src, width, format) {
           const extension = path.extname(src);
@@ -157,7 +159,7 @@ export default function (eleventyConfig) {
   return {
     dir: {
       input: 'src',
-      output: '_site',
+      output: outputDir,
       includes: 'includes',
       layouts: 'layouts',
       data: 'data',
