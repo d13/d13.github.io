@@ -3,6 +3,7 @@ import tsc from 'esbuild-plugin-tsc';
 import Image from '@11ty/eleventy-img';
 import path from 'path';
 import { getFaviconIcons } from './utils/icons.js';
+import * as lightningcss from 'lightningcss';
 
 // Simplified favicon configuration
 const faviconConfig = {
@@ -24,13 +25,13 @@ export default function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy({ 'src/media': 'media' });
   eleventyConfig.addPassthroughCopy({ 'src/meta': 'meta' });
-  eleventyConfig.addPassthroughCopy({ 'src/styles/**/*.css': 'styles' });
+  // CSS files are now processed by LightningCSS plugin
   eleventyConfig.addPassthroughCopy({ 'src/favicon.ico': 'favicon.ico' });
 
   // Watch for changes
   eleventyConfig.addWatchTarget('src/**/*');
 
-  // Process CSS
+  // Process CSS with LightningCSS
   eleventyConfig.addTemplateFormats('css');
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
@@ -41,7 +42,30 @@ export default function (eleventyConfig) {
       }
 
       return async () => {
-        return inputContent;
+        try {
+          const { code } = lightningcss.transform({
+            code: Buffer.from(inputContent),
+            minify: isProd,
+            sourceMap: isDev,
+            targets: {
+              // Support modern browsers with CSS features like:
+              // - CSS nesting
+              // - color-mix()
+              // - :where() selector
+              // - @layer
+              // - calc() with pow()
+              browsers: ['last 2 years', 'not dead', '> 0.5%'],
+            },
+            drafts: {
+              nesting: true,
+              customMedia: true,
+            },
+          });
+          return code.toString();
+        } catch (error) {
+          console.error('CSS Processing Error:', error);
+          return inputContent; // Return original content on error
+        }
       };
     },
   });
