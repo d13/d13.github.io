@@ -4,9 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "clean": "pnpx rimraf docs",
     "dev": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy",
-    "preview": "pnpm run build && npx http-server docs",
+    "build": "pnpm run clean && NODE_ENV=production eleventy",
+    "preview": "pnpm run build && pnpx http-server docs",
     "lint": "eslint .",
     "lint:clean": "npx rimraf .eslintcache"
   },

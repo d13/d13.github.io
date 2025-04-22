@@ -24,4 +24,7 @@
 <link rel="preload" href="https://use.typekit.net/bdx2zst.css" as="style" />
 
 <link rel="stylesheet" href="styles/index.css" />
+{% if stylesheet %}
+<link rel="stylesheet" href="styles/{{ stylesheet }}" />
+{% endif %}
 <script type="module" src="js/{{ bundle | default('index.js') }}"></script>

@@ -27,11 +27,12 @@ export default function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy({ 'src/media': 'media' });
   eleventyConfig.addPassthroughCopy({ 'src/meta': 'meta' });
-  // CSS files are now processed by LightningCSS plugin
   eleventyConfig.addPassthroughCopy({ 'src/favicon.ico': 'favicon.ico' });
 
+  if (isDev) {
   // Watch for changes
   eleventyConfig.addWatchTarget('src/**/*');
+  }
 
   // Process CSS with LightningCSS
   eleventyConfig.addTemplateFormats('css');
@@ -126,7 +127,7 @@ export default function (eleventyConfig) {
   // Image shortcode for optimized images
   eleventyConfig.addAsyncShortcode(
     'image',
-    async function (src, alt, sizes = '100vw', widths = [300, 600, 900, 1200], formats = ['webp', 'jpeg']) {
+    async function (src, alt, sizes = '100vw', widths = [300, 600, 900, 1200], formats = ['webp']) {
       if (!src.startsWith('./')) {
         // For non-relative paths, prepend the src directory
         src = `./src/${src}`;

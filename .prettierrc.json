@@ -18,6 +18,10 @@
     {
       "files": "*.svg",
       "options": { "parser": "html" }
+    },
+    {
+      "files": "*.njk",
+      "options": { "parser": "html", "htmlWhitespaceSensitivity": "css" }
     }
   ]
 }
