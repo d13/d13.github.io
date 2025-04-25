@@ -3,7 +3,7 @@
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
-    "runem.lit-plugin",
+    "jackolope.lit-analyzer-plugin",
     "ronnidc.nunjucks"
   ]
 }
