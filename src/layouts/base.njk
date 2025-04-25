@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="en" data-theme="auto">
   <head>
-    {% include "partials/head.njk" %}
+    {% include "layout/head.njk" %}
   </head>
   <body>
-    {% include "partials/skip-links.njk" %}
-    {% include "partials/header.njk" %}
+    {% include "layout/skip-links.njk" %} {% include "layout/header.njk" %}
 
-    <main id="main">
-      {{ content | safe }}
-    </main>
+    <main id="main">{{ content | safe }}</main>
 
-    {% include "partials/footer.njk" %}
+    {% include "layout/footer.njk" %}
   </body>
 </html>

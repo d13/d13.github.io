@@ -6,7 +6,5 @@ eleventyExcludeFromCollections: true
 bundle: error.js
 ---
 
-{% from "partials/hero.njk" import hero %}
-{{ hero("404", "Page not found", "I really just wanted to make another hero SVG...", "d-error-image") }}
-
-{% include "partials/connect.njk" %}
+{% from "macros/hero.njk" import hero %} {{ hero("404", "Page not found", "I really just wanted to make another hero
+SVG...", "d-error-image") }} {% include "connect.njk" %}

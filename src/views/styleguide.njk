@@ -1,0 +1,402 @@
+---
+layout: base.njk
+title: Styleguide | Keith Daulton | Design Technologist, User Experience Engineer, Technical Leader
+description: Principal front-end web developer and designer, Keith Daulton.
+eleventyExcludeFromCollections: true
+permalink: /styleguide.html
+stylesheet: styleguide.css
+---
+
+<section class="container styleguide">
+  <hgroup class="styleguide__header">
+    <h1>Styleguide</h1>
+    <p class="lead">This page demonstrates the styling of all basic HTML elements used throughout the site.</p>
+  </hgroup>
+
+  <nav class="styleguide__nav" aria-label="Styleguide Navigation">
+    <ul class="nav-inline">
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#buttons-links">Buttons & Links</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#quotes">Quotes</a></li>
+      <li><a href="#horizontal-rules">Horizontal Rules</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#theme-switcher">Theme Switcher</a></li>
+    </ul>
+  </nav>
+</section>
+
+<section class="container demo" id="typography">
+  <h2 class="demo__heading">Typography</h2>
+
+  <h3 class="demo__subheading">Headings</h3>
+
+  <div class="demo__block">
+    <h1>Heading Level 1</h1>
+    <h2>Heading Level 2</h2>
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+  </div>
+
+  <h3 class="demo__subheading">Paragraphs</h3>
+
+  <div class="demo__block">
+    <p>
+      This is a standard paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna
+      mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </p>
+    <p>
+      Another paragraph with <a href="#">a link</a>, <strong>strong text</strong>, <em>emphasized text</em>,
+      <code>inline code</code>, and <mark>marked text</mark>.
+    </p>
+    <p><small>This is small text, often used for captions or secondary information.</small></p>
+  </div>
+
+  <h3 class="demo__subheading">Text Formatting</h3>
+
+  <div class="demo__block">
+    <p><strong>Bold text using &lt;strong&gt;</strong> and <b>bold text using &lt;b&gt;</b></p>
+    <p><em>Italic text using &lt;em&gt;</em> and <i>italic text using &lt;i&gt;</i></p>
+    <p><u>Underlined text using &lt;u&gt;</u></p>
+    <p><s>Strikethrough text using &lt;s&gt;</s> and <del>deleted text using &lt;del&gt;</del></p>
+    <p>Superscript: E = mc<sup>2</sup> and Subscript: H<sub>2</sub>O</p>
+    <p><abbr title="Abbreviation">Abbr.</abbr> and <acronym title="As Soon As Possible">ASAP</acronym></p>
+    <p><q>This is an inline quote using &lt;q&gt;</q></p>
+    <p><cite>This is a citation using &lt;cite&gt;</cite></p>
+    <p><dfn>This is a definition using &lt;dfn&gt;</dfn></p>
+    <p><mark>This is marked/highlighted text using &lt;mark&gt;</mark></p>
+    <p>This text contains a line<br />break using &lt;br&gt;</p>
+  </div>
+</section>
+
+<section class="container demo" id="lists">
+  <h2 class="demo__heading">Lists</h2>
+
+  <h3 class="demo__subheading">Unordered List</h3>
+
+  <div class="demo__block">
+    <ul>
+      <li>List item one</li>
+      <li>
+        List item two
+        <ul>
+          <li>Nested list item 2.1</li>
+          <li>Nested list item 2.2</li>
+        </ul>
+      </li>
+      <li>List item three</li>
+    </ul>
+  </div>
+
+  <h3 class="demo__subheading">Ordered List</h3>
+  <div class="demo__block">
+    <ol>
+      <li>List item one</li>
+      <li>
+        List item two
+        <ol>
+          <li>Nested list item 2.1</li>
+          <li>Nested list item 2.2</li>
+        </ol>
+      </li>
+      <li>List item three</li>
+    </ol>
+  </div>
+
+  <h3 class="demo__subheading">Definition List</h3>
+  <div class="demo__block">
+    <dl>
+      <dt>Definition Term 1</dt>
+      <dd>Definition description 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+      <dt>Definition Term 2</dt>
+      <dd>Definition description 2. Nullam quis risus eget urna mollis ornare vel eu leo.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="container demo" id="tables">
+  <h2 class="demo__heading">Tables</h2>
+
+  <div class="demo__block">
+    <table>
+      <caption>
+        Sample Table Caption
+      </caption>
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1, Cell 1</td>
+          <td>Row 1, Cell 2</td>
+          <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+          <td>Row 2, Cell 1</td>
+          <td>Row 2, Cell 2</td>
+          <td>Row 2, Cell 3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Table footer information</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<section class="container demo" id="forms">
+  <h2 class="demo__heading">Forms</h2>
+
+  <div class="demo__block">
+    <form>
+      <fieldset>
+        <legend>Form Legend</legend>
+
+        <div>
+          <label for="text-input">Text Input</label>
+          <input type="text" id="text-input" placeholder="Text input placeholder" />
+        </div>
+
+        <div>
+          <label for="email-input">Email Input</label>
+          <input type="email" id="email-input" placeholder="email@example.com" />
+        </div>
+
+        <div>
+          <label for="password-input">Password Input</label>
+          <input type="password" id="password-input" placeholder="Password" />
+        </div>
+
+        <div>
+          <label for="textarea">Textarea</label>
+          <textarea id="textarea" rows="4" placeholder="Enter your message here"></textarea>
+        </div>
+
+        <div>
+          <label for="select">Select Dropdown</label>
+          <select id="select">
+            <option value="">Select an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Checkboxes</legend>
+            <div>
+              <input type="checkbox" id="checkbox1" name="checkbox" value="1" />
+              <label for="checkbox1">Checkbox 1</label>
+            </div>
+            <div>
+              <input type="checkbox" id="checkbox2" name="checkbox" value="2" />
+              <label for="checkbox2">Checkbox 2</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Radio Buttons</legend>
+            <div>
+              <input type="radio" id="radio1" name="radio" value="1" />
+              <label for="radio1">Radio 1</label>
+            </div>
+            <div>
+              <input type="radio" id="radio2" name="radio" value="2" />
+              <label for="radio2">Radio 2</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <label for="range">Range Input</label>
+          <input type="range" id="range" min="0" max="100" value="50" />
+        </div>
+
+        <div>
+          <button type="submit">Submit Button</button>
+          <button type="reset">Reset Button</button>
+          <button type="button">Regular Button</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<section class="container demo" id="buttons-links">
+  <h2 class="demo__heading">Buttons and Links</h2>
+
+  <h3 class="demo__subheading">Buttons</h3>
+
+  <div class="demo__block">
+    <button>Default Button</button>
+    <button disabled>Disabled Button</button>
+    <button class="primary">Primary Button</button>
+    <button class="secondary">Secondary Button</button>
+  </div>
+
+  <h3 class="demo__subheading">Links</h3>
+
+  <div class="demo__block">
+    <p>
+      <a href="#">Default Link</a>
+    </p>
+  </div>
+</section>
+
+<section class="container demo" id="media">
+  <h2 class="demo__heading">Images and Media</h2>
+
+  <div class="demo__block">
+    <figure>
+      <img src="https://baconmockup.com/800/400" alt="Placeholder image" />
+      <figcaption>Figure caption for the image above</figcaption>
+    </figure>
+  </div>
+
+  <h3 class="demo__subheading">Responsive Image</h3>
+
+  <div class="demo__block">
+    <img
+      src="https://baconmockup.com/1200/600"
+      alt="Responsive placeholder image"
+      style="max-width: 100%; height: auto"
+    />
+  </div>
+
+  <h3 class="demo__subheading">Audio</h3>
+
+  <div class="demo__block">
+    <audio controls>
+      <source src="#" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h3 class="demo__subheading">Video</h3>
+  <div class="demo__block">
+    <video controls width="100%" height="auto">
+      <source src="#" type="video/mp4" />
+      Your browser does not support the video element.
+    </video>
+  </div>
+</section>
+
+<section class="container demo" id="code">
+  <h2 class="demo__heading">Code</h2>
+
+  <h3 class="demo__subheading">Inline Code</h3>
+
+  <div class="demo__block">
+    <p>This is an example of <code>inline code</code> within a paragraph.</p>
+  </div>
+
+  <h3 class="demo__subheading">Code Block</h3>
+
+  <div class="demo__block">
+    <pre><code>// This is a code block
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet('World'));</code></pre>
+  </div>
+
+  <h3 class="demo__subheading">Keyboard Input</h3>
+
+  <div class="demo__block">
+    <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text.</p>
+  </div>
+
+  <h3 class="demo__subheading">Sample Output</h3>
+
+  <div class="demo__block">
+    <samp>This is sample output from a computer program.</samp>
+  </div>
+
+  <h3 class="demo__subheading">Variables</h3>
+
+  <div class="demo__block">
+    <p>The <var>x</var> variable represents the horizontal position.</p>
+  </div>
+</section>
+
+<section class="container demo" id="quotes">
+  <h2 class="demo__heading">Blockquotes</h2>
+
+  <div class="demo__block">
+    <blockquote>
+      <p>This is a blockquote. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="container demo" id="horizontal-rules">
+  <h2 class="demo__heading">Horizontal Rules</h2>
+
+  <div class="demo__block">
+    <p>Text above the horizontal rule.</p>
+    <hr />
+    <p>Text below the horizontal rule.</p>
+  </div>
+</section>
+
+<section class="demo" id="layout">
+  <div class="container">
+    <h2 class="demo__heading">Layout</h2>
+
+    <h3 class="demo__subheading">Container</h3>
+    <div class="container demo__block">
+      <p>This is content inside a .container</p>
+    </div>
+
+    <h3 class="demo__subheading">Container Wide</h3>
+  </div>
+  <div class="container container--wide demo__block">
+    <p>This is content inside a .container.container--wide</p>
+  </div>
+
+  <div class="container">
+    <h3 class="demo__subheading">Layout Row</h3>
+    <div class="layout-row demo__block">
+      <div class="demo__column">Column 1</div>
+      <div class="demo__column">Column 2</div>
+      <div class="demo__column">Column 3</div>
+    </div>
+
+    <h3 class="demo__subheading">Layout Row with Heavy Start</h3>
+    <div class="layout-row layout-row--heavy-start demo__block">
+      <div class="demo__column">Column 1 (Wider)</div>
+      <div class="demo__column">Column 2</div>
+    </div>
+  </div>
+</section>
+
+<section class="container demo" id="theme-switcher">
+  <h2 class="demo__heading">Theme Switcher</h2>
+
+  <p>Click the buttons below to switch between themes:</p>
+
+  <nav>
+    <button onclick="document.documentElement.setAttribute('data-theme', 'light')">Light Theme</button>
+    <button onclick="document.documentElement.setAttribute('data-theme', 'dark')">Dark Theme</button>
+    <button onclick="document.documentElement.setAttribute('data-theme', 'auto')">
+      Auto Theme (System Preference)
+    </button>
+  </nav>
+</section>

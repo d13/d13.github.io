@@ -1,6 +1,6 @@
-{% macro hero(title, subtitle, tagline, heroComponent = "d-hero-image") %}
+{% macro hero(title, subtitle, tagline, heroComponent = "d-hero-image", id = "hero") %}
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero" id="{{ id }}">
   <{{ heroComponent }} class="hero__media"></{{ heroComponent }}>
   <hgroup class="hero__content">
     <div class="container container--wide">

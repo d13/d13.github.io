@@ -3,10 +3,11 @@ layout: base.njk
 title: Keith Daulton | Design Technologist, User Experience Engineer, Technical Leader
 description: Principal front-end web developer and designer, Keith Daulton.
 permalink: /index.html
+stylesheet: index.css
 ---
 
-{% from "partials/hero.njk" import hero %}
-{{ hero("Keith Daulton", "Design Technologist", "Entrepreneur, Engineering Leader") }}
+{% from "macros/hero.njk" import hero %} {{ hero("Keith Daulton", "Design Technologist", "Entrepreneur, Engineering
+Leader") }}
 
 <!-- ABOUT -->
 <div id="about" class="about">
@@ -26,27 +27,27 @@ permalink: /index.html
         <div>
           <h2>Engineer + Designer</h2>
           <p>
-            A hands-on leader in user-interface development and design with over 20 years of experience. I build
-            systems that bring cohesion and accessibility for all customers, while providing documentation and
-            code that engineering teams love to build with.
+            A hands-on leader in user-interface development and design with over 20 years of experience. I build systems
+            that bring cohesion and accessibility for all customers, while providing documentation and code that
+            engineering teams love to build with.
           </p>
           <p>My approach combines:</p>
           <ul>
             <li>Deep experience in front-end architecture and performance optimization</li>
             <li>Problem-solving focused on real customer needs and practical innovation</li>
             <li>Natural collaboration that bridges design and engineering teams</li>
-            <li>
-              Active involvement in engineering communities through open-source, mentorship and knowledge sharing
-            </li>
+            <li>Active involvement in engineering communities through open-source, mentorship and knowledge sharing</li>
           </ul>
         </div>
       </section>
     </div>
     <aside class="about__aside">
       <section class="phone-swap">
-        {% image "media/features/phone-mergein-rough.png", "Rough Design", "(max-width: 768px) 100vw, 600px", [300, 600, 900] %}
+        {% image "media/features/phone-mergein-rough.png", "Rough Design", "(max-width: 768px) 100vw, 600px", [300, 600,
+        900] %}
         <div class="phone-swap__finished">
-          {% image "media/features/phone-mergein-finished.png", "Finished Design", "(max-width: 768px) 100vw, 600px", [300, 600, 900] %}
+          {% image "media/features/phone-mergein-finished.png", "Finished Design", "(max-width: 768px) 100vw, 600px",
+          [300, 600, 900] %}
         </div>
       </section>
     </aside>
@@ -72,4 +73,4 @@ permalink: /index.html
   </div>
 </section> -->
 
-{% include "partials/connect.njk" %}
+{% include "connect.njk" %}

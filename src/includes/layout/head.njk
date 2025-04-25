@@ -3,10 +3,7 @@
 
 <title>{{ title | default(site.title) }}</title>
 <meta name="description" content="{{ description | default(site.description) }}" />
-<meta
-  name="keywords"
-  content="{{ keywords | default(site.keywords) }}"
-/>
+<meta name="keywords" content="{{ keywords | default(site.keywords) }}" />
 <meta name="author" content="{{ site.author }}" />
 
 <meta name="theme-color" content="{{ site.manifest.themeColor }}" />
@@ -15,15 +12,15 @@
 {% favicon 'media/branding/logo-square.png' %}
 <link rel="manifest" href="site.webmanifest" />
 
-<meta property="og:title" content="{{ ogTitle | default(title) | default(site.title) }}">
-<meta property="og:description" content="{{ ogDescription | default(description) | default(site.description) }}">
-<meta property="og:image" content="{{ ogImage | default(site.og.defaultImage) }}">
+<meta property="og:title" content="{{ ogTitle | default(title) | default(site.title) }}" />
+<meta property="og:description" content="{{ ogDescription | default(description) | default(site.description) }}" />
+<meta property="og:image" content="{{ ogImage | default(site.og.defaultImage) }}" />
 
 <link rel="preconnect" href="https://p.typekit.net" />
 <link rel="preconnect" href="https://use.typekit.net" />
 <link rel="preload" href="https://use.typekit.net/bdx2zst.css" as="style" />
 
-<link rel="stylesheet" href="styles/index.css" />
+<link rel="stylesheet" href="styles/base.css" />
 {% if stylesheet %}
 <link rel="stylesheet" href="styles/{{ stylesheet }}" />
 {% endif %}
