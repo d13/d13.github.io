@@ -7,9 +7,11 @@
     "clean": "pnpx rimraf docs",
     "dev": "eleventy --serve",
     "build": "pnpm run clean && NODE_ENV=production eleventy",
-    "preview": "pnpm run build && pnpx http-server docs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint .",
-    "lint:clean": "npx rimraf .eslintcache"
+    "lint:clean": "npx rimraf .eslintcache",
+    "preview": "pnpm run build && pnpx http-server docs"
   },
   "engines": {
     "node": ">23.0.0"

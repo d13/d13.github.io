@@ -1,8 +1,13 @@
-dist
-out
-docs
-node_modules
 assets/bundle
 assets/favicon-opt
 assets/media-opt
 assets/refs
+assets/scripts/site.js
+assets/styles/site.css
+dist
+docs
+node_modules
+out
+pnpm-lock.yaml
+site.webmanifest.njk
+src/media

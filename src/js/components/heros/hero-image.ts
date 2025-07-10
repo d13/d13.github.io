@@ -1,8 +1,8 @@
-import { html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { HeroImageBase } from "./base";
+import { html } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import { HeroImageBase } from './base';
 
-@customElement("d-hero-image")
+@customElement('d-hero-image')
 export class HeroImage extends HeroImageBase {
   protected renderMedia() {
     // prettier-ignore

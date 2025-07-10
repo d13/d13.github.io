@@ -1,4 +1,4 @@
-import type { CSSResult } from "lit";
+import type { CSSResult } from 'lit';
 
 export function litToStyleSheet(...cssResults: CSSResult[]): CSSStyleSheet[] {
   const styleSheets: CSSStyleSheet[] = [];

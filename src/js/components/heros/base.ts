@@ -1,6 +1,6 @@
-import { css, html, LitElement, TemplateResult } from "lit";
-import { range } from "lit/directives/range.js";
-import { repeat } from "lit/directives/repeat.js";
+import { css, html, LitElement, TemplateResult } from 'lit';
+import { range } from 'lit/directives/range.js';
+import { repeat } from 'lit/directives/repeat.js';
 
 const mouseGrid = Array.from(range(-6, 7, 1)); // -3, 4
 const mouseGridSize = mouseGrid.length;
@@ -69,55 +69,55 @@ export abstract class HeroImageBase extends LitElement {
         `,
     ),
     css`
-      [fill="#BEBFC1"],
-      [fill="#6B6E71"] {
+      [fill='#BEBFC1'],
+      [fill='#6B6E71'] {
         fill: var(--color-raw-neutral-50);
       }
 
-      [fill="#2A84E6"] {
+      [fill='#2A84E6'] {
         fill: var(--color-raw-blue-50);
       }
 
-      [fill="#D32429"] {
+      [fill='#D32429'] {
         fill: var(--color-raw-red-50);
       }
 
-      [fill="#A8344B"] {
+      [fill='#A8344B'] {
         fill: var(--color-raw-red-30);
       }
 
-      [fill="#1E5A9D"] {
+      [fill='#1E5A9D'] {
         fill: var(--color-raw-blue-30);
       }
 
-      :host-context([data-theme="auto"]),
-      :host-context([data-theme="light"]) {
-        [fill="#181C21"] {
+      :host-context([data-theme='auto']),
+      :host-context([data-theme='light']) {
+        [fill='#181C21'] {
           fill: var(--color-raw-neutral-70);
         }
 
-        [stroke="#181C21"] {
+        [stroke='#181C21'] {
           stroke: var(--color-raw-neutral-70);
         }
       }
 
       @media (prefers-color-scheme: dark) {
-        :host-context([data-theme="auto"]) {
-          [fill="#181C21"] {
+        :host-context([data-theme='auto']) {
+          [fill='#181C21'] {
             fill: var(--color-raw-neutral-10);
           }
-          [stroke="#181C21"] {
+          [stroke='#181C21'] {
             stroke: var(--color-raw-neutral-10);
           }
         }
       }
 
-      :host-context([data-theme="dark"]) {
-        [fill="#181C21"] {
+      :host-context([data-theme='dark']) {
+        [fill='#181C21'] {
           fill: var(--color-raw-neutral-10);
         }
 
-        [stroke="#181C21"] {
+        [stroke='#181C21'] {
           stroke: var(--color-raw-neutral-10);
         }
       }
@@ -134,27 +134,11 @@ export abstract class HeroImageBase extends LitElement {
           calc(var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-offset-distance))
         ); */
           transform: translate(
-              calc(
-                var(--d-hero-image-mouse-offset-x) *
-                  var(--d-hero-image-mouse-offset-distance)
-              ),
-              calc(
-                var(--d-hero-image-mouse-offset-y) *
-                  var(--d-hero-image-mouse-offset-distance)
-              )
+              calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-offset-distance)),
+              calc(var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-offset-distance))
             )
-            rotateX(
-              calc(
-                0deg - var(--d-hero-image-mouse-offset-y) *
-                  var(--d-hero-image-mouse-rotate-distance)
-              )
-            )
-            rotateY(
-              calc(
-                var(--d-hero-image-mouse-offset-x) *
-                  var(--d-hero-image-mouse-rotate-distance)
-              )
-            );
+            rotateX(calc(0deg - var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-rotate-distance)))
+            rotateY(calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-rotate-distance)));
         }
 
         #svg-layer-outlined {
@@ -163,36 +147,18 @@ export abstract class HeroImageBase extends LitElement {
           calc(var(--d-hero-image-mouse-offset-y) * -1 * var(--d-hero-image-mouse-offset-distance))
         ); */
           transform: translate(
-              calc(
-                (var(--d-hero-image-mouse-offset-x) * 0.75) *
-                  var(--d-hero-image-mouse-offset-distance)
-              ),
-              calc(
-                (var(--d-hero-image-mouse-offset-y) * 0.75) *
-                  var(--d-hero-image-mouse-offset-distance)
-              )
+              calc((var(--d-hero-image-mouse-offset-x) * 0.75) * var(--d-hero-image-mouse-offset-distance)),
+              calc((var(--d-hero-image-mouse-offset-y) * 0.75) * var(--d-hero-image-mouse-offset-distance))
             )
-            rotateX(
-              calc(
-                0deg - var(--d-hero-image-mouse-offset-y) *
-                  var(--d-hero-image-mouse-rotate-distance)
-              )
-            )
-            rotateY(
-              calc(
-                var(--d-hero-image-mouse-offset-x) *
-                  var(--d-hero-image-mouse-rotate-distance)
-              )
-            );
+            rotateX(calc(0deg - var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-rotate-distance)))
+            rotateY(calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-rotate-distance)));
         }
       }
     `,
   ];
 
   override render() {
-    return html`<div class="hero-image">
-      ${this.renderMedia()}${this.renderMouseGrid()}
-    </div>`;
+    return html`<div class="hero-image">${this.renderMedia()}${this.renderMouseGrid()}</div>`;
   }
 
   private renderMouseGrid() {
@@ -200,10 +166,7 @@ export abstract class HeroImageBase extends LitElement {
     return html`<div class="mouse-grid">
       ${repeat(
         Array.from({ length: mouseGridSize ** 2 }),
-        (_, i) =>
-          html`<div
-            class="x${i % mouseGridSize} y${Math.floor(i / mouseGridSize)}"
-          ></div>`,
+        (_, i) => html`<div class="x${i % mouseGridSize} y${Math.floor(i / mouseGridSize)}"></div>`,
       )}
     </div>`;
   }

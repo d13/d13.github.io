@@ -1,8 +1,8 @@
-import { html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { HeroImageBase } from "./base";
+import { html } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import { HeroImageBase } from './base';
 
-@customElement("d-error-image")
+@customElement('d-error-image')
 export class ErrorImage extends HeroImageBase {
   protected renderMedia() {
     // prettier-ignore
