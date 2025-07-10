@@ -30,8 +30,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/favicon.ico': 'favicon.ico' });
 
   if (isDev) {
-  // Watch for changes
-  eleventyConfig.addWatchTarget('src/**/*');
+    // Watch for changes
+    eleventyConfig.addWatchTarget('src/**/*');
   }
 
   // Process CSS with LightningCSS
@@ -155,6 +155,22 @@ export default function (eleventyConfig) {
       return Image.generateHTML(metadata, imageAttributes);
     },
   );
+
+  // Prevent views from outputting into a `/views` folder
+  // eleventyConfig.addPermalinkAttributeByGlob('src/views/**/*.njk', data => {
+  //   if (!data) {
+  //     return data;
+  //   }
+
+  //   // Only apply to files in the views directory
+  //   if (data.page?.inputPath?.includes('/views/')) {
+  //     // Extract the filename without extension
+  //     const filename = path.basename(data.page.filePathStem).replace('/views/', '');
+  //     // Return the file to the root, unless it already has a permalink
+  //     return data.permalink || `/${filename}.html`;
+  //   }
+  //   return data.permalink;
+  // });
 
   // Base config
   return {
