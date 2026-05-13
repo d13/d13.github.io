@@ -12,13 +12,14 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "html.suggest.html5": true,
   "emmet.includeLanguages": {
-    "njk": "html"
+    "astro": "html"
   },
-  "[njk]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.formatOnSave": true
   },
   "files.associations": {
-    "*.njk": "html"
-  }
+    "*.astro": "astro"
+  },
+  "eslint.validate": ["javascript", "typescript", "astro"]
 }
