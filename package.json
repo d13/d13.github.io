@@ -4,22 +4,26 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "clean": "pnpx rimraf docs",
-    "dev": "eleventy --serve",
-    "build": "pnpm run clean && NODE_ENV=production eleventy",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "lint:clean": "npx rimraf .eslintcache",
-    "preview": "pnpm run build && pnpx http-server docs"
+    "lint:clean": "npx rimraf .eslintcache"
   },
   "engines": {
     "node": ">23.0.0"
   },
   "dependencies": {
+    "astro": "^6.3.1",
     "lit": "^3.3.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@eslint/js": "^9.30.1",
     "@types/node": "^22.16.2",
     "@typescript-eslint/parser": "^8.36.0",

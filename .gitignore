@@ -10,6 +10,13 @@ dist-ssr
 _site
 *.local
 
+# Astro
+.astro/
+
+# Playwright
+playwright-report
+test-results
+
 # OS generated files
 .DS_Store
 Thumbs.db
