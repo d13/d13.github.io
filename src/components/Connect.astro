@@ -1,0 +1,46 @@
+---
+// Connect block — used on landing and (optionally) elsewhere. Contact + social.
+const contactLinks = [
+  { href: 'mailto:keith@keithdaulton.com', icon: 'envelope', label: 'Email' },
+  { href: 'tel:+1-954-805-2603', icon: 'phone', label: 'Phone' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/d13', icon: 'github', label: 'GitHub' },
+  { href: 'https://bsky.app/profile/keithdaulton.com', icon: 'bluesky', label: 'Bluesky' },
+  { href: 'https://www.linkedin.com/in/keithdaulton', icon: 'linkedin', label: 'LinkedIn' },
+  { href: 'https://dribbble.com/keithdaulton', icon: 'dribbble', label: 'Dribbble' },
+  { href: 'https://codepen.io/d13', icon: 'codepen', label: 'CodePen' },
+];
+---
+
+<section class="connect" id="connect" aria-labelledby="connect-heading">
+  <div class="container connect__content">
+    <h2 id="connect-heading">Connect</h2>
+    <p class="connect__lede">TODO: connect lede — short invitation to reach out.</p>
+    <nav class="connect__contact" aria-label="Contact information">
+      {contactLinks.map((link) => (
+        <a href={link.href}>
+          <d-icon-library icon={link.icon}></d-icon-library>
+          <span class="o-sr-only">{link.label}</span>
+        </a>
+      ))}
+    </nav>
+    <nav class="connect__social" aria-label="Social links">
+      {socialLinks.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener">
+          <d-icon-library icon={link.icon}></d-icon-library>
+          <span class="o-sr-only">{link.label}</span>
+        </a>
+      ))}
+    </nav>
+    <img
+      class="connect__mark"
+      src="/media/branding/logo-tight.png"
+      alt=""
+      width="107"
+      height="128"
+      aria-hidden="true"
+    />
+  </div>
+</section>

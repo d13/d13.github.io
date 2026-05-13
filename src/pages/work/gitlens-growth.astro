@@ -1,0 +1,19 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import { getCaseStudy } from '../../data/work.ts';
+
+const study = getCaseStudy('gitlens-growth')!;
+---
+
+<CaseStudyLayout study={study}>
+  <p><span class="placeholder-tag">TODO</span> Lede paragraph — the growth story in one breath.</p>
+  <p>
+    TODO: body. Where GitLens was when I joined, what the surface area was, and where it went.
+  </p>
+  <p>
+    TODO: body. Specific bets that paid off; specific bets that did not. Honest read.
+  </p>
+  <p>
+    TODO: body. Throughline back to the rest of the work.
+  </p>
+</CaseStudyLayout>

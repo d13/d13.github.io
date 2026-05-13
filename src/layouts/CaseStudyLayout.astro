@@ -1,0 +1,53 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CaseStudy } from '../data/work.ts';
+
+interface Props {
+  study: CaseStudy;
+  /** Optional override of the page title (defaults to study title). */
+  title?: string;
+  description?: string;
+}
+
+const { study, title, description } = Astro.props;
+const pageTitle = title ?? study.title;
+const pageDescription = description ?? study.blurb;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} bodyClass="page page--case-study">
+  <article class="case-study">
+    <header class="case-study__header">
+      <div class="container">
+        <p class="case-study__eyebrow">{study.context ?? 'Case study'}</p>
+        <h1 class="case-study__title">{study.title}</h1>
+      </div>
+    </header>
+
+    <div class="case-study__hero container" aria-hidden="true">
+      <div class="case-study__hero-slot">
+        <p class="placeholder-tag">TODO: lead image / hero media</p>
+      </div>
+    </div>
+
+    <div class="case-study__body container">
+      <div class="prose">
+        <slot />
+      </div>
+
+      <aside class="case-study__metrics" aria-label="Proof points">
+        <p class="case-study__metrics-heading">Proof points</p>
+        <ul>
+          <li>TODO: metric 1</li>
+          <li>TODO: metric 2</li>
+          <li>TODO: metric 3</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="case-study__footer container">
+      <a href="/work" class="link-cta">
+        <span aria-hidden="true">←</span> Back to all work
+      </a>
+    </footer>
+  </article>
+</BaseLayout>

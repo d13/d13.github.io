@@ -10,6 +10,11 @@ export class IconLibrary extends LitElement {
     github: icons.gitHubInverted,
     'link-external': icons.linkExternal,
     'arrow-up': icons.arrowUp,
+    phone: icons.phone,
+    bluesky: icons.bluesky,
+    linkedin: icons.linkedin,
+    dribbble: icons.dribbble,
+    codepen: icons.codepen,
   };
 
   static override styles = [

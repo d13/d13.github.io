@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site.ts';
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__row">
+    <p class="site-footer__copyright">
+      &copy; Copyright {site.buildYear} {site.author} and respective brands. All rights reserved.
+    </p>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="#top" class="site-footer__top" aria-label="Back to top">
+        <d-icon-library icon="arrow-up"></d-icon-library>
+        <span aria-hidden="true">Top</span>
+      </a>
+    </nav>
+  </div>
+</footer>

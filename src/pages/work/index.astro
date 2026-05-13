@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import { caseStudies } from '../../data/work.ts';
+---
+
+<BaseLayout title="Work" description="Selected case studies." bodyClass="page page--work">
+  <section class="page__header container">
+    <p class="page__eyebrow">Work</p>
+    <h1 class="page__title">Case studies</h1>
+    <p class="tease__body">
+      TODO: short lede framing the four case studies and what they have in common.
+    </p>
+  </section>
+
+  <section class="container">
+    <div class="work-grid" role="list">
+      {caseStudies.map((study) => (
+        <div role="listitem">
+          <WorkCard study={study} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container" style="margin-block-start: var(--spacing-2xl);">
+    <a href="/" class="link-cta"><span aria-hidden="true">←</span> Back to home</a>
+  </section>
+</BaseLayout>

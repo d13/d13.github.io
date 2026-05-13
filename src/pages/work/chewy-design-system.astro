@@ -1,0 +1,19 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import { getCaseStudy } from '../../data/work.ts';
+
+const study = getCaseStudy('chewy-design-system')!;
+---
+
+<CaseStudyLayout study={study}>
+  <p><span class="placeholder-tag">TODO</span> Lede paragraph — the design system, the org, the shape of the problem.</p>
+  <p>
+    TODO: body. Adoption, governance, contribution model. The hard parts.
+  </p>
+  <p>
+    TODO: body. How tokens, components, and patterns lined up with the engineering org.
+  </p>
+  <p>
+    TODO: body. What I would build the same way again, and what I would not.
+  </p>
+</CaseStudyLayout>

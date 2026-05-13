@@ -1,0 +1,40 @@
+---
+const navItems = [
+  { href: '/story', label: 'Story' },
+  { href: '/work', label: 'Work' },
+  { href: '/#connect', label: 'Connect' },
+];
+
+const pathname = Astro.url.pathname;
+function isCurrent(href: string): boolean {
+  if (href.startsWith('/#')) return false;
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+---
+
+<header class="site-header" id="header">
+  <div class="container container--wide site-header__row">
+    <div class="site-header__group">
+      <a href="/" class="logo" aria-label="Keith Daulton — Home">
+        <img src="/media/branding/logo-square.png" alt="" width="28" height="28" />
+      </a>
+    </div>
+    <nav class="site-header__group" id="nav" aria-label="Main Navigation">
+      <ul class="nav-inline">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="site-header__group site-header__group--end">
+      <a href="https://github.com/d13" target="_blank" rel="noopener" aria-label="Keith on GitHub">
+        <d-icon-library icon="github"></d-icon-library>
+      </a>
+    </div>
+  </div>
+</header>

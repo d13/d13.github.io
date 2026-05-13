@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Not found" description="The page you were looking for doesn't exist." bodyClass="page page--404">
+  <section class="page__header container">
+    <p class="page__eyebrow">404</p>
+    <h1 class="page__title">This page doesn't exist.</h1>
+    <p class="tease__body">
+      The page you were looking for has moved, been renamed, or never existed in the first place.
+    </p>
+  </section>
+
+  <section class="container" style="margin-block-start: var(--spacing-xl);">
+    <ul class="prose" style="list-style: none; padding: 0;">
+      <li><a class="link-cta" href="/">Home <span aria-hidden="true">→</span></a></li>
+      <li><a class="link-cta" href="/story">Story <span aria-hidden="true">→</span></a></li>
+      <li><a class="link-cta" href="/work">Work <span aria-hidden="true">→</span></a></li>
+    </ul>
+  </section>
+</BaseLayout>
