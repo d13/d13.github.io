@@ -13,3 +13,6 @@ _site
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Untracked working files
+.work
