@@ -1,5 +1,5 @@
 /* global document, window */
-import { Disposable, toDisposable } from './disposable';
+import { type Disposable, toDisposable } from './disposable';
 
 export function onReady(target: Document | Window, callback: () => void, thisArg?: unknown, callIfReady = true): void {
   const isWindow = target === window;
