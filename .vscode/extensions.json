@@ -4,6 +4,6 @@
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "jackolope.lit-analyzer-plugin",
-    "ronnidc.nunjucks"
+    "astro-build.astro-vscode"
   ]
 }
