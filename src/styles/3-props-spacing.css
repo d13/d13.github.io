@@ -1,0 +1,25 @@
+@layer props.spacing {
+  :root {
+    --spacing-xs: var(--size--5);
+    --spacing-sm: var(--size--3);
+    --spacing-md: var(--size--1);
+    --spacing-lg: var(--size-0);
+    --spacing-xl: var(--size-1);
+    --spacing-2xl: var(--size-4);
+    --spacing-3xl: var(--size-8);
+
+    --spacing-gutter: var(--spacing-lg);
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --spacing-gutter: var(--spacing-xl);
+    }
+  }
+
+  @media (min-width: 800px) {
+    :root {
+      --spacing-gutter: var(--spacing-2xl);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+/**
+ * TABLE OF CONTENTS
+ *  props........ tokens for fonts, colors, sizing, spacing
+ *  base......... normalize
+ *  patterns..... classes for common patterns
+ *  utilities.... generic helper classes
+ *  overrides.... styles with a sledgehammer
+ */
+
+@layer props.sizing {
+  :root {
+    /* modular scale tokens - https://docs.google.com/spreadsheets/d/1hX1n-Z9jlRxA6zbIf2z8VYe56AYGVC_M2xTw9SNGwyc/edit#gid=0 */
+    --size-scale: 1.2;
+    --size--5: calc(pow(var(--size-scale), -5) * 1rem);
+    --size--4: calc(pow(var(--size-scale), -4) * 1rem);
+    --size--3: calc(pow(var(--size-scale), -3) * 1rem);
+    --size--2: calc(pow(var(--size-scale), -2) * 1rem);
+    --size--1: calc(pow(var(--size-scale), -1) * 1rem);
+    --size-0: 1rem;
+    --size-1: calc(pow(var(--size-scale), 1) * 1rem);
+    --size-2: calc(pow(var(--size-scale), 2) * 1rem);
+    --size-3: calc(pow(var(--size-scale), 3) * 1rem);
+    --size-4: calc(pow(var(--size-scale), 4) * 1rem);
+    --size-5: calc(pow(var(--size-scale), 5) * 1rem);
+    --size-6: calc(pow(var(--size-scale), 6) * 1rem);
+    --size-7: calc(pow(var(--size-scale), 7) * 1rem);
+    --size-8: calc(pow(var(--size-scale), 8) * 1rem);
+    --size-9: calc(pow(var(--size-scale), 9) * 1rem);
+    --size-10: calc(pow(var(--size-scale), 10) * 1rem);
+    --size-11: calc(pow(var(--size-scale), 11) * 1rem);
+    --size-12: calc(pow(var(--size-scale), 12) * 1rem);
+    --size-13: calc(pow(var(--size-scale), 13) * 1rem);
+    --size-14: calc(pow(var(--size-scale), 14) * 1rem);
+    --size-15: calc(pow(var(--size-scale), 15) * 1rem);
+
+    /* static */
+    --size-rule-hair: 0.5px;
+    --size-rule-thin: 1px;
+    --size-rule: 1.5px;
+    --size-rule-heavy: 3px;
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --size-scale: 1.26;
+    }
+  }
+
+  @media (min-width: 800px) {
+    :root {
+      --size-scale: 1.333;
+    }
+  }
+}

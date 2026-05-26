@@ -1,0 +1,11 @@
+@layer props.elevation {
+  :root {
+    --elevation-behind: -1;
+    --elevation-inline: 1;
+    --elevation-sticky: 1000;
+    --elevation-cover: 1100;
+    --elevation-dialog: 1200;
+    --elevation-modal: 1300;
+    --elevation-popover: 1400;
+  }
+}

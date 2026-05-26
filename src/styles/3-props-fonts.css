@@ -1,0 +1,49 @@
+/**
+ * TABLE OF CONTENTS
+ *  props........ tokens for fonts, colors, sizing, spacing
+ *  base......... normalize
+ *  patterns..... classes for common patterns
+ *  utilities.... generic helper classes
+ *  overrides.... styles with a sledgehammer
+ */
+
+@import url(https://use.typekit.net/bdx2zst.css) layer(props.fonts);
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap) layer(props.fonts);
+
+@layer props.fonts {
+  :root {
+    --font-family-base:
+      'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC', 'Segoe UI',
+      /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
+      /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
+    --font-family-heading:
+      'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC',
+      'Segoe UI', /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
+      /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
+    --font-family-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --font-size-base: 16px;
+    --font-line-height-base: 1.5;
+    --font-line-height-heading: 1.2;
+    --font-weight-base: 400;
+    --font-weight-bold: 700;
+    --font-weight-heading: 900;
+  }
+}
+
+@layer props.type {
+  :root {
+    --type-h1-size: var(--size-7);
+    --type-h2-size: var(--size-4);
+    --type-h3-size: var(--size-3);
+    --type-h4-size: var(--size-2);
+    --type-h5-size: var(--size-1);
+    --type-h6-size: var(--size-0);
+    --type-body-2xl-size: var(--size-3);
+    --type-body-xl-size: var(--size-2);
+    --type-body-lg-size: var(--size-1);
+    --type-body-sm-size: var(--size--1);
+    --type-body-xs-size: var(--size--2);
+    --type-overline-size: var(--size--2);
+    --type-small-size: 0.75em; /* based on --size--1 */
+  }
+}

@@ -1,0 +1,10 @@
+/**
+ * TABLE OF CONTENTS
+ *  props........ tokens for fonts, colors, sizing, spacing
+ *  base......... normalize
+ *  patterns..... classes for common patterns
+ *  utilities.... generic helper classes
+ *  overrides.... styles with a sledgehammer
+ */
+
+@layer props, base, patterns, utilities, overrides;
