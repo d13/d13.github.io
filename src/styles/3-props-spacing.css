@@ -7,17 +7,16 @@
     --spacing-xl: var(--size-1);
     --spacing-2xl: var(--size-4);
     --spacing-3xl: var(--size-8);
-
     --spacing-gutter: var(--spacing-lg);
   }
 
-  @media (min-width: 640px) {
+  @media (width >= 640px) {
     :root {
       --spacing-gutter: var(--spacing-xl);
     }
   }
 
-  @media (min-width: 800px) {
+  @media (width >= 800px) {
     :root {
       --spacing-gutter: var(--spacing-2xl);
     }

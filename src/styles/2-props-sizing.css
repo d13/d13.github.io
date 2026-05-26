@@ -40,13 +40,13 @@
     --size-rule-heavy: 3px;
   }
 
-  @media (min-width: 640px) {
+  @media (width >= 640px) {
     :root {
       --size-scale: 1.26;
     }
   }
 
-  @media (min-width: 800px) {
+  @media (width >= 800px) {
     :root {
       --size-scale: 1.333;
     }

@@ -22,16 +22,18 @@ export class IconLibrary extends LitElement {
       :host {
         display: contents;
       }
+    
       .icon {
         display: inline-block;
-        vertical-align: middle;
         inline-size: 1em;
         aspect-ratio: 1;
-      }
-      .icon svg {
         vertical-align: middle;
+      }
+    
+      .icon svg {
         inline-size: 100%;
         block-size: 100%;
+        vertical-align: middle;
       }
     `,
   ];

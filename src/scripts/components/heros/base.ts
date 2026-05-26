@@ -10,8 +10,10 @@ export abstract class HeroImageBase extends LitElement {
     css`
       :host {
         --d-hero-image-offset-y: 0; /* -10%; */
+
         display: block;
       }
+
       * {
         box-sizing: border-box;
       }
@@ -21,12 +23,13 @@ export abstract class HeroImageBase extends LitElement {
         --d-hero-image-mouse-offset-y: 0;
         --d-hero-image-mouse-offset-distance: 3%;
         --d-hero-image-mouse-rotate-distance: 5deg;
+
         position: relative;
-        inline-size: 100%;
-        block-size: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        inline-size: 100%;
+        block-size: 100%;
         overflow: hidden;
       }
 
@@ -40,16 +43,17 @@ export abstract class HeroImageBase extends LitElement {
       }
 
       .mouse-grid {
-        display: grid;
-        grid-template-columns: repeat(${mouseGridSize}, 1fr);
-        grid-template-rows: repeat(${mouseGridSize}, 1fr);
-        gap: 1px;
-        inline-size: 100%;
-        block-size: 100%;
         position: absolute;
         inset-block-start: 0;
         inset-inline-start: 0;
+        display: grid;
+        grid-template-rows: repeat(${mouseGridSize}, 1fr);
+        grid-template-columns: repeat(${mouseGridSize}, 1fr);
+        gap: 1px;
+        inline-size: 100%;
+        block-size: 100%;
       }
+
       @media (prefers-reduced-motion: reduce) {
         .mouse-grid {
           display: none;
@@ -63,6 +67,7 @@ export abstract class HeroImageBase extends LitElement {
           .hero-image:has(.x${i}:hover) {
             --d-hero-image-mouse-offset-x: ${val};
           }
+
           .hero-image:has(.y${i}:hover) {
             --d-hero-image-mouse-offset-y: ${val};
           }
@@ -106,6 +111,7 @@ export abstract class HeroImageBase extends LitElement {
           [fill='#181C21'] {
             fill: var(--color-raw-neutral-10);
           }
+
           [stroke='#181C21'] {
             stroke: var(--color-raw-neutral-10);
           }
@@ -130,9 +136,9 @@ export abstract class HeroImageBase extends LitElement {
       @media (prefers-reduced-motion: no-preference) {
         #svg-layer-filled {
           /* transform: translate(
-          calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-offset-distance)),
-          calc(var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-offset-distance))
-        ); */
+  calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-offset-distance)),
+  calc(var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-offset-distance))
+); */
           transform: translate(
               calc(var(--d-hero-image-mouse-offset-x) * var(--d-hero-image-mouse-offset-distance)),
               calc(var(--d-hero-image-mouse-offset-y) * var(--d-hero-image-mouse-offset-distance))
@@ -143,9 +149,9 @@ export abstract class HeroImageBase extends LitElement {
 
         #svg-layer-outlined {
           /* transform: translate(
-          calc(var(--d-hero-image-mouse-offset-x) * -1 * var(--d-hero-image-mouse-offset-distance)),
-          calc(var(--d-hero-image-mouse-offset-y) * -1 * var(--d-hero-image-mouse-offset-distance))
-        ); */
+  calc(var(--d-hero-image-mouse-offset-x) * -1 * var(--d-hero-image-mouse-offset-distance)),
+  calc(var(--d-hero-image-mouse-offset-y) * -1 * var(--d-hero-image-mouse-offset-distance))
+); */
           transform: translate(
               calc((var(--d-hero-image-mouse-offset-x) * 0.75) * var(--d-hero-image-mouse-offset-distance)),
               calc((var(--d-hero-image-mouse-offset-y) * 0.75) * var(--d-hero-image-mouse-offset-distance))

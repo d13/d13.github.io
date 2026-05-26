@@ -1,9 +1,10 @@
 {
   "recommendations": [
+    "astro-build.astro-vscode",
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "jackolope.lit-analyzer-plugin",
-    "astro-build.astro-vscode"
+    "stylelint.vscode-stylelint"
   ]
 }

@@ -7,20 +7,20 @@
  *  overrides.... styles with a sledgehammer
  */
 
-@import url(https://use.typekit.net/bdx2zst.css) layer(props.fonts);
-@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap) layer(props.fonts);
+@import url("https://use.typekit.net/bdx2zst.css") layer(props.fonts);
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap") layer(props.fonts);
 
 @layer props.fonts {
   :root {
     --font-family-base:
-      'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC', 'Segoe UI',
+      'proxima-nova', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC', 'Segoe UI',
       /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
       /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
     --font-family-heading:
-      'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, BlinkMacSystemFont, /* win */ 'Segoe WPC',
+      'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC',
       'Segoe UI', /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
       /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
-    --font-family-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --font-family-mono: 'JetBrains Mono', sfmono-regular, menlo, monaco, consolas, 'Courier New', monospace;
     --font-size-base: 16px;
     --font-line-height-base: 1.5;
     --font-line-height-heading: 1.2;

@@ -29,11 +29,11 @@
   }
 
   :where(body) {
-    margin: 0;
     min-block-size: 100%;
+    margin: 0;
     font-family: var(--font-family-base);
-    background-color: var(--color-primary-background);
     color: var(--color-primary-foreground);
+    background-color: var(--color-primary-background);
   }
 
   :where(img, svg) {
@@ -44,8 +44,8 @@
   /* add selection styles */
   ::selection,
   mark {
-    background-color: var(--color-selection-background);
     color: var(--color-selection-foreground);
+    background-color: var(--color-selection-background);
   }
 
   :focus-visible {
@@ -64,12 +64,12 @@
   }
 
   :where(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: 0;
     font-family: var(--font-family-heading);
-    line-height: var(--font-line-height-heading);
     font-weight: var(--font-weight-heading);
+    line-height: var(--font-line-height-heading);
     line-height: 1.2;
     text-wrap: balance;
-    margin-block-start: 0;
   }
 
   :where(h1, h2) {
@@ -81,8 +81,7 @@
   }
 
   :where(h6, p, ol, ul, blockquote) {
-    margin-block-start: 0;
-    margin-block-end: var(--spacing-md);
+    margin-block: 0 var(--spacing-md);
   }
 
   :where(h1) {
@@ -124,9 +123,11 @@
   :where(a) {
     color: var(--color-link-foreground);
   }
+
   :where(a:visited) {
     color: var(--color-link-visited-foreground);
   }
+
   :where(a:hover) {
     color: var(--color-link-hover-foreground);
   }
@@ -136,26 +137,26 @@
   }
 
   :where(em) {
+    padding-inline: var(--size--4);
     font-style: normal;
     background: linear-gradient(0deg, var(--color-accent-01) 0%, var(--color-accent-01) 18%, transparent 18%);
-    padding-inline: var(--size--4);
   }
 
   :where(blockquote) {
-    font-family: var(--font-family-heading);
-    font-weight: 800;
-    font-size: var(--size-3);
-    line-height: 1;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    text-wrap: balance;
-    margin-inline: 0;
     margin-block-start: 0;
+    margin-inline: 0;
+    font-family: var(--font-family-heading);
+    font-size: var(--size-3);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 
   :where(h1, h2, h3, h4, h5, h6, blockquote) :where(em) {
+    padding-inline: 0;
     color: var(--color-accent-01);
     background: inherit;
-    padding-inline: 0;
   }
 }

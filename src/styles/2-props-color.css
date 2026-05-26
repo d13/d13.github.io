@@ -9,41 +9,39 @@
 
 @layer props.raw {
   :root {
-    --color-raw-blue-05: rgb(2, 17, 38);
-    --color-raw-blue-10: rgb(4, 28, 56);
-    --color-raw-blue-20: rgb(10, 49, 91);
-    --color-raw-blue-30: rgb(19, 71, 128);
-    --color-raw-blue-40: rgb(28, 95, 168);
-    --color-raw-blue-50: rgb(37, 120, 210);
-    --color-raw-blue-60: rgb(62, 146, 247);
-    --color-raw-blue-70: rgb(127, 172, 249);
-    --color-raw-blue-80: rgb(174, 199, 251);
-    --color-raw-blue-90: rgb(216, 227, 253);
-    --color-raw-blue-95: rgb(236, 241, 254);
-
-    --color-raw-red-05: rgb(42, 2, 3);
-    --color-raw-red-10: rgb(62, 5, 6);
-    --color-raw-red-20: rgb(100, 12, 15);
-    --color-raw-red-30: rgb(141, 21, 25);
-    --color-raw-red-40: rgb(184, 31, 36);
-    --color-raw-red-50: rgb(229, 41, 47);
-    --color-raw-red-60: rgb(245, 94, 96);
-    --color-raw-red-70: rgb(246, 141, 143);
-    --color-raw-red-80: rgb(249, 181, 182);
-    --color-raw-red-90: rgb(251, 219, 219);
-    --color-raw-red-95: rgb(253, 237, 237);
-
-    --color-raw-neutral-05: rgb(14, 17, 21);
-    --color-raw-neutral-10: rgb(24, 28, 33);
-    --color-raw-neutral-20: rgb(43, 49, 57);
-    --color-raw-neutral-30: rgb(63, 71, 82);
-    --color-raw-neutral-40: rgb(84, 95, 109);
-    --color-raw-neutral-50: rgb(107, 120, 137);
-    --color-raw-neutral-60: rgb(130, 146, 167);
-    --color-raw-neutral-70: rgb(157, 173, 193);
-    --color-raw-neutral-80: rgb(189, 199, 213);
-    --color-raw-neutral-90: rgb(222, 227, 234);
-    --color-raw-neutral-95: rgb(239, 241, 244);
+    --color-raw-blue-05: rgb(2 17 38);
+    --color-raw-blue-10: rgb(4 28 56);
+    --color-raw-blue-20: rgb(10 49 91);
+    --color-raw-blue-30: rgb(19 71 128);
+    --color-raw-blue-40: rgb(28 95 168);
+    --color-raw-blue-50: rgb(37 120 210);
+    --color-raw-blue-60: rgb(62 146 247);
+    --color-raw-blue-70: rgb(127 172 249);
+    --color-raw-blue-80: rgb(174 199 251);
+    --color-raw-blue-90: rgb(216 227 253);
+    --color-raw-blue-95: rgb(236 241 254);
+    --color-raw-red-05: rgb(42 2 3);
+    --color-raw-red-10: rgb(62 5 6);
+    --color-raw-red-20: rgb(100 12 15);
+    --color-raw-red-30: rgb(141 21 25);
+    --color-raw-red-40: rgb(184 31 36);
+    --color-raw-red-50: rgb(229 41 47);
+    --color-raw-red-60: rgb(245 94 96);
+    --color-raw-red-70: rgb(246 141 143);
+    --color-raw-red-80: rgb(249 181 182);
+    --color-raw-red-90: rgb(251 219 219);
+    --color-raw-red-95: rgb(253 237 237);
+    --color-raw-neutral-05: rgb(14 17 21);
+    --color-raw-neutral-10: rgb(24 28 33);
+    --color-raw-neutral-20: rgb(43 49 57);
+    --color-raw-neutral-30: rgb(63 71 82);
+    --color-raw-neutral-40: rgb(84 95 109);
+    --color-raw-neutral-50: rgb(107 120 137);
+    --color-raw-neutral-60: rgb(130 146 167);
+    --color-raw-neutral-70: rgb(157 173 193);
+    --color-raw-neutral-80: rgb(189 199 213);
+    --color-raw-neutral-90: rgb(222 227 234);
+    --color-raw-neutral-95: rgb(239 241 244);
   }
 }
 
@@ -56,8 +54,7 @@
     --color-static-accent-05: #bee81e;
     --color-static-accent-06: #ffec00;
     --color-static-accent-07: #a021ff;
-    --color-static-accent-08: #ffcc00;
-
+    --color-static-accent-08: #fc0;
     --color-accent-01: var(--color-raw-red-50);
     --color-accent-02: var(--color-raw-blue-50);
   }
@@ -66,31 +63,23 @@
 @layer props.color {
   :where([data-mode='auto'], [data-mode='light']) {
     color-scheme: light;
+
     --color-min: #fff;
     --color-max: #000;
-
     --color-focus-foreground: var(--color-raw-blue-50);
-
     --color-primary-background: var(--color-raw-neutral-95);
     --color-primary-foreground: var(--color-raw-neutral-10);
-
     --color-end-background: var(--color-raw-neutral-10);
     --color-end-foreground: var(--color-raw-neutral-90);
     --color-end-rule: var(--color-raw-neutral-20);
-
     --color-deemphasize-foreground: var(--color-raw-neutral-50);
-
     --color-link-foreground: var(--color-raw-blue-50);
     --color-link-hover-foreground: var(--color-raw-blue-40);
     --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-50) 65%, var(--color-raw-red-50));
-
-    --color-elevation-shadow: rgba(0, 0, 0, 0.6);
-
+    --color-elevation-shadow: rgb(0 0 0 / 0.6);
     --color-selection-background: var(--color-raw-red-60);
     --color-selection-foreground: var(--color-raw-neutral-10);
-
     --color-rule: var(--color-raw-neutral-10);
-
     --color-card-num-foreground: var(--color-deemphasize-foreground);
     --color-card-hover-foreground: var(--color-min);
     --color-card-hover-background: var(--color-max);
@@ -100,29 +89,22 @@
   @media (prefers-color-scheme: dark) {
     :where([data-mode='auto']) {
       color-scheme: dark;
+
       --color-min: #000;
       --color-max: #fff;
-
       --color-primary-background: var(--color-raw-neutral-10);
       --color-primary-foreground: var(--color-raw-neutral-90);
-
       --color-end-background: var(--color-min);
       --color-end-foreground: var(--color-raw-neutral-80);
       --color-end-rule: var(--color-raw-neutral-10);
-
       --color-deemphasize-foreground: var(--color-raw-neutral-50);
-
       --color-link-foreground: var(--color-raw-blue-60);
       --color-link-hover-foreground: var(--color-raw-blue-50);
       --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
-
-      --color-elevation-shadow: rgba(0, 0, 0, 0.6);
-
+      --color-elevation-shadow: rgb(0 0 0 / 0.6);
       --color-selection-background: var(--color-raw-red-40);
       --color-selection-foreground: var(--color-raw-neutral-90);
-
       --color-rule: var(--color-raw-neutral-90);
-
       --color-card-num-foreground: var(--color-deemphasize-foreground);
       --color-card-hover-foreground: var(--color-min);
       --color-card-hover-background: var(--color-max);
@@ -132,29 +114,22 @@
 
   :where([data-mode='dark']) {
     color-scheme: dark;
+
     --color-min: #000;
     --color-max: #fff;
-
     --color-primary-background: var(--color-raw-neutral-10);
     --color-primary-foreground: var(--color-raw-neutral-90);
-
     --color-deemphasize-foreground: var(--color-raw-neutral-50);
-
     --color-end-background: var(--color-min);
     --color-end-foreground: var(--color-raw-neutral-80);
     --color-end-rule: var(--color-raw-neutral-10);
-
     --color-link-foreground: var(--color-raw-blue-60);
     --color-link-hover-foreground: var(--color-raw-blue-50);
     --color-link-visited-foreground: color-mix(in srgb, var(--color-raw-blue-60) 65%, var(--color-raw-red-60));
-
-    --color-elevation-shadow: rgba(0, 0, 0, 0.6);
-
+    --color-elevation-shadow: rgb(0 0 0 / 0.6);
     --color-selection-background: var(--color-raw-red-40);
     --color-selection-foreground: var(--color-raw-neutral-90);
-
     --color-rule: var(--color-raw-neutral-90);
-
     --color-card-num-foreground: var(--color-deemphasize-foreground);
     --color-card-hover-foreground: var(--color-min);
     --color-card-hover-background: var(--color-max);
