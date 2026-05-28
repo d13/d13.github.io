@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site.ts';
+import SkipLinks from '../components/SkipLinks.astro';
 import '../styles/1-layers.css';
 import '../styles/2-props-color.css';
 import '../styles/2-props-sizing.css';
@@ -80,6 +81,7 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     </script>
   </head>
   <body class={bodyClass}>
+    <SkipLinks />
     <slot />
   </body>
 </html>

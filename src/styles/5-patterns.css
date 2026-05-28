@@ -1,4 +1,9 @@
 @layer patterns.content {
+  .skip-link {
+    position: absolute;
+    z-index: var(--elevation-popover);
+  }
+
   .brand {
     display: flex;
     flex-direction: row;
