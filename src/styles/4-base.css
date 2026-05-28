@@ -1,7 +1,13 @@
+/* Opt in to cross-document view transitions for same-origin navigation.
+   Must be top-level (not nested in @layer) per spec. */
+@view-transition {
+  navigation: auto;
+}
+
 @layer base.normalize {
   :not(:defined) {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity var(--motion-duration-3) var(--motion-ease-in-out);
   }
 
   [hidden] {

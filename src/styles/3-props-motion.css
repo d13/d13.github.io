@@ -1,0 +1,26 @@
+@layer props.motion {
+  :root {
+    /* Durations — pick by what the motion is, not how long it is.
+       1: micro feedback (focus rings, hover color/bg flips)
+       2: small UI motion (arrows, underlines, card hovers)
+       3: reveals and state changes (scroll-driven entry, view transitions)
+       4: first-impression entrances (hero on initial paint) */
+    --motion-duration-1: 120ms;
+    --motion-duration-2: 220ms;
+    --motion-duration-3: 400ms;
+    --motion-duration-4: 700ms;
+
+    /* Easings — default to ease-out for anything entering or responding to
+       user input; ease-in-out for two-way state toggles; spring sparingly
+       for moments that should feel playful (e.g. focus bounce). */
+    --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --motion-ease-spring: cubic-bezier(0.5, 1.6, 0.4, 1);
+
+    /* Property guidance: only transition compositor-friendly properties
+       (opacity, transform, translate, scale, color, background, box-shadow).
+       Avoid width/height/top/left/margin — they trigger layout. Skip
+       transitions entirely when the change is instantaneous by design
+       (e.g. theme swap, focus-trap entry, content swap). */
+  }
+}

@@ -150,7 +150,7 @@
     font-size: var(--type-body-lg-size);
     font-weight: 500;
     content: '→';
-    transition: transform 0.25s ease;
+    transition: transform var(--motion-duration-2) var(--motion-ease-out);
   }
 
   .nav-bigass__link:is(:hover, :focus-visible) {
@@ -180,6 +180,25 @@
   }
 
   .meta__section {
+  }
+
+  /* Availability indicator: gentle outward pulse to signal "live".
+     Square dot is intentional — design language is square, so the ring
+     stays square. ~2.4s period, animates only ~30% of the cycle. */
+  .meta__section.m1 .dot {
+    animation: pulse-availability 2.4s var(--motion-ease-out) infinite;
+  }
+
+  @keyframes pulse-availability {
+    0%,
+    60%,
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-02) 55%, transparent);
+    }
+
+    30% {
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent-02) 0%, transparent);
+    }
   }
 
   .eyebrow-rule {
@@ -255,8 +274,8 @@
 
     /* position: relative; */
     transition:
-      background 0.2s ease,
-      color 0.2s ease;
+      background var(--motion-duration-2) var(--motion-ease-out),
+      color var(--motion-duration-2) var(--motion-ease-out);
 
     + .contact__btn {
       border-block-start: var(--size-rule) solid var(--color-rule);
@@ -287,7 +306,7 @@
     font-family: var(--font-family-mono);
     font-size: var(--type-body-xl-size);
     font-weight: 500;
-    transition: transform 0.25s ease;
+    transition: transform var(--motion-duration-2) var(--motion-ease-out);
   }
 
   .contact__btn:is(:hover, :focus-visible) .arr {
@@ -471,8 +490,8 @@
     border-block-end: var(--size-rule) solid var(--color-rule);
     border-inline-end: var(--size-rule) solid var(--color-rule);
     transition:
-      background 0.25s ease,
-      color 0.25s ease;
+      background var(--motion-duration-2) var(--motion-ease-out),
+      color var(--motion-duration-2) var(--motion-ease-out);
   }
 
   .case-card:is(:hover, :focus-visible) {
@@ -548,7 +567,7 @@
     font-family: var(--font-family-mono);
     font-size: var(--type-body-xl-size);
     font-weight: 500;
-    transition: transform 0.25s ease;
+    transition: transform var(--motion-duration-2) var(--motion-ease-out);
   }
 
   .case-card:is(:hover, :focus-visible) .case-card__arrow {
@@ -757,6 +776,48 @@
     font-size: var(--type-body-lg-size);
   }
 
+  /* Staggered hero entrance. Held back until web fonts are ready so the
+     animation isn't eaten by FOUT (handled by an inline script in <head>
+     that adds `data-fonts="ready"` to <html>). Falls back to immediate
+     reveal if the script never runs or the fonts.ready promise never
+     resolves (timeout in the script). */
+  .hero__eyebrow,
+  .hero__headline,
+  .hero__intro,
+  .hero__sub {
+    transition:
+      opacity var(--motion-duration-4) var(--motion-ease-out),
+      translate var(--motion-duration-4) var(--motion-ease-out);
+  }
+
+  :root[data-fonts='loading'] :is(.hero__eyebrow, .hero__headline, .hero__intro, .hero__sub) {
+    opacity: 0;
+  }
+
+  :root[data-fonts='loading'] .hero__eyebrow {
+    translate: 0 -0.5rem;
+  }
+
+  :root[data-fonts='loading'] :is(.hero__headline, .hero__intro, .hero__sub) {
+    translate: 0 1rem;
+  }
+
+  /* Stagger cadence: ~120ms gap between eyebrow → headline, then widening
+     gaps through intro and sub to let the eye settle on the headline first.
+     Tuned by ear; not tokenized because the values are relational, not
+     categorical — they only mean something next to each other. */
+  :root[data-fonts='ready'] .hero__headline {
+    transition-delay: 80ms;
+  }
+
+  :root[data-fonts='ready'] .hero__intro {
+    transition-delay: 200ms;
+  }
+
+  :root[data-fonts='ready'] .hero__sub {
+    transition-delay: 320ms;
+  }
+
   /* === SECTION ========================================= */
 
   .section {
@@ -897,7 +958,7 @@
 
     a::before {
       content: '→';
-      transition: transform 0.25s ease;
+      transition: transform var(--motion-duration-2) var(--motion-ease-out);
     }
 
     a:is(:hover, :focus-visible)::before {

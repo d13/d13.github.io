@@ -7,8 +7,10 @@
  *  overrides.... styles with a sledgehammer
  */
 
-@import url("https://use.typekit.net/bdx2zst.css") layer(props.fonts);
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap") layer(props.fonts);
+/* Web font stylesheets (Typekit + Google Fonts) are loaded via <link>
+   tags in BaseLayout2026.astro <head> so the browser's preload-scanner
+   discovers them in parallel with the main CSS bundle, instead of waiting
+   for this file to parse and chase down @import chains. */
 
 @layer props.fonts {
   :root {
