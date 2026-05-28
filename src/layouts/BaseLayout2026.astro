@@ -1,6 +1,8 @@
 ---
 import { site } from '../data/site.ts';
 import SkipLinks from '../components/SkipLinks.astro';
+import SiteHeader from '../components/SiteHeader2026.astro';
+import SiteFooter from '../components/SiteFooter2026.astro';
 import '../styles/1-layers.css';
 import '../styles/2-props-color.css';
 import '../styles/2-props-sizing.css';
@@ -21,6 +23,7 @@ interface Props {
   ogImage?: string;
   bodyClass?: string;
   mode?: 'auto' | 'light' | 'dark';
+  isHome?: boolean;
 }
 
 const {
@@ -31,6 +34,7 @@ const {
   ogImage = site.og.defaultImage,
   bodyClass,
   mode,
+  isHome = false,
 } = Astro.props;
 
 const pageTitle = title === site.title ? title : `${title} · Keith Daulton`;
@@ -101,6 +105,8 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
   </head>
   <body class={bodyClass}>
     <SkipLinks />
-    <slot />
+    <SiteHeader isHome={isHome} />
+    <main id="main"><slot /></main>
+    <SiteFooter isHome={isHome} />
   </body>
 </html>

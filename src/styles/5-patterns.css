@@ -676,7 +676,7 @@
 
   .hero {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
     padding-block: var(--spacing-2xl);
     padding-inline: var(--spacing-gutter);
     border-block-end: var(--size-rule-heavy) solid var(--color-rule);
@@ -693,6 +693,13 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 0 var(--spacing-2xl);
+    }
+  }
+
+  .hero__content {
+    /* needs to be a container query */
+    @media (width >= 800px) {
+      grid-column: 1 / 13;
     }
   }
 

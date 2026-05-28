@@ -1,356 +1,288 @@
 ---
 import BaseLayout from '../layouts/BaseLayout2026.astro';
+import { site } from '../data/site.ts';
 ---
 
-<BaseLayout bodyClass="page">
-  <!-- HEADER -->
-  <header class="header header--pinned" role="banner">
-    <div class="header__row">
-      <div class="header__group">
-        <a href="#top" class="brand" aria-label="Keith Daulton home">
-          <img src="media/branding/logo-tight.png" alt="" class="brand__mark" />
-          <span>
-            <span class="brand__name">Keith Daulton</span>
-            <span class="brand__role">D13 // EST. 2001</span>
-          </span>
-        </a>
-      </div>
-      <nav class="header__group" id="nav" aria-label="Main Navigation">
-        <ul class="nav-inline header__nav">
-          <li><a href="#about"><span class="sub">01</span>About</a></li>
-          <li><a href="#story"><span class="sub">02</span>Story</a></li>
-          <li><a href="#work"><span class="sub">03</span>Work</a></li>
-          <li><a href="#connect"><span class="sub">04</span>Connect</a></li>
-          <li>
-            <a href="https://github.com/d13" rel="noopener" target="_blank"><span class="sub">&#8599;</span>Code</a>
-          </li>
-          <li>
-            <button><span class="dot"></span>Modes</button>
-          </li>
-        </ul>
-      </nav>
+<BaseLayout bodyClass="page" isHome>
+  <!-- HERO -->
+  <section class="hero hero--connected">
+    <div class="meta hero__meta">
+      <span class="meta__section m1"><span class="dot"></span> Available &mdash; Q3 / Q4 2026</span>
+      <span class="meta__section m2">v.{site.build.version} // build {site.build.number}</span>
+      <span class="meta__section m3">Lat 26.12° N &mdash; Long 80.13° W</span>
+      <span class="meta__section m4">Index 01 of 04</span>
     </div>
-  </header>
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero hero--connected">
-      <div class="meta hero__meta">
-        <span class="meta__section m1"><span class="dot"></span> Available &mdash; Q3 / Q4 2026</span>
-        <span class="meta__section m2">v.2026.05 // build 03</span>
-        <span class="meta__section m3">Lat 26.12° N &mdash; Long 80.13° W</span>
-        <span class="meta__section m4">Index 01 of 04</span>
-      </div>
-      <div class="hero__main">
-        <div class="hero__content">
-          <div class="eyebrow-rule hero__eyebrow">
-            <span>[ 00 ] Portfolio</span>
-            <span class="rule eyebrow-rule__rule"></span>
-            <span>Engineering Leader &centerdot; Design Technologist</span>
-          </div>
-          <h1 class="hero__headline hero__headline--big"><span class="u-solo">Keith</span> Daulton</h1>
-          <p class="hero__intro">
-            <span class="sep">&#11834;</span>
-            <span>An engineering leader who makes things <em>people love to use</em></span>
-          </p>
-          <p class="hero__sub">
-            Fierce advocate for the people <strong>building products</strong> &mdash; and the people <strong
-              >using them</strong
-            >.
-          </p>
+    <div class="hero__main">
+      <div class="hero__content">
+        <div class="eyebrow-rule hero__eyebrow">
+          <span>[ 00 ] Portfolio</span>
+          <span class="rule eyebrow-rule__rule"></span>
+          <span>Engineering Leader &centerdot; Design Technologist</span>
         </div>
-        <div class="hero__canvas">
-          <d-hero-image class="hero__visual"></d-hero-image>
-        </div>
+        <h1 class="hero__headline hero__headline--big"><span class="u-solo">Keith</span> Daulton</h1>
+        <p class="hero__intro">
+          <span class="sep">&#11834;</span>
+          <span>An engineering leader who makes things <em>people love to use</em></span>
+        </p>
+        <p class="hero__sub">
+          Fierce advocate for the people <strong>building products</strong> &mdash; and the people <strong
+            >using them</strong
+          >.
+        </p>
       </div>
-    </section>
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <header class="section__header">
-        <hgroup class="section__header-row">
-          <p class="section__index">[ 01 ] About</p>
-          <h2 class="section__headline">Engineer<br />+ Designer.</h2>
-          <p class="section__lede">
-            Two-decade veteran of UI engineering, design systems and developer tools. Hands-on, opinionated, kind.
-          </p>
-        </hgroup>
-      </header>
-      <div class="section__body">
-        <div class="manifesto">
-          <blockquote class="manifesto__quote">
-            I build the <em>tools</em> that build the things<br />people love to use — and lead the <em>teams</em><br
-            />that ship them.
-          </blockquote>
+      <div class="hero__canvas">
+        <d-hero-image class="hero__visual"></d-hero-image>
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="section__index">[ 01 ] About</p>
+        <h2 class="section__headline">Engineer<br />+ Designer.</h2>
+        <p class="section__lede">
+          Two-decade veteran of UI engineering, design systems and developer tools. Hands-on, opinionated, kind.
+        </p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="manifesto">
+        <blockquote class="manifesto__quote">
+          I build the <em>tools</em> that build the things<br />people love to use — and lead the <em>teams</em><br
+          />that ship them.
+        </blockquote>
 
-          <div class="manifesto__stats">
-            <div class="stat">
-              <span class="stat__value">20<small>+</small></span>
-              <span class="stat__label">Years shipping UI</span>
-            </div>
-            <div class="stat">
-              <span class="stat__value">29M<small>+</small></span>
-              <span class="stat__label">GitLens installs · maintained</span>
-            </div>
-            <div class="stat">
-              <span class="stat__value">12</span>
-              <span class="stat__label">Brands shipped to production</span>
-            </div>
+        <div class="manifesto__stats">
+          <div class="stat">
+            <span class="stat__value">20<small>+</small></span>
+            <span class="stat__label">Years shipping UI</span>
           </div>
-          <div class="manifesto__detail">
-            <p>
-              <strong>A hands-on leader</strong> in user-interface development and design. I've delivered engaging experiences
-              for design systems, component libraries, developer tools, marketing content and e-commerce — including <strong
-                >Chewy's Chirp design system</strong
-              >, <strong>Spirit Airlines'</strong>
-              rebuilt booking experience, and the <strong>GitLens</strong> extension for VS Code.
-            </p>
-            <p>
-              I build systems that bring <strong>cohesion and accessibility</strong> for every customer, while creating a
-              developer experience — documentation, tokens, code — that engineering teams actually
-              <strong>love to build with</strong>.
-            </p>
+          <div class="stat">
+            <span class="stat__value">29M<small>+</small></span>
+            <span class="stat__label">GitLens installs · maintained</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">12</span>
+            <span class="stat__label">Brands shipped to production</span>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- STORY -->
-    <section class="section" id="story">
-      <header class="section__header">
-        <hgroup class="section__header-row">
-          <p class="section__index">[ 02 ] The Story</p>
-          <h2 class="section__headline">Twenty-three years,<br />still shipping.</h2>
-          <p class="section__lede">
-            The long way &mdash; told properly. How a 19-year-old building XSLT pages became the team lead behind a tool
-            with two million daily users.
+        <div class="manifesto__detail">
+          <p>
+            <strong>A hands-on leader</strong> in user-interface development and design. I've delivered engaging experiences
+            for design systems, component libraries, developer tools, marketing content and e-commerce — including <strong
+              >Chewy's Chirp design system</strong
+            >, <strong>Spirit Airlines'</strong>
+            rebuilt booking experience, and the <strong>GitLens</strong> extension for VS Code.
           </p>
-        </hgroup>
-      </header>
-      <div class="section__body">
-        <div class="story-tease">
-          <p class="story-tease__lede">
-            <span class="year sub">2003 → </span> I was nineteen, hand-writing XSLT for a flight-booking page that flew on
-            a million tickets a year. <em>Twenty-three years later</em> I lead the team behind a developer tool with two
-            million daily users. The path between those two points isn't a résumé — it's a story about how to
-            <em>build things that matter</em>, and the people who matter for building them.
+          <p>
+            I build systems that bring <strong>cohesion and accessibility</strong> for every customer, while creating a developer
+            experience — documentation, tokens, code — that engineering teams actually
+            <strong>love to build with</strong>.
           </p>
-
-          <aside class="story-tease__chapters">
-            <h3 class="story-tease__label">Chapters</h3>
-            <div class="story-tease__chapter">
-              <span class="sub">01</span>
-              <div>
-                <strong>Origin</strong>
-                <small>Building pages before there was a degree to want one.</small>
-              </div>
-            </div>
-            <div class="story-tease__chapter">
-              <span class="sub">02</span>
-              <div>
-                <strong>The Airline</strong>
-                <small>Modernizing a million-dollar booking flow at twenty-five.</small>
-              </div>
-            </div>
-            <div class="story-tease__chapter">
-              <span class="sub">03</span>
-              <div>
-                <strong>The Lab</strong>
-                <small>Twelve years inventing tools at ion interactive.</small>
-              </div>
-            </div>
-            <div class="story-tease__chapter">
-              <span class="sub">04</span>
-              <div>
-                <strong>The Pet Empire</strong>
-                <small>Shipping Chirp inside one of e-commerce's biggest brands.</small>
-              </div>
-            </div>
-            <div class="story-tease__chapter">
-              <span class="sub">05</span>
-              <div>
-                <strong>Two Million Users</strong>
-                <small>GitLens, an extension, and what open-source maintenance teaches.</small>
-              </div>
-            </div>
-            <div class="story-tease__chapter">
-              <span class="sub">06</span>
-              <div>
-                <strong>What's Next</strong>
-                <small>Building for the way teams actually work.</small>
-              </div>
-            </div>
-          </aside>
-
-          <nav class="nav-bigass story-tease__cta">
-            <a class="nav-bigass__link" href="story.html">Read the full story</a>
-          </nav>
         </div>
       </div>
-    </section>
-    <!-- WORK -->
-    <section class="section" id="work">
-      <header class="section__header">
-        <hgroup class="section__header-row">
-          <p class="section__index">[ 03 ] Selected Case Studies</p>
-          <h2 class="section__headline">Thinking,<br />made tangible.</h2>
-          <p class="section__lede">
-            Four projects where the thesis matters more than the tool list. Each one earned its way into the next.
-          </p>
-        </hgroup>
-      </header>
-      <div class="section__body">
-        <div class="cases">
-          <a class="case-card" href="work.html#inspect-view" data-reveal>
-            <div class="case-card__head">
-              <span class="case-card__num">01</span>
-              <span class="sub case-card__tag">Product Thinking<br />GitLens · 2024</span>
-            </div>
-            <h3 class="case-card__title">Git history as ambient context.</h3>
-            <p class="case-card__thesis">
-              What if your code's history wasn't a destination you had to visit, but a panel that already knew what you
-              were looking at — and showed you only what mattered? Inspect View is that panel.
-            </p>
-            <div class="case-card__foot">
-              <span class="case-card__metric">2M<small>daily users · default home</small></span>
-              <span class="case-card__arrow">→</span>
-            </div>
-          </a>
+    </div>
+  </section>
+  <!-- STORY -->
+  <section class="section" id="story">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="section__index">[ 02 ] The Story</p>
+        <h2 class="section__headline">Twenty-three years,<br />still shipping.</h2>
+        <p class="section__lede">
+          The long way &mdash; told properly. How a 19-year-old building XSLT pages became the team lead behind a tool
+          with two million daily users.
+        </p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="story-tease">
+        <p class="story-tease__lede">
+          <span class="year sub">2003 → </span> I was nineteen, hand-writing XSLT for a flight-booking page that flew on
+          a million tickets a year. <em>Twenty-three years later</em> I lead the team behind a developer tool with two million
+          daily users. The path between those two points isn't a résumé — it's a story about how to
+          <em>build things that matter</em>, and the people who matter for building them.
+        </p>
 
-          <a class="case-card" href="work.html#ftux" data-reveal>
-            <div class="case-card__head">
-              <span class="case-card__num">02</span>
-              <span class="sub case-card__tag">Growth · First-time UX<br />GitKraken · 2024</span>
+        <aside class="story-tease__chapters">
+          <h3 class="story-tease__label">Chapters</h3>
+          <div class="story-tease__chapter">
+            <span class="sub">01</span>
+            <div>
+              <strong>Origin</strong>
+              <small>Building pages before there was a degree to want one.</small>
             </div>
-            <h3 class="case-card__title">From browse to “aha” in three minutes.</h3>
-            <p class="case-card__thesis">
-              Most trials die before the user learns the product exists. We rebuilt onboarding around the single insight
-              a new user needs to feel — not the feature tour we wanted to give them.
-            </p>
-            <div class="case-card__foot">
-              <span class="case-card__metric">3.7×<small>trial growth · same product</small></span>
-              <span class="case-card__arrow">→</span>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">02</span>
+            <div>
+              <strong>The Airline</strong>
+              <small>Modernizing a million-dollar booking flow at twenty-five.</small>
             </div>
-          </a>
-
-          <a class="case-card" href="work.html#chirp" data-reveal>
-            <div class="case-card__head">
-              <span class="case-card__num">03</span>
-              <span class="sub case-card__tag">Design Systems<br />Chewy · 2021–22</span>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">03</span>
+            <div>
+              <strong>The Lab</strong>
+              <small>Twelve years inventing tools at ion interactive.</small>
             </div>
-            <h3 class="case-card__title">A design system as a product.</h3>
-            <p class="case-card__thesis">
-              Treating Chirp like an internal SaaS — with docs, releases, support, and real customers (the engineers
-              shipping on top) — turned a style guide into infrastructure the whole org would defend.
-            </p>
-            <div class="case-card__foot">
-              <span class="case-card__metric">Web · iOS · Android<small>three reorgs · still standing</small></span>
-              <span class="case-card__arrow">→</span>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">04</span>
+            <div>
+              <strong>The Pet Empire</strong>
+              <small>Shipping Chirp inside one of e-commerce's biggest brands.</small>
             </div>
-          </a>
-
-          <a class="case-card" href="work.html#wc-ai" data-reveal>
-            <div class="case-card__head">
-              <span class="case-card__num">04</span>
-              <span class="sub case-card__tag">Engineering · Web Components<br />GitKraken · 2025</span>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">05</span>
+            <div>
+              <strong>Two Million Users</strong>
+              <small>GitLens, an extension, and what open-source maintenance teaches.</small>
             </div>
-            <h3 class="case-card__title">Web Components for the AI shoreline.</h3>
-            <p class="case-card__thesis">
-              Frontends for AI tools change every two weeks. Web Components let us ship UI that survives the model swaps
-              — framework-agnostic, embeddable anywhere a markdown stream lives.
-            </p>
-            <div class="case-card__foot">
-              <span class="case-card__metric"
-                >VS Code · Web · JetBrains<small>one codebase · three runtimes</small></span
-              >
-              <span class="case-card__arrow">→</span>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">06</span>
+            <div>
+              <strong>What's Next</strong>
+              <small>Building for the way teams actually work.</small>
             </div>
-          </a>
-        </div>
+          </div>
+        </aside>
 
         <nav class="nav-bigass story-tease__cta">
-          <a class="nav-bigass__link" href="work.html">See all case studies</a>
+          <a class="nav-bigass__link" href="story.html">Read the full story</a>
         </nav>
       </div>
-    </section>
-    <!-- CONNECT -->
-    <section class="section" id="connect">
-      <header class="section__header">
-        <hgroup class="section__header-row">
-          <p class="section__index">[ 04 ] Connect</p>
-          <h2 class="section__headline">Let's talk<br />shop.</h2>
-          <p class="section__lede">Engineering leadership, design systems, developer experience — or just to say hi.</p>
-        </hgroup>
-      </header>
-      <div class="section__body">
-        <div class="contact">
-          <div class="contact__head">
-            <h3 class="contact__headline">Let me know<br />what I can <em>do</em><br />for you.</h3>
-            <p>
-              Currently open to senior engineering, design-systems, or DX leadership conversations. Based in South
-              Florida, USA. Remote-first, limited travel ok.
-            </p>
-            <p>Icebreaker: Ask me about my homebrewing hobby!</p>
+    </div>
+  </section>
+  <!-- WORK -->
+  <section class="section" id="work">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="section__index">[ 03 ] Selected Case Studies</p>
+        <h2 class="section__headline">Thinking,<br />made tangible.</h2>
+        <p class="section__lede">
+          Four projects where the thesis matters more than the tool list. Each one earned its way into the next.
+        </p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="cases">
+        <a class="case-card" href="work.html#inspect-view" data-reveal>
+          <div class="case-card__head">
+            <span class="case-card__num">01</span>
+            <span class="sub case-card__tag">Product Thinking<br />GitLens · 2024</span>
           </div>
-          <div class="contact__actions">
-            <a class="contact__btn" href="mailto:kdaulton@gmail.com">
-              <span>
-                Email
-                <span class="sub">kdaulton@gmail.com</span>
-              </span>
-              <span class="arr">→</span>
-            </a>
-            <a class="contact__btn" href="https://www.linkedin.com/in/keithdaulton" target="_blank" rel="noopener">
-              <span>
-                LinkedIn
-                <span class="sub">linkedin.com/in/keithdaulton</span>
-              </span>
-              <span class="arr">↗</span>
-            </a>
-            <a class="contact__btn" href="https://github.com/d13" target="_blank" rel="noopener">
-              <span>
-                GitHub
-                <span class="sub">github.com/d13</span>
-              </span>
-              <span class="arr">↗</span>
-            </a>
+          <h3 class="case-card__title">Git history as ambient context.</h3>
+          <p class="case-card__thesis">
+            What if your code's history wasn't a destination you had to visit, but a panel that already knew what you
+            were looking at — and showed you only what mattered? Inspect View is that panel.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">2M<small>daily users · default home</small></span>
+            <span class="case-card__arrow">→</span>
           </div>
+        </a>
+
+        <a class="case-card" href="work.html#ftux" data-reveal>
+          <div class="case-card__head">
+            <span class="case-card__num">02</span>
+            <span class="sub case-card__tag">Growth · First-time UX<br />GitKraken · 2024</span>
+          </div>
+          <h3 class="case-card__title">From browse to “aha” in three minutes.</h3>
+          <p class="case-card__thesis">
+            Most trials die before the user learns the product exists. We rebuilt onboarding around the single insight a
+            new user needs to feel — not the feature tour we wanted to give them.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">3.7×<small>trial growth · same product</small></span>
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="case-card" href="work.html#chirp" data-reveal>
+          <div class="case-card__head">
+            <span class="case-card__num">03</span>
+            <span class="sub case-card__tag">Design Systems<br />Chewy · 2021–22</span>
+          </div>
+          <h3 class="case-card__title">A design system as a product.</h3>
+          <p class="case-card__thesis">
+            Treating Chirp like an internal SaaS — with docs, releases, support, and real customers (the engineers
+            shipping on top) — turned a style guide into infrastructure the whole org would defend.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">Web · iOS · Android<small>three reorgs · still standing</small></span>
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="case-card" href="work.html#wc-ai" data-reveal>
+          <div class="case-card__head">
+            <span class="case-card__num">04</span>
+            <span class="sub case-card__tag">Engineering · Web Components<br />GitKraken · 2025</span>
+          </div>
+          <h3 class="case-card__title">Web Components for the AI shoreline.</h3>
+          <p class="case-card__thesis">
+            Frontends for AI tools change every two weeks. Web Components let us ship UI that survives the model swaps —
+            framework-agnostic, embeddable anywhere a markdown stream lives.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">VS Code · Web · JetBrains<small>one codebase · three runtimes</small></span>
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="nav-bigass story-tease__cta">
+        <a class="nav-bigass__link" href="work.html">See all case studies</a>
+      </nav>
+    </div>
+  </section>
+  <!-- CONNECT -->
+  <section class="section" id="connect">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="section__index">[ 04 ] Connect</p>
+        <h2 class="section__headline">Let's talk<br />shop.</h2>
+        <p class="section__lede">Engineering leadership, design systems, developer experience — or just to say hi.</p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="contact">
+        <div class="contact__head">
+          <h3 class="contact__headline">Let me know<br />what I can <em>do</em><br />for you.</h3>
+          <p>
+            Currently open to senior engineering, design-systems, or DX leadership conversations. Based in South
+            Florida, USA. Remote-first, limited travel ok.
+          </p>
+          <p>Icebreaker: Ask me about my homebrewing hobby!</p>
+        </div>
+        <div class="contact__actions">
+          <a class="contact__btn" href="mailto:kdaulton@gmail.com">
+            <span>
+              Email
+              <span class="sub">kdaulton@gmail.com</span>
+            </span>
+            <span class="arr">→</span>
+          </a>
+          <a class="contact__btn" href="https://www.linkedin.com/in/keithdaulton" target="_blank" rel="noopener">
+            <span>
+              LinkedIn
+              <span class="sub">linkedin.com/in/keithdaulton</span>
+            </span>
+            <span class="arr">↗</span>
+          </a>
+          <a class="contact__btn" href="https://github.com/d13" target="_blank" rel="noopener">
+            <span>
+              GitHub
+              <span class="sub">github.com/d13</span>
+            </span>
+            <span class="arr">↗</span>
+          </a>
         </div>
       </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="footer__row">
-      <hgroup class="footer__mark">
-        <h2 class="footer__me">Keith<br />Daulton</h2>
-        <p class="sub footer__sub">D13 // Design Tech.<br />Est. 2003 — keithdaulton.com</p>
-      </hgroup>
-      <div class="footer__nav">
-        <h3>Here</h3>
-        <a href="#about">About</a><br />
-        <a href="#story">Story</a><br />
-        <a href="#work">Work</a><br />
-        <a href="#connect">Connect</a><br />
-      </div>
-      <div class="footer__nav">
-        <h3>Elsewhere</h3>
-        <a href="https://github.com/d13" target="_blank" rel="noopener">GitHub</a><br />
-        <a href="https://www.linkedin.com/in/keithdaulton" target="_blank" rel="noopener">LinkedIn</a><br />
-        <a href="https://codepen.io/d13" target="_blank" rel="noopener">CodePen</a><br />
-        <a href="https://dribbble.com/keithdaulton" target="_blank" rel="noopener">Dribbble</a><br />
-      </div>
-      <div class="footer__colophon">
-        <h3>Colophon</h3>
-        <p>
-          Set in Proxima Nova (& Condensed)<br />
-          &amp; JetBrains Mono.
-        </p>
-        <p>
-          Built with &hearts;, HTML, CSS &amp; JS.<br />
-          Powered by Astro &amp; My Brews.
-        </p>
-      </div>
     </div>
-    <p class="footer__end">
-      <span>&copy; 2026 Keith Daulton &centerdot; All content respective brands.</span>
-      <span>// v.2026.05 &centerdot; build 03</span>
-    </p>
-  </footer>
+  </section>
 </BaseLayout>

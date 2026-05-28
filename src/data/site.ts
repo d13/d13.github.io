@@ -11,6 +11,10 @@ export const site = {
   author: 'Keith Daulton',
   buildYear: new Date().getFullYear(),
   themeColor: '#ffffff',
+  build: {
+    version: '2026.05',
+    number: '03',
+  },
   og: {
     defaultImage: '/media/social/og-image.png',
   },
