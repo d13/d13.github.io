@@ -38,6 +38,9 @@
     --size-rule-thin: 1px;
     --size-rule: 1.5px;
     --size-rule-heavy: 3px;
+
+    /* component sizes */
+    --header-height: var(--size-6);
   }
 
   @media (width >= 640px) {
@@ -49,6 +52,7 @@
   @media (width >= 800px) {
     :root {
       --size-scale: 1.333;
+      --header-height: var(--size-5);
     }
   }
 }

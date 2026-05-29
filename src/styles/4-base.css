@@ -73,8 +73,9 @@
     margin-block-start: 0;
     font-family: var(--font-family-heading);
     font-weight: var(--font-weight-heading);
+    font-optical-sizing: auto;
     line-height: var(--font-line-height-heading);
-    line-height: 1.2;
+    text-transform: uppercase;
     text-wrap: balance;
   }
 
@@ -118,12 +119,31 @@
     text-wrap: pretty;
   }
 
-  :where(button, input, select, textarea) {
+  :where(input, select, textarea) {
     font-family: inherit;
+  }
+
+  :where(button) {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    background: transparent;
+    border: 0;
   }
 
   :where(button:not(:disabled)) {
     cursor: pointer;
+  }
+
+  :where(cite, figcaption) {
+    font-family: var(--font-family-mono);
+    font-size: var(--type-body-xs-size);
+    font-style: normal;
+    color: var(--color-deemphasize-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 
   :where(a) {

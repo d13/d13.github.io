@@ -69,6 +69,7 @@
     --color-focus-foreground: var(--color-raw-blue-50);
     --color-primary-background: var(--color-raw-neutral-95);
     --color-primary-foreground: var(--color-raw-neutral-10);
+    --color-muted-background: var(--color-raw-neutral-90);
     --color-end-background: var(--color-raw-neutral-10);
     --color-end-foreground: var(--color-raw-neutral-90);
     --color-end-rule: var(--color-raw-neutral-20);
@@ -94,6 +95,7 @@
       --color-max: #fff;
       --color-primary-background: var(--color-raw-neutral-10);
       --color-primary-foreground: var(--color-raw-neutral-90);
+      --color-muted-background: var(--color-raw-neutral-20);
       --color-end-background: var(--color-min);
       --color-end-foreground: var(--color-raw-neutral-80);
       --color-end-rule: var(--color-raw-neutral-10);
@@ -119,6 +121,7 @@
     --color-max: #fff;
     --color-primary-background: var(--color-raw-neutral-10);
     --color-primary-foreground: var(--color-raw-neutral-90);
+    --color-muted-background: var(--color-raw-neutral-20);
     --color-deemphasize-foreground: var(--color-raw-neutral-50);
     --color-end-background: var(--color-min);
     --color-end-foreground: var(--color-raw-neutral-80);

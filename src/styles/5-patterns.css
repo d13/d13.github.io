@@ -43,12 +43,21 @@
     white-space: nowrap;
   }
 
-  .sub {
+  /* Canonical mono-eyebrow treatment. Shared across small uppercase
+     metadata labels — table-of-contents headers, section indices, stat
+     labels, audience pickers, image-slot placeholders, footer ends, etc.
+     Per-pattern overrides for font-size, color, or letter-spacing live on
+     the individual pattern selectors below. */
+  :where(.eyebrow, .sub, .tag, .meta, .eyebrow-rule) {
     font-family: var(--font-family-mono);
-    font-size: var(--type-body-sm-size);
+    font-size: var(--type-body-xs-size);
     color: var(--color-deemphasize-foreground);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+
+  .sub {
+    font-size: var(--type-body-sm-size);
   }
 
   .dot {
@@ -58,21 +67,12 @@
     background-color: var(--color-accent-02);
   }
 
-  .meta {
-  }
-
   .tag {
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-sm);
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-xs-size);
-    color: var(--bg);
-    text-transform: uppercase;
+    color: var(--color-primary-background);
     letter-spacing: 0.08em;
-    background: var(--fg);
-  }
-
-  .eyebrow {
+    background-color: var(--color-primary-foreground);
   }
 
   .rule {
@@ -100,10 +100,6 @@
   }
 
   .stat__label {
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-xs-size);
-    color: var(--color-deemphasize-foreground);
-    text-transform: uppercase;
     letter-spacing: 0.08em;
   }
 }
@@ -169,9 +165,6 @@
     align-items: flex-start;
     justify-content: space-between;
     padding-block: var(--spacing-md);
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-xs-size);
-    text-transform: uppercase;
     border-block-end: var(--size-rule) solid var(--color-rule);
 
     @media (width >= 800px) {
@@ -209,9 +202,7 @@
     gap: var(--spacing-xl);
     align-items: center;
     justify-content: flex-start;
-    font-family: var(--font-family-mono);
     font-size: var(--type-body-sm-size);
-    text-transform: uppercase;
   }
 
   .eyebrow-rule__rule {
@@ -244,7 +235,6 @@
   .contact__headline {
     font-size: var(--size-5);
     line-height: 0.86;
-    text-transform: uppercase;
   }
 
   .contact__actions {
@@ -292,10 +282,7 @@
 
     /* color: var(--fg-mute); */
     margin-block-start: var(--spacing-xs);
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-sm-size);
     font-weight: 400;
-    letter-spacing: 0.06em;
   }
 
   .contact__btn:is(:hover, :focus-visible) .sub {
@@ -415,11 +402,8 @@
   }
 
   .story-tease__label {
-    font-family: var(--font-family-mono);
     font-size: var(--type-body-sm-size);
     font-weight: normal;
-    color: var(--color-deemphasize-foreground);
-    text-transform: uppercase;
     letter-spacing: 0.08em;
   }
 
@@ -523,7 +507,6 @@
   .case-card__title {
     margin-block: var(--spacing-lg);
     font-size: var(--type-body-xl-size);
-    text-transform: uppercase;
   }
 
   .case-card__thesis {
@@ -553,12 +536,8 @@
     small {
       display: block;
       margin-top: var(--spacing-sm);
-      font-family: var(--font-family-mono);
       font-size: var(--type-body-sm-size);
       font-weight: 400;
-      color: var(--color-deemphasize-foreground);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
   }
 
@@ -611,11 +590,7 @@
     flex-direction: row;
     gap: var(--spacing-md);
     justify-content: space-between;
-    block-size: var(--size-6);
-
-    @media (width >= 800px) {
-      block-size: var(--size-5);
-    }
+    block-size: var(--header-height);
   }
 
   .header__group:not(:last-child) {
@@ -635,12 +610,6 @@
 
     li {
       border-inline-start: var(--size-rule) solid var(--color-rule);
-    }
-
-    button {
-      appearance: none;
-      background-color: transparent;
-      border: none;
     }
 
     :is(a, button) {
@@ -755,7 +724,6 @@
 
   .hero__headline {
     line-height: 0.86;
-    text-transform: uppercase;
     letter-spacing: -0.02em;
   }
 
@@ -832,7 +800,8 @@
     padding-inline: var(--spacing-gutter);
   }
 
-  .section--next {
+  .section--end {
+    background-color: var(--color-muted-background);
     border-block-start: var(--size-rule-heavy) solid var(--color-rule);
   }
 
@@ -858,10 +827,7 @@
   .section__index {
     flex: none;
     margin-block: 0;
-    font-family: var(--font-family-mono);
     font-size: var(--type-overline-size);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
 
     @media (width >= 800px) {
       width: var(--size-8);
@@ -876,8 +842,14 @@
     margin-block: 0;
     font-stretch: condensed;
     line-height: 0.86;
-    text-transform: uppercase;
     letter-spacing: -0.02em;
+  }
+
+  .section--end .section__headline {
+    font-size: var(--size-6);
+    font-stretch: normal;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
   }
 
   .section__lede {
@@ -899,6 +871,10 @@
 
   .section__body {
     padding-block: var(--spacing-2xl);
+  }
+
+  .section__actions {
+    margin-block-start: var(--spacing-2xl);
   }
 
   /* === FOOTER ========================================= */
@@ -930,10 +906,9 @@
     /* flex: none; */
   }
 
-  .footer__me {
+  .footer__headline {
     margin-block-end: var(--spacing-xs);
     line-height: 0.86;
-    text-transform: uppercase;
   }
 
   .footer__sub {
@@ -941,13 +916,9 @@
     white-space: nowrap;
   }
 
-  .footer h3 {
+  .footer__subhead {
     margin-block-end: var(--spacing-sm);
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-xs-size);
     font-weight: 400;
-    color: var(--color-deemphasize-foreground);
-    text-transform: uppercase;
     letter-spacing: 0.08em;
   }
 
@@ -984,10 +955,6 @@
     justify-content: space-between;
     padding-block-start: var(--spacing-xl);
     margin-block: var(--spacing-lg) 0;
-    font-family: var(--font-family-mono);
-    font-size: var(--type-body-xs-size);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
     border-block-start: var(--size-rule) solid var(--color-rule);
   }
 }
