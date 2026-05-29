@@ -1,30 +1,307 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout2026.astro';
 ---
 
-<BaseLayout title="Story" description="The story behind Keith Daulton's work." bodyClass="page page--story">
-  <section class="page__header container">
-    <p class="page__eyebrow">Story</p>
-    <h1 class="page__title">TODO: Story headline.</h1>
-    <p class="tease__body">
-      TODO: short lede that frames what this page is about — origin, throughline, what someone leaves with after reading.
-    </p>
+<BaseLayout
+  title="Story"
+  description="Twenty-six years of shipping interfaces — the long way, told properly."
+  bodyClass="page page--story"
+>
+  <!-- TOC — sticky chapter rail (desktop only via CSS) -->
+  <aside class="toc eyebrow" aria-label="Story chapters">
+    <h2 class="toc__label eyebrow">Chapters</h2>
+    <ol class="toc__list">
+      <li><a href="#origin"><span class="toc__num">01</span><span>Origin</span></a></li>
+      <li><a href="#airline"><span class="toc__num">02</span><span>The Airline</span></a></li>
+      <li><a href="#lab"><span class="toc__num">03</span><span>The Lab</span></a></li>
+      <li><a href="#pet-empire"><span class="toc__num">04</span><span>The Pet Empire</span></a></li>
+      <li><a href="#two-million"><span class="toc__num">05</span><span>Two Million Users</span></a></li>
+      <li><a href="#whats-next"><span class="toc__num">06</span><span>What's Next</span></a></li>
+    </ol>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="meta hero__meta">
+      <span class="meta__section m1">[ 02 ] The Story</span>
+      <span class="meta__section m2">Long-form / 26-year arc</span>
+      <span class="meta__section m3">~12 min read &centerdot; 6 chapters</span>
+      <span class="meta__section m4">v.2026.05</span>
+    </div>
+    <div class="hero__main">
+      <div class="hero__content">
+        <div class="eyebrow-rule hero__eyebrow">
+          <span>Twenty-six years, six chapters</span>
+          <span class="rule eyebrow-rule__rule"></span>
+          <span>Audience-aware</span>
+        </div>
+        <h1 class="hero__headline"><span class="u-solo">The long</span> way <em>round</em></h1>
+        <p class="hero__sub">
+          From <em>hand-writing XSLT</em> for a flight-booking page at nineteen, to leading the team behind a developer tool
+          with <em>two million daily users</em>. Not a résumé &mdash; a story about how the people you build with shape
+          the things you ship.
+        </p>
+        <div class="audience-strip eyebrow" data-audience-strip>
+          <span class="audience-strip__label">I'm here as a&nbsp;&nbsp;&rarr;</span>
+          <div class="audience" role="tablist" aria-label="Audience">
+            <button class="audience__btn is-active" type="button" role="tab" aria-selected="true" data-aud="all">
+              Reader
+            </button>
+            <button class="audience__btn" type="button" role="tab" aria-selected="false" data-aud="hiring">
+              Hiring manager
+            </button>
+            <button class="audience__btn" type="button" role="tab" aria-selected="false" data-aud="founder">
+              Founder
+            </button>
+            <button class="audience__btn" type="button" role="tab" aria-selected="false" data-aud="peer"> Peer </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="container prose">
-    <p><span class="placeholder-tag">TODO</span> Body copy lands here. Multiple paragraphs. Real narrative, not bullet points.</p>
-    <p>
-      TODO: body paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-      TODO: body paragraph. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
-      TODO: body paragraph. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
+  <!-- CHAPTERS — inserted below -->
+
+  <!-- CHAPTER 01 · Origin -->
+  <section class="chapter" id="origin" aria-labelledby="ch-origin-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>01</em></span>
+      <span class="chapter__years sub">&mdash; 2003</span>
+      <span class="chapter__tag eyebrow">Beginnings</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-origin-title">Origin.</h2>
+      <p class="chapter__lede">Building pages before there was a degree to want one.</p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> I'm a self-taught designer-engineer who grew up with the early web &mdash;
+          the medium where the entire stack was visible if you knew how to <em>View Source</em>. By twenty I'd built
+          more sites than I could remember the URLs to: landing pages, e-commerce mock-ups, a few logos for friends'
+          bands, a Geocities-era fan site I still won't link to.
+        </p>
+        <p>
+          There was no university for the job I wanted, so I built one in my browser tabs. I learned Photoshop, then
+          HTML, then CSS, then JavaScript &mdash; in that order, because that's the order the work arrived in. The path
+          from &ldquo;design this&rdquo; to &ldquo;ship it&rdquo; was one person long, and that person was me.
+        </p>
+        <p>
+          That order matters. Twenty-three years later I still think the most useful UI engineers are the ones who
+          learned to design and ship in the same gesture.
+        </p>
+      </div>
+      <blockquote class="chapter__pull">
+        <p>I learned to <em>design</em> and <em>ship</em> in the same gesture.</p>
+        <cite>// chapter 01</cite>
+      </blockquote>
+      <figure class="chapter__figure">
+        <div class="image-slot eyebrow">[Image: early portfolio screenshot or a photo from ~2002]</div>
+        <figcaption>Fig. 01.01 &mdash; Replace with a screenshot of your earliest still-extant work.</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="container" style="margin-block-start: var(--spacing-2xl);">
-    <a href="/" class="link-cta"><span aria-hidden="true">←</span> Back to home</a>
+  <!-- CHAPTER 02 · The Airline -->
+  <section class="chapter" id="airline" aria-labelledby="ch-airline-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>02</em></span>
+      <span class="chapter__years sub">2011</span>
+      <span class="chapter__tag eyebrow">Spirit Airlines</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-airline-title">The <em>Airline.</em></h2>
+      <p class="chapter__lede">Modernizing a million-dollar booking flow at twenty-five.</p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> I walked into Spirit Airlines' offices in Fort Lauderdale and inherited
+          a website running a million ticket sales a year on nested HTML tables, inline styles, and a tangle of XSLT no one
+          had touched in years. The brief was nominally &ldquo;make it look better.&rdquo; The reality was a structural rebuild
+          done while the engine was running.
+        </p>
+        <p>
+          Nine months later it shipped on a modular CSS architecture, a reusable JS pattern library, and a set of
+          conventions for the next team to keep building with.
+          <span class="chapter__lift"
+            >Same revenue. Faster pages. A codebase the next engineer could actually open.</span
+          >
+        </p>
+        <p>
+          The lesson was about leverage. Legacy isn't a curse &mdash; it's a deadline, and the team that respects the
+          deadline gets to write the next chapter.
+        </p>
+      </div>
+      <blockquote class="chapter__pull">
+        <p>Nine months. One website. <em>A million</em> tickets.</p>
+        <cite>// chapter 02 · spirit airlines · 2011</cite>
+      </blockquote>
+      <figure class="chapter__figure chapter__figure--wide">
+        <div class="image-slot eyebrow">[Image: Spirit Airlines booking flow &mdash; before / after]</div>
+        <figcaption>Fig. 02.01 &mdash; Replace with a before/after of the booking flow.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03 · The Lab -->
+  <section class="chapter" id="lab" aria-labelledby="ch-lab-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>03</em></span>
+      <span class="chapter__years sub">2013 &mdash; 2019</span>
+      <span class="chapter__tag eyebrow">ion interactive</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-lab-title">The <em>Lab.</em></h2>
+      <p class="chapter__lede">
+        Twelve years inventing tools at a marketing-tech company you probably haven't heard of.
+      </p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> ion interactive (later ScribbleLive) made the platform that let non-engineers
+          build interactive marketing content. For six years I made the things that let other people make things &mdash;
+          the highest-leverage UI job there is.
+        </p>
+        <p>
+          A first-to-market in-browser grid builder that snapped responsive layouts together with draggable tiles. A
+          design system that survived four product redesigns. A participant-survey engine that turned quiz logic into a
+          visual pipeline. The lab taught me that the UI which matters most is usually the UI that other people will
+          build on top of.
+        </p>
+        <p>
+          It also taught me to love a team. Twelve years is enough time to ship through three economic cycles, two
+          acquisitions, and one global pandemic &mdash; with mostly the same people. That part doesn't go on a résumé.
+          It goes here.
+        </p>
+      </div>
+      <blockquote class="chapter__pull">
+        <p>The UI that <em>matters most</em> is usually the UI other people build <em>on top of.</em></p>
+        <cite>// chapter 03 · ion interactive · 2013–19</cite>
+      </blockquote>
+      <figure class="chapter__figure">
+        <div class="image-slot eyebrow">[Image: ion content builder UI · grid editor]</div>
+        <figcaption>
+          Fig. 03.01 &mdash; Replace with a screenshot of the ion content builder or design system.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 · The Pet Empire -->
+  <section class="chapter" id="pet-empire" aria-labelledby="ch-pet-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>04</em></span>
+      <span class="chapter__years sub">2020 &mdash; 2022</span>
+      <span class="chapter__tag eyebrow">Chewy · Chirp</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-pet-title">The Pet <em>Empire.</em></h2>
+      <p class="chapter__lede">Shipping Chirp inside one of e-commerce's biggest brands.</p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> At Chewy I joined Chirp, the design system, as a manager and individual
+          contributor &mdash; the rare arrangement that lets you shape the bet and ship the work in the same week. The bet
+          was simple:
+          <span class="chapter__lift">
+            treat Chirp like a SaaS for an internal customer (every engineer at Chewy), and the system would defend
+            itself across reorgs.
+          </span>
+        </p>
+        <p>
+          That meant docs that didn't lie. Releases with changelogs. Office hours. A roadmap visible to the whole org.
+          An on-call rotation. Versioned tokens. A real Storybook. Real types. Real tests. All the infrastructure of a
+          product, applied to a thing that had previously been treated as a style guide.
+        </p>
+        <p>
+          Three reorgs later, Chirp is still standing. It's powering web, iOS, and Android. The engineers who used to
+          fight design-system adoption now defend the system from the outside. That's the bet paying off.
+        </p>
+      </div>
+      <blockquote class="chapter__pull">
+        <p>Three reorgs later &mdash; <em>still standing.</em></p>
+        <cite>// chapter 04 · chewy · chirp design system</cite>
+      </blockquote>
+      <figure class="chapter__figure">
+        <div class="image-slot eyebrow">[Image: Chirp Storybook or design system docs]</div>
+        <figcaption>Fig. 04.01 &mdash; Replace with a Storybook or component library shot.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 05 · Two Million Users -->
+  <section class="chapter" id="two-million" aria-labelledby="ch-two-million-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>05</em></span>
+      <span class="chapter__years sub">2022 &rarr;</span>
+      <span class="chapter__tag eyebrow">GitKraken · GitLens</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-two-million-title">Two Million<br /><em>Users.</em></h2>
+      <p class="chapter__lede">GitLens, an extension, and what open-source maintenance teaches you about leadership.</p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> GitLens is the largest Git extension on the Visual Studio Marketplace
+          &mdash; twenty-nine million installs, two million daily active users. I joined as a maintainer, which is the closest
+          thing modern software has to a parish job: people you've never met, with problems you didn't cause, expecting answers
+          in your repo at midnight.
+        </p>
+        <p>
+          Open source taught me what twenty years of internal product work couldn't: that the hardest decisions involve
+          people you don't share a Slack with. That deprecating an API isn't a release-notes event, it's a relationship.
+          That every line of public code is a promise you have to be willing to keep &mdash; or to break, kindly, on the
+          record.
+        </p>
+        <p>
+          The work itself is the same shape as ever: shipping interfaces that real humans rely on. The scale is
+          different. Two million daily users teaches you to write the diff comment you'd want to read.
+        </p>
+      </div>
+      <blockquote class="chapter__pull">
+        <p>Every line of public code is a <em>promise</em> you have to be willing to keep.</p>
+        <cite>// chapter 05 · gitlens · 2022–</cite>
+      </blockquote>
+      <figure class="chapter__figure chapter__figure--wide">
+        <div class="image-slot eyebrow">[Image: GitLens UI · Inspect view or commit graph]</div>
+        <figcaption>Fig. 05.01 &mdash; Replace with a current GitLens screenshot.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 06 · What's Next -->
+  <section class="chapter" id="whats-next" aria-labelledby="ch-next-title">
+    <aside class="chapter__rail">
+      <span class="chapter__num"><em>06</em></span>
+      <span class="chapter__years sub">Now &rarr;</span>
+      <span class="chapter__tag eyebrow">Looking forward</span>
+    </aside>
+    <div class="chapter__body">
+      <h2 class="chapter__title" id="ch-next-title">What's <em>next.</em></h2>
+      <p class="chapter__lede">
+        Building for the way teams actually work &mdash; not the way org charts pretend they work.
+      </p>
+      <div class="chapter__prose">
+        <p>
+          <span class="chapter__lift">[Draft]</span> Twenty-three years in, the work I want next sits at three intersections:
+          <em>engineering leadership where design and engineering are one conversation</em>,
+          <em>developer-facing surfaces treated as customer surfaces</em>, and
+          <em>tools that ship at the speed of the people using them</em>.
+        </p>
+        <p>
+          That means front-end-heavy product organizations where the design system, the documentation, and the CLI all
+          matter. It means leadership roles where I get to keep my hands in the code while making the team smarter than
+          any one engineer on it. It means staying close to open source.
+        </p>
+        <p>
+          If that's the shape of the team you're building &mdash; for senior engineering, design-systems leadership,
+          developer-experience product work, or just a long conversation about how the work should feel &mdash;
+          <a href="/#connect">let's talk</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- END / CTA -->
+  <section class="section section--end">
+    <h2 class="section__headline">Thanks<br />for <em>reading.</em></h2>
+    <nav class="nav-bigass section__actions">
+      <a class="nav-bigass__link" href="/work">See the work</a>
+      <a class="nav-bigass__link" href="/#connect">Get in touch</a>
+    </nav>
   </section>
 </BaseLayout>

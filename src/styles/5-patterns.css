@@ -957,4 +957,267 @@
     margin-block: var(--spacing-lg) 0;
     border-block-start: var(--size-rule) solid var(--color-rule);
   }
+
+  /* === STORY · TOC (sticky chapter rail) ========================================= */
+
+  .toc {
+    position: fixed;
+    inset-block-start: 50%;
+    inset-inline-end: var(--spacing-sm);
+    z-index: var(--elevation-popover);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: color-mix(in srgb, var(--color-primary-background) 90%, transparent);
+    border: var(--size-rule) solid var(--color-rule);
+    backdrop-filter: blur(8px);
+    translate: 0 -50%;
+  }
+
+  .toc__label {
+    margin-block: 0 var(--spacing-sm);
+    font-weight: 400;
+  }
+
+  .toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding-inline-start: 0;
+    margin-block: 0;
+    list-style: none;
+  }
+
+  .toc__list a {
+    display: grid;
+    grid-template-columns: var(--size-1) 1fr;
+    gap: var(--spacing-xs);
+    align-items: baseline;
+    padding-block: var(--spacing-xs);
+    color: var(--color-deemphasize-foreground);
+    text-decoration: none;
+  }
+
+  .toc__num {
+    font-weight: 500;
+    color: var(--color-deemphasize-foreground);
+  }
+
+  .toc__list a:is(:hover, :focus-visible) {
+    color: var(--color-primary-foreground);
+  }
+
+  .toc__list a:is(:hover, :focus-visible) .toc__num {
+    color: var(--color-accent-01);
+  }
+
+  @media (width < 1180px) {
+    .toc {
+      display: none;
+    }
+  }
+
+  /* === STORY · AUDIENCE STRIP ========================================= */
+
+  .audience-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-block-start: var(--spacing-xl);
+  }
+
+  .audience {
+    display: inline-flex;
+    border: var(--size-rule) solid var(--color-rule);
+  }
+
+  .audience__btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-inline-start: var(--size-rule) solid var(--color-rule);
+    transition:
+      background-color var(--motion-duration-2) var(--motion-ease-out),
+      color var(--motion-duration-2) var(--motion-ease-out);
+  }
+
+  .audience__btn:first-child {
+    border-inline-start: 0;
+  }
+
+  .audience__btn:is(:hover, :focus-visible) {
+    color: var(--color-primary-foreground);
+  }
+
+  .audience__btn.is-active {
+    color: var(--color-primary-background);
+    background-color: var(--color-primary-foreground);
+  }
+
+  /* === STORY · CHAPTER ========================================= */
+
+  .chapter {
+    padding-block: var(--spacing-3xl) var(--spacing-2xl);
+    padding-inline: var(--spacing-gutter);
+    scroll-margin-block-start: var(--spacing-2xl);
+  }
+
+  .chapter + .chapter {
+    border-block-start: var(--size-rule) solid var(--color-rule);
+  }
+
+  @media (width >= 800px) {
+    .chapter {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 var(--spacing-xl);
+    }
+  }
+
+  .chapter__rail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-md);
+    align-items: baseline;
+    margin-block-end: var(--spacing-xl);
+
+    @media (width >= 800px) {
+      position: sticky;
+      inset-block-start: calc(var(--header-height) + var(--spacing-xl));
+      display: block;
+      grid-column: 1 / 3;
+      align-self: start;
+      padding-inline-end: var(--spacing-md);
+      margin-block-end: 0;
+    }
+  }
+
+  .chapter__num {
+    display: block;
+    font-family: var(--font-family-heading);
+    font-size: var(--size-6);
+    font-weight: var(--font-weight-heading);
+    line-height: 0.85;
+    color: var(--color-primary-foreground);
+    letter-spacing: -0.04em;
+  }
+
+  .chapter__num em {
+    padding-inline: 0;
+    font-style: normal;
+    color: var(--color-accent-01);
+    background: none;
+  }
+
+  .chapter__years {
+    display: block;
+    margin-block-start: var(--spacing-sm);
+  }
+
+  .chapter__tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin-block-start: var(--spacing-xs);
+    color: var(--color-primary-background);
+    background-color: var(--color-primary-foreground);
+  }
+
+  .chapter__body {
+    @media (width >= 800px) {
+      grid-column: 3 / 11;
+    }
+  }
+
+  .chapter__title {
+    margin-block: 0 var(--spacing-lg);
+    font-size: var(--size-5);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+  }
+
+  .chapter__lede {
+    max-width: 32ch;
+    margin-block: 0 var(--spacing-xl);
+    font-family: var(--font-family-heading);
+    font-size: var(--type-body-xl-size);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  .chapter__prose {
+    max-width: 62ch;
+    font-size: var(--type-body-lg-size);
+    line-height: var(--font-line-height-base);
+  }
+
+  .chapter__prose p {
+    margin-block: 0 var(--spacing-md);
+    text-wrap: pretty;
+  }
+
+  .chapter__prose p:last-child {
+    margin-block-end: 0;
+  }
+
+  .chapter__lift {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-foreground);
+  }
+
+  .chapter__pull {
+    position: relative;
+    padding-block: var(--spacing-lg);
+    margin-block: var(--spacing-2xl);
+    border-block-start: var(--size-rule-heavy) solid var(--color-rule);
+    border-block-end: var(--size-rule) solid var(--color-rule);
+  }
+
+  .chapter__pull p {
+    max-width: 22ch;
+    margin: 0;
+    font-family: var(--font-family-heading);
+    font-size: var(--size-3);
+    font-weight: var(--font-weight-heading);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .chapter__pull cite {
+    display: block;
+    margin-block-start: var(--spacing-md);
+  }
+
+  .chapter__figure {
+    margin: var(--spacing-2xl) 0;
+  }
+
+  .chapter__figure figcaption {
+    margin-block-start: var(--spacing-sm);
+  }
+
+  @media (width >= 1080px) {
+    .chapter__figure--wide {
+      margin-inline: calc(var(--spacing-3xl) * -1);
+    }
+  }
+
+  /* === STORY · IMAGE SLOT (placeholder) ========================================= */
+
+  .image-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0 12px,
+        color-mix(in srgb, var(--color-primary-foreground) 8%, transparent) 12px 13px
+      ),
+      color-mix(in srgb, var(--color-primary-foreground) 4%, var(--color-primary-background));
+    border: var(--size-rule-thin) dashed var(--color-rule);
+  }
 }
