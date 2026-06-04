@@ -1,10 +1,19 @@
 ---
 import { site } from '../data/site.ts';
+import SkipLinks from '../components/SkipLinks.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import SkipLinks from '../components/SkipLinks.astro';
-import '../styles/base.css';
-import '../styles/site.css';
+import '../styles/1-layers.css';
+import '../styles/2-props-color.css';
+import '../styles/2-props-sizing.css';
+import '../styles/3-props-fonts.css';
+import '../styles/3-props-spacing.css';
+import '../styles/3-props-elevation.css';
+import '../styles/3-props-motion.css';
+import '../styles/4-base.css';
+import '../styles/5-patterns.css';
+import '../styles/6-utilities.css';
+import '../styles/7-overrides.css';
 
 interface Props {
   title?: string;
@@ -13,6 +22,8 @@ interface Props {
   ogDescription?: string;
   ogImage?: string;
   bodyClass?: string;
+  mode?: 'auto' | 'light' | 'dark';
+  isHome?: boolean;
 }
 
 const {
@@ -22,6 +33,8 @@ const {
   ogDescription,
   ogImage = site.og.defaultImage,
   bodyClass,
+  mode,
+  isHome = false,
 } = Astro.props;
 
 const pageTitle = title === site.title ? title : `${title} · Keith Daulton`;
@@ -29,7 +42,7 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="auto">
+<html lang="en" data-mode={mode ?? 'light'} data-fonts="loading">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,18 +69,38 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
 
     <link rel="preconnect" href="https://p.typekit.net" />
     <link rel="preconnect" href="https://use.typekit.net" />
-    <link rel="preload" href="https://use.typekit.net/bdx2zst.css" as="style" />
+    <link rel="stylesheet" href="https://use.typekit.net/bdx2zst.css" />
 
-    <script>
-      // Client-side entry: registers web components and wires shared utilities.
-      // Astro bundles this script and emits the right `<script type="module">` tag.
-      import '../scripts/main.ts';
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
+
+    <script is:inline>
+      // Flip <html data-fonts> to "ready" once web fonts resolve, so CSS
+      // entrance animations don't get eaten by FOUT. 1.2s timeout guarantees
+      // reveal even if the fonts.ready promise never resolves (offline, etc.).
+      (function () {
+        var root = document.documentElement;
+        var reveal = function () {
+          root.setAttribute('data-fonts', 'ready');
+        };
+        if (document.fonts && document.fonts.ready) {
+          Promise.race([
+            document.fonts.ready,
+            new Promise(function (r) {
+              setTimeout(r, 1200);
+            }),
+          ]).then(reveal);
+        } else {
+          reveal();
+        }
+      })();
     </script>
   </head>
   <body class={bodyClass}>
     <SkipLinks />
-    <SiteHeader />
+    <SiteHeader isHome={isHome} />
     <main id="main"><slot /></main>
-    <SiteFooter />
+    <SiteFooter isHome={isHome} />
   </body>
 </html>

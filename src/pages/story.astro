@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout2026.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
@@ -7,6 +7,9 @@ import BaseLayout from '../layouts/BaseLayout2026.astro';
   description="Twenty-six years of shipping interfaces — the long way, told properly."
   bodyClass="page page--story"
 >
+  <script>
+    import '../scripts/main.ts';
+  </script>
   <!-- TOC — sticky chapter rail (desktop only via CSS) -->
   <aside class="toc eyebrow" aria-label="Story chapters">
     <h2 class="toc__label eyebrow">Chapters</h2>
@@ -35,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout2026.astro';
           <span class="rule eyebrow-rule__rule"></span>
           <span>Audience-aware</span>
         </div>
-        <h1 class="hero__headline"><span class="u-solo">The long</span> way <em>round</em></h1>
+        <h1 class="hero__headline"><span class="u-solo">I took the</span> <em>scenic route</em></h1>
         <p class="hero__sub">
           From <em>hand-writing XSLT</em> for a flight-booking page at nineteen, to leading the team behind a developer tool
           with <em>two million daily users</em>. Not a résumé &mdash; a story about how the people you build with shape

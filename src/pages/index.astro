@@ -1,14 +1,291 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import StoryTease from '../components/StoryTease.astro';
-import WorkTease from '../components/WorkTease.astro';
-import Connect from '../components/Connect.astro';
+import { site } from '../data/site.ts';
 ---
 
-<BaseLayout bodyClass="page page--home">
-  <Hero />
-  <StoryTease />
-  <WorkTease />
-  <Connect />
+<BaseLayout bodyClass="page" isHome>
+  <script>
+    import '../scripts/home.ts';
+  </script>
+  <!-- HERO -->
+  <section class="hero hero--connected">
+    <div class="meta hero__meta">
+      <span class="meta__section m1"><span class="dot"></span> <!--Available &mdash; Q3 / Q4 2026--></span>
+      <span class="meta__section m2">v.{site.build.version} // build {site.build.number}</span>
+      <span class="meta__section m3">Lat 26.12° N &mdash; Long 80.13° W</span>
+      <span class="meta__section m4">Index 01 of 04</span>
+    </div>
+    <div class="hero__main">
+      <div class="hero__content">
+        <div class="eyebrow-rule hero__eyebrow">
+          <span>[ 00 ] Portfolio</span>
+          <span class="rule eyebrow-rule__rule"></span>
+          <span>Engineering Leader &centerdot; Design Technologist</span>
+        </div>
+        <h1 class="hero__headline hero__headline--big"><span class="u-solo">Keith</span> Daulton</h1>
+        <p class="hero__intro">
+          <span>An engineering leader who makes things <em>people love to use</em></span>
+        </p>
+        <p class="hero__sub">
+          Fierce advocate for the people <strong>building products</strong> &mdash; and the people <strong
+            >using them</strong
+          >.
+        </p>
+      </div>
+      <div class="hero__canvas">
+        <d-hero-image class="hero__visual"></d-hero-image>
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="eyebrow section__index">[ 01 ] About</p>
+        <h2 class="section__headline">Engineer<br />+ Designer.</h2>
+        <p class="section__lede">
+          Two-decade veteran of UI engineering, design systems and developer tools. Hands-on, opinionated, kind.
+        </p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="manifesto">
+        <blockquote class="manifesto__quote">
+          I build the <em>tools</em> that build the things<br />people love to use &mdash; and lead the <em>teams</em
+          ><br />that ship them.
+        </blockquote>
+
+        <div class="manifesto__stats">
+          <div class="stat">
+            <span class="stat__value">20<small>+</small></span>
+            <span class="eyebrow stat__label">Years shipping UI</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">60M<small>+</small></span>
+            <span class="eyebrow stat__label">GitLens installs</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">10<small>+</small></span>
+            <span class="eyebrow stat__label">Years of technical leadership</span>
+          </div>
+        </div>
+        <div class="manifesto__detail">
+          <p>
+            <strong>A hands-on leader</strong> in interface development and design. Over twenty-plus years I've built across
+            developer tools, design systems, component libraries, e-commerce, and marketing content &mdash; including <strong
+              >Chewy's Chirp design system</strong
+            >, <strong>Spirit Airlines'</strong> booking experience, and the <strong>GitLens</strong> extension for VS Code.
+          </p>
+          <p>
+            I build systems that bring <strong>cohesion and accessibility</strong> for every &mdash; documentation, tokens,
+            code &mdash; that engineering teams <strong>love to build with</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- STORY -->
+  <section class="section" id="story">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="eyebrow section__index">[ 02 ] The Story</p>
+        <h2 class="section__headline">Taking the<br /> Scenic Route</h2>
+        <p class="section__lede">The long way around &mdash; art to engineering, by way of everything in between.</p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="story-tease">
+        <p class="story-tease__lede">
+          For over twenty years, I was set on becoming an artist. A self-taught tool for putting my art portfolio online
+          set me on a path I never saw coming — and every lens I picked up along the way is still in the work today.
+        </p>
+
+        <aside class="story-tease__chapters">
+          <h3 class="eyebrow story-tease__label">Chapters</h3>
+          <div class="story-tease__chapter">
+            <span class="sub">01</span>
+            <div>
+              <strong>Art</strong>
+              <small>Acrylic painting to computer animation.</small>
+            </div>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">02</span>
+            <div>
+              <strong>Design</strong>
+              <small>From hobby to a dotcom career.</small>
+            </div>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">03</span>
+            <div>
+              <strong>Engineering</strong>
+              <small>From designer who codes to developer.</small>
+            </div>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">04</span>
+            <div>
+              <strong>Entreprenuer</strong>
+              <small>Early startups, many hats, being scrappy.</small>
+            </div>
+          </div>
+          <div class="story-tease__chapter">
+            <span class="sub">05</span>
+            <div>
+              <strong>Leadership</strong>
+              <small>People just started turning to me.</small>
+            </div>
+          </div>
+        </aside>
+
+        <!-- <nav class="nav-bigass story-tease__cta">
+          <a class="nav-bigass__link" href="story.html">Read the full story</a>
+        </nav> -->
+        <nav class="nav-bigass story-tease__cta">
+          <span class="nav-bigass__link">Full story soon</span>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- WORK -->
+  <section class="section" id="work">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="eyebrow section__index">[ 03 ] Selected Projects</p>
+        <h2 class="section__headline">Thinking,<br />made tangible.</h2>
+        <p class="section__lede">Different problems, different stacks — all I'm proud of.</p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="cases">
+        <a
+          class="case-card"
+          href="https://help.gitkraken.com/gitlens/gitlens-release-notes-current/#version-18-0"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="case-card__head">
+            <span class="case-card__num">01</span>
+            <span class="sub case-card__tag">Product Leadership<br />GitLens · 2026</span>
+          </div>
+          <h3 class="case-card__title">The Commit Graph, Now a Workbench.</h3>
+          <p class="case-card__thesis">
+            GitLens 18 turns the Commit Graph from a place you read history into a place you work &mdash; inspect,
+            review, compose, and commit without leaving it. AI coding agents now first-class: live session status, an
+            agent activity map, and a Kanban board for the work your agents are doing, all inside the IDE.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">4M+<small class="eyebrow">daily users · Shipped May 2026</small></span>
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="case-card" href="#">
+          <div class="case-card__head">
+            <span class="case-card__num">02</span>
+            <span class="sub case-card__tag">Design Engineering<br />Chewy · 2021</span>
+          </div>
+          <h3 class="case-card__title">Chewy's First Hybrid Experience.</h3>
+          <p class="case-card__thesis">
+            Embedded with the Cart and Checkout teams to ship Chewy's first hybrid experience &mdash; a web surface that
+            knew when it was running inside the native app and adapted to match, down to the app's dark mode. Close,
+            daily collaboration between design and engineering, built directly in code.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric">Web · iOS · Android<small class="eyebrow">Platforms · same app</small></span
+            >
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="case-card" href="#">
+          <div class="case-card__head">
+            <span class="case-card__num">03</span>
+            <span class="sub case-card__tag">Design Systems<br />Chewy · 2021-22</span>
+          </div>
+          <h3 class="case-card__title">A design system as a product.</h3>
+          <p class="case-card__thesis">
+            Treating Chirp like an internal SaaS &mdash; with docs, releases, support, and real customers (the engineers
+            shipping on top) &mdash; turned a style guide into infrastructure the whole org would defend.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric"
+              >React · Vue · Design Tokens<small class="eyebrow">v1 TO v3 · still standing</small></span
+            >
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="case-card" href="https://github.com/d13/vscode-web-components-ai" target="_blank" rel="noopener">
+          <div class="case-card__head">
+            <span class="case-card__num">04</span>
+            <span class="sub case-card__tag">Web Components · AI / MCP <br />Open-source · 2025</span>
+          </div>
+          <h3 class="case-card__title">Teaching AI your Web Components.</h3>
+          <p class="case-card__thesis">
+            Supercharging your AI coding assistants with web component information from your workspace and dependencies.
+            Generate accurate component code using your actual custom elements, properties, and APIs.
+          </p>
+          <div class="case-card__foot">
+            <span class="case-card__metric"
+              >VS Code · Open VSX<small class="eyebrow">Extension · Custom Elements · AI Agents</small></span
+            >
+            <span class="case-card__arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- <nav class="nav-bigass story-tease__cta">
+        <a class="nav-bigass__link" href="work.html">See all case studies</a>
+      </nav> -->
+    </div>
+  </section>
+  <!-- CONNECT -->
+  <section class="section" id="connect">
+    <header class="section__header">
+      <hgroup class="section__header-row">
+        <p class="section__index eyebrow">[ 04 ] Connect</p>
+        <h2 class="section__headline">Let's talk<br />shop.</h2>
+        <p class="section__lede">
+          Engineering leadership, design systems, developer experience &mdash; or just to say hi.
+        </p>
+      </hgroup>
+    </header>
+    <div class="section__body">
+      <div class="contact">
+        <div class="contact__head">
+          <h3 class="contact__headline">Let me know<br />what I can <em>do</em><br />for you.</h3>
+          <p>
+            Based in South Florida, remote-first. If you're building something and think I could help, I'd like to hear
+            about it.
+          </p>
+          <p>Icebreaker: Ask me about my homebrewing hobby!</p>
+        </div>
+        <div class="contact__actions">
+          <a class="contact__btn" href="mailto:kdaulton@gmail.com">
+            <span>
+              Email
+              <span class="sub">kdaulton@gmail.com</span>
+            </span>
+            <span class="arr">→</span>
+          </a>
+          <a class="contact__btn" href="https://www.linkedin.com/in/keithdaulton" target="_blank" rel="noopener">
+            <span>
+              LinkedIn
+              <span class="sub">linkedin.com/in/keithdaulton</span>
+            </span>
+            <span class="arr">↗</span>
+          </a>
+          <a class="contact__btn" href="https://github.com/d13" target="_blank" rel="noopener">
+            <span>
+              GitHub
+              <span class="sub">github.com/d13</span>
+            </span>
+            <span class="arr">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

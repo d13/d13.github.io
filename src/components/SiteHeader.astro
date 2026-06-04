@@ -1,40 +1,51 @@
 ---
-const navItems = [
-  { href: '/story', label: 'Story' },
-  { href: '/work', label: 'Work' },
-  { href: '/#connect', label: 'Connect' },
-];
-
-const pathname = Astro.url.pathname;
-function isCurrent(href: string): boolean {
-  if (href.startsWith('/#')) return false;
-  if (href === '/') return pathname === '/';
-  return pathname === href || pathname.startsWith(`${href}/`);
+interface Props {
+  isHome?: boolean;
 }
+
+const { isHome = false } = Astro.props;
+const brandHref = isHome ? '#top' : '/';
+
+// Nav items: anchors on home, dedicated pages elsewhere.
+// About and Connect are exceptions — always home-page anchors.
+const navItems = [
+  { sub: '01', label: 'About', href: isHome ? '#about' : '/#about' },
+  { sub: '02', label: 'Story', href: isHome ? '#story' : '/story' },
+  { sub: '03', label: 'Work', href: isHome ? '#work' : '/work' },
+  { sub: '04', label: 'Connect', href: isHome ? '#connect' : '/#connect' },
+];
 ---
 
-<header class="site-header" id="header">
-  <div class="container container--wide site-header__row">
-    <div class="site-header__group">
-      <a href="/" class="logo" aria-label="Keith Daulton — Home">
-        <img src="/media/branding/logo-square.png" alt="" width="28" height="28" />
+<header class="header header--pinned" role="banner">
+  <div class="header__row">
+    <div class="header__group">
+      <a href={brandHref} class="brand" aria-label="Keith Daulton home">
+        <img src="media/branding/logo.svg" alt="" class="brand__mark" />
+        <span>
+          <span class="brand__name">Keith Daulton</span>
+          <span class="brand__role">D13 // EST. 2000</span>
+        </span>
       </a>
     </div>
-    <nav class="site-header__group" id="nav" aria-label="Main Navigation">
-      <ul class="nav-inline">
-        {navItems.map((item) => (
-          <li>
-            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
-              {item.label}
-            </a>
-          </li>
-        ))}
+    <nav class="header__group" id="nav" aria-label="Main Navigation">
+      <ul class="nav-inline header__nav">
+        {
+          navItems.map(item => (
+            <li>
+              <a href={item.href}>
+                <span class="sub">{item.sub}</span>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="https://github.com/d13" rel="noopener" target="_blank"><span class="sub">&#8599;</span>Code</a>
+        </li>
+        <li>
+          <button><span class="dot"></span>Modes</button>
+        </li>
       </ul>
     </nav>
-    <div class="site-header__group site-header__group--end">
-      <a href="https://github.com/d13" target="_blank" rel="noopener" aria-label="Keith on GitHub">
-        <d-icon-library icon="github"></d-icon-library>
-      </a>
-    </div>
   </div>
 </header>

@@ -1,17 +1,53 @@
 ---
 import { site } from '../data/site.ts';
+
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+
+// Anchors on home, dedicated pages elsewhere.
+// About and Connect are exceptions — always home-page anchors.
+const hrefAbout = isHome ? '#about' : '/#about';
+const hrefStory = isHome ? '#story' : '/story';
+const hrefWork = isHome ? '#work' : '/work';
+const hrefConnect = isHome ? '#connect' : '/#connect';
 ---
 
-<footer class="site-footer">
-  <div class="container site-footer__row">
-    <p class="site-footer__copyright">
-      &copy; Copyright {site.buildYear} {site.author} and respective brands. All rights reserved.
-    </p>
-    <nav class="site-footer__nav" aria-label="Footer">
-      <a href="#top" class="site-footer__top" aria-label="Back to top">
-        <d-icon-library icon="arrow-up"></d-icon-library>
-        <span aria-hidden="true">Top</span>
-      </a>
-    </nav>
+<footer class="footer">
+  <div class="footer__row">
+    <hgroup class="footer__mark">
+      <h2 class="footer__headline">Keith<br />Daulton</h2>
+      <p class="sub footer__sub">D13 // Design Tech.<br />EST. 2000 — keithdaulton.com</p>
+    </hgroup>
+    <div class="footer__nav">
+      <h3 class="eyebrow footer__subhead">Here</h3>
+      <a href={hrefAbout}>About</a><br />
+      <a href={hrefStory}>Story</a><br />
+      <a href={hrefWork}>Work</a><br />
+      <a href={hrefConnect}>Connect</a>
+    </div>
+    <div class="footer__nav">
+      <h3 class="eyebrow footer__subhead">Elsewhere</h3>
+      <a href="https://github.com/d13" target="_blank" rel="noopener">GitHub</a><br />
+      <a href="https://www.linkedin.com/in/keithdaulton" target="_blank" rel="noopener">LinkedIn</a><br />
+      <a href="https://bsky.app/profile/keithdaulton.com" target="_blank" rel="noopener">Bluesky</a>
+    </div>
+    <div class="footer__colophon">
+      <h3 class="eyebrow footer__subhead">Colophon</h3>
+      <p>
+        Set in <a href="https://fonts.adobe.com/fonts/proxima-nova" target="_blank" rel="noopener">Proxima Nova</a>
+        &amp; <a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener">JetBrains Mono</a>.
+      </p>
+      <p>
+        Built with &hearts;, HTML, CSS &amp; JS.<br />
+        Powered by <a href="https://astro.build/" target="_blank" rel="noopener">Astro</a> &amp; My Brews.
+      </p>
+    </div>
   </div>
+  <p class="eyebrow footer__end">
+    <span>&copy; {site.buildYear} Keith Daulton &centerdot; All rights reserved.</span>
+    <span>// v.{site.build.version} &centerdot; build {site.build.number}</span>
+  </p>
 </footer>

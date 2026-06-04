@@ -1,21 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.ts';
 ---
 
-<BaseLayout title="Not found" description="The page you were looking for doesn't exist." bodyClass="page page--404">
-  <section class="page__header container">
-    <p class="page__eyebrow">404</p>
-    <h1 class="page__title">This page doesn't exist.</h1>
-    <p class="tease__body">
-      The page you were looking for has moved, been renamed, or never existed in the first place.
-    </p>
-  </section>
-
-  <section class="container" style="margin-block-start: var(--spacing-xl);">
-    <ul class="prose" style=" padding: 0;list-style: none;">
-      <li><a class="link-cta" href="/">Home <span aria-hidden="true">→</span></a></li>
-      <li><a class="link-cta" href="/story">Story <span aria-hidden="true">→</span></a></li>
-      <li><a class="link-cta" href="/work">Work <span aria-hidden="true">→</span></a></li>
-    </ul>
+<BaseLayout bodyClass="page">
+  <script>
+    import '../scripts/error.ts';
+  </script>
+  <!-- HERO -->
+  <section class="hero hero--connected">
+    <div class="meta hero__meta">
+      <span class="meta__section m1"><span class="dot"></span> Available &mdash; Q3 / Q4 2026</span>
+      <span class="meta__section m2">v.{site.build.version} // build {site.build.number}</span>
+      <span class="meta__section m3">Lat 26.12° N &mdash; Long 80.13° W</span>
+      <span class="meta__section m4">Index 01 of 04</span>
+    </div>
+    <div class="hero__main">
+      <div class="hero__content">
+        <div class="eyebrow-rule hero__eyebrow">
+          <span>[ 00 ] Error</span>
+          <span class="rule eyebrow-rule__rule"></span>
+          <span>Engineering Leader &centerdot; Design Technologist</span>
+        </div>
+        <h1 class="hero__headline hero__headline--big"><span class="u-solo">Page</span> Not Found</h1>
+        <p class="hero__intro">
+          <span>An engineering leader who makes things <em>people love to use</em></span>
+        </p>
+        <p class="hero__sub">
+          Fierce advocate for the people <strong>building products</strong> &mdash; and the people <strong
+            >using them</strong
+          >.
+        </p>
+      </div>
+      <div class="hero__canvas">
+        <d-error-image class="hero__visual"></d-error-image>
+      </div>
+    </div>
   </section>
 </BaseLayout>
