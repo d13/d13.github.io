@@ -16,7 +16,7 @@ export const site = {
     number: '03',
   },
   og: {
-    defaultImage: '/media/social/og-image.png',
+    defaultImage: '/media/social/og-image-2026.png',
   },
 } as const;
 
