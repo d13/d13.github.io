@@ -12,7 +12,7 @@ All visual decisions ladder up to tokens declared in `src/styles/base.css`. That
 - **Elevation** — `--elevation-sticky`, `--elevation-overlay`, etc.
 - **Motion** — `--motion-duration-1`…`--motion-duration-4`; `--motion-ease-out`, `--motion-ease-in-out`, `--motion-ease-spring` (declared in `src/styles/3-props-motion.css` and adopted by `BaseLayout2026`).
 
-Theme switching is intent-driven via `<html data-theme="auto|light|dark">`. `auto` honours `prefers-color-scheme`.
+Theme switching is intent-driven via `<html data-scheme="auto|light|dark">`. `auto` honours `prefers-color-scheme`.
 
 ### Motion tokens
 

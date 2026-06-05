@@ -55,8 +55,8 @@
   }
 
   :focus-visible {
-    outline: 1px solid var(--color-focus-outline);
-    outline-offset: 2px;
+    outline: var(--size-rule-heavy) solid var(--color-focus-foreground);
+    outline-offset: var(--spacing-xs);
   }
 }
 

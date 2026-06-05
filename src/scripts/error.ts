@@ -7,4 +7,5 @@ document.adoptedStyleSheets.push(...styles);
 // Defer custom-element registration so shared styles are adopted first.
 setTimeout(() => {
   void import('./components/heros/error-image');
+  void import('./components/modes-menu');
 });

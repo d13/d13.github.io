@@ -42,7 +42,7 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
 ---
 
 <!doctype html>
-<html lang="en" data-scheme={mode ?? 'auto'} data-fonts="loading">
+<html lang="en" data-scheme={mode ?? 'auto'} data-accent="mix" data-fonts="loading">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,6 +75,25 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
 
+    <script is:inline>
+      // Hydrate persisted theme prefs before paint so accent/scheme don't
+      // flash on load. Keys mirror the d-modes-menu component constants.
+      (function () {
+        try {
+          var root = document.documentElement;
+          var scheme = localStorage.getItem('d13:scheme');
+          var accent = localStorage.getItem('d13:accent');
+          if (scheme === 'light' || scheme === 'dark' || scheme === 'auto') {
+            root.setAttribute('data-scheme', scheme);
+          }
+          if (accent === 'blue' || accent === 'red' || accent === 'mix') {
+            root.setAttribute('data-accent', accent);
+          }
+        } catch (e) {
+          /* storage unavailable */
+        }
+      })();
+    </script>
     <script is:inline>
       // Flip <html data-fonts> to "ready" once web fonts resolve, so CSS
       // entrance animations don't get eaten by FOUT. 1.2s timeout guarantees

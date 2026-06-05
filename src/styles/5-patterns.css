@@ -104,6 +104,111 @@
   }
 }
 
+@layer patterns.controls {
+  /* Grouped button toggle — visually hides native radios and styles each
+     label as a segment. Native radios keep keyboard nav and form semantics. */
+  .toggle-group {
+    display: inline-flex;
+    border: var(--size-rule) solid var(--color-rule);
+  }
+
+  .toggle-group:has(:focus-visible) {
+    outline: var(--size-rule-heavy) solid var(--color-focus-foreground);
+    outline-offset: var(--spacing-xs);
+  }
+
+  .toggle {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: var(--font-family-mono);
+    font-size: var(--type-body-xs-size);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition:
+      background-color var(--motion-duration-2) var(--motion-ease-out),
+      color var(--motion-duration-2) var(--motion-ease-out);
+  }
+
+  .toggle:not(:first-child) {
+    border-inline-start: var(--size-rule) solid var(--color-rule);
+  }
+
+  .toggle input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  .toggle:hover {
+    color: var(--color-primary-foreground);
+  }
+
+  .toggle:has(input:checked) {
+    color: var(--color-primary-background);
+    background-color: var(--color-primary-foreground);
+  }
+
+  /* === MODES MENU =========================================
+     Trigger inherits .header__nav button styles from patterns.layout.
+     Popover uses CSS anchor positioning where supported; otherwise
+     falls back to the browser's default popover positioning. */
+
+  d-modes-menu {
+    display: contents;
+  }
+
+  .modes-trigger {
+    anchor-name: --modes-trigger;
+  }
+
+  .modes-popover {
+    position: fixed;
+    inset: unset;
+    inset-block-start: anchor(bottom);
+    inset-inline-end: anchor(right);
+    z-index: var(--elevation-popover);
+    min-inline-size: 12rem;
+    padding: var(--spacing-md);
+    margin: var(--spacing-xs) 0 0;
+
+    /* CSS anchor positioning — Chromium-first, others use UA default. */
+    position-anchor: --modes-trigger;
+    position-try-fallbacks: flip-block, flip-inline;
+    color: var(--color-primary-foreground);
+    background-color: var(--color-primary-background);
+    border: var(--size-rule) solid var(--color-rule);
+    box-shadow: 0 8px 24px var(--color-elevation-shadow);
+  }
+
+  .modes-popover:popover-open {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .modes-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  .modes-group__legend {
+    padding: 0;
+    margin-block-end: var(--spacing-xs);
+  }
+}
+
 @layer patterns.nav {
   .nav-inline {
     display: inline-flex;
@@ -635,7 +740,7 @@
       }
     }
 
-    :is(a, button):is(:hover, :focus-visible) {
+    :is(a, button):is(:hover, :focus-visible, [aria-expanded='true']) {
       color: var(--color-min);
       background-color: var(--color-max);
     }

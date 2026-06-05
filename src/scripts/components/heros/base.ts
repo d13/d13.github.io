@@ -95,36 +95,36 @@ export abstract class HeroImageBase extends LitElement {
         fill: var(--color-raw-blue-30);
       }
 
-      :host-context([data-theme='auto']),
-      :host-context([data-theme='light']) {
-        [fill='#181C21'] {
-          fill: var(--color-raw-neutral-70);
-        }
-
-        [stroke='#181C21'] {
-          stroke: var(--color-raw-neutral-70);
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :host-context([data-theme='auto']) {
-          [fill='#181C21'] {
-            fill: var(--color-raw-neutral-10);
-          }
-
-          [stroke='#181C21'] {
-            stroke: var(--color-raw-neutral-10);
-          }
-        }
-      }
-
-      :host-context([data-theme='dark']) {
+      :host-context([data-scheme='auto']),
+      :host-context([data-scheme='light']) {
         [fill='#181C21'] {
           fill: var(--color-raw-neutral-10);
         }
 
         [stroke='#181C21'] {
           stroke: var(--color-raw-neutral-10);
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :host-context([data-scheme='auto']) {
+          [fill='#181C21'] {
+            fill: var(--color-raw-neutral-70);
+          }
+
+          [stroke='#181C21'] {
+            stroke: var(--color-raw-neutral-70);
+          }
+        }
+      }
+
+      :host-context([data-scheme='dark']) {
+        [fill='#181C21'] {
+          fill: var(--color-raw-neutral-70);
+        }
+
+        [stroke='#181C21'] {
+          stroke: var(--color-raw-neutral-70);
         }
       }
 
