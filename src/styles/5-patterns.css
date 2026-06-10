@@ -241,7 +241,7 @@
     color: var(--color-primary-foreground);
     background-color: var(--color-primary-background);
     border: var(--size-rule) solid var(--color-rule);
-    box-shadow: 0 8px 24px var(--color-elevation-shadow);
+    box-shadow: 0 12px 16px -8px var(--color-elevation-shadow);
   }
 
   .modes-popover:popover-open {
