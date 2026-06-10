@@ -181,7 +181,7 @@ import { site } from '../data/site.ts';
           </div>
         </a>
 
-        <a class="case-card" href="#">
+        <button type="button" class="case-card" command="show-modal" commandfor="case-dialog-02">
           <div class="case-card__head">
             <span class="case-card__num">02</span>
             <span class="sub case-card__tag">Design Engineering<br />Chewy · 2021</span>
@@ -197,9 +197,9 @@ import { site } from '../data/site.ts';
             >
             <span class="case-card__arrow">→</span>
           </div>
-        </a>
+        </button>
 
-        <a class="case-card" href="#">
+        <button type="button" class="case-card" command="show-modal" commandfor="case-dialog-03">
           <div class="case-card__head">
             <span class="case-card__num">03</span>
             <span class="sub case-card__tag">Design Systems<br />Chewy · 2021-22</span>
@@ -215,7 +215,7 @@ import { site } from '../data/site.ts';
             >
             <span class="case-card__arrow">→</span>
           </div>
-        </a>
+        </button>
 
         <a class="case-card" href="https://github.com/d13/vscode-web-components-ai" target="_blank" rel="noopener">
           <div class="case-card__head">
@@ -235,6 +235,42 @@ import { site } from '../data/site.ts';
           </div>
         </a>
       </div>
+
+      <dialog id="case-dialog-02" class="dialog" closedby="any" aria-labelledby="case-dialog-02-title">
+        <header class="dialog__header">
+          <p class="eyebrow">[ 02 ] Design Engineering · Chewy · 2021</p>
+          <button type="button" class="close dialog__close" command="close" commandfor="case-dialog-02">Close ×</button>
+        </header>
+        <div class="dialog__body">
+          <figure>
+            <img src="media/portfolio/chewy-checkout.png" alt="" />
+            <figcaption>
+              <strong id="case-dialog-02-title">Chewy's first hybrid mobile-first experience.</strong>
+              The website detected the native app and adapted to it — matching its light or dark mode through a UA-string
+              handshake, the company's first design-system-level dark mode. Three platform firsts in one surface: mobile-first,
+              native-web hybrid, and dark mode.
+            </figcaption>
+          </figure>
+        </div>
+      </dialog>
+
+      <dialog id="case-dialog-03" class="dialog" closedby="any" aria-labelledby="case-dialog-03-title">
+        <header class="dialog__header">
+          <p class="eyebrow">[ 03 ] Design Systems · Chewy · 2021-22</p>
+          <button type="button" class="close dialog__close" command="close" commandfor="case-dialog-03">Close ×</button>
+        </header>
+        <div class="dialog__body">
+          <figure>
+            <img src="media/portfolio/chirp-react-storybook.png" alt="" />
+            <figcaption>
+              <strong id="case-dialog-03-title">A design system as a product.</strong>
+              Chirp's component library in Storybook &mdash; one of four instances spanning legacy and modern Vue and React.
+              Treating the design system like an internal product meant real documentation, real releases, and real customers:
+              the engineers shipping on top of it.
+            </figcaption>
+          </figure>
+        </div>
+      </dialog>
 
       <!-- <nav class="nav-bigass story-tease__cta">
         <a class="nav-bigass__link" href="work.html">See all case studies</a>

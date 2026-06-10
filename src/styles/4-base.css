@@ -87,7 +87,7 @@
     margin-block-end: var(--spacing-lg);
   }
 
-  :where(h6, p, ol, ul, blockquote) {
+  :where(h6, p, ol, ul, figure, blockquote) {
     margin-block: 0 var(--spacing-md);
   }
 
@@ -137,6 +137,10 @@
     cursor: pointer;
   }
 
+  :where(figure) {
+    margin-inline: 0;
+  }
+
   :where(cite, figcaption) {
     font-family: var(--font-family-mono);
     font-size: var(--type-body-xs-size);
@@ -144,6 +148,10 @@
     color: var(--color-deemphasize-foreground);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+
+  :where(figcaption) {
+    margin-block-start: var(--spacing-md);
   }
 
   :where(a) {
@@ -184,5 +192,20 @@
     padding-inline: 0;
     color: var(--color-accent-01);
     background: inherit;
+  }
+
+  :where(dialog) {
+    width: min(960px, 92vw);
+    max-block-size: 90vh;
+    padding: 0;
+    overflow: clip auto;
+    color: var(--color-primary-foreground);
+    background: var(--color-primary-background);
+    border: var(--size-rule) solid var(--color-rule);
+  }
+
+  :where(dialog)::backdrop {
+    background: var(--color-backdrop);
+    backdrop-filter: blur(8px);
   }
 }

@@ -102,6 +102,62 @@
   .stat__label {
     letter-spacing: 0.08em;
   }
+
+  .close {
+    align-self: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-family-mono);
+    font-size: var(--type-body-xs-size);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .close:is(:hover, :active) {
+    color: var(--color-min);
+    background-color: var(--color-max);
+  }
+
+  /* .dialog::backdrop {
+    background: var(--color-backdrop);
+    backdrop-filter: blur(8px);
+  } */
+
+  /* should be used in conjunction with .eyebrow */
+  .dialog__header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--elevation-sticky);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-primary-background);
+    border-block-end: var(--size-rule) solid var(--color-rule);
+
+    > * {
+      margin-block: 0;
+    }
+  }
+
+  .dialog__close {
+    flex: none;
+  }
+
+  .dialog__body {
+    padding: var(--spacing-lg);
+  }
+
+  .dialog__footer {
+    position: sticky;
+    inset-block-end: 0;
+    z-index: var(--elevation-sticky);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-primary-background);
+    border-block-start: var(--size-rule) solid var(--color-rule);
+  }
 }
 
 @layer patterns.controls {
@@ -570,9 +626,11 @@
   .case-card {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    width: 100%;
     min-height: var(--size-11);
     padding: var(--spacing-xl);
     color: inherit;
+    text-align: start;
 
     /* position: relative; */
     text-decoration: none;
