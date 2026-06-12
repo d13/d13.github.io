@@ -38,6 +38,25 @@
     --font-width-heading: 85;
     --font-width-base: 105;
   }
+
+  /* Dark scheme: lightened weights to offset halation — light-on-dark text
+     blooms on emissive displays and reads heavier than the same wght on a
+     light background. Values tuned by eye against the light scheme. */
+  @media (prefers-color-scheme: dark) {
+    :where([data-scheme='auto']) {
+      --font-weight-base: 300;
+      --font-weight-bold: 680;
+      --font-weight-bolder: 740;
+      --font-weight-heading: 800;
+    }
+  }
+
+  :where([data-scheme='dark']) {
+    --font-weight-base: 300;
+    --font-weight-bold: 680;
+    --font-weight-bolder: 740;
+    --font-weight-heading: 800;
+  }
 }
 
 @layer props.type {
