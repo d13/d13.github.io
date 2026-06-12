@@ -23,9 +23,11 @@
 
   :where(html) {
     font-size: var(--font-size-base);
+    font-variation-settings: 'wdth' var(--font-width-base);
+    font-weight: var(--font-weight-base);
     line-height: var(--font-line-height-base);
-    text-size-adjust: 100%;
     background-color: var(--color-primary-background);
+    text-size-adjust: 100%;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -72,6 +74,7 @@
   :where(h1, h2, h3, h4, h5, h6) {
     margin-block-start: 0;
     font-family: var(--font-family-heading);
+    font-variation-settings: 'wdth' var(--font-width-heading);
     font-weight: var(--font-weight-heading);
     font-optical-sizing: auto;
     line-height: var(--font-line-height-heading);
@@ -176,15 +179,20 @@
     background: linear-gradient(0deg, var(--color-accent-01) 0%, var(--color-accent-01) 18%, transparent 18%);
   }
 
+  :where(strong, b) {
+    font-weight: var(--font-weight-bold);
+  }
+
   :where(blockquote) {
     margin-block-start: 0;
     margin-inline: 0;
     font-family: var(--font-family-heading);
     font-size: var(--size-3);
-    font-weight: 800;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-heading);
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
 

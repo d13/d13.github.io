@@ -7,28 +7,36 @@
  *  overrides.... styles with a sledgehammer
  */
 
-/* Web font stylesheets (Typekit + Google Fonts) are loaded via <link>
-   tags in BaseLayout2026.astro <head> so the browser's preload-scanner
-   discovers them in parallel with the main CSS bundle, instead of waiting
+/* Web font stylesheet (Adobe Fonts / Typekit) is loaded via a <link>
+   tag in BaseLayout.astro <head> so the browser's preload-scanner
+   discovers it in parallel with the main CSS bundle, instead of waiting
    for this file to parse and chase down @import chains. */
 
 @layer props.fonts {
-  :root {
+  :where(:root) {
     --font-family-base:
-      'proxima-nova', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC', 'Segoe UI',
+      'acumin-variable', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC', 'Segoe UI',
       /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
       /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
     --font-family-heading:
-      'proxima-nova-condensed', 'proxima-nova', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC',
-      'Segoe UI', /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
+      'acumin-variable', /* mac */ -apple-system, blinkmacsystemfont, /* win */ 'Segoe WPC', 'Segoe UI',
+      /* mobile */ 'Roboto', /* nix */ 'Oxygen', 'Ubuntu', 'Cantarell', /* FFOS */ 'Fira Sans',
       /* 'Droid */ 'Droid Sans', /* Boring */ 'Helvetica Neue', sans-serif;
-    --font-family-mono: 'JetBrains Mono', sfmono-regular, menlo, monaco, consolas, 'Courier New', monospace;
+    --font-family-mono: 'config-mono-vf', sfmono-regular, menlo, monaco, consolas, 'Courier New', monospace;
     --font-size-base: 16px;
     --font-line-height-base: 1.5;
     --font-line-height-heading: 1.2;
-    --font-weight-base: 400;
+    --font-weight-base: 350;
     --font-weight-bold: 700;
-    --font-weight-heading: 900;
+    --font-weight-bolder: 800;
+    --font-weight-heading: 842;
+
+    /* Acumin Variable wdth axis (range 50–115; 100 = normal). Drives the
+       condensed display look that Proxima Nova Condensed used to provide.
+       Applied via font-variation-settings because the kit's @font-face
+       declares font-stretch:normal, which clamps the high-level property. */
+    --font-width-heading: 85;
+    --font-width-base: 105;
   }
 }
 

@@ -23,7 +23,8 @@
 
   .brand__name {
     font-family: var(--font-family-heading);
-    font-weight: 800;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-heading);
     line-height: 1;
     text-transform: uppercase;
 
@@ -53,7 +54,7 @@
     font-size: var(--type-body-xs-size);
     color: var(--color-deemphasize-foreground);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
   }
 
   .sub {
@@ -89,7 +90,8 @@
   .stat__value {
     font-family: var(--font-family-heading);
     font-size: var(--type-body-2xl-size);
-    font-weight: 900;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-heading);
     line-height: 0.9;
     letter-spacing: -0.02em;
 
@@ -293,6 +295,7 @@
     padding: var(--spacing-sm) var(--spacing-xs);
     font-family: var(--font-family-heading);
     font-size: var(--type-body-lg-size);
+    font-variation-settings: 'wdth' var(--font-width-heading);
     font-weight: var(--font-weight-heading);
     color: inherit;
     text-transform: uppercase;
@@ -417,7 +420,8 @@
     padding: var(--spacing-xl);
     font-family: var(--font-family-heading);
     font-size: var(--type-body-xl-size);
-    font-weight: 800;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-bolder);
     color: inherit;
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -589,7 +593,8 @@
       margin-block-end: var(--spacing-xs);
       font-family: var(--font-family-heading);
       font-size: var(--type-body-sm-size);
-      font-weight: 800;
+      font-variation-settings: 'wdth' var(--font-width-heading);
+      font-weight: var(--font-weight-bold);
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
@@ -657,7 +662,8 @@
   .case-card__num {
     font-family: var(--font-family-heading);
     font-size: var(--size-6);
-    font-weight: 900;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-heading);
     line-height: 0.84;
     color: var(--color-card-num-foreground);
     letter-spacing: -0.04em;
@@ -691,7 +697,8 @@
   .case-card__metric {
     font-family: var(--font-family-heading);
     font-size: var(--type-body-lg-size);
-    font-weight: 800;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-bold);
     line-height: 1.05;
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -782,7 +789,8 @@
       padding: 0 var(--spacing-md);
       font-family: var(--font-family-heading);
       font-size: var(--type-body-sm-size);
-      font-weight: 700;
+      font-variation-settings: 'wdth' var(--font-width-heading);
+      font-weight: var(--font-weight-bold);
       color: inherit;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -887,7 +895,7 @@
 
   .hero__headline {
     line-height: 0.86;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
   }
 
   .hero__headline--big {
@@ -903,10 +911,12 @@
     margin-block: var(--spacing-xl);
     font-family: var(--font-family-heading);
     font-size: var(--type-body-xl-size);
-    font-weight: 800;
+    font-variation-settings: 'wdth' var(--font-width-heading);
+    font-weight: var(--font-weight-bolder);
     line-height: 1.05;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+
+    /* letter-spacing: 0.02em; */
   }
 
   .hero__sub {
@@ -1003,14 +1013,14 @@
 
   .section__headline {
     margin-block: 0;
-    font-stretch: condensed;
+    font-variation-settings: 'wdth' var(--font-width-heading);
     line-height: 0.86;
     letter-spacing: -0.02em;
   }
 
   .section--end .section__headline {
     font-size: var(--size-6);
-    font-stretch: normal;
+    font-variation-settings: 'wdth' var(--font-width-heading);
     line-height: 0.9;
     letter-spacing: -0.01em;
   }
@@ -1258,6 +1268,7 @@
     display: block;
     font-family: var(--font-family-heading);
     font-size: var(--size-6);
+    font-variation-settings: 'wdth' var(--font-width-heading);
     font-weight: var(--font-weight-heading);
     line-height: 0.85;
     color: var(--color-primary-foreground);
@@ -1302,6 +1313,7 @@
     margin-block: 0 var(--spacing-xl);
     font-family: var(--font-family-heading);
     font-size: var(--type-body-xl-size);
+    font-variation-settings: 'wdth' var(--font-width-heading);
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
     letter-spacing: -0.005em;
@@ -1341,6 +1353,7 @@
     margin: 0;
     font-family: var(--font-family-heading);
     font-size: var(--size-3);
+    font-variation-settings: 'wdth' var(--font-width-heading);
     font-weight: var(--font-weight-heading);
     line-height: 1;
     text-transform: uppercase;
