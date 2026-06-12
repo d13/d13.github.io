@@ -394,6 +394,10 @@
     @media (width >= 800px) {
       grid-column: 1 / 8;
     }
+
+    p {
+      max-width: 62ch;
+    }
   }
 
   .contact__headline {
