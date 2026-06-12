@@ -4,15 +4,17 @@ Design system orientation for `d13.github.io`.
 
 ## Token system
 
-All visual decisions ladder up to tokens declared in `src/styles/base.css`. That file is locked — do not modify token values without a deliberate review. Tokens include:
+All visual decisions ladder up to tokens declared in the `props.*` layer files under `src/styles/` (`2-props-color.css`, `2-props-sizing.css`, `3-props-fonts.css`, `3-props-spacing.css`, `3-props-elevation.css`, `3-props-motion.css`). Do not modify token values without a deliberate review. Tokens include:
 
-- **Colour** — `--color-raw-*` (raw palette) → `--color-primary-foreground`, `--color-primary-background`, `--color-link-*`, `--color-elevation-*` (semantic aliases).
-- **Type** — `--font-family-heading`, `--font-family-body`; sizes via `--type-h1-size`…`--type-overline-size`, `--type-body-lg-size`…`--type-body-sm-size`.
-- **Spacing** — `--spacing-xs`…`--spacing-3xl`; raw size scale via `--size-1`…`--size-12`.
-- **Elevation** — `--elevation-sticky`, `--elevation-overlay`, etc.
-- **Motion** — `--motion-duration-1`…`--motion-duration-4`; `--motion-ease-out`, `--motion-ease-in-out`, `--motion-ease-spring` (declared in `src/styles/3-props-motion.css` and adopted by `BaseLayout2026`).
+- **Colour** (`2-props-color.css`) — `--color-raw-*` (raw palette) → semantic aliases (`--color-*-foreground/-background`, link, card, dialog, static-accent). Accent pair `--color-accent-01/--color-accent-02` resolves per `data-accent` (`mix` = red+blue, `red`, `blue`). Light/dark values are declared per `data-scheme`, with `auto` deferring to `prefers-color-scheme`.
+- **Type** (`3-props-fonts.css`) — `--font-family-base/-heading` (Acumin Variable via Adobe Fonts) and `--font-family-mono` (Config Mono). Weight tokens (`--font-weight-base/-bold/-bolder/-heading`) are lightened in the dark scheme to offset halation. `--font-width-heading/-base` drive Acumin's `wdth` axis via `font-variation-settings` (the kit's `@font-face` clamps `font-stretch`).
+- **Sizing / spacing** (`2-props-sizing.css`, `3-props-spacing.css`) — raw size scale + spacing tokens.
+- **Elevation** (`3-props-elevation.css`) — z-index / shadow tokens.
+- **Motion** (`3-props-motion.css`) — `--motion-duration-1`…`--motion-duration-4`; `--motion-ease-out`, `--motion-ease-in-out`, `--motion-ease-spring`.
 
-Theme switching is intent-driven via `<html data-scheme="auto|light|dark">`. `auto` honours `prefers-color-scheme`.
+The Adobe Fonts kit stylesheet (`use.typekit.net/dmv6mus.css`) is loaded via `<link>` in `BaseLayout`'s head — not `@import` — so the preload scanner finds it early.
+
+Theme switching is intent-driven via `<html data-scheme="auto|light|dark" data-accent="mix|blue|red">`. `auto` honours `prefers-color-scheme`. `<d-modes-menu>` in the header sets both attributes and persists them to `localStorage` (`d13:scheme`, `d13:accent`); an inline head script in `BaseLayout` re-applies persisted values before first paint.
 
 ### Motion tokens
 
@@ -37,73 +39,88 @@ Global guards already in place: `prefers-reduced-motion` is honoured via `7-over
 
 ## CSS architecture
 
-`base.css` declares the cascade-layer order: `props`, `base`, `patterns`, `utilities`, `overrides`. `site.css` only adds **new sublayers under `patterns.*` and `overrides.*`** — it never redefines tokens.
+One file per cascade-layer concern, imported in order by `BaseLayout`:
 
-Examples currently in `site.css`:
+- `1-layers.css` declares the layer order: `props`, `base`, `patterns`, `utilities`, `overrides`.
+- `2-props-*.css` / `3-props-*.css` — tokens only (see above).
+- `4-base.css` — `base.normalize` (incl. the `:not(:defined)` FOUC guard) and `base.content`.
+- `5-patterns.css` — all pattern classes, grouped into five sublayers:
+  - `patterns.content` — eyebrows, rules, meta strips, prose parts
+  - `patterns.controls` — buttons, links, contact actions, modes popover
+  - `patterns.nav` — header/footer nav, inline nav, TOC, big CTA nav
+  - `patterns.parts` — hero, sections, manifesto/stats, story tease, case cards, dialogs, contact, header/footer chrome
+  - `patterns.layout` — page-level grid / flow
+- `6-utilities.css` — generic helpers (e.g. `.u-solo`). Unlayered class names with a `u-` prefix.
+- `7-overrides.css` — the `prefers-reduced-motion` guard. Deliberately top-level (not in a layer) so it wins everywhere.
 
-- `patterns.site-chrome` — header + footer
-- `patterns.hero` — landing hero overrides on top of base.css's hero defaults
-- `patterns.tease` — story/work tease sections
-- `patterns.work` — work card grid + card surface
-- `patterns.connect` — connect block (contact + social)
-- `patterns.page` — generic hub page chrome (eyebrow, title, prose)
-- `patterns.case-study` — case study layout (title, hero slot, body grid, metrics, footer)
-- `overrides.a11y` — visually-hidden helpers (`.o-sr-only`, `.o-sr-only-focusable`)
+Shared sheets also adopted from JS: `src/scripts/styles/shared.css.ts` defines Lit `css` modules (`base.normalize` link styles, `overrides.a11y` visually-hidden helpers `.o-sr-only` / `.o-sr-only-focusable`) that each script entry converts via `litToStyleSheet` and pushes onto `document.adoptedStyleSheets`.
+
+## Page anatomy
+
+`/` is a single-page landing of numbered sections sharing one skeleton: `.section` → `.section__header` (eyebrow index `[ NN ] Label`, headline, lede) → `.section__body`.
+
+- **[ 00 ] Hero** — meta strip (availability/build/coords/index), eyebrow rule, headline, locked intro + sub-line, `<d-hero-image>`.
+- **[ 01 ] About** — manifesto quote, stat trio, detail paragraphs.
+- **[ 02 ] The Story** — tease lede + chapter list; CTA to `/story` currently disabled ("Full story soon").
+- **[ 03 ] Selected Projects** — `.cases` grid of four `.case-card`s. Two are external links (`<a target="_blank">`), two are `<button>`s that open native `<dialog class="dialog" closedby="any">` modals via invoker commands (`command="show-modal"` / `commandfor`) — no JS.
+- **[ 04 ] Connect** — contact headline + email/LinkedIn/GitHub action buttons.
+
+`/story` is the long-form story: a sticky chapter TOC (desktop), hero, and chaptered prose. `/404` reuses the home hero skeleton with `<d-error-image>`.
 
 ## Component inventory
 
 ### Astro UI components (`src/components/*.astro`)
 
-| Component    | Used on                       | Notes                                                                |
-| ------------ | ----------------------------- | -------------------------------------------------------------------- |
-| `SkipLinks`  | every page (via `BaseLayout`) | a11y skip-to-content / skip-to-nav                                   |
-| `SiteHeader` | every page                    | logo, nav (Story / Work / Connect), GitHub link                      |
-| `SiteFooter` | every page                    | copyright + back-to-top                                              |
-| `Hero`       | `/`                           | locked positioning copy + `<d-hero-image>`                           |
-| `StoryTease` | `/`                           | placeholder tease + link to `/story`                                 |
-| `WorkTease`  | `/`                           | placeholder + work-card grid                                         |
-| `WorkCard`   | `/`, `/work`                  | single case-study card; consumes `CaseStudy` from `src/data/work.ts` |
-| `Connect`    | `/`                           | contact + social block; uses `<d-icon-library>`                      |
+| Component    | Used on                       | Notes                                                                                             |
+| ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| `SkipLinks`  | every page (via `BaseLayout`) | a11y skip-to-content / skip-to-nav                                                                |
+| `SiteHeader` | every page                    | brand, nav (About / Story / Work / Connect — anchors on home, routes elsewhere), `<d-modes-menu>` |
+| `SiteFooter` | every page                    | big mark, nav columns, colophon, copyright                                                        |
+
+The former `Hero`, `StoryTease`, `WorkTease`, `WorkCard`, and `Connect` components were removed in the redesign — their markup now lives inline in `index.astro` as pattern classes.
 
 ### Layouts (`src/layouts/*.astro`)
 
-- `BaseLayout` — html / head / chrome / slot. Pass `title`, `description`, `bodyClass`.
-- `CaseStudyLayout` — wraps a case-study body with eyebrow/title, hero slot, body+metrics grid, and a back-to-work link.
+- `BaseLayout` — the only layout. html / head / chrome / slot. Props: `title`, `description`, `ogTitle`, `ogDescription`, `ogImage`, `bodyClass`, `mode` (initial `data-scheme`), `isHome` (switches header/footer nav between anchors and routes). The head carries meta/OG tags, the Typekit `<link>`, and two inline scripts: theme-prefs hydration and the `data-fonts` FOUT gate.
 
 ### Web components (`src/scripts/components/`)
 
-| Element            | Source                                          | Purpose                                                                 |
-| ------------------ | ----------------------------------------------- | ----------------------------------------------------------------------- |
-| `<d-hero-image>`   | `heros/hero-image.ts` (extends `heros/base.ts`) | Animated SVG hero. **Preserved verbatim from the 11ty implementation.** |
-| `<d-icon-library>` | `icons/icon-library.ts`                         | Renders a named icon from the static `icons` map.                       |
+| Element            | Source                                           | Purpose                                                                            |
+| ------------------ | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| `<d-hero-image>`   | `heros/hero-image.ts` (extends `heros/base.ts`)  | Animated SVG hero on `/`. Preserved from the 11ty implementation.                  |
+| `<d-error-image>`  | `heros/error-image.ts` (extends `heros/base.ts`) | Animated SVG for `/404`.                                                           |
+| `<d-modes-menu>`   | `modes-menu.ts`                                  | Scheme/accent picker. Light-DOM Lit + native popover; persists to `localStorage`.  |
+| `<d-icon-library>` | `icons/icon-library.ts`                          | Named-icon renderer. **Currently unreferenced by any page** — kept for future use. |
 
-The icon library was extended during this port to add `phone`, `bluesky`, `linkedin`, `dribbble`, and `codepen` — the 11ty version referenced these names but the registry was missing them. The new icons are minimal inline SVGs in `icons/icons.ts`.
+Registration is split per page-entry: `main.ts` (`/story`) registers only `<d-modes-menu>`; `home.ts` adds `<d-hero-image>`; `error.ts` adds `<d-error-image>`. `src/data/work.ts` and `src/scripts/utils/hero-watcher.ts` are orphaned modules from the previous design — nothing imports them.
 
 ## Accessibility conventions
 
 - Every page starts with `SkipLinks` and a labelled `<main id="main">`.
-- Decorative custom elements declare `aria-hidden="true"`.
-- Each `<section>` is `aria-labelledby`ed by its visible heading.
-- Focus state on links and cards is non-decorative (uses underline / outline / colour shift). No focus traps.
-- Body class names (`page--<slug>`) are available for page-specific overrides, not for accessibility decisions.
+- Decorative custom elements declare `aria-hidden="true"`; decorative `<img>`s use empty `alt`.
+- Case-study dialogs are native `<dialog closedby="any">` with `aria-labelledby`, opened/closed by invoker commands — focus and dismissal are platform behaviour, not JS.
+- `<d-modes-menu>` renders in light DOM, uses the popover API with `role="dialog"`, `aria-haspopup`, `aria-expanded`.
+- Reduced motion is honoured globally via `7-overrides.css`; new animations need no per-case wrappers.
+- Body class names (`page`, `page--story`) are for page-specific overrides, not accessibility decisions.
 
 ## Web component conventions
 
-- **Lit** for any new component. Decorators (`@customElement`, `@property`) are fine — `experimentalDecorators` is on.
+- **Lit** for any new component. Decorators (`@customElement`, `@property`, `@state`, `@query`) are fine — `experimentalDecorators` is on.
 - **Native registration** via `customElements.define(...)` (or `@customElement('d-foo')`). No wrapping in `.astro`.
-- **Lazy-load from `main.ts`** with a `setTimeout(() => void import(...))` so the registry registers after the HTML has rendered. Avoids upgrade flash.
-- **Shared styles** via `lit/css` modules in `src/scripts/styles/`. Adopted globally through `document.adoptedStyleSheets` in `main.ts`.
+- **Lazy-load from the page's script entry** (`home.ts` / `main.ts` / `error.ts`) with a `setTimeout(() => void import(...))` so shared styles adopt before upgrade. Register only what the page uses.
+- **Shared styles** via `lit/css` modules in `src/scripts/styles/`, adopted globally through `document.adoptedStyleSheets` in each entry.
+- **Light DOM is allowed** when a component should inherit page patterns/tokens directly (see `<d-modes-menu>`'s `createRenderRoot`).
 - **Element naming** is the `d-` prefix (D13).
 - **No SSR.** Astro renders the custom element tag as unknown HTML; the client upgrades it.
 
 ## Future-state hooks
 
-- **Per-opportunity landings** (`/for/<slug>`) are intentionally not built in this pass. The route layout supports them: add `src/pages/for/<slug>.astro`, reuse `BaseLayout`, and slot in a tailored hero/body. Header navigation does not need to expose them — they are designed to be linked from outside (a recruiter email, a conference profile, etc.).
-- **Real copy.** `Hero` is the only positioning-locked text. The Story page, Work index lede, and case-study bodies are placeholders marked with `TODO:` plus a `.placeholder-tag` chip.
-- **Proof-points metrics.** The case-study sidebar currently shows three `TODO` rows. The metric format (number + label + source) will be defined when real metrics land — for now the slot is generic `<ul>`.
+- **Story CTA.** The "[ 02 ] Story" tease CTA on `/` is a placeholder span ("Full story soon") with the real link to `/story` commented out beside it — flip it when the story page copy is final.
+- **Work index.** A `work.html` mock exists in `.work/design-2026/mock-site/` and a "See all case studies" CTA is commented out in `index.astro`. If a `/work` index returns, the orphaned `src/data/work.ts` is the starting data shape — and the header/footer off-home "Work" links (currently pointing at the dead `/work` route) get fixed for free.
+- **Per-opportunity landings** (`/for/<slug>`) remain possible: add `src/pages/for/<slug>.astro`, reuse `BaseLayout`, link from outside.
 
-## Things deliberately not in this port
+## Things deliberately not in this design
 
-- The phone-swap section from the deprecated 11ty About area.
-- The old single-page anchor-link sections (`#story`, `#about`, `#work` on `/`).
-- Any real positioning copy beyond the locked hero pair.
+- The hub-and-spoke `/work` index and per-case-study pages from the first Astro pass (case studies are now cards + dialogs/external links on `/`).
+- The `CaseStudyLayout`, tease/card Astro components, and icon usage that supported them.
+- Availability line in the hero meta strip (commented out pending dates).
